@@ -2,9 +2,5 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Success_Making_Template.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Success_Making_Template.h" />
   </ItemGroup>
 </Project>
