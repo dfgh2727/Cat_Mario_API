@@ -79,7 +79,7 @@ UEngineWindow::UEngineWindow()
     RegisterClassExA(&wcex);
 
     WindowHandle = CreateWindowA("DefaultWindow", "MainWindow", WS_OVERLAPPEDWINDOW,
-        0, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+        -2000, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
     if (!WindowHandle)
     {
