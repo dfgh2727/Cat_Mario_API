@@ -1,20 +1,17 @@
-#include <Windows.h>
-#include <EnginePlatform/EngineWindow.h>
+#include "PreCompile.h"
+#include <ContentsProject/EduContentsCore.h>
 
-#pragma comment (lib, "EnginePlatform.lib")
+
+#include <EngineCore/EngineAPICore.h>
+
+#pragma comment (lib, "EngineCore.lib")
+#pragma comment (lib, "ContentsProject.lib")
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	_In_opt_ HINSTANCE hPrevInstance,
 	_In_ LPWSTR    lpCmdLine,
 	_In_ int       nCmdShow)
 {
-
-	// UGameEngine::Start(hInstance);
-
-	UEngineWindow::EngineWindowInit(hInstance);
-
-	UEngineWindow NewWindow;
-	NewWindow.Open();
-
-	return UEngineWindow::WindowMessageLoop();
+	EduContentsCore User;
+	return UEngineAPICore::EngineStart(hInstance, &User);
 }
