@@ -44,7 +44,7 @@ public:
 protected:
 
 private:
-	class ULevel* World = nullptr;
+	ULevel* World = nullptr;
 
 	FVector2D Location = FVector2D::ZERO;
 	FVector2D Scale = FVector2D::ZERO;
