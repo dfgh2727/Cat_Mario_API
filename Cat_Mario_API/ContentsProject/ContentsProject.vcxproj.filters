@@ -4,7 +4,7 @@
     <ClInclude Include="PreCompile.h">
       <Filter>PreCompile</Filter>
     </ClInclude>
-    <ClInclude Include="ContentsBox.h">
+    <ClInclude Include="EduContentsCore.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
@@ -18,7 +18,7 @@
     <ClCompile Include="PreCompile.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
-    <ClCompile Include="ContentsBox.cpp">
+    <ClCompile Include="EduContentsCore.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">

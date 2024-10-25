@@ -1,20 +1,20 @@
 #include "PreCompile.h"
-#include "ContentsBox.h"
+#include "EduContentsCore.h"
 #include <EngineCore/EngineAPICore.h>
 
 #include "PlayGameMode.h"
 #include "Player.h"
 
-ContentsBox::ContentsBox()
+EduContentsCore::EduContentsCore()
 {
 }
 
-ContentsBox::~ContentsBox()
+EduContentsCore::~EduContentsCore()
 {
 }
 
 // 엔진이 실행되고 단 1번 실행된다.
-void ContentsBox::BeginPlay()
+void EduContentsCore::BeginPlay()
 {
 	// 아무 쓸모 없는 코드.
 	// 애는 님들이 지워줘야한다.
@@ -31,6 +31,7 @@ void ContentsBox::BeginPlay()
 
 }
 
-void ContentsBox::Tick()
+void EduContentsCore::Tick()
 {
+	// 지금 전혀 용도를 찾지 못해서 사용하지 않는 함수입니다.
 }

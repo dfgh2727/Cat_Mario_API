@@ -16,7 +16,7 @@ public:
 	ULevel& operator=(const ULevel& _Other) = delete;
 	ULevel& operator=(ULevel&& _Other) noexcept = delete;
 
-	void Tick();
+	void Tick(float _DeltaTime);
 	void Render();
 
 	template<typename ActorType>
@@ -42,6 +42,8 @@ private:
 	void CreateGameMode()
 	{
 		GameMode = new GameModeType();
+
+		// 화면을 바라봐주는 카메라라고 생각하고 만드셔도 됩니다.
 		MainPawn = new MainPawnType();
 
 		// 월드세팅이 먼저되는것이 굉장히 중요하다.

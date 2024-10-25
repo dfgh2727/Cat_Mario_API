@@ -155,7 +155,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="ContentsBox.h">
+    <ClInclude Include="EduContentsCore.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -170,7 +170,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="ContentsBox.cpp">
+    <ClCompile Include="EduContentsCore.cpp">
       <SubType>
       </SubType>
     </ClCompile>
