@@ -43,53 +43,12 @@ public:
 	UEngineInput& operator=(const UEngineInput& _Other) = delete;
 	UEngineInput& operator=(UEngineInput&& _Other) noexcept = delete;
 
-	// static이 함께하게 되는 경우가 많다.
-	// 그 클래스 자기자신이 만들어서 외부에 공개한다.
-	// 여기에서 여러가지 패턴이 나오는데.
-
-	// 크게 포인터형과 값형으로 나눈다.
 
 	static UEngineInput& GetInst()
 	{
-		// 지역 static을 선호한다.
-		// 코드가 짧아져서 좋아한다.
-		// 클래스 내부의 static은 
-		// 외부에 공개하기가 까다롭다.
-
-		// 값형 싱글톤을 만들기가 쉽다.
 		static UEngineInput Inst = UEngineInput();
 		return Inst;
 	}
-
-
-	//static UEngineInput& GetInst()
-	//{
-	//	return Inst;
-	//}
-
-	// 포인터형의 장점은 딱 1개이다.
-	// if 있어서 싫고.
-	// 지울수 있다는게 장점인데.
-	// 그래서 싫어한다.
-	//static UEngineInput& GetInst()
-	//{
-	//	if (nullptr == Inst)
-	//	{
-	//		Inst = new UEngineInput();
-	//	}
-	//	return *Inst;
-	//}
-
-	// 한쌍의 삭제함수를 무조건 만들어줘야 한다.
-	// 어디선가 무조건 호출해줘야 한다.
-	//static void DestroyInst()
-	//{
-	//	if (nullptr != Inst)
-	//	{
-	//		delete Inst;
-	//		Inst = nullptr;
-	//	}
-	//}
 
 	// 외부에 공개하기는 싫다.
 private:

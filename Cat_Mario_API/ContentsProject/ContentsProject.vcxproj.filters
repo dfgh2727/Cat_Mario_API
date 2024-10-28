@@ -4,16 +4,7 @@
     <ClInclude Include="PreCompile.h">
       <Filter>PreCompile</Filter>
     </ClInclude>
-    <ClInclude Include="EduContentsCore.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>ContentsObject</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayGameMode.h">
-      <Filter>ContentsObject\GameMode</Filter>
-    </ClInclude>
-    <ClInclude Include="Bullet.h">
+    <ClInclude Include="MarioCat.h">
       <Filter>ContentsObject</Filter>
     </ClInclude>
   </ItemGroup>
@@ -21,16 +12,7 @@
     <ClCompile Include="PreCompile.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
-    <ClCompile Include="EduContentsCore.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>ContentsObject</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayGameMode.cpp">
-      <Filter>ContentsObject\GameMode</Filter>
-    </ClCompile>
-    <ClCompile Include="Bullet.cpp">
+    <ClCompile Include="MarioCat.cpp">
       <Filter>ContentsObject</Filter>
     </ClCompile>
   </ItemGroup>
