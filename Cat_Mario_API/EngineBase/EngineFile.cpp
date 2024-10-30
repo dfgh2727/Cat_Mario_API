@@ -8,6 +8,19 @@ UEngineFile::UEngineFile()
 
 }
 
+// 자식에서 부모 생성자를 명시적으로 호출해주면 된다.
+UEngineFile::UEngineFile(std::string_view _Path)
+	: UEnginePath(_Path)
+{
+
+}
+
+UEngineFile::UEngineFile(std::filesystem::path _Path)
+	: UEnginePath(_Path)
+{
+
+}
+
 UEngineFile::~UEngineFile()
 {
 	// 소멸자를 이용해서 자연스럽게 파괴되도록 만드는게 좋다.
@@ -77,6 +90,7 @@ void UEngineFile::Read(void* _Ptr, size_t _Size)
 // 인라인은 구현과 선언을분리하면 인라인을 하기 힘듭니다.
 bool UEngineFile::IsExits()
 {
+	// Window제공함수
 	int Result = _access(Path, 00);
 
 	// 0이면 있는것 0 이외의 값이면 없는 것
