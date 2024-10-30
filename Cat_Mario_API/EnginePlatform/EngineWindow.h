@@ -95,9 +95,11 @@ private:
 
 	FVector2D WindowSize;
 
+	// HDC
 	// 값형으로 해도 문제가 없고 더 빠르겠죠.
 	UEngineWinImage* BackBufferImage = nullptr;
 
+	// HDC
 	// 윈도우 이미지로 랩핑되었다.
 	UEngineWinImage* WindowImage = nullptr;
 

@@ -153,7 +153,6 @@ void UEngineWindow::CreateWindowClass(const WNDCLASSEXA& _Class)
 
 UEngineWindow::UEngineWindow() 
 {
-
     
 }
 
@@ -169,6 +168,13 @@ UEngineWindow::~UEngineWindow()
     {
         delete BackBufferImage;
         BackBufferImage = nullptr;
+    }
+    
+    // 릴리즈하는 순서는 왠만하면 만들어진 순서의 역순이 좋다.
+    if (nullptr != WindowHandle)
+    {
+        DestroyWindow(WindowHandle);
+        WindowHandle = nullptr;
     }
 }
 
@@ -221,7 +227,6 @@ void UEngineWindow::Open(std::string_view _TitleName /*= "Window"*/)
 
 void UEngineWindow::SetWindowPosAndScale(FVector2D _Pos, FVector2D _Scale)
 {
-
     // 이전의 크기와 달라졌을때만 백버퍼를 새로 만든 것이다.
     if (false == WindowSize.EqualToInt(_Scale))
     {
