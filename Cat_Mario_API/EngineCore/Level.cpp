@@ -2,6 +2,10 @@
 #include "Level.h"
 #include "EngineAPICore.h"
 
+#include <EngineBase/EngineMath.h>
+#include <EnginePlatform/EngineWindow.h>
+#include <EnginePlatform/EngineWinImage.h>
+
 ULevel::ULevel()
 {
 }
@@ -65,7 +69,7 @@ void ULevel::ScreenClear()
 	UEngineWinImage* BackBufferImage = MainWindow.GetBackBuffer();
 	FVector2D Size = MainWindow.GetWindowSize();
 
-	Rectangle(BackBufferImage->GetDC(), 0, 0, Size.iX(), Size.iY());
+	Rectangle(BackBufferImage->GetDC(), -1, -1, Size.iX() + 2, Size.iY() + 2);
 }
 
 void ULevel::DoubleBuffering()
