@@ -15,7 +15,8 @@ public:
 	GetLevelsReady& operator=(const GetLevelsReady& _Other) = delete;
 	GetLevelsReady& operator=(GetLevelsReady&& _Other) noexcept = delete;
 
-	void 
+	void MakeActors();
+
 protected:
 
 private:
