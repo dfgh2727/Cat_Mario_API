@@ -5,12 +5,14 @@
     <ClCompile Include="..\App\PreCompile.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
+    <ClCompile Include="CatMarioGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h" />
     <ClInclude Include="..\App\PreCompile.h">
       <Filter>PreCompile</Filter>
     </ClInclude>
+    <ClInclude Include="CatMarioGame.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
