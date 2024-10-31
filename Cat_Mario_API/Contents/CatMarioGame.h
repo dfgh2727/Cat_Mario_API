@@ -1,8 +1,9 @@
-
 #pragma once
+#include <EngineCore/EngineAPICore.h>
+#include <EnginePlatform/EngineWindow.h>
 
 // Ό³Έν :
-class CatMarioGame
+class CatMarioGame : public UContentsCore
 {
 public:
 	// constrcuter destructer
@@ -16,6 +17,9 @@ public:
 	CatMarioGame& operator=(CatMarioGame&& _Other) noexcept = delete;
 
 protected:
+	void BeginPlay() override;
+	/*void Tick() override*/;
+ 
 
 private:
 

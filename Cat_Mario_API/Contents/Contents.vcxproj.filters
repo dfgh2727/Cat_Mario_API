@@ -6,6 +6,8 @@
       <Filter>PreCompile</Filter>
     </ClCompile>
     <ClCompile Include="CatMarioGame.cpp" />
+    <ClCompile Include="MakeMap.cpp" />
+    <ClCompile Include="GetLevelsReady.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h" />
@@ -13,6 +15,8 @@
       <Filter>PreCompile</Filter>
     </ClInclude>
     <ClInclude Include="CatMarioGame.h" />
+    <ClInclude Include="MakeMap.h" />
+    <ClInclude Include="GetLevelsReady.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">

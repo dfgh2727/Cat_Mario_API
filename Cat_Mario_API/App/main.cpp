@@ -1,5 +1,5 @@
 #include "PreCompile.h"
-
+#include <Contents/CatMarioGame.h>
 
 
 #include <EngineCore/EngineAPICore.h>
@@ -15,6 +15,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	_In_ LPWSTR    lpCmdLine,
 	_In_ int       nCmdShow)
 {
-	/*EduContentsCore User*/;
-	return UEngineAPICore::EngineStart(hInstance, &User);
+	CatMarioGame GameStart;
+	return UEngineAPICore::EngineStart(hInstance, &GameStart);
 }

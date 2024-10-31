@@ -153,6 +153,14 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GetLevelsReady.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="MakeMap.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Player.cpp">
       <SubType>
       </SubType>
@@ -161,6 +169,14 @@
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h" />
     <ClInclude Include="CatMarioGame.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GetLevelsReady.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="MakeMap.h">
       <SubType>
       </SubType>
     </ClInclude>
