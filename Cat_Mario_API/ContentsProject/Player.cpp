@@ -10,7 +10,7 @@ APlayer::APlayer()
 	SetActorLocation({100, 100});
 	SetActorScale({ 256, 256 });
 
-	SetSprite("Player_Right.png");
+	SetSprite("TestImage.png");
 }
 
 APlayer::~APlayer()
@@ -47,7 +47,7 @@ void APlayer::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown('R'))
 	{
-		SetSprite("Player_Right.png", MySpriteIndex);
+		SetSprite("TestImage.png", MySpriteIndex);
 		++MySpriteIndex;
 	}
 
