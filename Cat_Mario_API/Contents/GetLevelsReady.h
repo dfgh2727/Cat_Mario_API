@@ -2,7 +2,7 @@
 #include <EngineCore/GameMode.h>
 
 // Ό³Έν :
-class GetLevelsReady
+class GetLevelsReady : public AGameMode
 {
 public:
 	// constrcuter destructer

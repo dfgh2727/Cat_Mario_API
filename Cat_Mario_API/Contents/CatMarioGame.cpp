@@ -50,3 +50,8 @@ void CatMarioGame::BeginPlay()
 	UEngineAPICore::GetCore()->OpenLevel("TestPlay");
 }
 
+void CatMarioGame::Tick()
+{
+	// 지금 전혀 용도를 찾지 못해서 사용하지 않는 함수입니다.
+}
+

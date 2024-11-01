@@ -1,5 +1,5 @@
-
 #pragma once
+#include <EngineCore/Actor.h>
 
 // Ό³Έν :
 class MarioCat : public AActor
@@ -15,9 +15,15 @@ public:
 	MarioCat& operator=(const MarioCat& _Other) = delete;
 	MarioCat& operator=(MarioCat&& _Other) noexcept = delete;
 
+	void BeginPlay() override;
+	void Tick(float _DeltaTime) override;
+
+	/*void CatController();*/
+
 protected:
 
 private:
+	float Speed = 100.0f;
 
 };
 
