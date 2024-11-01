@@ -5,24 +5,41 @@
       <Filter>PreCompile</Filter>
     </ClCompile>
     <ClCompile Include="CatMarioGame.cpp" />
-    <ClCompile Include="MakeMap.cpp" />
     <ClCompile Include="GetLevelsReady.cpp" />
     <ClCompile Include="MarioCat.cpp" />
-    <ClCompile Include="Enum.cpp" />
+    <ClCompile Include="MakeMap.cpp">
+      <Filter>MakeMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Enum.cpp">
+      <Filter>MakeMap</Filter>
+    </ClCompile>
+    <ClCompile Include="KeysForMap.cpp">
+      <Filter>MakeMap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
       <Filter>PreCompile</Filter>
     </ClInclude>
     <ClInclude Include="CatMarioGame.h" />
-    <ClInclude Include="MakeMap.h" />
     <ClInclude Include="GetLevelsReady.h" />
     <ClInclude Include="MarioCat.h" />
-    <ClInclude Include="Enum.h" />
+    <ClInclude Include="MakeMap.h">
+      <Filter>MakeMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>MakeMap</Filter>
+    </ClInclude>
+    <ClInclude Include="KeysForMap.h">
+      <Filter>MakeMap</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
       <UniqueIdentifier>{3154aa35-f7e0-4bc7-b873-00054cff9618}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MakeMap">
+      <UniqueIdentifier>{672b4ea2-e98a-431d-a703-67d20b541b1e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
