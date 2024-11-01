@@ -7,7 +7,7 @@
 
 MarioCat::MarioCat()
 {
-	SetActorLocation({ 100, 300 });
+	SetActorLocation({ 300, 100 });
 	
 	{
 		CatRenderer = CreateDefaultSubObject<USpriteRenderer>();
@@ -58,10 +58,10 @@ void MarioCat::Tick(float _DeltaTime)
 	}
 
 
-if (false == UEngineInput::GetInst().IsPress('A') &&
-	false == UEngineInput::GetInst().IsPress('D') &&
-	false == UEngineInput::GetInst().IsPress('W') &&
-	false == UEngineInput::GetInst().IsPress('S'))
+if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
+	false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
+	false == UEngineInput::GetInst().IsPress(VK_DOWN) &&
+	false == UEngineInput::GetInst().IsPress(VK_UP))
 {
 	CatRenderer->ChangeAnimation("Cat_Stand");
 }
