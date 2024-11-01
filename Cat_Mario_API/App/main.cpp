@@ -5,7 +5,7 @@
 #include <EngineCore/EngineAPICore.h>
 
 #pragma comment (lib, "EngineCore.lib")
-#pragma comment (lib, "ContentsProject.lib")
+#pragma comment (lib, "Contents.lib")
 
 
 #include <EngineBase/EngineTimer.h>
