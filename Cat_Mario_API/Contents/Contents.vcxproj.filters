@@ -13,9 +13,6 @@
     <ClCompile Include="Enum.cpp">
       <Filter>MakeMap</Filter>
     </ClCompile>
-    <ClCompile Include="KeysForMap.cpp">
-      <Filter>MakeMap</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -28,9 +25,6 @@
       <Filter>MakeMap</Filter>
     </ClInclude>
     <ClInclude Include="Enum.h">
-      <Filter>MakeMap</Filter>
-    </ClInclude>
-    <ClInclude Include="KeysForMap.h">
       <Filter>MakeMap</Filter>
     </ClInclude>
   </ItemGroup>

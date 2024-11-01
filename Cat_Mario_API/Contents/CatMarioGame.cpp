@@ -45,7 +45,7 @@ void CatMarioGame::BeginPlay()
 	UEngineAPICore::GetCore()->GetMainWindow().SetWindowTitle("Cat Mario Game");
 
 	
-	UEngineAPICore::GetCore()->GetMainWindow().SetWindowPosAndScale({ 0, 0 }, { 1280, 720 });
+	UEngineAPICore::GetCore()->GetMainWindow().SetWindowPosAndScale({ 0, 0 }, { 1260, 630 });
 
 	UEngineAPICore::GetCore()->CreateLevel< GetLevelsReady,MarioCat >("TestPlay");
 	
