@@ -8,6 +8,7 @@
     <ClCompile Include="MakeMap.cpp" />
     <ClCompile Include="GetLevelsReady.cpp" />
     <ClCompile Include="MarioCat.cpp" />
+    <ClCompile Include="Enum.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -17,6 +18,7 @@
     <ClInclude Include="MakeMap.h" />
     <ClInclude Include="GetLevelsReady.h" />
     <ClInclude Include="MarioCat.h" />
+    <ClInclude Include="Enum.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">

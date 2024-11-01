@@ -24,6 +24,6 @@ protected:
 
 private:
 	float Speed = 100.0f;
-
+	class USpriteRenderer* CatRenderer;
 };
 

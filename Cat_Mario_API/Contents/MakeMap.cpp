@@ -2,13 +2,14 @@
 #include "MakeMap.h"
 #include <EngineCore/EngineAPICore.h>
 #include <EngineCore/SpriteRenderer.h>
+#include "Enum.h"
 
 
 MakeMap::MakeMap()
 {
 	USpriteRenderer* SpriteRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	SpriteRenderer->SetOrder(0);
-	SpriteRenderer->SetSprite("TestMap.png");
+	SpriteRenderer->SetOrder(ERenderOrder::BACKGROUND);
+	SpriteRenderer->SetSprite("FisrtMap.png");
 
 	FVector2D MapScale = SpriteRenderer->SetSpriteScale(1.0f);
 	SpriteRenderer->SetComponentLocation(MapScale.Half());

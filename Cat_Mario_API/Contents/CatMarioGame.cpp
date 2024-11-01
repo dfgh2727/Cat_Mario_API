@@ -39,7 +39,10 @@ void CatMarioGame::BeginPlay()
 		UImageManager::GetInst().Load(FilePath);
 	}
 
-	UEngineAPICore::GetCore()->GetMainWindow().SetWindowTitle("TestWindow");
+	UImageManager::GetInst().CuttingSprite("CMPlayer.png", { 128, 128 });
+
+
+	UEngineAPICore::GetCore()->GetMainWindow().SetWindowTitle("Cat Mario Game");
 
 	
 	UEngineAPICore::GetCore()->GetMainWindow().SetWindowPosAndScale({ 0, 0 }, { 1280, 720 });
@@ -52,6 +55,6 @@ void CatMarioGame::BeginPlay()
 
 void CatMarioGame::Tick()
 {
-	// 지금 전혀 용도를 찾지 못해서 사용하지 않는 함수입니다.
+	// 미사용 함수 
 }
 

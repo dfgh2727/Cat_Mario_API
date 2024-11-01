@@ -23,20 +23,24 @@ void MarioCat::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	if (true == UEngineInput::GetInst().IsPress('D'))
+	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
 	{
+		CatRenderer->ChangeAnimation("Cat_Run");
 		AddActorLocation(FVector2D::RIGHT * _DeltaTime * Speed);
 	}
-	if (true == UEngineInput::GetInst().IsPress('A'))
+	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
 	{
+		CatRenderer->ChangeAnimation("Cat_Run");
 		AddActorLocation(FVector2D::LEFT * _DeltaTime * Speed);
 	}
-	if (true == UEngineInput::GetInst().IsPress('S'))
+	if (true == UEngineInput::GetInst().IsPress(VK_DOWN))
 	{
+		CatRenderer->ChangeAnimation("Cat_Run");
 		AddActorLocation(FVector2D::DOWN * _DeltaTime * Speed);
 	}
-	if (true == UEngineInput::GetInst().IsPress('W'))
+	if (true == UEngineInput::GetInst().IsPress(VK_UP))
 	{
+		CatRenderer->ChangeAnimation("Cat_Run");
 		AddActorLocation(FVector2D::UP * _DeltaTime * Speed);
 	}
 
