@@ -9,7 +9,7 @@
 #include <EngineCore/ImageManager.h>
 
 #include "GetLevelsReady.h"
-#include "Player.h"
+#include "MarioCat.h"
 
 
 CatMarioGame::CatMarioGame()
@@ -44,7 +44,7 @@ void CatMarioGame::BeginPlay()
 	
 	UEngineAPICore::GetCore()->GetMainWindow().SetWindowPosAndScale({ 0, 0 }, { 1280, 720 });
 
-	UEngineAPICore::GetCore()->CreateLevel< GetLevelsReady,Player >("TestPlay");
+	UEngineAPICore::GetCore()->CreateLevel< GetLevelsReady,MarioCat >("TestPlay");
 	
 
 	UEngineAPICore::GetCore()->OpenLevel("TestPlay");
