@@ -13,7 +13,7 @@ GetLevelsReady::~GetLevelsReady()
 {
 }
 
-void GetLevelsReady::MakeActors()
+void GetLevelsReady::BeginPlay()
 {
 	{
 	MakeMap* NewActor = GetWorld()->SpawnActor<MakeMap>();
