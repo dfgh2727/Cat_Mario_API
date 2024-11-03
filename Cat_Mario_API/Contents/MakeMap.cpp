@@ -9,7 +9,7 @@ MakeMap::MakeMap()
 {
 	USpriteRenderer* SpriteRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	SpriteRenderer->SetOrder(ERenderOrder::MAP1);
-	SpriteRenderer->SetSprite("FisrtMap.png");
+	SpriteRenderer->SetSprite("1stMap.png");
 
 	FVector2D MapScale = SpriteRenderer->SetSpriteScale(1.0f);
 	SpriteRenderer->SetComponentLocation(MapScale.Half());

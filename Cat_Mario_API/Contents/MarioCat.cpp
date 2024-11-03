@@ -30,6 +30,9 @@ MarioCat::~MarioCat()
 void MarioCat::BeginPlay()
 {
 	Super::BeginPlay();
+
+	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
+	GetWorld()->SetCameraPivot(Size.Half() * -1.0f);
 }
 
 void MarioCat::Tick(float _DeltaTime)
