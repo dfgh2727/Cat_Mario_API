@@ -39,12 +39,12 @@ void CatMarioGame::BeginPlay()
 		UImageManager::GetInst().Load(FilePath);
 	}
 
+
 	UImageManager::GetInst().CuttingSprite("CMPlayer.png", { 128, 128 });
 
 
 	UEngineAPICore::GetCore()->GetMainWindow().SetWindowTitle("Cat Mario Game");
 
-	
 	UEngineAPICore::GetCore()->GetMainWindow().SetWindowPosAndScale({ 0, 0 }, { 1260, 630 });
 
 	UEngineAPICore::GetCore()->CreateLevel< GetLevelsReady,MarioCat >("TestPlay");
