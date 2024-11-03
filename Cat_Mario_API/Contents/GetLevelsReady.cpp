@@ -17,6 +17,8 @@ void GetLevelsReady::MakeActors()
 {
 	{
 	MakeMap* NewActor = GetWorld()->SpawnActor<MakeMap>();
+
+	int a = 0;
 	}
 }
 

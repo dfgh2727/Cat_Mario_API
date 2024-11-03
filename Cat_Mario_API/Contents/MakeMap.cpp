@@ -13,6 +13,8 @@ MakeMap::MakeMap()
 
 	FVector2D MapScale = SpriteRenderer->SetSpriteScale(1.0f);
 	SpriteRenderer->SetComponentLocation(MapScale.Half());
+
+	int a = 0;
 }
 
 MakeMap::~MakeMap()

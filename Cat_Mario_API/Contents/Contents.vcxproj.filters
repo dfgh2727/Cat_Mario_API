@@ -7,12 +7,8 @@
     <ClCompile Include="CatMarioGame.cpp" />
     <ClCompile Include="GetLevelsReady.cpp" />
     <ClCompile Include="MarioCat.cpp" />
-    <ClCompile Include="MakeMap.cpp">
-      <Filter>MakeMap</Filter>
-    </ClCompile>
-    <ClCompile Include="Enum.cpp">
-      <Filter>MakeMap</Filter>
-    </ClCompile>
+    <ClCompile Include="MakeMap.cpp" />
+    <ClCompile Include="Enum.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -21,12 +17,8 @@
     <ClInclude Include="CatMarioGame.h" />
     <ClInclude Include="GetLevelsReady.h" />
     <ClInclude Include="MarioCat.h" />
-    <ClInclude Include="MakeMap.h">
-      <Filter>MakeMap</Filter>
-    </ClInclude>
-    <ClInclude Include="Enum.h">
-      <Filter>MakeMap</Filter>
-    </ClInclude>
+    <ClInclude Include="MakeMap.h" />
+    <ClInclude Include="Enum.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
