@@ -167,7 +167,15 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="FifthMap.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="FourthMap.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="GameMode_FifthMap.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -222,7 +230,15 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="FifthMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="FourthMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GameMode_FifthMap.h">
       <SubType>
       </SubType>
     </ClInclude>

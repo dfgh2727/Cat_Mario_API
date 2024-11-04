@@ -13,6 +13,7 @@
 #include "GameMode_SecondMap.h"
 #include "GameMode_ThirdMap.h"
 #include "GameMode_FourthMap.h"
+#include "GameMode_FifthMap.h"
 
 
 #include "MarioCat.h"
@@ -58,6 +59,8 @@ void CatMarioGame::BeginPlay()
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_SecondMap, MarioCat >("Play_SecondMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_ThirdMap, MarioCat >("Play_ThirdMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_FourthMap, MarioCat >("Play_FourthMap");
+	UEngineAPICore::GetCore()->CreateLevel< GameMode_FifthMap, MarioCat >("Play_FifthMap");
+
 
 
 	UEngineAPICore::GetCore()->OpenLevel("Title");

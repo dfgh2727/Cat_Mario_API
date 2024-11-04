@@ -4,7 +4,6 @@
     <ClCompile Include="..\App\PreCompile.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
-    <ClCompile Include="MarioCat.cpp" />
     <ClCompile Include="FirstMap.cpp">
       <Filter>ShowMeTheMap</Filter>
     </ClCompile>
@@ -41,12 +40,20 @@
     <ClCompile Include="FourthMap.cpp">
       <Filter>ShowMeTheMap</Filter>
     </ClCompile>
+    <ClCompile Include="MarioCat.cpp">
+      <Filter>MainPlayer_MarioCat</Filter>
+    </ClCompile>
+    <ClCompile Include="FifthMap.cpp">
+      <Filter>ShowMeTheMap</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMode_FifthMap.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
       <Filter>PreCompile</Filter>
     </ClInclude>
-    <ClInclude Include="MarioCat.h" />
     <ClInclude Include="FirstMap.h">
       <Filter>ShowMeTheMap</Filter>
     </ClInclude>
@@ -83,6 +90,15 @@
     <ClInclude Include="FourthMap.h">
       <Filter>ShowMeTheMap</Filter>
     </ClInclude>
+    <ClInclude Include="MarioCat.h">
+      <Filter>MainPlayer_MarioCat</Filter>
+    </ClInclude>
+    <ClInclude Include="FifthMap.h">
+      <Filter>ShowMeTheMap</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode_FifthMap.h">
+      <Filter>GameModes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -96,6 +112,9 @@
     </Filter>
     <Filter Include="MainGame">
       <UniqueIdentifier>{64ab0313-728c-4b1e-adff-97d483a1057b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainPlayer_MarioCat">
+      <UniqueIdentifier>{ef9b344d-efab-4e3f-8d97-9f22a1def2ab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
