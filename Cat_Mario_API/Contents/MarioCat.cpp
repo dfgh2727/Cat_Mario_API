@@ -4,10 +4,12 @@
 #include <EngineCore/EngineAPICore.h>
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineInput.h>
+#include <EngineCore/EngineCoreDebug.h>
+
 
 MarioCat::MarioCat()
 {
-	SetActorLocation({ 300, 100 });
+	SetActorLocation({ 480, 420 });
 	
 	{
 		CatRenderer = CreateDefaultSubObject<USpriteRenderer>();
@@ -38,6 +40,16 @@ void MarioCat::BeginPlay()
 void MarioCat::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+
+	UEngineDebug::CoreOutPutString("FPS : " + std::to_string(1.0f / _DeltaTime));
+	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
+
+	if (true == UEngineInput::GetInst().IsDown('R'))
+	{
+		UEngineAPICore::GetCore()->OpenLevel("Title");
+		// UEngineDebug::SwitchIsDebug();
+	}
+
 
 	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
 	{
