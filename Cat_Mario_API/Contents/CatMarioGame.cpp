@@ -57,7 +57,7 @@ void CatMarioGame::BeginPlay()
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_FirstMap,MarioCat >("Play_FirstMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_SecondMap, MarioCat >("Play_SecondMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_ThirdMap, MarioCat >("Play_ThirdMap");
-	UEngineAPICore::GetCore()->CreateLevel< GameMode_ThirdMap, MarioCat >("Play_FourthMap");
+	UEngineAPICore::GetCore()->CreateLevel< GameMode_FourthMap, MarioCat >("Play_FourthMap");
 
 
 	UEngineAPICore::GetCore()->OpenLevel("Title");
