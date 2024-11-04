@@ -5,12 +5,16 @@
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineInput.h>
 #include <EngineCore/EngineCoreDebug.h>
+#include <EngineCore/Level.h>
+
+#include <EngineBase/EngineMath.h>
+
 
 
 MarioCat::MarioCat()
 {
 	SetActorLocation({ 480, 420 });
-	
+
 	{
 		CatRenderer = CreateDefaultSubObject<USpriteRenderer>();
 		CatRenderer->SetSprite("CMPlayer_Right.png");
@@ -35,6 +39,8 @@ void MarioCat::BeginPlay()
 {
 	Super::BeginPlay();
 
+	GetWorld()->SetCameraToMainPawn(false);
+
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
 	GetWorld()->SetCameraPivot(Size.Half() * -1.0f);
 }
@@ -46,11 +52,11 @@ void MarioCat::Tick(float _DeltaTime)
 	UEngineDebug::CoreOutPutString("FPS : " + std::to_string(1.0f / _DeltaTime));
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
 
-	if (true == UEngineInput::GetInst().IsDown('R'))
-	{
-		UEngineAPICore::GetCore()->OpenLevel("Title");
-		// UEngineDebug::SwitchIsDebug();
-	}
+	//if (true == UEngineInput::GetInst().IsDown('R'))
+	//{
+	//	UEngineAPICore::GetCore()->OpenLevel("Title");
+	//	// UEngineDebug::SwitchIsDebug();
+	//}
 
 
 	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
@@ -75,17 +81,43 @@ void MarioCat::Tick(float _DeltaTime)
 	}
 
 
-if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
-	false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
-	false == UEngineInput::GetInst().IsPress(VK_DOWN) &&
-	false == UEngineInput::GetInst().IsPress(VK_UP))
-{
-	CatRenderer->ChangeAnimation("Cat_Stand");
-}
+	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
+	GetWorld()->SetCameraPos(GetActorLocation() - Size.Half());
+	FVector2D CameraPos = GetWorld()->GetCameraPos();
+
+	if (0.0 >= CameraPos.X)
+	{
+		CameraPos.X = 0.0f;
+	}
+
+	if (0.0 >= CameraPos.Y)
+	{
+		CameraPos.Y = 0.0f;
+	}
+
+	if (840.0 < CameraPos.Y + Size.Y)
+	{
+	
+	}
+
+	GetWorld()->SetCameraPos(CameraPos);
+
+
+
+
+	// GetWorld()->SetCameraPos({ 0, 0 });
+
+	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
+		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
+		false == UEngineInput::GetInst().IsPress(VK_DOWN) &&
+		false == UEngineInput::GetInst().IsPress(VK_UP))
+	{
+		CatRenderer->ChangeAnimation("Cat_Stand");
+	}
+
 
 }
-
-void MarioCat::LevelChangeStart() 
+void MarioCat::LevelChangeStart()
 {
 	Super::LevelChangeStart();
 }
