@@ -24,3 +24,13 @@ void GameMode_SecondMap::BeginPlay()
 	}
 }
 
+void GameMode_SecondMap::Tick(float _DeltaTime)
+{
+	Super::Tick(_DeltaTime);
+
+	if (true == UEngineInput::GetInst().IsDown(VK_RETURN))
+	{
+		UEngineAPICore::GetCore()->OpenLevel("Play_SecondMap");
+	}
+
+}

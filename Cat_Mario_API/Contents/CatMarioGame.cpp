@@ -10,6 +10,8 @@
 
 #include "GameMode_Title.h"
 #include "GameMode_FirstMap.h"
+#include "GameMode_SecondMap.h"
+
 #include "MarioCat.h"
 
 
@@ -48,8 +50,10 @@ void CatMarioGame::BeginPlay()
 
 	UEngineAPICore::GetCore()->GetMainWindow().SetWindowPosAndScale({ 0, 0 }, { 1260, 630 });
 
-	UEngineAPICore::GetCore()->CreateLevel< GameMode_FirstMap,MarioCat >("Play_FirstMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_Title, AActor >("Title");
+	UEngineAPICore::GetCore()->CreateLevel< GameMode_FirstMap,MarioCat >("Play_FirstMap");
+	UEngineAPICore::GetCore()->CreateLevel< GameMode_SecondMap, MarioCat >("Play_SecondMap");
+
 
 
 	UEngineAPICore::GetCore()->OpenLevel("Title");
