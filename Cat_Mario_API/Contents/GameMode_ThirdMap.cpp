@@ -30,7 +30,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_RETURN))
 	{
-		UEngineAPICore::GetCore()->OpenLevel("Play_ThirdMap");
+		UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
 	}
 
 }
