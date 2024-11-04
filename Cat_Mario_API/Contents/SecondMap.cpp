@@ -1,22 +1,21 @@
 #include "PreCompile.h"
-#include "FirstMap.h"
+#include "SecondMap.h"
 #include <EngineCore/EngineAPICore.h>
 #include <EngineCore/SpriteRenderer.h>
 #include "Enum.h"
 
 
-FirstMap::FirstMap()
+SecondMap::SecondMap()
 {
 	USpriteRenderer* SpriteRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	SpriteRenderer->SetOrder(ERenderOrder::MAP);
-	SpriteRenderer->SetSprite("1stMap.png");
+	SpriteRenderer->SetSprite("2ndMap.png");
 
 	FVector2D MapScale = SpriteRenderer->SetSpriteScale(1.0f);
 	SpriteRenderer->SetComponentLocation(MapScale.Half());
-
 }
 
-FirstMap::~FirstMap()
+SecondMap::~SecondMap()
 {
 }
 

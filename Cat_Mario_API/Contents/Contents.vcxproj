@@ -175,11 +175,19 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GameMode_SecondMap.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="GameMode_Title.cpp">
       <SubType>
       </SubType>
     </ClCompile>
     <ClCompile Include="MarioCat.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="SecondMap.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -206,11 +214,19 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="GameMode_SecondMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="GameMode_Title.h">
       <SubType>
       </SubType>
     </ClInclude>
     <ClInclude Include="MarioCat.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="SecondMap.h">
       <SubType>
       </SubType>
     </ClInclude>

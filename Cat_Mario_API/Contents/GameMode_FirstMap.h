@@ -15,7 +15,9 @@ public:
 	GameMode_FirstMap& operator=(const GameMode_FirstMap& _Other) = delete;
 	GameMode_FirstMap& operator=(GameMode_FirstMap&& _Other) noexcept = delete;
 
-	void BeginPlay();
+	void BeginPlay() override;
+
+	void Tick(float _DeltaTime) override;
 
 protected:
 

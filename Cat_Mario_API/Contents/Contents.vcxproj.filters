@@ -4,9 +4,7 @@
     <ClCompile Include="..\App\PreCompile.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
-    <ClCompile Include="CatMarioGame.cpp" />
     <ClCompile Include="MarioCat.cpp" />
-    <ClCompile Include="Enum.cpp" />
     <ClCompile Include="FirstMap.cpp">
       <Filter>ShowMeTheMap</Filter>
     </ClCompile>
@@ -19,14 +17,24 @@
     <ClCompile Include="TitleImage.cpp">
       <Filter>ShowMeTheMap</Filter>
     </ClCompile>
+    <ClCompile Include="SecondMap.cpp">
+      <Filter>ShowMeTheMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Enum.cpp">
+      <Filter>ShowMeTheMap</Filter>
+    </ClCompile>
+    <ClCompile Include="CatMarioGame.cpp">
+      <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMode_SecondMap.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
       <Filter>PreCompile</Filter>
     </ClInclude>
-    <ClInclude Include="CatMarioGame.h" />
     <ClInclude Include="MarioCat.h" />
-    <ClInclude Include="Enum.h" />
     <ClInclude Include="FirstMap.h">
       <Filter>ShowMeTheMap</Filter>
     </ClInclude>
@@ -39,6 +47,18 @@
     <ClInclude Include="TitleImage.h">
       <Filter>ShowMeTheMap</Filter>
     </ClInclude>
+    <ClInclude Include="SecondMap.h">
+      <Filter>ShowMeTheMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>ShowMeTheMap</Filter>
+    </ClInclude>
+    <ClInclude Include="CatMarioGame.h">
+      <Filter>MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode_SecondMap.h">
+      <Filter>GameModes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -49,6 +69,9 @@
     </Filter>
     <Filter Include="GameModes">
       <UniqueIdentifier>{ac313dfd-4acf-4f29-9a3c-99b03d2a9cc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame">
+      <UniqueIdentifier>{64ab0313-728c-4b1e-adff-97d483a1057b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
