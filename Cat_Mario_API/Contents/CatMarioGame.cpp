@@ -49,7 +49,8 @@ void CatMarioGame::BeginPlay()
 	}
 
 
-	UImageManager::GetInst().CuttingSprite("CMPlayer.png", { 128, 128 });
+	UImageManager::GetInst().CuttingSprite("CMPlayer_Right.png", { 128, 128 });
+	UImageManager::GetInst().CuttingSprite("CMPlayer_Left.png", { 128, 128 });
 
 
 	UEngineAPICore::GetCore()->GetMainWindow().SetWindowTitle("Cat Mario Game");

@@ -13,13 +13,15 @@ MarioCat::MarioCat()
 	
 	{
 		CatRenderer = CreateDefaultSubObject<USpriteRenderer>();
-		CatRenderer->SetSprite("CMPlayer.png");
-		CatRenderer->SetComponentScale({ 250, 250 });
+		CatRenderer->SetSprite("CMPlayer_Right.png");
+		CatRenderer->SetComponentScale({ 100, 100 });
 
 
-		CatRenderer->CreateAnimation("Cat_Run", "CMPlayer.png", 0, 1, 0.1f);
+		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.1f);
 
-		CatRenderer->CreateAnimation("Cat_Stand", "CMPlayer.png", 0, 0, 0.1f);
+		CatRenderer->CreateAnimation("Cat_RunLeft", "CMPlayer_Left.png", 0, 1, 0.1f);
+
+		CatRenderer->CreateAnimation("Cat_Stand", "CMPlayer_Right.png", 0, 0, 0.1f);
 
 		CatRenderer->ChangeAnimation("Cat_Stand");
 	}
@@ -53,22 +55,22 @@ void MarioCat::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
 	{
-		CatRenderer->ChangeAnimation("Cat_Run");
+		CatRenderer->ChangeAnimation("Cat_RunRight");
 		AddActorLocation(FVector2D::RIGHT * _DeltaTime * Speed);
 	}
 	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
 	{
-		CatRenderer->ChangeAnimation("Cat_Run");
+		CatRenderer->ChangeAnimation("Cat_RunLeft");
 		AddActorLocation(FVector2D::LEFT * _DeltaTime * Speed);
 	}
 	if (true == UEngineInput::GetInst().IsPress(VK_DOWN))
 	{
-		CatRenderer->ChangeAnimation("Cat_Run");
+		CatRenderer->ChangeAnimation("Cat_Stand");
 		AddActorLocation(FVector2D::DOWN * _DeltaTime * Speed);
 	}
 	if (true == UEngineInput::GetInst().IsPress(VK_UP))
 	{
-		CatRenderer->ChangeAnimation("Cat_Run");
+		CatRenderer->ChangeAnimation("Cat_RunRight");
 		AddActorLocation(FVector2D::UP * _DeltaTime * Speed);
 	}
 
