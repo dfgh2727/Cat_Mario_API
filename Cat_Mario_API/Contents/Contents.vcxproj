@@ -195,6 +195,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GameMode_SeventhMap.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="GameMode_SixthMap.cpp">
       <SubType>
       </SubType>
@@ -267,6 +271,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="GameMode_SecondMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GameMode_SeventhMap.h">
       <SubType>
       </SubType>
     </ClInclude>
