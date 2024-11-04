@@ -1,5 +1,4 @@
 #include "PreCompile.h"
-
 #include "GameMode_FourthMap.h"
 
 #include <EngineCore/Level.h>

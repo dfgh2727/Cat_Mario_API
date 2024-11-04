@@ -1,5 +1,5 @@
 #pragma once
-#include "Actor.h"
+#include <EngineCore/Actor.h>
 
 
 // Ό³Έν :
