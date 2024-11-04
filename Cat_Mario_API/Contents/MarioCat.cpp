@@ -13,7 +13,7 @@
 
 MarioCat::MarioCat()
 {
-	SetActorLocation({ 480, 420 });
+	SetActorLocation({ 300, 700 });
 
 	{
 		CatRenderer = CreateDefaultSubObject<USpriteRenderer>();
@@ -85,20 +85,14 @@ void MarioCat::Tick(float _DeltaTime)
 	GetWorld()->SetCameraPos(GetActorLocation() - Size.Half());
 	FVector2D CameraPos = GetWorld()->GetCameraPos();
 
+	CameraPos.Y = 0.0f;
+
 	if (0.0 >= CameraPos.X)
 	{
 		CameraPos.X = 0.0f;
 	}
 
-	if (0.0 >= CameraPos.Y)
-	{
-		CameraPos.Y = 0.0f;
-	}
-
-	if (840.0 < CameraPos.Y + Size.Y)
-	{
-	
-	}
+	if ()
 
 	GetWorld()->SetCameraPos(CameraPos);
 
