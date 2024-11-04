@@ -163,6 +163,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="EighthMap.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Enum.cpp">
       <SubType>
       </SubType>
@@ -172,6 +176,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="FourthMap.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="GameMode_EighthMap.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -242,6 +250,10 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="EighthMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Enum.h">
       <SubType>
       </SubType>
@@ -251,6 +263,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="FourthMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GameMode_EighthMap.h">
       <SubType>
       </SubType>
     </ClInclude>
