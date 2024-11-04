@@ -48,7 +48,7 @@ void CatMarioGame::BeginPlay()
 
 	UEngineAPICore::GetCore()->GetMainWindow().SetWindowPosAndScale({ 0, 0 }, { 1260, 630 });
 
-	UEngineAPICore::GetCore()->CreateLevel< GameMode_FirstMap,MarioCat >("FirstMapPlay");
+	UEngineAPICore::GetCore()->CreateLevel< GameMode_FirstMap,MarioCat >("Play_FirstMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_Title, AActor >("Title");
 
 

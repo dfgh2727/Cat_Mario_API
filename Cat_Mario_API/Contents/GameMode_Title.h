@@ -15,7 +15,9 @@ public:
 	GameMode_Title& operator=(const GameMode_Title& _Other) = delete;
 	GameMode_Title& operator=(GameMode_Title&& _Other) noexcept = delete;
 
-	void BeginPlay();
+	void BeginPlay() override;
+
+	void Tick(float _DeltaTime) override;
 
 
 protected:
