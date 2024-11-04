@@ -71,3 +71,13 @@ if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
 
 }
 
+void MarioCat::LevelChangeStart() 
+{
+	Super::LevelChangeStart();
+}
+
+void MarioCat::LevelChangeEnd()
+{
+	Super::LevelChangeEnd();
+}
+

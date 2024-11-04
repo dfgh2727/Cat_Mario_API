@@ -8,7 +8,7 @@
 #include <EngineBase/EngineFile.h>
 #include <EngineCore/ImageManager.h>
 
-#include "GetLevelsReady.h"
+#include "GameMode_FirstMap.h"
 #include "MarioCat.h"
 
 
@@ -47,8 +47,9 @@ void CatMarioGame::BeginPlay()
 
 	UEngineAPICore::GetCore()->GetMainWindow().SetWindowPosAndScale({ 0, 0 }, { 1260, 630 });
 
-	UEngineAPICore::GetCore()->CreateLevel< GetLevelsReady,MarioCat >("TestPlay");
-	
+	UEngineAPICore::GetCore()->CreateLevel< GameMode_FirstMap,MarioCat >("FirstMapPlay");
+	UEngineAPICore::GetCore()->CreateLevel< GameMode_FirstMap, AActor >("Title");
+
 
 	UEngineAPICore::GetCore()->OpenLevel("TestPlay");
 }

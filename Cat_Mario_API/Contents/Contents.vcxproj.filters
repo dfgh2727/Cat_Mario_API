@@ -5,27 +5,38 @@
       <Filter>PreCompile</Filter>
     </ClCompile>
     <ClCompile Include="CatMarioGame.cpp" />
-    <ClCompile Include="GetLevelsReady.cpp" />
     <ClCompile Include="MarioCat.cpp" />
-    <ClCompile Include="MakeMap.cpp" />
     <ClCompile Include="Enum.cpp" />
+    <ClCompile Include="FirstMap.cpp">
+      <Filter>ShowMeTheMap</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMode_FirstMap.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
       <Filter>PreCompile</Filter>
     </ClInclude>
     <ClInclude Include="CatMarioGame.h" />
-    <ClInclude Include="GetLevelsReady.h" />
     <ClInclude Include="MarioCat.h" />
-    <ClInclude Include="MakeMap.h" />
     <ClInclude Include="Enum.h" />
+    <ClInclude Include="FirstMap.h">
+      <Filter>ShowMeTheMap</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode_FirstMap.h">
+      <Filter>GameModes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
       <UniqueIdentifier>{3154aa35-f7e0-4bc7-b873-00054cff9618}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MakeMap">
-      <UniqueIdentifier>{672b4ea2-e98a-431d-a703-67d20b541b1e}</UniqueIdentifier>
+    <Filter Include="ShowMeTheMap">
+      <UniqueIdentifier>{18ec2783-8849-4192-b935-c0b6e6c612b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameModes">
+      <UniqueIdentifier>{ac313dfd-4acf-4f29-9a3c-99b03d2a9cc1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

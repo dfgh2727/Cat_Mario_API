@@ -1,11 +1,11 @@
 #include "PreCompile.h"
-#include "MakeMap.h"
+#include "FirstMap.h"
 #include <EngineCore/EngineAPICore.h>
 #include <EngineCore/SpriteRenderer.h>
 #include "Enum.h"
 
 
-MakeMap::MakeMap()
+FirstMap::FirstMap()
 {
 	USpriteRenderer* SpriteRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	SpriteRenderer->SetOrder(ERenderOrder::FIRSTMAP);
@@ -16,7 +16,7 @@ MakeMap::MakeMap()
 
 }
 
-MakeMap::~MakeMap()
+FirstMap::~FirstMap()
 {
 }
 

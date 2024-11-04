@@ -20,6 +20,9 @@ public:
 
 	/*void CatController();*/
 
+	void LevelChangeStart();
+	void LevelChangeEnd();
+
 protected:
 
 private:
