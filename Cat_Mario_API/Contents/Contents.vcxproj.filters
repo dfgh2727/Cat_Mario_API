@@ -32,6 +32,9 @@
     <ClCompile Include="ThirdMap.cpp">
       <Filter>ShowMeTheMap</Filter>
     </ClCompile>
+    <ClCompile Include="GameMode_ThirdMap.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -64,6 +67,9 @@
     </ClInclude>
     <ClInclude Include="ThirdMap.h">
       <Filter>ShowMeTheMap</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode_ThirdMap.h">
+      <Filter>GameModes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
