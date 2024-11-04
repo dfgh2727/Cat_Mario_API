@@ -92,7 +92,12 @@ void MarioCat::Tick(float _DeltaTime)
 		CameraPos.X = 0.0f;
 	}
 
-	if ()
+	/*if ((MapScale.X-Size.X)< CameraPos.X)
+	{
+		CameraPos.X = (MapScale.X - Size.X);
+	}*/
+
+	
 
 	GetWorld()->SetCameraPos(CameraPos);
 
