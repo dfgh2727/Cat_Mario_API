@@ -55,6 +55,9 @@
     <ClCompile Include="GameMode_SixthMap.cpp">
       <Filter>GameModes</Filter>
     </ClCompile>
+    <ClCompile Include="SeventhMap.cpp">
+      <Filter>ShowMeTheMap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -110,6 +113,9 @@
     </ClInclude>
     <ClInclude Include="GameMode_SixthMap.h">
       <Filter>GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="SeventhMap.h">
+      <Filter>ShowMeTheMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
