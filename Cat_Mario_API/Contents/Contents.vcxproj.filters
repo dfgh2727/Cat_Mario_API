@@ -13,6 +13,9 @@
     <ClCompile Include="GameMode_FirstMap.cpp">
       <Filter>GameModes</Filter>
     </ClCompile>
+    <ClCompile Include="GameMode_Title.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -25,6 +28,9 @@
       <Filter>ShowMeTheMap</Filter>
     </ClInclude>
     <ClInclude Include="GameMode_FirstMap.h">
+      <Filter>GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode_Title.h">
       <Filter>GameModes</Filter>
     </ClInclude>
   </ItemGroup>
