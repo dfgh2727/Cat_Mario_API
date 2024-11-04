@@ -12,7 +12,7 @@ MarioCat::MarioCat()
 	{
 		CatRenderer = CreateDefaultSubObject<USpriteRenderer>();
 		CatRenderer->SetSprite("CMPlayer.png");
-		CatRenderer->SetComponentScale({ 300, 300 });
+		CatRenderer->SetComponentScale({ 250, 250 });
 
 
 		CatRenderer->CreateAnimation("Cat_Run", "CMPlayer.png", 0, 1, 0.1f);

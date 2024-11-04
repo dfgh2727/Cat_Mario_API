@@ -19,9 +19,6 @@
     <ClCompile Include="SecondMap.cpp">
       <Filter>ShowMeTheMap</Filter>
     </ClCompile>
-    <ClCompile Include="Enum.cpp">
-      <Filter>ShowMeTheMap</Filter>
-    </ClCompile>
     <ClCompile Include="CatMarioGame.cpp">
       <Filter>MainGame</Filter>
     </ClCompile>
@@ -67,6 +64,9 @@
     <ClCompile Include="GameMode_EighthMap.cpp">
       <Filter>GameModes</Filter>
     </ClCompile>
+    <ClCompile Include="Enum.cpp">
+      <Filter>ShowMeTheMap\enum</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -85,9 +85,6 @@
       <Filter>ShowMeTheMap</Filter>
     </ClInclude>
     <ClInclude Include="SecondMap.h">
-      <Filter>ShowMeTheMap</Filter>
-    </ClInclude>
-    <ClInclude Include="Enum.h">
       <Filter>ShowMeTheMap</Filter>
     </ClInclude>
     <ClInclude Include="CatMarioGame.h">
@@ -135,6 +132,9 @@
     <ClInclude Include="GameMode_EighthMap.h">
       <Filter>GameModes</Filter>
     </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>ShowMeTheMap\enum</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -151,6 +151,9 @@
     </Filter>
     <Filter Include="MainPlayer_MarioCat">
       <UniqueIdentifier>{ef9b344d-efab-4e3f-8d97-9f22a1def2ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShowMeTheMap\enum">
+      <UniqueIdentifier>{5dbb7e8e-de8a-4861-ac61-0995eeddc56f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
