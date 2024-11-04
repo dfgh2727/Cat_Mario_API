@@ -211,6 +211,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="SixthMap.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ThirdMap.cpp">
       <SubType>
       </SubType>
@@ -271,6 +275,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="SecondMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="SixthMap.h">
       <SubType>
       </SubType>
     </ClInclude>
