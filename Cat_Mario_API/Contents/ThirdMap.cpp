@@ -1,3 +1,5 @@
+#include "PreCompile.h"
+
 #include "ThirdMap.h"
 
 #include <EngineCore/EngineAPICore.h>
