@@ -25,7 +25,7 @@ public:
 	void LevelChangeStart();
 	void LevelChangeEnd();
 
-	void SetColImage(std::string_view _ColImageName);
+	void SetMapImage(std::string_view _MapImageName);
 
 protected:
 
@@ -33,7 +33,7 @@ private:
 	float Speed = 500.0f;
 	int index = 0;
 
-	class UEngineWinImage* ColImage = nullptr;
+	class UEngineWinImage* MapImage = nullptr;
 	class USpriteRenderer* CatRenderer;
 };
 

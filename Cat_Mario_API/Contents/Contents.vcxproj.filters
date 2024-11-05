@@ -70,6 +70,9 @@
     <ClCompile Include="DeathCount.cpp">
       <Filter>ShowMeTheMap</Filter>
     </ClCompile>
+    <ClCompile Include="GameMode_DeathCount.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -140,6 +143,9 @@
     </ClInclude>
     <ClInclude Include="DeathCount.h">
       <Filter>ShowMeTheMap</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode_DeathCount.h">
+      <Filter>GameModes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

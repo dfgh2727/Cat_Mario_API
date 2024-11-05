@@ -16,7 +16,7 @@ GameMode_EighthMap::~GameMode_EighthMap()
 void GameMode_EighthMap::BeginPlay()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-	Player->SetColImage("8thMap.png");
+	Player->SetMapImage("8thMap.png");
 
 	{
 		EighthMap* NewActor = GetWorld()->SpawnActor<EighthMap>();

@@ -20,7 +20,7 @@ GameMode_ThirdMap::~GameMode_ThirdMap()
 void GameMode_ThirdMap::BeginPlay()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-	Player->SetColImage("3rdMap.png");
+	Player->SetMapImage("3rdMap.png");
 	{
 		ThirdMap* NewActor = GetWorld()->SpawnActor<ThirdMap>();
 

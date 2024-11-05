@@ -20,7 +20,7 @@ GameMode_FirstMap::~GameMode_FirstMap()
 void GameMode_FirstMap::BeginPlay()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-	Player->SetColImage("1stMap.png");
+	Player->SetMapImage("1stMap.png");
 
 	{
 	FirstMap* NewActor = GetWorld()->SpawnActor<FirstMap>();

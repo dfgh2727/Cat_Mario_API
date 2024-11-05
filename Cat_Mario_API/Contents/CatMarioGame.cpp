@@ -17,6 +17,8 @@
 #include "GameMode_SixthMap.h"
 #include "GameMode_SeventhMap.h"
 #include "GameMode_EighthMap.h"
+#include "GameMode_DeathCount.h"
+
 
 #include "MarioCat.h"
 
@@ -66,6 +68,8 @@ void CatMarioGame::BeginPlay()
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_SixthMap, MarioCat >("Play_SixthMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_SeventhMap, MarioCat >("Play_SeventhMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_EighthMap, MarioCat >("Play_EighthMap");
+	UEngineAPICore::GetCore()->CreateLevel< GameMode_DeathCount,AActor >("DeathCount");
+
 
 	UEngineAPICore::GetCore()->OpenLevel("Title");
 }

@@ -183,6 +183,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GameMode_DeathCount.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="GameMode_EighthMap.cpp">
       <SubType>
       </SubType>
@@ -271,6 +275,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="FourthMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GameMode_DeathCount.h">
       <SubType>
       </SubType>
     </ClInclude>

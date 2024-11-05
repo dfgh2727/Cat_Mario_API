@@ -27,7 +27,7 @@ void GameMode_Title::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_RETURN))
 	{
-		UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");
+		UEngineAPICore::GetCore()->OpenLevel("DeathCount");
 	}
 
 }

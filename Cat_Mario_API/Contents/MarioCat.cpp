@@ -55,9 +55,9 @@ void MarioCat::BeginPlay()
 	GetWorld()->SetCameraPivot(Size.Half() * -1.0f);
 }
 
-void MarioCat::SetColImage(std::string_view _ColImageName)
+void MarioCat::SetMapImage(std::string_view _MapImageName)
 {
-	ColImage = UImageManager::GetInst().FindImage(_ColImageName);
+	MapImage = UImageManager::GetInst().FindImage(_MapImageName);
 }
 
 void MarioCat::Tick(float _DeltaTime)
@@ -101,7 +101,7 @@ void MarioCat::Tick(float _DeltaTime)
 		CameraPos.X = 0.0f;
 	}
 
-	FVector2D MapScale = ColImage->GetImageScale();
+	FVector2D MapScale = MapImage->GetImageScale();
 
 	if (MapScale.X <= (Size.X + CameraPos.X))
 	{
