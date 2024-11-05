@@ -25,12 +25,15 @@ public:
 	void LevelChangeStart();
 	void LevelChangeEnd();
 
+	void SetColImage(std::string_view _ColImageName);
+
 protected:
 
 private:
 	float Speed = 500.0f;
 	int index = 0;
 
+	class UEngineWinImage* ColImage = nullptr;
 	class USpriteRenderer* CatRenderer;
 };
 

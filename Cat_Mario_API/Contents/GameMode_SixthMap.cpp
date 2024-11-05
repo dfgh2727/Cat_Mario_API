@@ -6,6 +6,7 @@
 #include <EngineCore/EngineAPICore.h>
 
 #include "SixthMap.h"
+#include "MarioCat.h"
 
 GameMode_SixthMap::GameMode_SixthMap()
 {
@@ -17,6 +18,9 @@ GameMode_SixthMap::~GameMode_SixthMap()
 
 void GameMode_SixthMap::BeginPlay()
 {
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	Player->SetColImage("6thMap.png");
+
 	{
 		SixthMap* NewActor = GetWorld()->SpawnActor<SixthMap>();
 

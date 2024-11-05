@@ -7,6 +7,7 @@
 #include <EngineCore/EngineAPICore.h>
 
 #include "SecondMap.h"
+#include "MarioCat.h"
 
 GameMode_SecondMap::GameMode_SecondMap()
 {
@@ -18,6 +19,9 @@ GameMode_SecondMap::~GameMode_SecondMap()
 
 void GameMode_SecondMap::BeginPlay()
 {
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	Player->SetColImage("2ndMap.png");
+
 	{
 		SecondMap* NewActor = GetWorld()->SpawnActor<SecondMap>();
 

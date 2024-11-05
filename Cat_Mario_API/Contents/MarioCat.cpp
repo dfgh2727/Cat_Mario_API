@@ -8,6 +8,16 @@
 #include <EngineCore/Level.h>
 
 #include <EngineBase/EngineMath.h>
+#include <EngineCore/ImageManager.h>
+
+#include "GameMode_FirstMap.h"
+#include "GameMode_SecondMap.h"
+#include "GameMode_ThirdMap.h"
+#include "GameMode_FourthMap.h"
+#include "GameMode_FifthMap.h"
+#include "GameMode_SixthMap.h"
+#include "GameMode_SeventhMap.h"
+#include "GameMode_EighthMap.h"
 
 
 
@@ -45,18 +55,17 @@ void MarioCat::BeginPlay()
 	GetWorld()->SetCameraPivot(Size.Half() * -1.0f);
 }
 
+void MarioCat::SetColImage(std::string_view _ColImageName)
+{
+	ColImage = UImageManager::GetInst().FindImage(_ColImageName);
+}
+
 void MarioCat::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
 	UEngineDebug::CoreOutPutString("FPS : " + std::to_string(1.0f / _DeltaTime));
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
-
-	//if (true == UEngineInput::GetInst().IsDown('R'))
-	//{
-	//	UEngineAPICore::GetCore()->OpenLevel("Title");
-	//	// UEngineDebug::SwitchIsDebug();
-	//}
 
 
 	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
@@ -92,16 +101,15 @@ void MarioCat::Tick(float _DeltaTime)
 		CameraPos.X = 0.0f;
 	}
 
-	/*if ((MapScale.X-Size.X)< CameraPos.X)
+	FVector2D MapScale = ColImage->GetImageScale();
+
+	if (MapScale.X <= (Size.X + CameraPos.X))
 	{
 		CameraPos.X = (MapScale.X - Size.X);
-	}*/
+	}
 
 	
-
 	GetWorld()->SetCameraPos(CameraPos);
-
-
 
 
 	// GetWorld()->SetCameraPos({ 0, 0 });

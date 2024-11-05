@@ -6,6 +6,7 @@
 #include <EngineCore/EngineAPICore.h>
 
 #include "FourthMap.h"
+#include "MarioCat.h"
 
 GameMode_FourthMap::GameMode_FourthMap()
 {
@@ -17,6 +18,9 @@ GameMode_FourthMap::~GameMode_FourthMap()
 
 void GameMode_FourthMap::BeginPlay()
 {
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	Player->SetColImage("4thMap.png");
+
 	{
 		FourthMap* NewActor = GetWorld()->SpawnActor<FourthMap>();
 
