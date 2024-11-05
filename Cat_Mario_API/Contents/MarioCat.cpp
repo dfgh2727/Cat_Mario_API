@@ -21,11 +21,11 @@ MarioCat::MarioCat()
 		CatRenderer->SetComponentScale({ 100, 100 });
 
 
-		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.5f);
+		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.25f); 
 
-		CatRenderer->CreateAnimation("Cat_RunLeft", "CMPlayer_Left.png", 0, 1, 0.1f);
+		CatRenderer->CreateAnimation("Cat_RunLeft", "CMPlayer_Left.png", 0, 1, 0.25f);
 
-		CatRenderer->CreateAnimation("Cat_Stand", "CMPlayer_Right.png", 0, 0, 0.1f);
+		CatRenderer->CreateAnimation("Cat_Stand", "CMPlayer_Right.png", 0, 0, 0.5f);
 
 		CatRenderer->ChangeAnimation("Cat_Stand");
 	}

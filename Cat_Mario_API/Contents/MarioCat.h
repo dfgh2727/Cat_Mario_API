@@ -28,7 +28,7 @@ public:
 protected:
 
 private:
-	float Speed = 100.0f;
+	float Speed = 500.0f;
 	int index = 0;
 
 	class USpriteRenderer* CatRenderer;
