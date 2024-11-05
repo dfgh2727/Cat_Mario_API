@@ -110,9 +110,8 @@ void MarioCat::Tick(float _DeltaTime)
 
 	
 	GetWorld()->SetCameraPos(CameraPos);
-
-
 	// GetWorld()->SetCameraPos({ 0, 0 });
+
 
 	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
 		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
@@ -121,7 +120,6 @@ void MarioCat::Tick(float _DeltaTime)
 	{
 		CatRenderer->ChangeAnimation("Cat_Stand");
 	}
-
 
 }
 void MarioCat::LevelChangeStart()

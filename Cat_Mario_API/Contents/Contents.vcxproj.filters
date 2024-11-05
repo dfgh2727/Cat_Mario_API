@@ -67,6 +67,9 @@
     <ClCompile Include="Enum.cpp">
       <Filter>ShowMeTheMap\enum</Filter>
     </ClCompile>
+    <ClCompile Include="DeathCount.cpp">
+      <Filter>ShowMeTheMap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -134,6 +137,9 @@
     </ClInclude>
     <ClInclude Include="Enum.h">
       <Filter>ShowMeTheMap\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="DeathCount.h">
+      <Filter>ShowMeTheMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
