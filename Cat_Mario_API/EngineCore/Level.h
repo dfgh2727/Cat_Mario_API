@@ -25,6 +25,7 @@ public:
 
 	void Tick(float _DeltaTime);
 	void Render(float _DeltaTime);
+	void Release(float _DeltaTime);
 
 	template<typename ActorType>
 	ActorType* SpawnActor()
@@ -64,6 +65,17 @@ public:
 	FVector2D GetCameraPos()
 	{
 		return CameraPos;
+	}
+
+	AActor* GetPawn()
+	{
+		return MainPawn;
+	}
+
+	template<typename ConvertType>
+	ConvertType* GetPawn()
+	{
+		return dynamic_cast<ConvertType*>(MainPawn);
 	}
 
 

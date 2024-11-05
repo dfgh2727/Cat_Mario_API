@@ -100,7 +100,6 @@ void UImageManager::Load(std::string_view _KeyName, std::string_view Path)
 	// 만들었다고 끝이 아닙니다.
 	UEngineWinImage* NewImage = new UEngineWinImage();
 	NewImage->Load(WindowImage, Path);
-
 	NewImage->SetName(UpperName);
 	Images.insert({ UpperName , NewImage});
 
@@ -216,6 +215,8 @@ void UImageManager::CuttingSprite(std::string_view _KeyName, FVector2D _CuttingS
 	UEngineWinImage* Image = Images[UpperName];
 
 	Sprite->ClearSpriteData();
+	Sprite->SetName(UpperName);
+	Image->SetName(UpperName);
 
 	if (0 != (Image->GetImageScale().iX() % _CuttingSize.iX()))
 	{
@@ -279,7 +280,7 @@ UEngineWinImage* UImageManager::FindImage(std::string_view _KeyName)
 
 	if (false == Images.contains(UpperName))
 	{
-		MSGASSERT("로드하지 않은 스프라이트를 사용하려고 했습니다" + std::string(_KeyName));
+		// MSGASSERT("로드하지 않은 스프라이트를 사용하려고 했습니다" + std::string(_KeyName));
 		return nullptr;
 	}
 
@@ -333,6 +334,8 @@ void UImageManager::CreateCutSprite(std::string_view _SearchKeyName, std::string
 
 	UEngineSprite* Sprite = Sprites[SearchName];
 	UEngineWinImage* Image = Images[SearchName];
+	Sprite->SetName(SearchName);
+	Image->SetName(SearchName);
 
 	Sprite->ClearSpriteData();
 

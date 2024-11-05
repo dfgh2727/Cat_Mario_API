@@ -150,7 +150,7 @@ FVector2D USpriteRenderer::SetSpriteScale(float _Ratio /*= 1.0f*/, int _CurIndex
 		return FVector2D::ZERO;
 	}
 
-	UEngineSprite::USpriteData CurData = Sprite->GetSpriteData(CurIndex);
+	UEngineSprite::USpriteData CurData = Sprite->GetSpriteData(_CurIndex);
 
 	FVector2D Scale = CurData.Transform.Scale* _Ratio;
 
@@ -254,6 +254,8 @@ void USpriteRenderer::ChangeAnimation(std::string_view _AnimationName, bool _For
 	{
 		CurAnimation->Events[CurAnimation->CurIndex]();
 	}
+
+	Sprite = CurAnimation->Sprite;
 }
 
 

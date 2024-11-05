@@ -129,6 +129,8 @@ void UEngineAPICore::Tick()
 	//  UEngineInput::GetInst().EventCheck(DeltaTime);
 	CurLevel->Render(DeltaTime);
 
+	// 틱돌고 랜더돌고 릴리즈
+	CurLevel->Release(DeltaTime);
 }
 
 
@@ -156,7 +158,7 @@ void UEngineAPICore::OpenLevel(std::string_view _LevelName)
 		MSGASSERT(ChangeName + "라는 이름의 레벨은 존재하지 않습니다.");
 		return;
 	}
-	
+
 	// 절대 안됨
 	// 이걸 어디서 호출할까요?
 	NextLevel = FindIter->second;
