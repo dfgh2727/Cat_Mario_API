@@ -195,8 +195,6 @@ UEngineInput::UEngineInput()
 	Keys.insert({ VK_F22		, UEngineKey(VK_F22) });
 	Keys.insert({ VK_F23		, UEngineKey(VK_F23) });
 	Keys.insert({ VK_F24		, UEngineKey(VK_F24) });
-	Keys.insert({ VK_RETURN		, UEngineKey(VK_RETURN) });
-
 
 }
 
