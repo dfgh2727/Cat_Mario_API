@@ -86,7 +86,6 @@ void MarioCat::Tick(float _DeltaTime)
 		AddActorLocation(FVector2D::UP * _DeltaTime * Speed);
 	}
 
-
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
 	GetWorld()->SetCameraPos(GetActorLocation() - Size.Half());
 	FVector2D CameraPos = GetWorld()->GetCameraPos();
@@ -107,6 +106,32 @@ void MarioCat::Tick(float _DeltaTime)
 
 	GetWorld()->SetCameraPos(CameraPos);
 	// GetWorld()->SetCameraPos({ 0, 0 });
+
+	{
+	   FVector2D CatPos = this->GetActorLocation();
+		
+		if (0.0 >= CatPos.X)
+		{
+			CatPos.X = 0.0f;
+		}
+
+		if (MapScale.X <= CatPos.X)
+		{
+			CatPos.X = MapScale.X;
+		}
+
+		if (0.0 >= CatPos.Y)
+		{
+			CatPos.Y = 0.0f;
+		}
+
+		if (MapScale.Y <= CatPos.Y)
+		{
+			CatPos.Y = MapScale.Y;
+		}
+		
+		SetActorLocation(CatPos);
+	}
 }
 
 
