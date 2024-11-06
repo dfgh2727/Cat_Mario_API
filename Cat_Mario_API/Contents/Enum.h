@@ -3,8 +3,8 @@
 // Ό³Έν :
 enum class ERenderOrder
 {
-
-	MAP = -1000,
+	COLLISION = -10,
+	MAP = -9,
 	PLAYER = 0,
 };
 

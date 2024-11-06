@@ -19,5 +19,7 @@ protected:
 
 private:
 
+	class USpriteRenderer* BackSpriteRenderer;
+	class USpriteRenderer* ColSpriteRenderer;
 };
 

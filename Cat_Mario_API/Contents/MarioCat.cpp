@@ -60,6 +60,11 @@ void MarioCat::SetMapImage(std::string_view _MapImageName)
 	MapImage = UImageManager::GetInst().FindImage(_MapImageName);
 }
 
+void MarioCat::SetColImage(std::string_view _ColImageName)
+{
+	ColImage = UImageManager::GetInst().FindImage(_ColImageName);
+}
+
 void MarioCat::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
@@ -121,7 +126,22 @@ void MarioCat::Tick(float _DeltaTime)
 		CatRenderer->ChangeAnimation("Cat_Stand");
 	}
 
+	FVector2D Vector = FVector2D::ZERO;
+
+	if (nullptr != ColImage)
+	{
+		/*FVector2D NextPos = GetActorLocation() + Vector * _DeltaTime * Speed;*/
+
+		UColor Color = ColImage->GetColor(Vector, UColor::BLACK);
+		if (Color == UColor::WHITE)
+		{
+			AddActorLocation(Vector * _DeltaTime * Speed);
+		}
+	}
+
 }
+
+
 void MarioCat::LevelChangeStart()
 {
 	Super::LevelChangeStart();

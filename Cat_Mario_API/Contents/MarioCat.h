@@ -26,6 +26,7 @@ public:
 	void LevelChangeEnd();
 
 	void SetMapImage(std::string_view _MapImageName);
+	void SetColImage(std::string_view _ColImageName);
 
 protected:
 
@@ -34,6 +35,8 @@ private:
 	int index = 0;
 
 	class UEngineWinImage* MapImage = nullptr;
+	class UEngineWinImage* ColImage = nullptr;
+
 	class USpriteRenderer* CatRenderer;
 };
 
