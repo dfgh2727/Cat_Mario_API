@@ -127,28 +127,17 @@ void MarioCat::Tick(float _DeltaTime)
 
 void MarioCat::ChangeState(PlayerState _CurPlayerState)
 {
-	switch (_CurPlayerState)
-	{
-	case PlayerState::Idle:
-		MarioCat::Idle(_DeltaTime);
-		break;
-	case PlayerState::Move:
-		Move(_DeltaTime);
-		break;
-	default:
-		break;
-	}
-
 	CurPlayerState = _CurPlayerState;
-
 }
 
 void MarioCat::Idle(float _DeltaTime)
 {
-	if (true == UEngineInput::GetInst().IsPress('A') ||
-		true == UEngineInput::GetInst().IsPress('D') ||
-		true == UEngineInput::GetInst().IsPress('W') ||
-		true == UEngineInput::GetInst().IsPress('S'))
+	CatRenderer->ChangeAnimation("Cat_Stand");
+
+	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT) ||
+		true == UEngineInput::GetInst().IsPress(VK_LEFT) ||
+		true == UEngineInput::GetInst().IsPress(VK_DOWN) ||
+		true == UEngineInput::GetInst().IsPress(VK_UP))
 	{
 		ChangeState(PlayerState::Move);
 		return;
@@ -159,32 +148,29 @@ void MarioCat::Move(float _DeltaTime)
 {
 	FVector2D Vector = FVector2D::ZERO;
 
-	if (true == UEngineInput::GetInst().IsPress('D'))
+	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
 	{
-		Vector += FVector2D::RIGHT;
 		CatRenderer->ChangeAnimation("Cat_RunRight");
+		Vector += FVector2D::RIGHT;
 	}
-	if (true == UEngineInput::GetInst().IsPress('A'))
+	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
 	{
-		Vector += FVector2D::LEFT;
 		CatRenderer->ChangeAnimation("Cat_RunLeft");
+		Vector += FVector2D::LEFT;
 	}
-	if (true == UEngineInput::GetInst().IsPress('S'))
+	if (true == UEngineInput::GetInst().IsPress(VK_DOWN))
 	{
 		Vector += FVector2D::DOWN;
-		CatRenderer->ChangeAnimation("Cat_Stand");
 	}
-	if (true == UEngineInput::GetInst().IsPress('W'))
+	if (true == UEngineInput::GetInst().IsPress(VK_UP))
 	{
 		Vector += FVector2D::UP;
-		CatRenderer->ChangeAnimation("Cat_Stand");
-
 	}
 
-	if (false == UEngineInput::GetInst().IsPress('A') &&
-		false == UEngineInput::GetInst().IsPress('D') &&
-		false == UEngineInput::GetInst().IsPress('W') &&
-		false == UEngineInput::GetInst().IsPress('S'))
+	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
+		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
+		false == UEngineInput::GetInst().IsPress(VK_DOWN) &&
+		false == UEngineInput::GetInst().IsPress(VK_UP))
 	{
 		ChangeState(PlayerState::Idle);
 		return;
@@ -202,6 +188,7 @@ void MarioCat::Move(float _DeltaTime)
 			AddActorLocation(Vector * _DeltaTime * Speed);
 		}
 	}
+
 }
 
 
