@@ -55,15 +55,6 @@ void MarioCat::BeginPlay()
 	GetWorld()->SetCameraPivot(Size.Half() * -1.0f);
 }
 
-void MarioCat::SetMapImage(std::string_view _MapImageName)
-{
-	MapImage = UImageManager::GetInst().FindImage(_MapImageName);
-}
-
-void MarioCat::SetColImage(std::string_view _ColImageName)
-{
-	ColImage = UImageManager::GetInst().FindImage(_ColImageName);
-}
 
 void MarioCat::Tick(float _DeltaTime)
 {
@@ -71,29 +62,6 @@ void MarioCat::Tick(float _DeltaTime)
 
 	UEngineDebug::CoreOutPutString("FPS : " + std::to_string(1.0f / _DeltaTime));
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
-
-
-	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
-	{
-		CatRenderer->ChangeAnimation("Cat_RunRight");
-		AddActorLocation(FVector2D::RIGHT * _DeltaTime * Speed);
-	}
-	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
-	{
-		CatRenderer->ChangeAnimation("Cat_RunLeft");
-		AddActorLocation(FVector2D::LEFT * _DeltaTime * Speed);
-	}
-	if (true == UEngineInput::GetInst().IsPress(VK_DOWN))
-	{
-		CatRenderer->ChangeAnimation("Cat_Stand");
-		AddActorLocation(FVector2D::DOWN * _DeltaTime * Speed);
-	}
-	if (true == UEngineInput::GetInst().IsPress(VK_UP))
-	{
-		CatRenderer->ChangeAnimation("Cat_RunRight");
-		AddActorLocation(FVector2D::UP * _DeltaTime * Speed);
-	}
-
 
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
 	GetWorld()->SetCameraPos(GetActorLocation() - Size.Half());
@@ -117,30 +85,32 @@ void MarioCat::Tick(float _DeltaTime)
 	GetWorld()->SetCameraPos(CameraPos);
 	// GetWorld()->SetCameraPos({ 0, 0 });
 
-
-	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
-		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
-		false == UEngineInput::GetInst().IsPress(VK_DOWN) &&
-		false == UEngineInput::GetInst().IsPress(VK_UP))
-	{
-		CatRenderer->ChangeAnimation("Cat_Stand");
-	}
-
-	FVector2D Vector = FVector2D::ZERO;
-
-	if (nullptr != ColImage)
-	{
-		/*FVector2D NextPos = GetActorLocation() + Vector * _DeltaTime * Speed;*/
-
-		UColor Color = ColImage->GetColor(Vector, UColor::BLACK);
-		if (Color == UColor::WHITE)
+	FSM.CreateState(PlayerState::Idle, std::bind(&MarioCat::Idle, this, std::placeholders::_1),
+		[this]()
 		{
-			AddActorLocation(Vector * _DeltaTime * Speed);
+			CatRenderer->ChangeAnimation("Idle_Right");
 		}
-	}
+	);
 
+	FSM.CreateState(PlayerState::Move, std::bind(&MarioCat::Move, this, std::placeholders::_1),
+		[this]()
+		{
+			CatRenderer->ChangeAnimation("Run_Right");
+		}
+	);
+
+	FSM.ChangeState(PlayerState::Idle);
 }
 
+void MarioCat::SetMapImage(std::string_view _MapImageName)
+{
+	MapImage = UImageManager::GetInst().FindImage(_MapImageName);
+}
+
+void MarioCat::SetColImage(std::string_view _ColImageName)
+{
+	ColImage = UImageManager::GetInst().FindImage(_ColImageName);
+}
 
 void MarioCat::LevelChangeStart()
 {
