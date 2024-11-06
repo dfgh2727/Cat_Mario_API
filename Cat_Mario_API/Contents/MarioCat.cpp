@@ -64,34 +64,16 @@ void MarioCat::Tick(float _DeltaTime)
 	UEngineDebug::CoreOutPutString("FPS : " + std::to_string(1.0f / _DeltaTime));
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
 
-
-	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
+	switch (CurPlayerState)
 	{
-		CatRenderer->ChangeAnimation("Cat_RunRight");
-		AddActorLocation(FVector2D::RIGHT * _DeltaTime * Speed);
-	}
-	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
-	{
-		CatRenderer->ChangeAnimation("Cat_RunLeft");
-		AddActorLocation(FVector2D::LEFT * _DeltaTime * Speed);
-	}
-	if (true == UEngineInput::GetInst().IsPress(VK_DOWN))
-	{
-		CatRenderer->ChangeAnimation("Cat_Stand");
-		AddActorLocation(FVector2D::DOWN * _DeltaTime * Speed);
-	}
-	if (true == UEngineInput::GetInst().IsPress(VK_UP))
-	{
-		CatRenderer->ChangeAnimation("Cat_RunRight");
-		AddActorLocation(FVector2D::UP * _DeltaTime * Speed);
-	}
-
-	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
-		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
-		false == UEngineInput::GetInst().IsPress(VK_DOWN) &&
-		false == UEngineInput::GetInst().IsPress(VK_UP))
-	{
-		CatRenderer->ChangeAnimation("Cat_Stand");
+	case PlayerState::Idle:
+		Idle(_DeltaTime);
+		break;
+	case PlayerState::Move:
+		Move(_DeltaTime);
+		break;
+	default:
+		break;
 	}
 
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
@@ -141,9 +123,84 @@ void MarioCat::Tick(float _DeltaTime)
 		SetActorLocation(CatPos);
 	}
 
+}
+
+void MarioCat::ChangeState(PlayerState _CurPlayerState)
+{
+	switch (_CurPlayerState)
+	{
+	case PlayerState::Idle:
+		MarioCat::Idle(_DeltaTime);
+		break;
+	case PlayerState::Move:
+		Move(_DeltaTime);
+		break;
+	default:
+		break;
+	}
+
+	CurPlayerState = _CurPlayerState;
+
+}
+
+void MarioCat::Idle(float _DeltaTime)
+{
+	if (true == UEngineInput::GetInst().IsPress('A') ||
+		true == UEngineInput::GetInst().IsPress('D') ||
+		true == UEngineInput::GetInst().IsPress('W') ||
+		true == UEngineInput::GetInst().IsPress('S'))
+	{
+		ChangeState(PlayerState::Move);
+		return;
+	}
+}
+
+void MarioCat::Move(float _DeltaTime)
+{
+	FVector2D Vector = FVector2D::ZERO;
+
+	if (true == UEngineInput::GetInst().IsPress('D'))
+	{
+		Vector += FVector2D::RIGHT;
+		CatRenderer->ChangeAnimation("Cat_RunRight");
+	}
+	if (true == UEngineInput::GetInst().IsPress('A'))
+	{
+		Vector += FVector2D::LEFT;
+		CatRenderer->ChangeAnimation("Cat_RunLeft");
+	}
+	if (true == UEngineInput::GetInst().IsPress('S'))
+	{
+		Vector += FVector2D::DOWN;
+		CatRenderer->ChangeAnimation("Cat_Stand");
+	}
+	if (true == UEngineInput::GetInst().IsPress('W'))
+	{
+		Vector += FVector2D::UP;
+		CatRenderer->ChangeAnimation("Cat_Stand");
+
+	}
+
+	if (false == UEngineInput::GetInst().IsPress('A') &&
+		false == UEngineInput::GetInst().IsPress('D') &&
+		false == UEngineInput::GetInst().IsPress('W') &&
+		false == UEngineInput::GetInst().IsPress('S'))
+	{
+		ChangeState(PlayerState::Idle);
+		return;
+	}
+
 	if (nullptr != ColImage)
 	{
-		
+
+		// 픽셀충돌에서 제일 중요한건 애초에 박히지 않는것이다.
+		FVector2D NextPos = GetActorLocation() + Vector * _DeltaTime * Speed;
+
+		UColor Color = ColImage->GetColor(NextPos, UColor::BLACK);
+		if (Color == UColor::WHITE)
+		{
+			AddActorLocation(Vector * _DeltaTime * Speed);
+		}
 	}
 }
 

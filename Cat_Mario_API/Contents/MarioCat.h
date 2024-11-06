@@ -1,6 +1,12 @@
 #pragma once
 #include <EngineCore/Actor.h>
 
+enum class PlayerState
+{
+	Idle,
+	Move
+};
+
 class MarioCat : public AActor
 {
 public:
@@ -17,6 +23,8 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void ChangeState(PlayerState _CurPlayerState);
+
 	void LevelChangeStart();
 	void LevelChangeEnd();
 
@@ -28,6 +36,11 @@ protected:
 private:
 	float Speed = 500.0f;
 	int index = 0;
+
+	PlayerState CurPlayerState = PlayerState::Idle;
+
+	void Idle(float _DeltaTime);
+	void Move(float _DeltaTime);
 
 
 	class UEngineWinImage* MapImage = nullptr;
