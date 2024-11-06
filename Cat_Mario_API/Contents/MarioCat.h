@@ -1,13 +1,6 @@
 #pragma once
 #include <EngineCore/Actor.h>
-#include <EngineBase/FSMStateManager.h>
 
-
-enum class PlayerState
-{
-	Idle,
-	Move
-};
 class MarioCat : public AActor
 {
 public:
@@ -27,9 +20,6 @@ public:
 	/*void CameraCheck();*/
 	/*void CatController();*/
 
-	void Idle(float _DeltaTime);
-	void Move(float _DeltaTime);
-
 	void LevelChangeStart();
 	void LevelChangeEnd();
 
@@ -42,7 +32,6 @@ private:
 	float Speed = 500.0f;
 	int index = 0;
 
-	UFSMStateManager FSM;
 
 	class UEngineWinImage* MapImage = nullptr;
 	class UEngineWinImage* ColImage = nullptr;

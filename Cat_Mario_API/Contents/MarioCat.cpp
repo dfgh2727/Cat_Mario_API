@@ -53,6 +53,7 @@ void MarioCat::BeginPlay()
 
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
 	GetWorld()->SetCameraPivot(Size.Half() * -1.0f);
+
 }
 
 
@@ -62,6 +63,29 @@ void MarioCat::Tick(float _DeltaTime)
 
 	UEngineDebug::CoreOutPutString("FPS : " + std::to_string(1.0f / _DeltaTime));
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
+
+
+	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
+	{
+		CatRenderer->ChangeAnimation("Cat_RunRight");
+		AddActorLocation(FVector2D::RIGHT * _DeltaTime * Speed);
+	}
+	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
+	{
+		CatRenderer->ChangeAnimation("Cat_RunLeft");
+		AddActorLocation(FVector2D::LEFT * _DeltaTime * Speed);
+	}
+	if (true == UEngineInput::GetInst().IsPress(VK_DOWN))
+	{
+		CatRenderer->ChangeAnimation("Cat_Stand");
+		AddActorLocation(FVector2D::DOWN * _DeltaTime * Speed);
+	}
+	if (true == UEngineInput::GetInst().IsPress(VK_UP))
+	{
+		CatRenderer->ChangeAnimation("Cat_RunRight");
+		AddActorLocation(FVector2D::UP * _DeltaTime * Speed);
+	}
+
 
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
 	GetWorld()->SetCameraPos(GetActorLocation() - Size.Half());
@@ -81,26 +105,10 @@ void MarioCat::Tick(float _DeltaTime)
 		CameraPos.X = (MapScale.X - Size.X);
 	}
 
-	
 	GetWorld()->SetCameraPos(CameraPos);
 	// GetWorld()->SetCameraPos({ 0, 0 });
-
-	FSM.CreateState(PlayerState::Idle, std::bind(&MarioCat::Idle, this, std::placeholders::_1),
-		[this]()
-		{
-			CatRenderer->ChangeAnimation("Idle_Right");
-		}
-	);
-
-	FSM.CreateState(PlayerState::Move, std::bind(&MarioCat::Move, this, std::placeholders::_1),
-		[this]()
-		{
-			CatRenderer->ChangeAnimation("Run_Right");
-		}
-	);
-
-	FSM.ChangeState(PlayerState::Idle);
 }
+
 
 void MarioCat::SetMapImage(std::string_view _MapImageName)
 {
