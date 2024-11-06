@@ -86,6 +86,14 @@ void MarioCat::Tick(float _DeltaTime)
 		AddActorLocation(FVector2D::UP * _DeltaTime * Speed);
 	}
 
+	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
+		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
+		false == UEngineInput::GetInst().IsPress(VK_DOWN) &&
+		false == UEngineInput::GetInst().IsPress(VK_UP))
+	{
+		CatRenderer->ChangeAnimation("Cat_Stand");
+	}
+
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
 	GetWorld()->SetCameraPos(GetActorLocation() - Size.Half());
 	FVector2D CameraPos = GetWorld()->GetCameraPos();

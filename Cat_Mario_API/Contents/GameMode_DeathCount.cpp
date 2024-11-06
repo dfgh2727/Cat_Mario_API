@@ -32,11 +32,11 @@ void GameMode_DeathCount::BeginPlay()
 	{
 		CountDown* NewActor = GetWorld()->SpawnActor<CountDown>();
 
-		NewActor->SetActorLocation({300, 420});
+		NewActor->SetActorLocation({540, 420});
 		NewActor->SetTextSpriteName("CMnum.PNG");
 		NewActor->SetOrder(ERenderOrder::UI);
 		NewActor->SetTextScale({ 128, 128 });
-		NewActor->SetValue(5);
+		NewActor->SetValue(2);
 
 	}
 
