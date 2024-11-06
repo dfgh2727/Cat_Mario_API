@@ -176,12 +176,12 @@ void MarioCat::Move(float _DeltaTime)
 		return;
 	}
 
-	
+	if (ColImage != nullptr)
 	{
 		FVector2D NextPos = GetActorLocation() + Vector * _DeltaTime * Speed;
 
 		UColor Color = ColImage->GetColor(NextPos, UColor::BLACK);
-		if (Color != UColor::BLACK)
+		if (Color == UColor::WHITE)
 		{
 			AddActorLocation(Vector * _DeltaTime * Speed);
 		}

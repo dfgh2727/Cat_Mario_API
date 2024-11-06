@@ -266,6 +266,7 @@ UColor UEngineWinImage::GetColor(FIntPoint _Point, UColor _DefaultColor = UColor
 		return _DefaultColor;
 	}
 
+
 	if (Info.bmWidth <= _Point.X)
 	{
 		return _DefaultColor;
