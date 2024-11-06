@@ -176,14 +176,12 @@ void MarioCat::Move(float _DeltaTime)
 		return;
 	}
 
-	if (nullptr != ColImage)
+	
 	{
-
-		// 픽셀충돌에서 제일 중요한건 애초에 박히지 않는것이다.
 		FVector2D NextPos = GetActorLocation() + Vector * _DeltaTime * Speed;
 
 		UColor Color = ColImage->GetColor(NextPos, UColor::BLACK);
-		if (Color == UColor::WHITE)
+		if (Color != UColor::BLACK)
 		{
 			AddActorLocation(Vector * _DeltaTime * Speed);
 		}
