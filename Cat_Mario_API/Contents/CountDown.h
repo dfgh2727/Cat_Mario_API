@@ -20,6 +20,24 @@ public:
 	CountDown& operator=(const CountDown& _Other) = delete;
 	CountDown& operator=(CountDown&& _Other) noexcept = delete;
 
+	void SetTextSpriteName(const std::string _Text);
+
+	void SetTextScale(FVector2D _TextScale)
+	{
+		TextScale = _TextScale;
+	}
+
+	template<typename EnumType>
+	void SetOrder(EnumType _Order)
+	{
+		SetOrder(static_cast<int>(_Order));
+	}
+
+	void SetOrder(int _Order);
+
+	void SetValue(int _Score);
+
+
 protected:
 
 	void BeginPlay() override;
