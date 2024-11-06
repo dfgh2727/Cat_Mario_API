@@ -4,6 +4,9 @@
 #include <EngineCore/SpriteRenderer.h>
 #include "Enum.h"
 
+#include <EnginePlatform/EngineInput.h>
+
+
 
 FirstMap::FirstMap()
 {
@@ -19,7 +22,7 @@ FirstMap::FirstMap()
 	{
 		USpriteRenderer* ColSpriteRenderer = CreateDefaultSubObject<USpriteRenderer>();
 		ColSpriteRenderer->SetOrder(ERenderOrder::COLLISION);
-		ColSpriteRenderer->SetSprite("1stMap.png");
+		ColSpriteRenderer->SetSprite("1stColMap.png");
 
 		FVector2D MapScale = ColSpriteRenderer->SetSpriteScale(1.0f);
 		ColSpriteRenderer->SetComponentLocation(MapScale.Half());

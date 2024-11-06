@@ -132,6 +132,11 @@ void MarioCat::Tick(float _DeltaTime)
 		
 		SetActorLocation(CatPos);
 	}
+
+	if (nullptr != ColImage)
+	{
+		
+	}
 }
 
 
