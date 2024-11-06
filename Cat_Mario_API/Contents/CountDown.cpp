@@ -4,7 +4,7 @@
 
 CountDown::CountDown()
 {
-	for (size_t i = 0; i < 11; i++)
+	for (size_t i = 0; i < 12; i++)
 	{
 		// 카메라가 움직여도 이녀석은 움직이지 않는다.
 		USpriteRenderer* Sprite = CreateDefaultSubObject<USpriteRenderer>();
