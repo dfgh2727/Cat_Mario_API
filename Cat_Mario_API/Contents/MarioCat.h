@@ -23,8 +23,6 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
-	void ChangeState(PlayerState _CurPlayerState);
-
 	void LevelChangeStart();
 	void LevelChangeEnd();
 
@@ -41,7 +39,7 @@ private:
 
 	void Idle(float _DeltaTime);
 	void Move(float _DeltaTime);
-
+	void ChangeState(PlayerState CurPlayerState);
 
 	class UEngineWinImage* MapImage = nullptr;
 	class UEngineWinImage* ColImage = nullptr;
