@@ -20,6 +20,8 @@ void GameMode_SixthMap::BeginPlay()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	Player->SetMapImage("6thMap.png");
+	Player->SetColImage("6thColMap.png");
+
 
 	{
 		SixthMap* NewActor = GetWorld()->SpawnActor<SixthMap>();

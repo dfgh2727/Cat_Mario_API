@@ -20,6 +20,8 @@ void GameMode_SeventhMap::BeginPlay()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	Player->SetMapImage("7thMap.png");
+	Player->SetColImage("7thColMap.png");
+
 	{
 		SeventhMap* NewActor = GetWorld()->SpawnActor<SeventhMap>();
 

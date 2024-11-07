@@ -21,6 +21,8 @@ void GameMode_FifthMap::BeginPlay()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	Player->SetMapImage("5thMap.png");
+	Player->SetColImage("5thColMap.png");
+
 
 	{
 		FifthMap* NewActor = GetWorld()->SpawnActor<FifthMap>();
