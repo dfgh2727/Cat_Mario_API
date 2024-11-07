@@ -122,6 +122,8 @@ void MarioCat::Tick(float _DeltaTime)
 		SetActorLocation(CatPos);
 	}
 
+	/*CatRenderer->USpriteRenderer::SetPivotType(PivotType::Bot);*/
+
 }
 
 void MarioCat::ChangeState(PlayerState _CurPlayerState)
