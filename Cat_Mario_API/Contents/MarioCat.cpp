@@ -50,7 +50,6 @@ void MarioCat::BeginPlay()
 	Super::BeginPlay();
 
 	GetWorld()->SetCameraToMainPawn(false);
-
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
 	GetWorld()->SetCameraPivot(Size.Half() * -1.0f);
 
@@ -166,6 +165,7 @@ void MarioCat::Move(float _DeltaTime)
 	{
 		Vector += FVector2D::UP;
 	}
+
 
 	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
 		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&

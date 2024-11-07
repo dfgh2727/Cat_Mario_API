@@ -39,7 +39,7 @@ private:
 
 	void Idle(float _DeltaTime);
 	void Move(float _DeltaTime);
-	void ChangeState(PlayerState CurPlayerState);
+	void ChangeState(PlayerState _CurPlayerState);
 
 	class UEngineWinImage* MapImage = nullptr;
 	class UEngineWinImage* ColImage = nullptr;
