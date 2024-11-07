@@ -21,6 +21,7 @@ void GameMode_SecondMap::BeginPlay()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	Player->SetMapImage("2ndMap.png");
+	Player->SetColImage("2ndColMap.png");
 
 	{
 		SecondMap* NewActor = GetWorld()->SpawnActor<SecondMap>();

@@ -20,6 +20,8 @@ void GameMode_FourthMap::BeginPlay()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	Player->SetMapImage("4thMap.png");
+	Player->SetColImage("4thColMap.png");
+
 
 	{
 		FourthMap* NewActor = GetWorld()->SpawnActor<FourthMap>();
