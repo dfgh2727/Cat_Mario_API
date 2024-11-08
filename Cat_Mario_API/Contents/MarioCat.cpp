@@ -99,7 +99,7 @@ void MarioCat::PlayerGroundCheck(FVector2D _MovePos)
 
 void MarioCat::Gravity(float _DeltaTime)
 {
-	if (false == IsGround)
+	if (true)
 	{
 		// 증가시키고 
 		// 여기서 계산
@@ -119,8 +119,20 @@ void MarioCat::Friction(float _DeltaTime)
 	{
 		// 증가시키고 
 		// 여기서 계산
-		AddActorLocation(GravityForce * _DeltaTime);
-		GravityForce += FVector2D::DOWN * _DeltaTime * 500.0f;
+		AddActorLocation(FrictionCo * _DeltaTime);
+		FVector2D RunningDir = FVector2D::ZERO;
+
+		if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
+		{
+			FVector2D RunningDir = FVector2D::LEFT;
+		}
+
+		if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
+		{
+			FVector2D RunningDir = FVector2D::RIGHT;
+		}
+
+		FrictionCo -= RunningDir * _DeltaTime * 500.0f
 	}
 	else {
 		GravityForce = FVector2D::ZERO;
@@ -239,6 +251,7 @@ void MarioCat::Move(float _DeltaTime)
 {
 	PlayerCameraCheck();
 	PlayerGroundCheck(GravityForce * _DeltaTime);
+	Friction(_DeltaTime);
 	Gravity(_DeltaTime);
 
 	FVector2D Vector = FVector2D::ZERO;
