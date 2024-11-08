@@ -9,3 +9,8 @@ enum class ERenderOrder
 	UI = 10
 };
 
+enum class ECollisionGroup
+{
+	PlayerBody,
+	MonsterBody,
+};

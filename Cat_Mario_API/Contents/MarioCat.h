@@ -1,5 +1,7 @@
 #pragma once
 #include <EngineCore/Actor.h>
+#include <EngineCore/2DCollision.h>
+
 
 enum class PlayerState
 {
@@ -22,6 +24,8 @@ public:
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
+	void MainCamera();
+
 
 	void LevelChangeStart();
 	void LevelChangeEnd();
@@ -30,12 +34,19 @@ public:
 	void SetColImage(std::string_view _ColImageName);
 
 	void Gravity(float _DeltaTime);
+	void PlayerCameraCheck();
+	void PlayerGroundCheck(FVector2D _MovePos);
+
+
 
 protected:
 
 private:
 	float Speed = 500.0f;
 	int index = 0;
+
+	int IsGround = false;
+	FVector2D GravityForce = FVector2D::ZERO;
 
 	PlayerState CurPlayerState = PlayerState::Idle;
 
@@ -47,5 +58,7 @@ private:
 	class UEngineWinImage* ColImage = nullptr;
 
 	class USpriteRenderer* CatRenderer;
+	U2DCollision* CollisionComponent;
+
 };
 
