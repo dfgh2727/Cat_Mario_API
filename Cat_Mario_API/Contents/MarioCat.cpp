@@ -19,6 +19,9 @@
 #include "GameMode_SeventhMap.h"
 #include "GameMode_EighthMap.h"
 
+#include <EngineCore/EngineCoreDebug.h>
+
+
 
 
 MarioCat::MarioCat()
@@ -38,7 +41,11 @@ MarioCat::MarioCat()
 		CatRenderer->CreateAnimation("Cat_Stand", "CMPlayer_Right.png", 0, 0, 0.5f);
 
 		CatRenderer->ChangeAnimation("Cat_Stand");
+
 	}
+	
+	DebugOn();
+
 }
 
 MarioCat::~MarioCat()

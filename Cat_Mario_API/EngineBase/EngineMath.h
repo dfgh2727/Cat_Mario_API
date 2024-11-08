@@ -5,6 +5,16 @@
 // FVector4D xyzw
 // FVector4D == FVector;
 
+
+class UEngineMath
+{
+public:
+	static float Sqrt(float _Value)
+	{
+		return ::sqrtf(_Value);
+	}
+};
+
 class FVector2D
 {
 public:
@@ -47,6 +57,16 @@ public:
 		return static_cast<int>(Y);
 	}
 
+	float hX() const
+	{
+		return X * 0.5f;
+	}
+
+	float hY() const
+	{
+		return Y * 0.5f;
+	}
+
 	// X든 Y든 0이있으면 터트리는 함수.
 	bool IsZeroed() const
 	{
@@ -58,12 +78,19 @@ public:
 		return { X * 0.5f, Y * 0.5f };
 	}
 
+	// 빗변의 길이입니다.
 	float Length() const
 	{
-		return sqrtf(X * X + Y * Y);
+		return UEngineMath::Sqrt(X * X + Y * Y);
 	}
 
 	class FIntPoint ConvertToPoint() const;
+
+	static FVector2D Normalize(FVector2D _Value) 
+	{
+		_Value.Normalize();
+		return _Value;
+	}
 
 	void Normalize()
 	{
@@ -71,7 +98,7 @@ public:
 		if (0.0f < Len && false == isnan(Len))
 		{
 			X = X / Len;
-			X = Y / Len;
+			Y = Y / Len;
 		}
 		return;
 	}
@@ -97,6 +124,14 @@ public:
 		return Result;
 	}
 
+	FVector2D& operator-=(FVector2D _Other) 
+	{
+		X -= _Other.X;
+		Y -= _Other.Y;
+		return *this;
+	}
+
+
 	FVector2D operator-(FVector2D _Other) const
 	{
 		FVector2D Result;
@@ -105,6 +140,13 @@ public:
 		return Result;
 	}
 
+	FVector2D operator-() const
+	{
+		FVector2D Result;
+		Result.X = -X;
+		Result.Y = -Y;
+		return Result;
+	}
 
 	FVector2D operator/(int _Value) const
 	{
@@ -162,22 +204,68 @@ public:
 	}
 };
 
+enum class ECollisionType
+{
+	Point,
+	Rect,
+	CirCle, // 타원이 아닌 정방원 
+	Max
+
+	//AABB,
+	//OBB,
+};
+
 // 대부분 오브젝트에서 크기와 위치는 한쌍입니다.
 // 그래서 그 2가지를 모두 묶는 자료형을 만들어서 그걸 써요.
 class FTransform
 {
+private:
+	friend class CollisionFunctionInit;
+
+	static std::function<bool(const FTransform&, const FTransform&)> AllCollisionFunction[static_cast<int>(ECollisionType::Max)][static_cast<int>(ECollisionType::Max)];
+
 public:
+	static bool Collision(ECollisionType _LeftType, const FTransform& _Left, ECollisionType _RightType, const FTransform& _Right);
+
+	// 완전히 같은 형의 함수죠?
+	static bool RectToRect(const FTransform& _Left, const FTransform& _Right);
+	// static bool RectToCirCle(const FTransform& _Left, const FTransform& _Right);
+
+	static bool CirCleToCirCle(const FTransform& _Left, const FTransform& _Right);
+	// static bool CirCleToRect(const FTransform& _Left, const FTransform& _Right);
+
 	FVector2D Scale;
 	FVector2D Location;
+
 
 	FVector2D CenterLeftTop() const
 	{
 		return Location - Scale.Half();
 	}
 
+	float CenterLeft() const
+	{
+		return Location.X - Scale.hX();
+	}
+
+	float CenterTop() const
+	{
+		return Location.Y - Scale.hY();
+	}
+
 	FVector2D CenterRightBottom() const
 	{
 		return Location + Scale.Half();
+	}
+
+	float CenterRight() const
+	{
+		return Location.X + Scale.hX();
+	}
+
+	float CenterBottom() const
+	{
+		return Location.Y + Scale.hY();
 	}
 };
 
@@ -233,11 +321,6 @@ public:
 
 
 };
-
-class EngineMath
-{
-};
-
 
 
 class UColor
