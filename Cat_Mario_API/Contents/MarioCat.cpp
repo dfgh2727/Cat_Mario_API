@@ -124,19 +124,19 @@ void MarioCat::Friction(float _DeltaTime)
 
 		if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
 		{
-			FVector2D RunningDir = FVector2D::LEFT;
+			RunningDir = FVector2D::LEFT;
 		}
 
 		if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
 		{
-			FVector2D RunningDir = FVector2D::RIGHT;
+			RunningDir = FVector2D::RIGHT;
 		}
 
-		FrictionCo -= RunningDir * _DeltaTime * 500.0f
+		FrictionCo -= RunningDir * _DeltaTime * 500.0f;
 	}
-	else {
-		GravityForce = FVector2D::ZERO;
-	}
+	/*else {
+		
+	}*/
 
 	// »ó½Ã 
 }
