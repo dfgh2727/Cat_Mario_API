@@ -184,13 +184,30 @@ void MarioCat::Move(float _DeltaTime)
 
 	if (ColImage != nullptr)
 	{
-		FVector2D NextPos = GetActorLocation() + Vector * _DeltaTime * Speed;
 
+		// Bottom
+		FVector2D NextPos = GetActorLocation() + Vector * _DeltaTime * Speed;
 		UColor Color = ColImage->GetColor(NextPos, UColor::BLACK);
-		if (Color == UColor::WHITE)
+
+		// Top
+		FVector2D CatScale = CatRenderer->GetTransform().Scale;
+		FVector2D NextUpPos = GetActorLocation() + FVector2D{ 0.0f, -(CatScale.Y * 0.5f) } + Vector * _DeltaTime * Speed;
+		UColor UpColor = ColImage->GetColor(NextUpPos, UColor::BLACK);
+
+		// Left
+		FVector2D NextLeftPos = GetActorLocation() + FVector2D{ -(CatScale.X * 0.25f), 0.0f } + Vector * _DeltaTime * Speed;
+		UColor LeftColor = ColImage->GetColor(NextLeftPos, UColor::BLACK);
+
+		// Right
+		FVector2D NextRightPos = GetActorLocation() + FVector2D{ (CatScale.X * 0.25f), 0.0f } + Vector * _DeltaTime * Speed;
+		UColor RightColor = ColImage->GetColor(NextRightPos, UColor::BLACK);
+
+		if (Color != UColor::BLACK && UpColor != UColor::BLACK &&
+			LeftColor != UColor::BLACK && RightColor != UColor::BLACK)
 		{
 			AddActorLocation(Vector * _DeltaTime * Speed);
 		}
+
 	}
 
 }
