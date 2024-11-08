@@ -42,9 +42,7 @@ MarioCat::MarioCat()
 		CatRenderer->ChangeAnimation("Cat_Stand");
 
 	}
-	
-	DebugOn();
-
+	DebugOn();    
 }
 
 MarioCat::~MarioCat()
