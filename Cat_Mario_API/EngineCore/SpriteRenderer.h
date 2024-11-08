@@ -4,6 +4,10 @@
 #include <EngineBase/EngineDelegate.h>
 #include <map>
 
+#include "ActorComponent.h"
+#include <EngineCore/Actor.h>
+
+
 enum class PivotType
 {
 	Center,
