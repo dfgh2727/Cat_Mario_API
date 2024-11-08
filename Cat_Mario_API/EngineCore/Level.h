@@ -5,6 +5,7 @@
 class ULevel
 {
 public:
+	friend class U2DCollision;
 	friend class USpriteRenderer;
 	friend class UEngineAPICore;
 	// constrcuter destructer
@@ -14,9 +15,9 @@ public:
 	// delete Function
 	ULevel(const ULevel& _Other) = delete;
 	ULevel(ULevel&& _Other) noexcept = delete;
-	ULevel& operator=(const ULevel& _Other) = delete;
 	ULevel& operator=(ULevel&& _Other) noexcept = delete;
 
+	ULevel& operator=(const ULevel& _Other) = delete;
 	// 내가 CurLevel 됐을대
 	void LevelChangeStart();
 
@@ -55,6 +56,11 @@ public:
 	void SetCameraPos(FVector2D _Pos)
 	{
 		CameraPos = _Pos;
+	}
+
+	void AddCameraPos(FVector2D _Value)
+	{
+		CameraPos += _Value;
 	}
 
 	FVector2D GetCameraPivot()
@@ -108,10 +114,11 @@ private:
 		//AllActors.push_back(MainPawn);
 	}
 
-
 	// 아무나 함부로 호출하지 못하게 하기 위해서 private 이어야 한다.
 	void PushRenderer(class USpriteRenderer* _Renderer);
 	void ChangeRenderOrder(class USpriteRenderer* _Renderer, int _PrevOrder);
+
+	void PushCollision(class U2DCollision* _Collision);
 
 	// 헝가리안 표기법
 	// 이름은 마음대로
@@ -136,5 +143,7 @@ private:
 
 	// 오더링을 할것이다.
 	std::map<int, std::list<class USpriteRenderer*>> Renderers;
+
+	std::map<int, std::list<class U2DCollision*>> Collisions;
 };
 
