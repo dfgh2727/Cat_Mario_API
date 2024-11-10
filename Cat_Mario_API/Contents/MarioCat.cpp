@@ -79,7 +79,8 @@ void MarioCat::PlayerGroundCheck(FVector2D _MovePos)
 	if (nullptr != ColImage)
 	{
 		// 픽셀충돌에서 제일 중요한건 애초에 박히지 않는것이다.
-		FVector2D NextPos = GetActorLocation() + _MovePos;
+		FVector2D CatScale = CatRenderer->GetTransform().Scale;
+		FVector2D NextPos = GetActorLocation() + FVector2D{ 0.0f, (CatScale.Y * 0.3f) } + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);
@@ -97,9 +98,33 @@ void MarioCat::PlayerGroundCheck(FVector2D _MovePos)
 	}
 }
 
+void MarioCat::DoNotOverlap(float _DeltaTime)
+{
+	//FVector2D Vector = FVector2D::ZERO;
+
+	//    //Top
+	//	FVector2D CatScale = CatRenderer->GetTransform().Scale;
+	//	FVector2D NextUpPos = GetActorLocation() + FVector2D{ 0.0f, -(CatScale.Y * 0.5f) } + Vector * _DeltaTime * Speed;
+	//	UColor UpColor = ColImage->GetColor(NextUpPos, UColor::BLACK);
+
+	//	// Left
+	//	FVector2D NextLeftPos = GetActorLocation() + FVector2D{ -(CatScale.X * 0.25f), 0.0f } + Vector * _DeltaTime * Speed;
+	//	UColor LeftColor = ColImage->GetColor(NextLeftPos, UColor::BLACK);
+
+	//	// Right
+	//	FVector2D NextRightPos = GetActorLocation() + FVector2D{ (CatScale.X * 0.25f), 0.0f } + Vector * _DeltaTime * Speed;
+	//	UColor RightColor = ColImage->GetColor(NextRightPos, UColor::BLACK);
+
+	//	if (UpColor != UColor::BLACK && LeftColor != UColor::BLACK && RightColor != UColor::BLACK)
+	//	{
+	//			AddActorLocation(Vector * _DeltaTime * Speed);
+	//	}
+}
+
+
 void MarioCat::Gravity(float _DeltaTime)
 {
-	if (true)
+	if (false == IsGround)
 	{
 		// 증가시키고 
 		// 여기서 계산
@@ -113,33 +138,33 @@ void MarioCat::Gravity(float _DeltaTime)
 	// 상시 
 }
 
-void MarioCat::Friction(float _DeltaTime)
-{
-	if (false == IsGround)
-	{
-		// 증가시키고 
-		// 여기서 계산
-		AddActorLocation(FrictionCo * _DeltaTime);
-		FVector2D RunningDir = FVector2D::ZERO;
-
-		if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
-		{
-			RunningDir = FVector2D::LEFT;
-		}
-
-		if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
-		{
-			RunningDir = FVector2D::RIGHT;
-		}
-
-		FrictionCo -= RunningDir * _DeltaTime * 500.0f;
-	}
+//void MarioCat::Friction(float _DeltaTime)
+//{
+//	if (false == IsGround)
+//	{
+//		// 증가시키고 
+//		// 여기서 계산
+//		AddActorLocation(FrictionCo * _DeltaTime);
+//		FVector2D RunningDir = FVector2D::ZERO;
+//
+//		if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
+//		{
+//			RunningDir = FVector2D::LEFT;
+//		}
+//
+//		if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
+//		{
+//			RunningDir = FVector2D::RIGHT;
+//		}
+//
+//		FrictionCo -= RunningDir * _DeltaTime * 800.0f;
+//	}
 	/*else {
 		
 	}*/
 
 	// 상시 
-}
+//}
 
 void MarioCat::Tick(float _DeltaTime)
 {
@@ -251,8 +276,9 @@ void MarioCat::Move(float _DeltaTime)
 {
 	PlayerCameraCheck();
 	PlayerGroundCheck(GravityForce * _DeltaTime);
-	Friction(_DeltaTime);
+	//Friction(_DeltaTime);
 	Gravity(_DeltaTime);
+	DoNotOverlap(_DeltaTime);
 
 	FVector2D Vector = FVector2D::ZERO;
 
@@ -287,15 +313,29 @@ void MarioCat::Move(float _DeltaTime)
 		return;
 	}
 
+	while (true)
+	{
+		UColor Color = ColImage->GetColor(GetActorLocation(), UColor::WHITE);
+		if (Color == UColor::BLACK)
+		{
+			// 나가 땅위로 올라갈때까지 while 계속 올려준다.
+			AddActorLocation(FVector2D::UP);
+		}
+		else {
+			break;
+		}
+
+	}
+
 	UEngineDebug::CoreOutPutString("IsGround : " + std::to_string(IsGround));
 	
 
 	//if (ColImage != nullptr)
-	//{
+	//{ 750 729
 
-	//	// Bottom
-	//	FVector2D NextPos = GetActorLocation() + Vector * _DeltaTime * Speed;
-	//	UColor Color = ColImage->GetColor(NextPos, UColor::BLACK);
+	//	//// Bottom
+	//	//FVector2D NextPos = GetActorLocation() + Vector * _DeltaTime * Speed;
+	//	//UColor Color = ColImage->GetColor(NextPos, UColor::BLACK);
 
 	//	// Top
 	//	FVector2D CatScale = CatRenderer->GetTransform().Scale;
@@ -310,7 +350,7 @@ void MarioCat::Move(float _DeltaTime)
 	//	FVector2D NextRightPos = GetActorLocation() + FVector2D{ (CatScale.X * 0.25f), 0.0f } + Vector * _DeltaTime * Speed;
 	//	UColor RightColor = ColImage->GetColor(NextRightPos, UColor::BLACK);
 
-	//	if (Color != UColor::BLACK && UpColor != UColor::BLACK &&
+	//	if (/*Color != UColor::BLACK &&*/ UpColor != UColor::BLACK &&
 	//		LeftColor != UColor::BLACK && RightColor != UColor::BLACK)
 	//	{
 	//		AddActorLocation(Vector * _DeltaTime * Speed);

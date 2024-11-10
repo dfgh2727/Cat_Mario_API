@@ -34,11 +34,12 @@ public:
 	void SetColImage(std::string_view _ColImageName);
 
 	void Gravity(float _DeltaTime);
-	void Friction(float _DeltaTime);
+	//void Friction(float _DeltaTime);
 
 	void PlayerCameraCheck();
 	void PlayerGroundCheck(FVector2D _MovePos);
 
+	void DoNotOverlap(float _DeltaTime);
 
 
 protected:
