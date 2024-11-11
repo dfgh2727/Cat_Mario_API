@@ -7,7 +7,10 @@ BBreakingBlock::BBreakingBlock()
 {
 	BBreakingBlockRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	BBreakingBlockRenderer->SetSprite("BBreakingBlock.png");
-	BBreakingBlockRenderer->SetComponentScale({ 100, 100 });
+	BBreakingBlockRenderer->SetComponentScale({ 60, 60 });
+
+	SetActorLocation({ 726, 528 });
+
 }
 
 BBreakingBlock::~BBreakingBlock()

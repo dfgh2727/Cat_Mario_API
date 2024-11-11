@@ -28,13 +28,12 @@ void GameMode_FirstMap::BeginPlay()
 	
 	FirstMap* NewActor = GetWorld()->SpawnActor<FirstMap>();
 	{
-		GoingUpBlock* NewActor = GetWorld()->SpawnActor<GoingUpBlock>();
-		SetActorLocation({ 800, 500 });
+    GoingUpBlock* NewActor = GetWorld()->SpawnActor<GoingUpBlock>();
+	}
+	{
+	BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
 	}
 
-	{
-		/*BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();*/
-	}
 	
 }
 
