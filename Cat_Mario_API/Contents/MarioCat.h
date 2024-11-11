@@ -53,7 +53,6 @@ private:
 	FVector2D GravityForce = FVector2D::ZERO;
 	FVector2D FrictionCo = FVector2D::ZERO;
 
-
 	PlayerState CurPlayerState = PlayerState::Idle;
 
 	void Idle(float _DeltaTime);

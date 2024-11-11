@@ -19,7 +19,7 @@
 #include "GameMode_SeventhMap.h"
 #include "GameMode_EighthMap.h"
 
-//#include "Enum.h"
+#include "Enum.h"
 //#include <EngineCore/2DCollision.h>
 
 MarioCat::MarioCat()
@@ -29,8 +29,15 @@ MarioCat::MarioCat()
 	{
 		CatRenderer = CreateDefaultSubObject<USpriteRenderer>();
 		CatRenderer->SetSprite("CMPlayer_Right.png");
+		CatRenderer->SetOrder(ERenderOrder::PLAYER);
 		CatRenderer->SetComponentScale({ 100, 100 });
 
+		{
+			CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+			CollisionComponent->SetComponentScale({ 40, 68 });
+			CollisionComponent->SetCollisionGroup(ECollisionGroup::PlayerBody);
+			CollisionComponent->SetCollisionType(ECollisionType::Rect);
+		}
 
 		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.25f); 
 		CatRenderer->CreateAnimation("Cat_RunLeft", "CMPlayer_Left.png", 0, 1, 0.25f);

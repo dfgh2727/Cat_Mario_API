@@ -80,6 +80,9 @@
     <ClCompile Include="BBreakingBlock.cpp">
       <Filter>InterActive Things\Blocks</Filter>
     </ClCompile>
+    <ClCompile Include="BParticles.cpp">
+      <Filter>InterActive Things\Blocks</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -161,6 +164,9 @@
     <ClInclude Include="BBreakingBlock.h">
       <Filter>InterActive Things\Blocks</Filter>
     </ClInclude>
+    <ClInclude Include="BParticles.h">
+      <Filter>InterActive Things\Blocks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -180,9 +186,6 @@
     </Filter>
     <Filter Include="ShowMeTheMap\enum">
       <UniqueIdentifier>{5dbb7e8e-de8a-4861-ac61-0995eeddc56f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Doors">
-      <UniqueIdentifier>{b7ae8024-fd4f-4650-8337-f69f179c34c7}</UniqueIdentifier>
     </Filter>
     <Filter Include="InterActive Things">
       <UniqueIdentifier>{d03d0fe4-0c15-4e19-a2c1-8bd4f5c8cb54}</UniqueIdentifier>

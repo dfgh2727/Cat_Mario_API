@@ -27,13 +27,16 @@ void GameMode_FirstMap::BeginPlay()
 
 	
 	FirstMap* NewActor = GetWorld()->SpawnActor<FirstMap>();
-	{
-    GoingUpBlock* NewActor = GetWorld()->SpawnActor<GoingUpBlock>();
-	}
-	{
-	BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
-	}
 
+	{
+		GoingUpBlock* NewActor = GetWorld()->SpawnActor<GoingUpBlock>();
+		NewActor->SetActorLocation({ 494, 528 });
+	}
+    
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 726, 528 });
+	}
 	
 }
 
@@ -41,10 +44,21 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
+
+
+
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("Play_SecondMap");
 	}
+
+}
+
+void BlockDisappears()
+{
+	//bool BlockAppears = true;
+
+	//if ()
 
 }
 

@@ -4,8 +4,10 @@
 enum class ERenderOrder
 {
 	COLLISION = -10,
-	MAP = -9,
+	HIDDEN = -9,
+	MAP = -8,
 	PLAYER = 0,
+	OBJECT = 0,
 	UI = 10
 };
 
@@ -13,4 +15,5 @@ enum class ECollisionGroup
 {
 	PlayerBody,
 	MonsterBody,
+	SquareBlock,
 };

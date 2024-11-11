@@ -163,6 +163,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="BParticles.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="CatMarioGame.cpp">
       <SubType>
       </SubType>
@@ -267,6 +271,10 @@
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h" />
     <ClInclude Include="BBreakingBlock.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="BParticles.h">
       <SubType>
       </SubType>
     </ClInclude>
