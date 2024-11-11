@@ -7,6 +7,8 @@
 
 #include "FirstMap.h"
 #include "MarioCat.h"
+#include "BBreakingBlock.h"
+#include "GoingUpBlock.h"
 
 
 GameMode_FirstMap::GameMode_FirstMap()
@@ -23,9 +25,17 @@ void GameMode_FirstMap::BeginPlay()
 	Player->SetMapImage("1stMap.png");
 	Player->SetColImage("1stColMap.png");
 
-	{
+	
 	FirstMap* NewActor = GetWorld()->SpawnActor<FirstMap>();
+	{
+		GoingUpBlock* NewActor = GetWorld()->SpawnActor<GoingUpBlock>();
+		SetActorLocation({ 800, 500 });
 	}
+
+	{
+		/*BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();*/
+	}
+	
 }
 
 void GameMode_FirstMap::Tick(float _DeltaTime)

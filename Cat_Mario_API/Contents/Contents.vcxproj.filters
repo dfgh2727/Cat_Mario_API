@@ -74,6 +74,12 @@
       <Filter>GameModes</Filter>
     </ClCompile>
     <ClCompile Include="CountDown.cpp" />
+    <ClCompile Include="GoingUpBlock.cpp">
+      <Filter>InterActive Things\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="BBreakingBlock.cpp">
+      <Filter>InterActive Things\Blocks</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -149,6 +155,12 @@
       <Filter>GameModes</Filter>
     </ClInclude>
     <ClInclude Include="CountDown.h" />
+    <ClInclude Include="GoingUpBlock.h">
+      <Filter>InterActive Things\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BBreakingBlock.h">
+      <Filter>InterActive Things\Blocks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -171,6 +183,12 @@
     </Filter>
     <Filter Include="Doors">
       <UniqueIdentifier>{b7ae8024-fd4f-4650-8337-f69f179c34c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things">
+      <UniqueIdentifier>{d03d0fe4-0c15-4e19-a2c1-8bd4f5c8cb54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Blocks">
+      <UniqueIdentifier>{af7926c7-6f1f-44ac-b2ed-8d163e786dd1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -159,6 +159,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="BBreakingBlock.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="CatMarioGame.cpp">
       <SubType>
       </SubType>
@@ -231,6 +235,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GoingUpBlock.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="MarioCat.cpp">
       <SubType>
       </SubType>
@@ -258,6 +266,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h" />
+    <ClInclude Include="BBreakingBlock.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="CatMarioGame.h">
       <SubType>
       </SubType>
@@ -327,6 +339,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="GameMode_Title.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GoingUpBlock.h">
       <SubType>
       </SubType>
     </ClInclude>
