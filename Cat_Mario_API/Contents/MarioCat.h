@@ -41,6 +41,7 @@ public:
 
 	void DoNotOverlap(float _DeltaTime);
 
+	MarioCat* MainPlayer;
 
 protected:
 
