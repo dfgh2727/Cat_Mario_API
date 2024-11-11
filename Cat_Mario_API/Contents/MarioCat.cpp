@@ -46,14 +46,6 @@ MarioCat::MarioCat()
 
 	}
 
-	/*{
-		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentLocation({ 200, 0 });
-		CollisionComponent->SetComponentScale({ 50, 50 });
-		CollisionComponent->SetCollisionGroup(ECollisionGroup::PlayerBody);
-		CollisionComponent->SetCollisionType(ECollisionType::CirCle);
-	}*/
-
 	DebugOn();    
 }
 
