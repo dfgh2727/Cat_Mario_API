@@ -34,7 +34,7 @@ MarioCat::MarioCat()
 
 		{
 			CollisionHead = CreateDefaultSubObject<U2DCollision>();
-			CollisionHead->SetComponentScale({ 34, 7 });
+			CollisionHead->SetComponentScale({ 34, 8 });
 			CollisionHead->SetCollisionGroup(ECollisionGroup::PlayerHead);
 			CollisionHead->SetCollisionType(ECollisionType::Rect);
 			CollisionHead->SetComponentLocation(FVector2D{ 0, -30 });
