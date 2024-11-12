@@ -63,7 +63,8 @@ private:
 	class UEngineWinImage* ColImage = nullptr;
 
 	class USpriteRenderer* CatRenderer;
-	U2DCollision* CollisionComponent;
+	U2DCollision* CollisionHead;
+	U2DCollision* CollisionFoot;
 
 };
 

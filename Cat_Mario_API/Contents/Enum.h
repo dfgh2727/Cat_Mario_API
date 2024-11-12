@@ -13,7 +13,9 @@ enum class ERenderOrder
 
 enum class ECollisionGroup
 {
+	PlayerHead,
 	PlayerBody,
+	PlayerFoot,
 	MonsterBody,
 	SquareBlock,
 };

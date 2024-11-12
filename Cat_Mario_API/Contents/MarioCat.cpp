@@ -33,10 +33,10 @@ MarioCat::MarioCat()
 		CatRenderer->SetComponentScale({ 100, 100 });
 
 		{
-			CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-			CollisionComponent->SetComponentScale({ 40, 68 });
-			CollisionComponent->SetCollisionGroup(ECollisionGroup::PlayerBody);
-			CollisionComponent->SetCollisionType(ECollisionType::Rect);
+			CollisionHead = CreateDefaultSubObject<U2DCollision>();
+			CollisionHead->SetComponentScale({ 10, 10 });
+			CollisionHead->SetCollisionGroup(ECollisionGroup::PlayerHead);
+			CollisionHead->SetCollisionType(ECollisionType::CirCle);
 	
 		}
 
@@ -100,25 +100,7 @@ void MarioCat::PlayerGroundCheck(FVector2D _MovePos)
 
 void MarioCat::DoNotOverlap(float _DeltaTime)
 {
-	//FVector2D Vector = FVector2D::ZERO;
-
-	//    //Top
-	//	FVector2D CatScale = CatRenderer->GetTransform().Scale;
-	//	FVector2D NextUpPos = GetActorLocation() + FVector2D{ 0.0f, -(CatScale.Y * 0.5f) } + Vector * _DeltaTime * Speed;
-	//	UColor UpColor = ColImage->GetColor(NextUpPos, UColor::BLACK);
-
-	//	// Left
-	//	FVector2D NextLeftPos = GetActorLocation() + FVector2D{ -(CatScale.X * 0.25f), 0.0f } + Vector * _DeltaTime * Speed;
-	//	UColor LeftColor = ColImage->GetColor(NextLeftPos, UColor::BLACK);
-
-	//	// Right
-	//	FVector2D NextRightPos = GetActorLocation() + FVector2D{ (CatScale.X * 0.25f), 0.0f } + Vector * _DeltaTime * Speed;
-	//	UColor RightColor = ColImage->GetColor(NextRightPos, UColor::BLACK);
-
-	//	if (UpColor != UColor::BLACK && LeftColor != UColor::BLACK && RightColor != UColor::BLACK)
-	//	{
-	//			AddActorLocation(Vector * _DeltaTime * Speed);
-	//	}
+	
 }
 
 
