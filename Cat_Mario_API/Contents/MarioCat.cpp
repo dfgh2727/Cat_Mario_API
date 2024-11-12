@@ -33,11 +33,10 @@ MarioCat::MarioCat()
 		CatRenderer->SetComponentScale({ 100, 100 });
 
 		{
-			CollisionHead = CreateDefaultSubObject<U2DCollision>();
+			/*CollisionHead = CreateDefaultSubObject<U2DCollision>();
 			CollisionHead->SetComponentScale({ 10, 10 });
 			CollisionHead->SetCollisionGroup(ECollisionGroup::PlayerHead);
-			CollisionHead->SetCollisionType(ECollisionType::CirCle);
-	
+			CollisionHead->SetCollisionType(ECollisionType::CirCle);*/
 		}
 
 		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.25f); 
