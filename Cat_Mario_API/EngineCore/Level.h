@@ -70,7 +70,7 @@ public:
 
 	FVector2D GetCameraPos()
 	{
-		return CameraPos;
+ 		return CameraPos;
 	}
 
 	AActor* GetPawn()

@@ -34,9 +34,10 @@ MarioCat::MarioCat()
 
 		{
 			CollisionHead = CreateDefaultSubObject<U2DCollision>();
-			CollisionHead->SetComponentScale({ 10, 10 });
+			CollisionHead->SetComponentScale({ 34, 7 });
 			CollisionHead->SetCollisionGroup(ECollisionGroup::PlayerHead);
-			CollisionHead->SetCollisionType(ECollisionType::CirCle);
+			CollisionHead->SetCollisionType(ECollisionType::Rect);
+			CollisionHead->SetComponentLocation(FVector2D{ 0, -30 });
 		}
 
 		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.25f); 
@@ -154,10 +155,12 @@ void MarioCat::Tick(float _DeltaTime)
 	UEngineDebug::CoreOutPutString("FPS : " + std::to_string(1.0f / _DeltaTime));
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
 
-	FTransform PlayerTransform = GetTransform();
+	/*FTransform PlayerTransform = GetTransform();
 	PlayerTransform.Location += FVector2D(20, 0) - GetWorld()->GetCameraPos();
 	PlayerTransform.Scale = { 6,6 };
-	//UEngineDebug::CoreDebugRender(PlayerTransform, UEngineDebug::EDebugPosType::Circle);
+	UEngineDebug::CoreDebugRender(PlayerTransform, UEngineDebug::EDebugPosType::Circle);*/
+
+	BreakTheBlock(_DeltaTime);
 
 	if (true == UEngineInput::GetInst().IsDown('R'))
 	{
@@ -339,6 +342,15 @@ void MarioCat::Move(float _DeltaTime)
 
 	//}
 
+}
+
+void MarioCat::BreakTheBlock(float _DeltaTime)
+{
+	AActor* Result = CollisionHead->CollisionOnce(ECollisionGroup::SquareBlock);
+	if (nullptr != Result)
+	{
+		Result->Destroy();
+	}
 }
 
 

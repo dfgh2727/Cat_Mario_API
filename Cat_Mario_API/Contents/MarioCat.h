@@ -40,8 +40,7 @@ public:
 	void PlayerGroundCheck(FVector2D _MovePos);
 
 	void DoNotOverlap(float _DeltaTime);
-
-	MarioCat* MainPlayer;
+	void BreakTheBlock(float _DeltaTime);
 
 protected:
 
@@ -52,6 +51,7 @@ private:
 	int IsGround = false;
 	FVector2D GravityForce = FVector2D::ZERO;
 	FVector2D FrictionCo = FVector2D::ZERO;
+	FVector2D CatPos = FVector2D::ZERO;
 
 	PlayerState CurPlayerState = PlayerState::Idle;
 
