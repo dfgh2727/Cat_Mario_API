@@ -26,7 +26,5 @@ void BParticles::Tick(float _DeltaTime)
 
 void FallApart(float _DeltaTime)
 {
-
-
 }
 
