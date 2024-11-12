@@ -193,5 +193,8 @@
     <Filter Include="InterActive Things\Blocks">
       <UniqueIdentifier>{af7926c7-6f1f-44ac-b2ed-8d163e786dd1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="InterActive Things\Monster">
+      <UniqueIdentifier>{48372f66-cdc9-477d-ad03-957637169473}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

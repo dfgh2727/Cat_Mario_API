@@ -41,6 +41,8 @@ public:
 
 	void DoNotOverlap(float _DeltaTime);
 	void BreakTheBlock(float _DeltaTime);
+	void StandOnIt(float _DeltaTime);
+
 
 protected:
 

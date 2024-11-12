@@ -40,6 +40,14 @@ MarioCat::MarioCat()
 			CollisionHead->SetComponentLocation(FVector2D{ 0, -30 });
 		}
 
+		{
+			CollisionFoot = CreateDefaultSubObject<U2DCollision>();
+			CollisionFoot->SetComponentScale({ 34, 8 });
+			CollisionFoot->SetCollisionGroup(ECollisionGroup::PlayerFoot);
+			CollisionFoot->SetCollisionType(ECollisionType::Rect);
+			CollisionFoot->SetComponentLocation(FVector2D{ 0, 29 });
+		}
+
 		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.25f); 
 		CatRenderer->CreateAnimation("Cat_RunLeft", "CMPlayer_Left.png", 0, 1, 0.25f);
 		CatRenderer->CreateAnimation("Cat_Stand", "CMPlayer_Right.png", 0, 0, 0.5f);
@@ -161,6 +169,8 @@ void MarioCat::Tick(float _DeltaTime)
 	UEngineDebug::CoreDebugRender(PlayerTransform, UEngineDebug::EDebugPosType::Circle);*/
 
 	BreakTheBlock(_DeltaTime);
+	StandOnIt(_DeltaTime);
+
 
 	if (true == UEngineInput::GetInst().IsDown('R'))
 	{
@@ -352,6 +362,17 @@ void MarioCat::BreakTheBlock(float _DeltaTime)
 		Result->Destroy();
 	}
 }
+
+void MarioCat::StandOnIt(float _DeltaTime)
+{
+	AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::SquareBlock);
+	if (nullptr != Result)
+	{
+		UColor Color = ColImage->GetColor(GetActorLocation(), UColor::BLACK);
+	}
+	
+}
+
 
 
 void MarioCat::SetMapImage(std::string_view _MapImageName)

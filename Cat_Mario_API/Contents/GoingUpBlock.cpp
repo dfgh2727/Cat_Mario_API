@@ -12,7 +12,6 @@ GoingUpBlock::GoingUpBlock()
 	GoingUpBlockRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	GoingUpBlockRenderer->SetSprite("QBlock.png");
 	GoingUpBlockRenderer->SetComponentScale({ 60, 60 });
-
 }
 
 GoingUpBlock::~GoingUpBlock()
@@ -21,11 +20,13 @@ GoingUpBlock::~GoingUpBlock()
 
 void GoingUpBlock::BeginPlay()
 {
-
+	Super::BeginPlay();
 }
 
 void GoingUpBlock::Tick(float _DeltaTime)
 {
+	Super::Tick(_DeltaTime);
+
 	KeepDistance();	
 }
 
