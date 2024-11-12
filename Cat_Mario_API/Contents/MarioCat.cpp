@@ -33,10 +33,10 @@ MarioCat::MarioCat()
 		CatRenderer->SetComponentScale({ 100, 100 });
 
 		{
-			/*CollisionHead = CreateDefaultSubObject<U2DCollision>();
+			CollisionHead = CreateDefaultSubObject<U2DCollision>();
 			CollisionHead->SetComponentScale({ 10, 10 });
 			CollisionHead->SetCollisionGroup(ECollisionGroup::PlayerHead);
-			CollisionHead->SetCollisionType(ECollisionType::CirCle);*/
+			CollisionHead->SetCollisionType(ECollisionType::CirCle);
 		}
 
 		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.25f); 
@@ -157,7 +157,7 @@ void MarioCat::Tick(float _DeltaTime)
 	FTransform PlayerTransform = GetTransform();
 	PlayerTransform.Location += FVector2D(20, 0) - GetWorld()->GetCameraPos();
 	PlayerTransform.Scale = { 6,6 };
-	UEngineDebug::CoreDebugRender(PlayerTransform, UEngineDebug::EDebugPosType::Circle);
+	//UEngineDebug::CoreDebugRender(PlayerTransform, UEngineDebug::EDebugPosType::Circle);
 
 	if (true == UEngineInput::GetInst().IsDown('R'))
 	{
