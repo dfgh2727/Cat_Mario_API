@@ -72,14 +72,6 @@ void MarioCat::BeginPlay()
 
 }
 
-void MarioCat::PlayerCameraCheck()
-{
-	FVector2D WindowSize = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
-	GetWorld()->SetCameraPos(GetActorLocation() - WindowSize.Half());
-
-	DebugOn();
-}
-
 void MarioCat::PlayerGroundCheck(FVector2D _MovePos)
 {
 	IsGround = false;
@@ -163,11 +155,6 @@ void MarioCat::Tick(float _DeltaTime)
 	UEngineDebug::CoreOutPutString("FPS : " + std::to_string(1.0f / _DeltaTime));
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
 
-	/*FTransform PlayerTransform = GetTransform();
-	PlayerTransform.Location += FVector2D(20, 0) - GetWorld()->GetCameraPos();
-	PlayerTransform.Scale = { 6,6 };
-	UEngineDebug::CoreDebugRender(PlayerTransform, UEngineDebug::EDebugPosType::Circle);*/
-
 	BreakTheBlock(_DeltaTime);
 	StandOnIt(_DeltaTime);
 
@@ -250,7 +237,6 @@ void MarioCat::MainCamera()
 
 void MarioCat::Idle(float _DeltaTime)
 {
-	PlayerCameraCheck();
 	PlayerGroundCheck(GravityForce * _DeltaTime);
 	Gravity(_DeltaTime);
 
@@ -268,7 +254,6 @@ void MarioCat::Idle(float _DeltaTime)
 
 void MarioCat::Move(float _DeltaTime)
 {
-	PlayerCameraCheck();
 	PlayerGroundCheck(GravityForce * _DeltaTime);
 	//Friction(_DeltaTime);
 	Gravity(_DeltaTime);

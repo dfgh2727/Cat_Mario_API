@@ -36,7 +36,7 @@ public:
 	void Gravity(float _DeltaTime);
 	//void Friction(float _DeltaTime);
 
-	void PlayerCameraCheck();
+	/*void PlayerCameraCheck();*/
 	void PlayerGroundCheck(FVector2D _MovePos);
 
 	void DoNotOverlap(float _DeltaTime);

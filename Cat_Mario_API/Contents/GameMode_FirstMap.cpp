@@ -32,12 +32,18 @@ void GameMode_FirstMap::BeginPlay()
 		GoingUpBlock* NewActor = GetWorld()->SpawnActor<GoingUpBlock>();
 		NewActor->SetActorLocation({ 494, 528 });
 	}
-    
 	{
 		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
-		NewActor->SetActorLocation({ 726, 528 });
+		NewActor->SetActorLocation({ 727, 528 });
 	}
-	
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 843, 528 });
+	}
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 959, 528 });
+	}
 }
 
 void GameMode_FirstMap::Tick(float _DeltaTime)
