@@ -5,6 +5,7 @@
 #include "Enum.h"
 
 #include <EnginePlatform/EngineInput.h>
+#include <EngineBase/Object.h>
 
 
 
@@ -32,5 +33,11 @@ FirstMap::FirstMap()
 
 FirstMap::~FirstMap()
 {
+}
+
+void FirstMap::Tick(float _DeltaTime)
+{
+	Super::Tick(_DeltaTime);
+
 }
 

@@ -3,6 +3,9 @@
 #include "Enum.h"
 
 #include <EngineCore/SpriteRenderer.h>
+#include <EnginePlatform/EngineInput.h>
+#include <EngineCore/EngineCoreDebug.h>
+
 
 BBreakingBlock::BBreakingBlock()
 {
@@ -13,13 +16,12 @@ BBreakingBlock::BBreakingBlock()
 
 	{
 		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentScale({100, 100 });
+		CollisionComponent->SetComponentScale({ 60, 60 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
-		/*CollisionComponent->DebugOn();*/
+		DebugOn();
 	}
 
-	DebugOn();
 }
 
 BBreakingBlock::~BBreakingBlock()
@@ -28,10 +30,15 @@ BBreakingBlock::~BBreakingBlock()
 
 void BBreakingBlock::BeginPlay()
 {
-
+	Super::BeginPlay();
 }
 
 void BBreakingBlock::Tick(float _DeltaTime)
 {
+	Super::Tick(_DeltaTime);
 
+	if (true == UEngineInput::GetInst().IsDown('R'))
+	{
+		UEngineDebug::SwitchIsDebug();
+	}
 }

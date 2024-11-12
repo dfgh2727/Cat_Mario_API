@@ -1,5 +1,6 @@
 #pragma once
 #include <EngineCore/Actor.h>
+#include <EngineCore/2DCollision.h>
 
 // Ό³Έν :
 class GoingUpBlock : public AActor
@@ -26,6 +27,7 @@ protected:
 private:
 
 	class USpriteRenderer* GoingUpBlockRenderer;
+	U2DCollision* CollisionComponent;
 
 };
 

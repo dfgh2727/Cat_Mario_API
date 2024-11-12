@@ -15,6 +15,8 @@ public:
 	FirstMap& operator=(const FirstMap& _Other) = delete;
 	FirstMap& operator=(FirstMap&& _Other) noexcept = delete;
 
+	void Tick(float _DeltaTime) override;
+
 protected:
 
 private:

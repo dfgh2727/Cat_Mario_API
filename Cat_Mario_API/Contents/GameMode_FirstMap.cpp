@@ -44,9 +44,6 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-
-
-
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("Play_SecondMap");
