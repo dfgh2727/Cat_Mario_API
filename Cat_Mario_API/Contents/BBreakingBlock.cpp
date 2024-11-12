@@ -9,13 +9,13 @@
 
 BBreakingBlock::BBreakingBlock()
 {
-	BBreakingBlockRenderer = CreateDefaultSubObject<USpriteRenderer>();
+	USpriteRenderer* BBreakingBlockRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	BBreakingBlockRenderer->SetSprite("BBreakingBlock.png");
 	BBreakingBlockRenderer->SetOrder(ERenderOrder::OBJECT);
 	BBreakingBlockRenderer->SetComponentScale({ 60, 60 });
 
 	{
-		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent->SetComponentScale({ 60, 60 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
@@ -37,8 +37,4 @@ void BBreakingBlock::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	if (true == UEngineInput::GetInst().IsDown('R'))
-	{
-		UEngineDebug::SwitchIsDebug();
-	}
 }
