@@ -27,7 +27,6 @@ protected:
 private:
 
 	class USpriteRenderer* GoingUpBlockRenderer;
-	U2DCollision* CollisionComponent;
 
 };
 

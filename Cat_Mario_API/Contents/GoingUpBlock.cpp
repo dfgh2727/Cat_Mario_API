@@ -13,14 +13,6 @@ GoingUpBlock::GoingUpBlock()
 	GoingUpBlockRenderer->SetSprite("QBlock.png");
 	GoingUpBlockRenderer->SetComponentScale({ 60, 60 });
 
-	{
-		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentScale({ 100, 100 });
-		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
-		CollisionComponent->SetCollisionType(ECollisionType::CirCle);
-		/*CollisionComponent->DebugOn();*/
-	}
-
 }
 
 GoingUpBlock::~GoingUpBlock()

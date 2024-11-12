@@ -37,6 +37,7 @@ MarioCat::MarioCat()
 			CollisionComponent->SetComponentScale({ 40, 68 });
 			CollisionComponent->SetCollisionGroup(ECollisionGroup::PlayerBody);
 			CollisionComponent->SetCollisionType(ECollisionType::Rect);
+	
 		}
 
 		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.25f); 
@@ -46,7 +47,7 @@ MarioCat::MarioCat()
 
 	}
 
-	DebugOn();    
+		DebugOn();    
 }
 
 MarioCat::~MarioCat()
