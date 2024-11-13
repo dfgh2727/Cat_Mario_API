@@ -6,7 +6,8 @@
 enum class PlayerState
 {
 	Idle,
-	Move
+	Move,
+	Jump
 };
 
 class MarioCat : public AActor
@@ -45,6 +46,9 @@ public:
 
 	void DirCheck();
 
+	void OnTheGround(float _DeltaTime);
+	void InTheAir(float _DeltaTime);
+
 protected:
 
 private:
@@ -60,6 +64,8 @@ private:
 
 	void Idle(float _DeltaTime);
 	void Move(float _DeltaTime);
+	void Jump(float _DeltaTime);
+
 	void ChangeState(PlayerState _CurPlayerState);
 
 	class UEngineWinImage* MapImage = nullptr;
@@ -70,6 +76,8 @@ private:
 	U2DCollision* CollisionFoot;
 
 	std::string DirString = "Right";
+
+	FVector2D JumpPower = FVector2D(0.0f, -500.0f);
 
 };
 
