@@ -48,7 +48,6 @@ public:
 protected:
 
 private:
-	float Speed = 500.0f;
 	int index = 0;
 
 	int IsGround = false;
@@ -71,9 +70,15 @@ private:
 	U2DCollision* CollisionHead;
 	U2DCollision* CollisionFoot;
 
+	FVector2D DirVector = FVector2D::ZERO;
+	float DirAcc = 500.0f;
+	float MaxSpeed = 300.0f;
+	float MinSpeed = 0.05f;
+	
+
 	std::string DirString = "Right";
 
-	FVector2D JumpPower = FVector2D(0.0f, -800.0f);
+	FVector2D JumpPower = FVector2D(0.0f, -500.0f);
 
 };
 

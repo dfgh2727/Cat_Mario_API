@@ -124,7 +124,7 @@ void MarioCat::Gravity(float _DeltaTime)
 		// 증가시키고 
 		// 여기서 계산
 		AddActorLocation(GravityForce * _DeltaTime);
-		GravityForce += FVector2D::DOWN * _DeltaTime * 1700.0f;
+		GravityForce += FVector2D::DOWN * _DeltaTime * 500.0f;
 	}
 	else {
 		GravityForce = FVector2D::ZERO;
@@ -183,6 +183,9 @@ void MarioCat::Tick(float _DeltaTime)
 		break;
 	case PlayerState::Move:
 		Move(_DeltaTime);
+		break;
+	case PlayerState::Jump:
+		Jump(_DeltaTime);
 		break;
 	default:
 		break;
@@ -260,6 +263,22 @@ void MarioCat::Idle(float _DeltaTime)
 		ChangeState(PlayerState::Move);
 		return;
 	}
+
+	AddActorLocation(DirVector * _DeltaTime);
+
+	if (DirVector.Length() >= MaxSpeed)
+	{
+		DirVector.Normalize();
+		DirVector *= MaxSpeed;
+	}
+	
+	DirVector += -DirVector * _DeltaTime;
+
+	if (DirVector.Length() < MinSpeed)
+	{
+		DirVector = FVector2D::ZERO;
+	}
+
 }
 
 void MarioCat::Move(float _DeltaTime)
@@ -280,12 +299,22 @@ void MarioCat::Move(float _DeltaTime)
 		CatRenderer->ChangeAnimation("Cat_Run" + DirString);
 		Vector += FVector2D::LEFT;
 	}
-	AddActorLocation(Vector * _DeltaTime * Speed);
-	
+
+	DirVector += Vector * DirAcc * _DeltaTime;
+
+	AddActorLocation(DirVector * _DeltaTime);
+
+	if (DirVector.Length() >= MaxSpeed)
+	{
+		DirVector.Normalize();
+		DirVector *= 300.0f;
+	}
+
+	DirVector += -DirVector * _DeltaTime;
+
 	if (true == UEngineInput::GetInst().IsPress(VK_UP))
 	{
-		CatRenderer->ChangeAnimation("Cat_Jump" + DirString);
-	    AddActorLocation(JumpPower * _DeltaTime);
+		ChangeState(PlayerState::Jump);
 		return;
 	}
 
@@ -318,30 +347,34 @@ void MarioCat::Move(float _DeltaTime)
 
 void MarioCat::Jump(float _DeltaTime)
 {
+	AddActorLocation(JumpPower * _DeltaTime);
 	Gravity(_DeltaTime);
 	PlayerGroundCheck(GravityForce * _DeltaTime);
 	FVector2D Vector = FVector2D::ZERO;
+	if (true == IsGround)
+	{
+		ChangeState(PlayerState::Idle);
+		return;
+	}
+
 	CatRenderer->ChangeAnimation("Cat_Jump" + DirString);
 
-	if (true == UEngineInput::GetInst().IsDown(VK_UP))
-	{
-		Vector += FVector2D::UP;
-	}
-	AddActorLocation(JumpPower * _DeltaTime);
+	DirVector += Vector * DirAcc * _DeltaTime;
 
-	//if (true == UEngineInput::GetInst().IsPress(VK_RIGHT) ||
-	//	true == UEngineInput::GetInst().IsPress(VK_LEFT))
-	//{
-	//	ChangeState(PlayerState::Move);
-	//	return;
-	//}
-	//if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
-	//	false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
-	//	false == UEngineInput::GetInst().IsPress(VK_UP))
-	//{
-	//	ChangeState(PlayerState::Idle);
-	//	return;
-	//}
+	AddActorLocation(DirVector * _DeltaTime);
+
+
+		//if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
+		//{
+		//	Vector += FVector2D::RIGHT;
+		//}
+		//if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
+		//{
+		//	Vector += FVector2D::LEFT;
+		//}
+		//AddActorLocation(Vector * _DeltaTime);
+
+
 }
 
 void MarioCat::BreakTheBlock(float _DeltaTime)
