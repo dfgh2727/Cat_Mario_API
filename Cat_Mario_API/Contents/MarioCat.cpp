@@ -132,34 +132,6 @@ void MarioCat::Gravity(float _DeltaTime)
 
 }
 
-//void MarioCat::Friction(float _DeltaTime)
-//{
-//	if (false == IsGround)
-//	{
-//		// 증가시키고 
-//		// 여기서 계산
-//		AddActorLocation(FrictionCo * _DeltaTime);
-//		FVector2D RunningDir = FVector2D::ZERO;
-//
-//		if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
-//		{
-//			RunningDir = FVector2D::LEFT;
-//		}
-//
-//		if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
-//		{
-//			RunningDir = FVector2D::RIGHT;
-//		}
-//
-//		FrictionCo -= RunningDir * _DeltaTime * 800.0f;
-//	}
-	/*else {
-		
-	}*/
-
-	// 상시 
-//}
-
 void MarioCat::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
