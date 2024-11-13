@@ -316,6 +316,34 @@ void MarioCat::Move(float _DeltaTime)
 	
 }
 
+void MarioCat::Jump(float _DeltaTime)
+{
+	Gravity(_DeltaTime);
+	PlayerGroundCheck(GravityForce * _DeltaTime);
+	FVector2D Vector = FVector2D::ZERO;
+	CatRenderer->ChangeAnimation("Cat_Jump" + DirString);
+
+	if (true == UEngineInput::GetInst().IsDown(VK_UP))
+	{
+		Vector += FVector2D::UP;
+	}
+	AddActorLocation(JumpPower * _DeltaTime);
+
+	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT) ||
+		true == UEngineInput::GetInst().IsPress(VK_LEFT))
+	{
+		ChangeState(PlayerState::Move);
+		return;
+	}
+	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
+		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
+		false == UEngineInput::GetInst().IsPress(VK_UP))
+	{
+		ChangeState(PlayerState::Idle);
+		return;
+	}
+}
+
 void MarioCat::BreakTheBlock(float _DeltaTime)
 {
 	AActor* Result = CollisionHead->CollisionOnce(ECollisionGroup::SquareBlock);

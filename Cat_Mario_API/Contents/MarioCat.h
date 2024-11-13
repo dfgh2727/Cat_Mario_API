@@ -60,6 +60,7 @@ private:
 
 	void Idle(float _DeltaTime);
 	void Move(float _DeltaTime);
+	void Jump(float _DeltaTime);
 
 	void ChangeState(PlayerState _CurPlayerState);
 
