@@ -386,7 +386,6 @@ class UColor
 public:
 	static const UColor WHITE;
 	static const UColor BLACK;
-	static const UColor RED;
 
 	union
 	{

@@ -357,7 +357,7 @@ void MarioCat::StandOnIt(float _DeltaTime)
 	AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::SquareBlock);
 	if (nullptr != Result)
 	{
-		UColor Color = ColImage->GetColor(GetActorLocation(), UColor::);
+		UColor Color = ColImage->GetColor(GetActorLocation(), UColor::BLACK);
 		if (Color == UColor::BLACK)
 		{
 			IsGround = false;
