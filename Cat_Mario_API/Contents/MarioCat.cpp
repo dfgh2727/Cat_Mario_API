@@ -244,7 +244,7 @@ void MarioCat::Idle(float _DeltaTime)
 		DirVector *= MaxSpeed;
 	}
 	
-	DirVector += -DirVector * _DeltaTime;
+	DirVector += -DirVector * _DeltaTime * 2.0f;
 
 	if (DirVector.Length() < MinSpeed)
 	{
@@ -256,7 +256,6 @@ void MarioCat::Idle(float _DeltaTime)
 void MarioCat::Move(float _DeltaTime)
 {
 	PlayerGroundCheck(GravityForce * _DeltaTime);
-	//Friction(_DeltaTime);
 	Gravity(_DeltaTime);
 
 	FVector2D Vector = FVector2D::ZERO;
@@ -307,14 +306,14 @@ void MarioCat::Move(float _DeltaTime)
 			// 나가 땅위로 올라갈때까지 while 계속 올려준다.
 			AddActorLocation(FVector2D::UP);
 		}
-		else {
+		else 
+		{
 			break;
 		}
 
 	}
 
 	UEngineDebug::CoreOutPutString("IsGround : " + std::to_string(IsGround));
-	
 }
 
 void MarioCat::Jump(float _DeltaTime)
@@ -322,6 +321,8 @@ void MarioCat::Jump(float _DeltaTime)
 	AddActorLocation(JumpPower * _DeltaTime);
 	Gravity(_DeltaTime);
 	PlayerGroundCheck(GravityForce * _DeltaTime);
+	CatRenderer->ChangeAnimation("Cat_Jump" + DirString);
+	
 	FVector2D Vector = FVector2D::ZERO;
 	if (true == IsGround)
 	{
@@ -329,24 +330,17 @@ void MarioCat::Jump(float _DeltaTime)
 		return;
 	}
 
-	CatRenderer->ChangeAnimation("Cat_Jump" + DirString);
+	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
+	{
+		Vector += FVector2D::RIGHT;
+	}
+	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
+	{
+		Vector += FVector2D::LEFT;
+	}
 
 	DirVector += Vector * DirAcc * _DeltaTime;
-
 	AddActorLocation(DirVector * _DeltaTime);
-
-
-		//if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
-		//{
-		//	Vector += FVector2D::RIGHT;
-		//}
-		//if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
-		//{
-		//	Vector += FVector2D::LEFT;
-		//}
-		//AddActorLocation(Vector * _DeltaTime);
-
-
 }
 
 void MarioCat::BreakTheBlock(float _DeltaTime)
@@ -363,7 +357,16 @@ void MarioCat::StandOnIt(float _DeltaTime)
 	AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::SquareBlock);
 	if (nullptr != Result)
 	{
-		UColor Color = ColImage->GetColor(GetActorLocation(), UColor::BLACK);
+		UColor Color = ColImage->GetColor(GetActorLocation(), UColor::);
+		if (Color == UColor::BLACK)
+		{
+			IsGround = false;
+		}
+		else if (Color == UColor::WHITE)
+		{
+			IsGround = true;
+			// 땅에 박히지 않을때까지 올려주는 기능도 함께 만들거나 해야한다.
+		}
 	}
 	
 }
