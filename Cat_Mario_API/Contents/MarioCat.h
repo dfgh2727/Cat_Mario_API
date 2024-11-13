@@ -73,7 +73,7 @@ private:
 
 	std::string DirString = "Right";
 
-	FVector2D JumpPower = FVector2D(0.0f, -500.0f);
+	FVector2D JumpPower = FVector2D(0.0f, -800.0f);
 
 };
 

@@ -124,7 +124,7 @@ void MarioCat::Gravity(float _DeltaTime)
 		// 증가시키고 
 		// 여기서 계산
 		AddActorLocation(GravityForce * _DeltaTime);
-		GravityForce += FVector2D::DOWN * _DeltaTime * 500.0f;
+		GravityForce += FVector2D::DOWN * _DeltaTime * 1700.0f;
 	}
 	else {
 		GravityForce = FVector2D::ZERO;
@@ -329,19 +329,19 @@ void MarioCat::Jump(float _DeltaTime)
 	}
 	AddActorLocation(JumpPower * _DeltaTime);
 
-	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT) ||
-		true == UEngineInput::GetInst().IsPress(VK_LEFT))
-	{
-		ChangeState(PlayerState::Move);
-		return;
-	}
-	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
-		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
-		false == UEngineInput::GetInst().IsPress(VK_UP))
-	{
-		ChangeState(PlayerState::Idle);
-		return;
-	}
+	//if (true == UEngineInput::GetInst().IsPress(VK_RIGHT) ||
+	//	true == UEngineInput::GetInst().IsPress(VK_LEFT))
+	//{
+	//	ChangeState(PlayerState::Move);
+	//	return;
+	//}
+	//if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
+	//	false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
+	//	false == UEngineInput::GetInst().IsPress(VK_UP))
+	//{
+	//	ChangeState(PlayerState::Idle);
+	//	return;
+	//}
 }
 
 void MarioCat::BreakTheBlock(float _DeltaTime)
