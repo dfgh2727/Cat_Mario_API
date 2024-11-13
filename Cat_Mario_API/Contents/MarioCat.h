@@ -35,7 +35,6 @@ public:
 	void SetColImage(std::string_view _ColImageName);
 
 	void Gravity(float _DeltaTime);
-	//void Friction(float _DeltaTime);
 
 	void PlayerGroundCheck(FVector2D _MovePos);
 
@@ -71,8 +70,8 @@ private:
 	U2DCollision* CollisionFoot;
 
 	FVector2D DirVector = FVector2D::ZERO;
-	float DirAcc = 500.0f;
-	float MaxSpeed = 300.0f;
+	float DirAcc = 1000.0f;
+	float MaxSpeed = 1000.0f;
 	float MinSpeed = 0.05f;
 	
 

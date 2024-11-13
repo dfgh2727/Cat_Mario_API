@@ -41,7 +41,7 @@ void GoingUpBlock::KeepDistance()
 	MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
 
 	FVector2D BlockPos = this->GetActorLocation();
-	FVector2D CatPos = MainPlayer->GetActorLocation();
+	FVector2D CatPos = (MainPlayer->GetActorLocation()) + FVector2D{ 0, -30 };
 	FVector2D Distance = CatPos - BlockPos;
 
 	if (-50.0 <= Distance.X && Distance.X <= 50.0)

@@ -124,7 +124,7 @@ void MarioCat::Gravity(float _DeltaTime)
 		// 증가시키고 
 		// 여기서 계산
 		AddActorLocation(GravityForce * _DeltaTime);
-		GravityForce += FVector2D::DOWN * _DeltaTime * 500.0f;
+		GravityForce += FVector2D::DOWN * _DeltaTime * 700.0f;
 	}
 	else {
 		GravityForce = FVector2D::ZERO;
@@ -244,7 +244,7 @@ void MarioCat::Idle(float _DeltaTime)
 		DirVector *= MaxSpeed;
 	}
 	
-	DirVector += -DirVector * _DeltaTime * 2.0f;
+	DirVector += -DirVector * _DeltaTime * 5.0f;
 
 	if (DirVector.Length() < MinSpeed)
 	{
@@ -281,7 +281,7 @@ void MarioCat::Move(float _DeltaTime)
 		DirVector *= 300.0f;
 	}
 
-	DirVector += -DirVector * _DeltaTime;
+	DirVector += -DirVector *_DeltaTime ;
 
 	if (true == UEngineInput::GetInst().IsPress(VK_UP))
 	{
@@ -365,7 +365,6 @@ void MarioCat::StandOnIt(float _DeltaTime)
 		else if (Color == UColor::WHITE)
 		{
 			IsGround = true;
-			// 땅에 박히지 않을때까지 올려주는 기능도 함께 만들거나 해야한다.
 		}
 	}
 	
