@@ -117,12 +117,6 @@ void MarioCat::PlayerGroundCheck(FVector2D _MovePos)
 	}
 }
 
-void MarioCat::DoNotOverlap(float _DeltaTime)
-{
-	
-}
-
-
 void MarioCat::Gravity(float _DeltaTime)
 {
 	if (false == IsGround)
@@ -182,7 +176,7 @@ void MarioCat::Tick(float _DeltaTime)
 		UEngineDebug::SwitchIsDebug();
 	}
 
-	/*switch (CurPlayerState)
+	switch (CurPlayerState)
 	{
 	case PlayerState::Idle:
 		Idle(_DeltaTime);
@@ -190,12 +184,9 @@ void MarioCat::Tick(float _DeltaTime)
 	case PlayerState::Move:
 		Move(_DeltaTime);
 		break;
-	case PlayerState::Jump:
-		Jump(_DeltaTime);
-		break;
 	default:
 		break;
-	}*/
+	}
 
 	MainCamera();
 	DirCheck();
@@ -227,7 +218,6 @@ void MarioCat::MainCamera()
 	}
 
 	GetWorld()->SetCameraPos(CameraPos);
-	// GetWorld()->SetCameraPos({ 0, 0 });
 
 	{
 		FVector2D CatPos = this->GetActorLocation();
@@ -264,17 +254,12 @@ void MarioCat::Idle(float _DeltaTime)
 	CatRenderer->ChangeAnimation("Cat_Stand" + DirString);
 
 	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT) ||
-		true == UEngineInput::GetInst().IsPress(VK_LEFT))
+		true == UEngineInput::GetInst().IsPress(VK_LEFT)  ||
+		true == UEngineInput::GetInst().IsPress(VK_UP))
 	{
 		ChangeState(PlayerState::Move);
 		return;
 	}
-	if (true == UEngineInput::GetInst().IsPress(VK_UP))
-	{
-		ChangeState(PlayerState::Jump);
-		return;
-	}
-
 }
 
 void MarioCat::Move(float _DeltaTime)
@@ -282,10 +267,8 @@ void MarioCat::Move(float _DeltaTime)
 	PlayerGroundCheck(GravityForce * _DeltaTime);
 	//Friction(_DeltaTime);
 	Gravity(_DeltaTime);
-	DoNotOverlap(_DeltaTime);
 
 	FVector2D Vector = FVector2D::ZERO;
-
 
 	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
 	{
@@ -297,20 +280,27 @@ void MarioCat::Move(float _DeltaTime)
 		CatRenderer->ChangeAnimation("Cat_Run" + DirString);
 		Vector += FVector2D::LEFT;
 	}
-
 	AddActorLocation(Vector * _DeltaTime * Speed);
+	
+	if (true == UEngineInput::GetInst().IsPress(VK_UP))
+	{
+		CatRenderer->ChangeAnimation("Cat_Jump" + DirString);
+	    AddActorLocation(JumpPower * _DeltaTime);
+		return;
+	}
 
 	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
 		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
-		false == UEngineInput::GetInst().IsDown(VK_UP))
+		false == UEngineInput::GetInst().IsPress(VK_UP))
 	{
 		ChangeState(PlayerState::Idle);
 		return;
 	}
 
+
 	while (true)
 	{
-		UColor Color = ColImage->GetColor(GetActorLocation(), UColor::WHITE);
+		UColor Color = ColImage->GetColor(GetActorLocation()+ FVector2D { 0, 29 }, UColor::WHITE);
 		if (Color == UColor::BLACK)
 		{
 			// 나가 땅위로 올라갈때까지 while 계속 올려준다.
@@ -325,45 +315,6 @@ void MarioCat::Move(float _DeltaTime)
 	UEngineDebug::CoreOutPutString("IsGround : " + std::to_string(IsGround));
 	
 }
-
-void MarioCat::Jump(float _DeltaTime)
-{
-	Gravity(_DeltaTime);
-	PlayerGroundCheck(GravityForce * _DeltaTime);
-	FVector2D Vector = FVector2D::ZERO;
-	CatRenderer->ChangeAnimation("Cat_Jump" + DirString);
-
-	if (true == UEngineInput::GetInst().IsDown(VK_UP))
-	{
-		Vector += FVector2D::UP;
-	}
-		AddActorLocation(JumpPower * _DeltaTime);
-
-	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT) ||
-		true == UEngineInput::GetInst().IsPress(VK_LEFT))
-	{
-		ChangeState(PlayerState::Move);
-		return;
-	}
-	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
-		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
-		false == UEngineInput::GetInst().IsPress(VK_UP))
-	{
-		ChangeState(PlayerState::Idle);
-		return;
-	}
-}
-
-void MarioCat::OnTheGround(float _DeltaTime)
-{
-
-}
-
-void MarioCat::InTheAir(float _DeltaTime)
-{
-
-}
-
 
 void MarioCat::BreakTheBlock(float _DeltaTime)
 {
@@ -383,8 +334,6 @@ void MarioCat::StandOnIt(float _DeltaTime)
 	}
 	
 }
-
-
 
 void MarioCat::SetMapImage(std::string_view _MapImageName)
 {

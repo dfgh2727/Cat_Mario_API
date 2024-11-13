@@ -37,17 +37,13 @@ public:
 	void Gravity(float _DeltaTime);
 	//void Friction(float _DeltaTime);
 
-	/*void PlayerCameraCheck();*/
 	void PlayerGroundCheck(FVector2D _MovePos);
 
-	void DoNotOverlap(float _DeltaTime);
+	/*void DoNotOverlap(float _DeltaTime);*/
 	void BreakTheBlock(float _DeltaTime);
 	void StandOnIt(float _DeltaTime);
 
 	void DirCheck();
-
-	void OnTheGround(float _DeltaTime);
-	void InTheAir(float _DeltaTime);
 
 protected:
 
@@ -64,7 +60,6 @@ private:
 
 	void Idle(float _DeltaTime);
 	void Move(float _DeltaTime);
-	void Jump(float _DeltaTime);
 
 	void ChangeState(PlayerState _CurPlayerState);
 
