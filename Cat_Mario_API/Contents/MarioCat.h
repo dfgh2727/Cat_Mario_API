@@ -43,6 +43,7 @@ public:
 	void BreakTheBlock(float _DeltaTime);
 	void StandOnIt(float _DeltaTime);
 
+	void DirCheck();
 
 protected:
 
@@ -67,6 +68,8 @@ private:
 	class USpriteRenderer* CatRenderer;
 	U2DCollision* CollisionHead;
 	U2DCollision* CollisionFoot;
+
+	std::string DirString = "Right";
 
 };
 

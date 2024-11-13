@@ -50,8 +50,10 @@ MarioCat::MarioCat()
 
 		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.25f); 
 		CatRenderer->CreateAnimation("Cat_RunLeft", "CMPlayer_Left.png", 0, 1, 0.25f);
-		CatRenderer->CreateAnimation("Cat_Stand", "CMPlayer_Right.png", 0, 0, 0.5f);
-		CatRenderer->ChangeAnimation("Cat_Stand");
+		CatRenderer->CreateAnimation("Cat_StandRight", "CMPlayer_Right.png", 0, 0, 0.5f);
+		CatRenderer->CreateAnimation("Cat_StandLeft", "CMPlayer_Left.png", 0, 0, 0.5f);
+
+		CatRenderer->ChangeAnimation("Cat_StandRight");
 
 	}
 
@@ -69,6 +71,21 @@ void MarioCat::BeginPlay()
 	GetWorld()->SetCameraToMainPawn(false);
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
 	GetWorld()->SetCameraPivot(Size.Half() * -1.0f);
+
+}
+
+void MarioCat::DirCheck()
+{
+
+	if (true == UEngineInput::GetInst().IsPress('D'))
+	{
+		DirString = "Right";
+	}
+
+	if (true == UEngineInput::GetInst().IsPress('A'))
+	{
+		DirString = "Left";
+	}
 
 }
 
@@ -240,7 +257,7 @@ void MarioCat::Idle(float _DeltaTime)
 	PlayerGroundCheck(GravityForce * _DeltaTime);
 	Gravity(_DeltaTime);
 
-	CatRenderer->ChangeAnimation("Cat_Stand");
+	CatRenderer->ChangeAnimation("Cat_Stand"+ DirString);
 
 	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT) ||
 		true == UEngineInput::GetInst().IsPress(VK_LEFT) ||
@@ -272,14 +289,14 @@ void MarioCat::Move(float _DeltaTime)
 		CatRenderer->ChangeAnimation("Cat_RunLeft");
 		Vector += FVector2D::LEFT;
 	}
-	if (true == UEngineInput::GetInst().IsPress(VK_DOWN))
-	{
-		Vector += FVector2D::DOWN;
-	}
-	if (true == UEngineInput::GetInst().IsPress(VK_UP))
-	{
-		Vector += FVector2D::UP;
-	}
+	//if (true == UEngineInput::GetInst().IsPress(VK_DOWN))
+	//{
+	//	Vector += FVector2D::DOWN;
+	//}
+	//if (true == UEngineInput::GetInst().IsPress(VK_UP))
+	//{
+	//	Vector += FVector2D::UP;
+	//}
 
 	AddActorLocation(Vector * _DeltaTime * Speed);
 
