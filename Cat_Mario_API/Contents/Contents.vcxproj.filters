@@ -65,7 +65,7 @@
       <Filter>GameModes</Filter>
     </ClCompile>
     <ClCompile Include="Enum.cpp">
-      <Filter>ShowMeTheMap\enum</Filter>
+      <Filter>enum</Filter>
     </ClCompile>
     <ClCompile Include="DeathCount.cpp">
       <Filter>ShowMeTheMap</Filter>
@@ -149,7 +149,7 @@
       <Filter>GameModes</Filter>
     </ClInclude>
     <ClInclude Include="Enum.h">
-      <Filter>ShowMeTheMap\enum</Filter>
+      <Filter>enum</Filter>
     </ClInclude>
     <ClInclude Include="DeathCount.h">
       <Filter>ShowMeTheMap</Filter>
@@ -184,9 +184,6 @@
     <Filter Include="MainPlayer_MarioCat">
       <UniqueIdentifier>{ef9b344d-efab-4e3f-8d97-9f22a1def2ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ShowMeTheMap\enum">
-      <UniqueIdentifier>{5dbb7e8e-de8a-4861-ac61-0995eeddc56f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="InterActive Things">
       <UniqueIdentifier>{d03d0fe4-0c15-4e19-a2c1-8bd4f5c8cb54}</UniqueIdentifier>
     </Filter>
@@ -195,6 +192,9 @@
     </Filter>
     <Filter Include="InterActive Things\Monster">
       <UniqueIdentifier>{48372f66-cdc9-477d-ad03-957637169473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enum">
+      <UniqueIdentifier>{5dbb7e8e-de8a-4861-ac61-0995eeddc56f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
