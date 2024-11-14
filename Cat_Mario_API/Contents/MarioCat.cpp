@@ -20,7 +20,6 @@
 #include "GameMode_EighthMap.h"
 
 #include "Enum.h"
-//#include <EngineCore/2DCollision.h>
 
 MarioCat::MarioCat()
 {
@@ -324,14 +323,12 @@ void MarioCat::Move(float _DeltaTime)
 		UColor Color = ColImage->GetColor(GetActorLocation()+ FVector2D { 0, 29 }, UColor::WHITE);
 		if (Color == UColor::BLACK)
 		{
-			// 나가 땅위로 올라갈때까지 while 계속 올려준다.
 			AddActorLocation(FVector2D::UP);
 		}
 		else 
 		{
 			break;
 		}
-
 	}
 
 	UEngineDebug::CoreOutPutString("IsGround : " + std::to_string(IsGround));
