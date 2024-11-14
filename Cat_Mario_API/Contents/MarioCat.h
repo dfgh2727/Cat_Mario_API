@@ -7,7 +7,8 @@ enum class PlayerState
 {
 	Idle,
 	Move,
-	Jump
+	Jump,
+	Stay,
 };
 
 class MarioCat : public AActor
@@ -38,9 +39,9 @@ public:
 
 	void PlayerGroundCheck(FVector2D _MovePos);
 
-	/*void DoNotOverlap(float _DeltaTime);*/
+	void DontOverlap(float _DeltaTime);
 	void BreakTheBlock(float _DeltaTime);
-	void StandOnIt(float _DeltaTime);
+	bool CatOnTheBlock(float _DeltaTime);
 
 	void DirCheck();
 
@@ -59,6 +60,7 @@ private:
 	void Idle(float _DeltaTime);
 	void Move(float _DeltaTime);
 	void Jump(float _DeltaTime);
+	/*void Stay(float _DeltaTime);*/
 
 	void ChangeState(PlayerState _CurPlayerState);
 
@@ -67,6 +69,7 @@ private:
 
 	class USpriteRenderer* CatRenderer;
 	U2DCollision* CollisionHead;
+	U2DCollision* CollisionBody;
 	U2DCollision* CollisionFoot;
 
 	FVector2D DirVector = FVector2D::ZERO;

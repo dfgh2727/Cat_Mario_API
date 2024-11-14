@@ -57,11 +57,3 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 
 }
 
-void BlockDisappears()
-{
-	//bool BlockAppears = true;
-
-	//if ()
-
-}
-

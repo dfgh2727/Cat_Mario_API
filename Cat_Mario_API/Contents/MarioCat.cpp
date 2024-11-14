@@ -47,6 +47,12 @@ MarioCat::MarioCat()
 			CollisionFoot->SetCollisionType(ECollisionType::Rect);
 			CollisionFoot->SetComponentLocation(FVector2D{ 0, 29 });
 		}
+	/*	{
+			CollisionBody = CreateDefaultSubObject<U2DCollision>();
+			CollisionBody->SetComponentScale({ 45, 40 });
+			CollisionBody->SetCollisionGroup(ECollisionGroup::PlayerBody);
+			CollisionBody->SetCollisionType(ECollisionType::Rect);
+		}*/
 
 		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.25f); 
 		CatRenderer->CreateAnimation("Cat_RunLeft", "CMPlayer_Left.png", 0, 1, 0.25f);
@@ -88,6 +94,11 @@ void MarioCat::DirCheck()
 	{
 		DirString = "Left";
 	}
+
+}
+
+void MarioCat::DontOverlap(float _DeltaTime)
+{
 
 }
 
@@ -140,8 +151,6 @@ void MarioCat::Tick(float _DeltaTime)
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
 
 	BreakTheBlock(_DeltaTime);
-	StandOnIt(_DeltaTime);
-
 
 	if (true == UEngineInput::GetInst().IsDown('R'))
 	{
@@ -224,6 +233,12 @@ void MarioCat::MainCamera()
 void MarioCat::Idle(float _DeltaTime)
 {
 	PlayerGroundCheck(GravityForce * _DeltaTime);
+
+	if (true == CatOnTheBlock(_DeltaTime))
+	{
+		IsGround = true;
+	}
+
 	Gravity(_DeltaTime);
 
 	CatRenderer->ChangeAnimation("Cat_Stand" + DirString);
@@ -243,7 +258,7 @@ void MarioCat::Idle(float _DeltaTime)
 		DirVector.Normalize();
 		DirVector *= MaxSpeed;
 	}
-	
+
 	DirVector += -DirVector * _DeltaTime * 5.0f;
 
 	if (DirVector.Length() < MinSpeed)
@@ -256,6 +271,12 @@ void MarioCat::Idle(float _DeltaTime)
 void MarioCat::Move(float _DeltaTime)
 {
 	PlayerGroundCheck(GravityForce * _DeltaTime);
+
+	if (true == CatOnTheBlock(_DeltaTime))
+	{
+		IsGround = true;
+	}
+
 	Gravity(_DeltaTime);
 
 	FVector2D Vector = FVector2D::ZERO;
@@ -330,6 +351,11 @@ void MarioCat::Jump(float _DeltaTime)
 		return;
 	}
 
+	if (true == CatOnTheBlock(_DeltaTime))
+	{
+		ChangeState(PlayerState::Idle);
+	}
+
 	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
 	{
 		Vector += FVector2D::RIGHT;
@@ -343,6 +369,49 @@ void MarioCat::Jump(float _DeltaTime)
 	AddActorLocation(DirVector * _DeltaTime);
 }
 
+bool MarioCat::CatOnTheBlock(float _DeltaTime)
+{
+	std::vector<AActor*> SteppingBlock;
+	bool IsCatOnTheBlock = CollisionFoot
+		->Collision(static_cast<int>(ECollisionGroup::SquareBlock), SteppingBlock, GravityForce * _DeltaTime, 100);
+	return IsCatOnTheBlock;
+}
+
+/*void MarioCat::Stay(float _DeltaTime)
+{
+
+	if (true == CatOnTheBlock(_DeltaTime))
+	{
+		return;
+	}	
+
+	CatRenderer->ChangeAnimation("Cat_Stand" + DirString);
+
+	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT) ||
+		true == UEngineInput::GetInst().IsPress(VK_LEFT) ||
+		true == UEngineInput::GetInst().IsPress(VK_UP))
+	{
+		ChangeState(PlayerState::Move);
+		return;
+	}
+
+	AddActorLocation(DirVector * _DeltaTime);
+
+	if (DirVector.Length() >= MaxSpeed)
+	{
+		DirVector.Normalize();
+		DirVector *= MaxSpeed;
+	}
+
+	DirVector += -DirVector * _DeltaTime * 5.0f;
+
+	if (DirVector.Length() < MinSpeed)
+	{
+		DirVector = FVector2D::ZERO;
+	}
+	
+}*/
+
 void MarioCat::BreakTheBlock(float _DeltaTime)
 {
 	AActor* Result = CollisionHead->CollisionOnce(ECollisionGroup::SquareBlock);
@@ -350,24 +419,6 @@ void MarioCat::BreakTheBlock(float _DeltaTime)
 	{
 		Result->Destroy();
 	}
-}
-
-void MarioCat::StandOnIt(float _DeltaTime)
-{
-	AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::SquareBlock);
-	if (nullptr != Result)
-	{
-		UColor Color = ColImage->GetColor(GetActorLocation(), UColor::BLACK);
-		if (Color == UColor::BLACK)
-		{
-			IsGround = false;
-		}
-		else if (Color == UColor::WHITE)
-		{
-			IsGround = true;
-		}
-	}
-	
 }
 
 void MarioCat::SetMapImage(std::string_view _MapImageName)
