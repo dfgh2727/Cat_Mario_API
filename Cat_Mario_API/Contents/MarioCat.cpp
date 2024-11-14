@@ -377,41 +377,6 @@ bool MarioCat::CatOnTheBlock(float _DeltaTime)
 	return IsCatOnTheBlock;
 }
 
-/*void MarioCat::Stay(float _DeltaTime)
-{
-
-	if (true == CatOnTheBlock(_DeltaTime))
-	{
-		return;
-	}	
-
-	CatRenderer->ChangeAnimation("Cat_Stand" + DirString);
-
-	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT) ||
-		true == UEngineInput::GetInst().IsPress(VK_LEFT) ||
-		true == UEngineInput::GetInst().IsPress(VK_UP))
-	{
-		ChangeState(PlayerState::Move);
-		return;
-	}
-
-	AddActorLocation(DirVector * _DeltaTime);
-
-	if (DirVector.Length() >= MaxSpeed)
-	{
-		DirVector.Normalize();
-		DirVector *= MaxSpeed;
-	}
-
-	DirVector += -DirVector * _DeltaTime * 5.0f;
-
-	if (DirVector.Length() < MinSpeed)
-	{
-		DirVector = FVector2D::ZERO;
-	}
-	
-}*/
-
 void MarioCat::BreakTheBlock(float _DeltaTime)
 {
 	AActor* Result = CollisionHead->CollisionOnce(ECollisionGroup::SquareBlock);
