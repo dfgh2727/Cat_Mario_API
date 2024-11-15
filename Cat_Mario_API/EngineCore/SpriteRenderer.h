@@ -4,6 +4,7 @@
 #include <EngineBase/EngineDelegate.h>
 #include <map>
 #include <EngineBase/EngineMath.h>
+#include "ActorComponent.h"
 
 enum class PivotType
 {
