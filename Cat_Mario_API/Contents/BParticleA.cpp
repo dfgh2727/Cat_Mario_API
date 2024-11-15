@@ -25,12 +25,12 @@ void BParticleA::BeginPlay()
 
 void BParticleA::Tick(float _DeltaTime)
 {
-	/*FallApart(_DeltaTime);*/
+	FallApart(_DeltaTime);
 }
 
 void BParticleA::FallApart(float _DeltaTime)
 {
-	FVector2D MoveVec = { -100.0f, (- 100.0f + 500.0f * _DeltaTime)};
+	FVector2D MoveVec = { -0.1f, /*(- 5.0f + */0.2f /** _DeltaTime)*/};
 	AddActorLocation(MoveVec);
 }
 
