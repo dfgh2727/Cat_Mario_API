@@ -42,13 +42,21 @@ void CatMarioGame::BeginPlay()
 		return;
 	}
 
+	Dir.Append("Image");
 	std::vector<UEngineFile> ImageFiles = Dir.GetAllFile();
-
 	for (size_t i = 0; i < ImageFiles.size(); i++)
 	{
 		std::string FilePath = ImageFiles[i].GetPathToString();
 		UImageManager::GetInst().Load(FilePath);
 	}
+
+	//std::vector<UEngineFile> ImageFiles = Dir.GetAllFile();
+
+	//for (size_t i = 0; i < ImageFiles.size(); i++)
+	//{
+	//	std::string FilePath = ImageFiles[i].GetPathToString();
+	//	UImageManager::GetInst().Load(FilePath);
+	//}
 
 
 	UImageManager::GetInst().CuttingSprite("CMPlayer_Right.png", { 128, 128 });
