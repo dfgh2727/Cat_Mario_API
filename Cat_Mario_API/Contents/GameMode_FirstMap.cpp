@@ -9,6 +9,7 @@
 #include "MarioCat.h"
 #include "BBreakingBlock.h"
 #include "GoingUpBlock.h"
+#include "BNormalBlock.h"
 
 
 GameMode_FirstMap::GameMode_FirstMap()
@@ -43,6 +44,10 @@ void GameMode_FirstMap::BeginPlay()
 	{
 		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
 		NewActor->SetActorLocation({ 959, 528 });
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 785, 528 });
 	}
 }
 

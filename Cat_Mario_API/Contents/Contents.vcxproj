@@ -163,7 +163,11 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="BParticles.cpp">
+    <ClCompile Include="BNormalBlock.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="BParticleA.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -274,7 +278,11 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="BParticles.h">
+    <ClInclude Include="BNormalBlock.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="BParticleA.h">
       <SubType>
       </SubType>
     </ClInclude>
