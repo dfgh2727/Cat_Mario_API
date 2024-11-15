@@ -1,6 +1,5 @@
 #pragma once
 #include "ActorComponent.h"
-#include "EngineBase/EngineMath.h"
 
 // Ό³Έν :
 class USceneComponent : public UActorComponent
