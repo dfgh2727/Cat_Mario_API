@@ -40,7 +40,7 @@ public:
 	void PlayerGroundCheck(FVector2D _MovePos);
 
 	void DontOverlap(float _DeltaTime);
-	void BreakTheBlock(float _DeltaTime);
+	/*void BreakTheBlock(float _DeltaTime);*/
 	bool CatOnTheBlock(float _DeltaTime);
 
 	void DirCheck();

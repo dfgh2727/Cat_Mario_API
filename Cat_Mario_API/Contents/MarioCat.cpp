@@ -160,7 +160,7 @@ void MarioCat::Tick(float _DeltaTime)
 	//	//UEngineAPICore::GetCore()->OpenLevel("Play");
 	//}
 
-	BreakTheBlock(_DeltaTime);
+	/*BreakTheBlock(_DeltaTime);*/
 
 	if (true == UEngineInput::GetInst().IsDown('R'))
 	{
@@ -385,14 +385,9 @@ bool MarioCat::CatOnTheBlock(float _DeltaTime)
 	return IsCatOnTheBlock;
 }
 
-void MarioCat::BreakTheBlock(float _DeltaTime)
-{
-	AActor* Result = CollisionHead->CollisionOnce(ECollisionGroup::SquareBlock);
-	if (nullptr != Result)
-	{
-		Result->Destroy();
-	}
-}
+//void MarioCat::BreakTheBlock(float _DeltaTime)
+//{
+//}
 
 void MarioCat::SetMapImage(std::string_view _MapImageName)
 {

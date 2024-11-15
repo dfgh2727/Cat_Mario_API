@@ -26,5 +26,6 @@ private:
 	class USpriteRenderer* BBreakingBlockRenderer;
 	U2DCollision* CollisionComponent;
 
+	USpriteRenderer* ParticleRenderer;
 };
 

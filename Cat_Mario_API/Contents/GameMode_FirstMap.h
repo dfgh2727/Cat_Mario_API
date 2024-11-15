@@ -18,6 +18,8 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void SpawnBBreakingBlock(FVector2D _Pos);
+
 protected:
 
 private:
