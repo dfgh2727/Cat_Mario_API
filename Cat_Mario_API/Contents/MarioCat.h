@@ -1,7 +1,7 @@
 #pragma once
 #include <EngineCore/Actor.h>
 #include <EngineCore/2DCollision.h>
-
+#include <EnginePlatform/EngineSound.h>
 
 enum class PlayerState
 {
@@ -80,6 +80,6 @@ private:
 	std::string DirString = "Right";
 
 	FVector2D JumpPower = FVector2D(0.0f, -500.0f);
-
+	/*USoundPlayer BGMPlayer;*/
 };
 

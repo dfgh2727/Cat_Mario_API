@@ -79,6 +79,8 @@ void MarioCat::BeginPlay()
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
 	GetWorld()->SetCameraPivot(Size.Half() * -1.0f);
 
+	/*BGMPlayer = UEngineSound::Play("Field.MP3");*/
+
 }
 
 void MarioCat::DirCheck()
@@ -148,6 +150,15 @@ void MarioCat::Tick(float _DeltaTime)
 
 	UEngineDebug::CoreOutPutString("FPS : " + std::to_string(1.0f / _DeltaTime));
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
+
+	//if (true == UEngineInput::GetInst().IsDown(VK_F3))
+	//{
+	//	BGMPlayer.OnOffSwtich();
+
+	//	// static½è´Ù. 
+	//	//UEngineAPICore::GetCore()->ResetLevel<APlayGameMode, ANewPlayer>("Play");
+	//	//UEngineAPICore::GetCore()->OpenLevel("Play");
+	//}
 
 	BreakTheBlock(_DeltaTime);
 
