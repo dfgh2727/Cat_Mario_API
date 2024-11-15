@@ -12,6 +12,14 @@ GoingUpBlock::GoingUpBlock()
 	GoingUpBlockRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	GoingUpBlockRenderer->SetSprite("QBlock.png");
 	GoingUpBlockRenderer->SetComponentScale({ 60, 60 });
+
+	{
+		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent->SetComponentScale({ 60, 60 });
+		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
+		CollisionComponent->SetCollisionType(ECollisionType::Rect);
+		DebugOn();
+	}
 }
 
 GoingUpBlock::~GoingUpBlock()
@@ -46,7 +54,7 @@ void GoingUpBlock::KeepDistance()
 
 	if (-50.0 <= Distance.X && Distance.X <= 50.0)
 	{
-		if (Distance.Y <= 80.0)
+		if (Distance.Y <= 80.0 && BlockPos.Y < CatPos.Y)
 		{
 			AddActorLocation(FVector2D::UP);
 		}
