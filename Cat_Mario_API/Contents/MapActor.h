@@ -17,11 +17,12 @@ public:
 	AMapActor& operator=(AMapActor&& _Other) noexcept = delete;
 
 	void SetColImage(std::string_view _ColImageName);
+	void SetMapImage(std::string_view _MapImageName);
 
 protected:
 
 private:
 	class UEngineWinImage* ColImage = nullptr;
-
+	UEngineWinImage* MapImage = nullptr;
 };
 

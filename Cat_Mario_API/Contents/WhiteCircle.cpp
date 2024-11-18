@@ -8,6 +8,8 @@
 #include <EngineBase/EngineMath.h>
 #include <EngineCore/ImageManager.h>
 
+#include "MapActor.h"
+
 #include "GameMode_FirstMap.h"
 #include "Enum.h"
 
@@ -62,6 +64,7 @@ void WhiteCircle::Move(float _DeltaTime)
 void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
 {
 	IsGround = false;
+	ColImage = AMapActor::SetColImage(_)
 
 	if (nullptr != ColImage)
 	{
@@ -119,7 +122,7 @@ bool WhiteCircle::OnTheBlock(float _DeltaTime)
 	return IsOnTheBlock;
 }
 
-void WhiteCircle::SetColImage(std::string_view _ColImageName)
-{
-	ColImage = UImageManager::GetInst().FindImage(_ColImageName);
-}
+//void WhiteCircle::SetColImage(std::string_view _ColImageName)
+//{
+//	ColImage = UImageManager::GetInst().FindImage(_ColImageName);
+//}

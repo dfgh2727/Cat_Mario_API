@@ -34,5 +34,6 @@ private:
 	class USpriteRenderer* MonsterRenderer;
 
 	U2DCollision* MonsterBody;
+	class UEngineWinImage* ColImage = nullptr;
 
 };
