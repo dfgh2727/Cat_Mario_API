@@ -46,12 +46,12 @@ MarioCat::MarioCat()
 			CollisionFoot->SetCollisionType(ECollisionType::Rect);
 			CollisionFoot->SetComponentLocation(FVector2D{ 0, 29 });
 		}
-	/*	{
+		{
 			CollisionBody = CreateDefaultSubObject<U2DCollision>();
 			CollisionBody->SetComponentScale({ 45, 40 });
 			CollisionBody->SetCollisionGroup(ECollisionGroup::PlayerBody);
 			CollisionBody->SetCollisionType(ECollisionType::Rect);
-		}*/
+		}
 
 		CatRenderer->CreateAnimation("Cat_RunRight", "CMPlayer_Right.png", 0, 1, 0.25f); 
 		CatRenderer->CreateAnimation("Cat_RunLeft", "CMPlayer_Left.png", 0, 1, 0.25f);
@@ -100,6 +100,8 @@ void MarioCat::DirCheck()
 
 void MarioCat::DontOverlap(float _DeltaTime)
 {
+	//픽셀 충돌시 겹치지 않게 이동시키는 함수
+
 	while (true)
 	{
 		UColor Color = ColImage->GetColor(GetActorLocation() + FVector2D{ 0, 29 }, UColor::WHITE);
@@ -174,7 +176,8 @@ void MarioCat::Gravity(float _DeltaTime)
 		AddActorLocation(GravityForce * _DeltaTime);
 		GravityForce += FVector2D::DOWN * _DeltaTime * 700.0f;
 	}
-	else {
+	else 
+	{
 		GravityForce = FVector2D::ZERO;
 	}
 
@@ -292,6 +295,7 @@ void MarioCat::MainCamera()
 			CatPos.Y = 0.0f;
 		}
 
+		// 이후 사망 처리시 제거
 		if (MapScale.Y <= CatPos.Y)
 		{
 			CatPos.Y = MapScale.Y;
@@ -432,9 +436,10 @@ bool MarioCat::CatOnTheBlock(float _DeltaTime)
 	return IsCatOnTheBlock;
 }
 
-//void MarioCat::BreakTheBlock(float _DeltaTime)
-//{
-//}
+void MarioCat::HitTheBlock(float _DeltaTime)
+{
+
+}
 
 void MarioCat::SetMapImage(std::string_view _MapImageName)
 {
