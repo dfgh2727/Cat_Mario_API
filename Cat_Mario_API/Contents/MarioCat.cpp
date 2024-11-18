@@ -211,7 +211,20 @@ void MarioCat::MainCamera()
 		CameraPos.X = (MapScale.X - Size.X);
 	}
 
-	GetWorld()->SetCameraPos(CameraPos);
+	// 이전 위치보다 x가 전진했을때
+	// 맨처음
+	//   100         50
+	if (PrevPos.X < CameraPos.X)
+	{
+		GetWorld()->SetCameraPos(CameraPos);
+		PrevPos = CameraPos;
+	}
+	else 
+	{
+		// 
+		PrevPos.Y = CameraPos.Y;
+		GetWorld()->SetCameraPos(PrevPos);
+	}
 
 	{
 		FVector2D CatPos = this->GetActorLocation();
