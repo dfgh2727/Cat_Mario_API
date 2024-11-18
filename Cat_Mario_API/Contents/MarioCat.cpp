@@ -234,6 +234,11 @@ void MarioCat::MainCamera()
 			CatPos.X = 0.0f;
 		}
 
+		if (CatPos.X <= PrevPos.X)
+		{
+			CatPos.X = PrevPos.X;
+		}
+
 		if (MapScale.X <= CatPos.X)
 		{
 			CatPos.X = MapScale.X;
