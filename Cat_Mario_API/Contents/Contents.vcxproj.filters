@@ -86,9 +86,6 @@
     <ClCompile Include="BParticleA.cpp">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClCompile>
-    <ClCompile Include="WhiteCircle.cpp">
-      <Filter>InterActive Things\Monster</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -175,9 +172,6 @@
     </ClInclude>
     <ClInclude Include="BParticleA.h">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
-    </ClInclude>
-    <ClInclude Include="WhiteCircle.h">
-      <Filter>InterActive Things\Monster</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
