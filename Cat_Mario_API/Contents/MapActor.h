@@ -20,9 +20,9 @@ public:
 	void SetMapImage(std::string_view _MapImageName);
 
 protected:
-
-private:
 	class UEngineWinImage* ColImage = nullptr;
 	UEngineWinImage* MapImage = nullptr;
+
+private:
 };
 
