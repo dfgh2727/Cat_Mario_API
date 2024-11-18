@@ -19,18 +19,17 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
-	void PlayerGroundCheck(FVector2D _MovePos);
+	void MonsterGroundCheck(FVector2D _MovePos);
 	void Gravity(float _DeltaTime);
 
 protected:
 
 private:
 
-	class UEngineWinImage* ColImage = nullptr;
-
-	class USpriteRenderer* MonsterRenderer;
+	void Move(float _DeltaTime);
+	FVector2D GravityForce = FVector2D::ZERO;
 	bool IsGround = false;
 
-	FVector2D GravityForce = FVector2D::ZERO;
-
+	class UEngineWinImage* ColImage = nullptr;
+	class USpriteRenderer* MonsterRenderer;
 };

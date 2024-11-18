@@ -39,10 +39,15 @@ void WhiteCircle::BeginPlay()
 
 void WhiteCircle::Tick(float _DeltaTime)
 {
-	/*AddActorLocation(FVector2D::LEFT);*/
+
 }
 
-void WhiteCircle::PlayerGroundCheck(FVector2D _MovePos)
+void WhiteCircle::Move(float _DeltaTime)
+{
+
+}
+
+void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
 {
 	IsGround = false;
 
