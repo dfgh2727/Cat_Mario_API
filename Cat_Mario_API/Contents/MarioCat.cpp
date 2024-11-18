@@ -33,7 +33,7 @@ MarioCat::MarioCat()
 
 		{
 			CollisionHead = CreateDefaultSubObject<U2DCollision>();
-			CollisionHead->SetComponentScale({ 34, 8 });
+			CollisionHead->SetComponentScale({20, 8 });
 			CollisionHead->SetCollisionGroup(ECollisionGroup::PlayerHead);
 			CollisionHead->SetCollisionType(ECollisionType::Rect);
 			CollisionHead->SetComponentLocation(FVector2D{ 0, -30 });
@@ -48,7 +48,7 @@ MarioCat::MarioCat()
 		}
 		{
 			CollisionBody = CreateDefaultSubObject<U2DCollision>();
-			CollisionBody->SetComponentScale({ 45, 40 });
+			CollisionBody->SetComponentScale({ 50, 55 });
 			CollisionBody->SetCollisionGroup(ECollisionGroup::PlayerBody);
 			CollisionBody->SetCollisionType(ECollisionType::Rect);
 		}
@@ -225,6 +225,7 @@ void MarioCat::Tick(float _DeltaTime)
 	MainCamera();
 	DirCheck();
 	DontOverlap(_DeltaTime);
+	HitTheBlock(_DeltaTime);
 
 }
 
@@ -438,6 +439,25 @@ bool MarioCat::CatOnTheBlock(float _DeltaTime)
 
 void MarioCat::HitTheBlock(float _DeltaTime)
 {
+	{
+		std::vector<AActor*> HitTheBlockR;
+		bool Hit = CollisionBody
+			->Collision(static_cast<int>(ECollisionGroup::SquareBlock), HitTheBlockR, FVector2D::RIGHT, 100);
+		if (true == Hit)
+		{
+			AddActorLocation(FVector2D::LEFT);
+		}
+	}
+	{
+		std::vector<AActor*> HitTheBlockL;
+		bool Hit = CollisionBody
+			->Collision(static_cast<int>(ECollisionGroup::SquareBlock), HitTheBlockL, FVector2D::LEFT, 100);
+		if (true == Hit)
+		{
+			AddActorLocation(FVector2D::RIGHT);
+		}
+	}
+	
 
 }
 
