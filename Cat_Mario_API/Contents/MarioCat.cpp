@@ -197,13 +197,16 @@ void MarioCat::MainCamera()
 	GetWorld()->SetCameraPos(GetActorLocation() - Size.Half());
 	FVector2D CameraPos = GetWorld()->GetCameraPos();
 
+	//횡스크롤...Y는 고정
 	CameraPos.Y = 0.0f;
 
+	//맵 좌측으로 카메라 이동 불가
 	if (0.0 >= CameraPos.X)
 	{
 		CameraPos.X = 0.0f;
 	}
 
+	//맵 우측으로 카메라 이동 불가
 	FVector2D MapScale = MapImage->GetImageScale();
 
 	if (MapScale.X <= (Size.X + CameraPos.X))
@@ -234,10 +237,11 @@ void MarioCat::MainCamera()
 			CatPos.X = 0.0f;
 		}
 
-		if (CatPos.X <= PrevPos.X)
+		//고양이 좌측 움직임 제한
+		/*if (CatPos.X <= PrevPos.X)
 		{
 			CatPos.X = PrevPos.X;
-		}
+		}*/
 
 		if (MapScale.X <= CatPos.X)
 		{
