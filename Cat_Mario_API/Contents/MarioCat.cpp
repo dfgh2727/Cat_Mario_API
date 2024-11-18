@@ -100,7 +100,43 @@ void MarioCat::DirCheck()
 
 void MarioCat::DontOverlap(float _DeltaTime)
 {
+	while (true)
+	{
+		UColor Color = ColImage->GetColor(GetActorLocation() + FVector2D{ 0, 29 }, UColor::WHITE);
+		if (Color == UColor::BLACK)
+		{
+			AddActorLocation(FVector2D::UP);
+		}
+		else
+		{
+			break;
+		}
+	}
+	while (true)
+	{
+		UColor Color = ColImage->GetColor(GetActorLocation() + FVector2D{ 20, 0 }, UColor::WHITE);
+		if (Color == UColor::BLACK)
+		{
+			AddActorLocation(FVector2D::LEFT);
+		}
+		else
+		{
+			break;
+		}
+	}
 
+	while (true)
+	{
+		UColor Color = ColImage->GetColor(GetActorLocation() + FVector2D{ -20, 0 }, UColor::WHITE);
+		if (Color == UColor::BLACK)
+		{
+			AddActorLocation(FVector2D::RIGHT);
+		}
+		else
+		{
+			break;
+		}
+	}
 }
 
 void MarioCat::PlayerGroundCheck(FVector2D _MovePos)
@@ -151,6 +187,7 @@ void MarioCat::Tick(float _DeltaTime)
 	UEngineDebug::CoreOutPutString("FPS : " + std::to_string(1.0f / _DeltaTime));
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
 
+	//추후에 브금 추가시 주석 해제 
 	//if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	//{
 	//	BGMPlayer.OnOffSwtich();
@@ -184,6 +221,8 @@ void MarioCat::Tick(float _DeltaTime)
 
 	MainCamera();
 	DirCheck();
+	DontOverlap(_DeltaTime);
+
 }
 
 void MarioCat::ChangeState(PlayerState _CurPlayerState)
@@ -224,7 +263,6 @@ void MarioCat::MainCamera()
 	}
 	else 
 	{
-		// 
 		PrevPos.Y = CameraPos.Y;
 		GetWorld()->SetCameraPos(PrevPos);
 	}
@@ -349,20 +387,6 @@ void MarioCat::Move(float _DeltaTime)
 	{
 		ChangeState(PlayerState::Idle);
 		return;
-	}
-
-
-	while (true)
-	{
-		UColor Color = ColImage->GetColor(GetActorLocation()+ FVector2D { 0, 29 }, UColor::WHITE);
-		if (Color == UColor::BLACK)
-		{
-			AddActorLocation(FVector2D::UP);
-		}
-		else 
-		{
-			break;
-		}
 	}
 
 	UEngineDebug::CoreOutPutString("IsGround : " + std::to_string(IsGround));
