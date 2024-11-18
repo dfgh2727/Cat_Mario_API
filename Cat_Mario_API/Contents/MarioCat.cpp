@@ -470,7 +470,7 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 
 void MarioCat::SetMapImage(std::string_view _MapImageName)
 {
-	MapImage = UImageManager::GetInst().FindImage(_MapImageName);
+	MapImage = AMapActor::SetMapImage(_MapImageName);
 }
 
 void MarioCat::SetColImage(std::string_view _ColImageName)

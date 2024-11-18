@@ -16,8 +16,8 @@ public:
 	AMapActor& operator=(const AMapActor& _Other) = delete;
 	AMapActor& operator=(AMapActor&& _Other) noexcept = delete;
 
-	void SetColImage(std::string_view _ColImageName);
-	void SetMapImage(std::string_view _MapImageName);
+	UEngineWinImage* SetColImage(std::string_view _ColImageName);
+	UEngineWinImage* SetMapImage(std::string_view _MapImageName);
 
 protected:
 	class UEngineWinImage* ColImage = nullptr;
