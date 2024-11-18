@@ -34,5 +34,4 @@ void BNormalBlock::BeginPlay()
 void BNormalBlock::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
-
 }

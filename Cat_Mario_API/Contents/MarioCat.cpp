@@ -458,6 +458,13 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 		}
 	}
 
+	AActor* Result = CollisionHead->CollisionOnce(ECollisionGroup::SquareBlock);
+	if (nullptr != Result)
+	{
+		ChangeState(PlayerState::Idle);
+		return;
+	}
+
 }
 
 void MarioCat::SetMapImage(std::string_view _MapImageName)
