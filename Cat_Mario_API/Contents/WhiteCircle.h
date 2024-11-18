@@ -1,5 +1,5 @@
 #pragma once
-#include <EngineCore/Actor.h>
+#include "MapActor.h"
 #include <EngineCore/2DCollision.h>
 
 // Ό³Έν :
@@ -21,6 +21,7 @@ public:
 
 	void MonsterGroundCheck(FVector2D _MovePos);
 	void Gravity(float _DeltaTime);
+	bool OnTheBlock(float _DeltaTime);
 
 protected:
 
@@ -30,6 +31,8 @@ private:
 	FVector2D GravityForce = FVector2D::ZERO;
 	bool IsGround = false;
 
-	class UEngineWinImage* ColImage = nullptr;
 	class USpriteRenderer* MonsterRenderer;
+
+	U2DCollision* MonsterBody;
+
 };

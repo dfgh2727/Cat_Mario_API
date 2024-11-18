@@ -38,7 +38,7 @@
       <Filter>ShowMeTheMap</Filter>
     </ClCompile>
     <ClCompile Include="MarioCat.cpp">
-      <Filter>MainPlayer_MarioCat</Filter>
+      <Filter>InterActive Things\MainPlayer_MarioCat</Filter>
     </ClCompile>
     <ClCompile Include="FifthMap.cpp">
       <Filter>ShowMeTheMap</Filter>
@@ -89,6 +89,9 @@
     <ClCompile Include="WhiteCircle.cpp">
       <Filter>InterActive Things\Monster</Filter>
     </ClCompile>
+    <ClCompile Include="MapActor.cpp">
+      <Filter>InterActive Things</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -128,7 +131,7 @@
       <Filter>ShowMeTheMap</Filter>
     </ClInclude>
     <ClInclude Include="MarioCat.h">
-      <Filter>MainPlayer_MarioCat</Filter>
+      <Filter>InterActive Things\MainPlayer_MarioCat</Filter>
     </ClInclude>
     <ClInclude Include="FifthMap.h">
       <Filter>ShowMeTheMap</Filter>
@@ -179,6 +182,9 @@
     <ClInclude Include="WhiteCircle.h">
       <Filter>InterActive Things\Monster</Filter>
     </ClInclude>
+    <ClInclude Include="MapActor.h">
+      <Filter>InterActive Things</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -192,9 +198,6 @@
     </Filter>
     <Filter Include="MainGame">
       <UniqueIdentifier>{64ab0313-728c-4b1e-adff-97d483a1057b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="MainPlayer_MarioCat">
-      <UniqueIdentifier>{ef9b344d-efab-4e3f-8d97-9f22a1def2ab}</UniqueIdentifier>
     </Filter>
     <Filter Include="InterActive Things">
       <UniqueIdentifier>{d03d0fe4-0c15-4e19-a2c1-8bd4f5c8cb54}</UniqueIdentifier>
@@ -210,6 +213,9 @@
     </Filter>
     <Filter Include="InterActive Things\Blocks\BParticles">
       <UniqueIdentifier>{d4b768e9-8875-4d32-a9f6-a76d799fa4bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\MainPlayer_MarioCat">
+      <UniqueIdentifier>{ef9b344d-efab-4e3f-8d97-9f22a1def2ab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

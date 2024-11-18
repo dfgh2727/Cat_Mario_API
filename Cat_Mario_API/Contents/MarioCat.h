@@ -1,5 +1,5 @@
 #pragma once
-#include <EngineCore/Actor.h>
+#include "MapActor.h"
 #include <EngineCore/2DCollision.h>
 #include <EnginePlatform/EngineSound.h>
 
@@ -11,7 +11,7 @@ enum class PlayerState
 	Stay,
 };
 
-class MarioCat : public AActor
+class MarioCat : public AMapActor
 {
 public:
 	// constrcuter destructer
@@ -33,7 +33,6 @@ public:
 	void LevelChangeEnd();
 
 	void SetMapImage(std::string_view _MapImageName);
-	void SetColImage(std::string_view _ColImageName);
 
 	void Gravity(float _DeltaTime);
 
@@ -64,7 +63,6 @@ private:
 	void ChangeState(PlayerState _CurPlayerState);
 
 	class UEngineWinImage* MapImage = nullptr;
-	class UEngineWinImage* ColImage = nullptr;
 
 	class USpriteRenderer* CatRenderer;
 	U2DCollision* CollisionHead;
