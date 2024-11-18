@@ -229,6 +229,7 @@ void MarioCat::MainCamera()
 		GetWorld()->SetCameraPos(PrevPos);
 	}
 
+	// 이하 고양이 이동 제한
 	{
 		FVector2D CatPos = this->GetActorLocation();
 
@@ -238,10 +239,10 @@ void MarioCat::MainCamera()
 		}
 
 		//고양이 좌측 움직임 제한
-		/*if (CatPos.X <= PrevPos.X)
+		if (CatPos.X <= PrevPos.X)
 		{
 			CatPos.X = PrevPos.X;
-		}*/
+		}
 
 		if (MapScale.X <= CatPos.X)
 		{
