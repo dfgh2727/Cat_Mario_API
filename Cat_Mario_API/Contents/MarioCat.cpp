@@ -162,7 +162,6 @@ void MarioCat::PlayerGroundCheck(FVector2D _MovePos)
 		else if (Color == UColor::BLACK)
 		{
 			IsGround = true;
-			// 땅에 박히지 않을때까지 올려주는 기능도 함께 만들거나 해야한다.
 		}
 	}
 }

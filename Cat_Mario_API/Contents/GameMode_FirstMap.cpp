@@ -10,6 +10,8 @@
 #include "BBreakingBlock.h"
 #include "GoingUpBlock.h"
 #include "BNormalBlock.h"
+#include "WhiteCircle.h"
+
 //#include "BParticleA.h"
 
 
@@ -49,6 +51,10 @@ void GameMode_FirstMap::BeginPlay()
 	}
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 785, 528 });
+	}
+	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
 		NewActor->SetActorLocation({ 785, 528 });
 	}
 }

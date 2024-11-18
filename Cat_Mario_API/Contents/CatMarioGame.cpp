@@ -51,12 +51,6 @@ void CatMarioGame::BeginPlay()
 		}
 	}
 
-	{
-		UEngineDirectory Dir;
-		Dir.MoveParentToDirectory("Resources//Image");
-		Dir.Append("Block");
-	}
-
 	// 사운드 로드
 	{
 		UEngineDirectory Dir;

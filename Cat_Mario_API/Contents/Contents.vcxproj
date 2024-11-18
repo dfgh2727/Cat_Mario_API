@@ -271,6 +271,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="WhiteCircle.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h" />
@@ -383,6 +387,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="TitleImage.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="WhiteCircle.h">
       <SubType>
       </SubType>
     </ClInclude>
