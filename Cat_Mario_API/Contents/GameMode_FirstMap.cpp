@@ -55,7 +55,7 @@ void GameMode_FirstMap::BeginPlay()
 	}
 	{
 		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
-		NewActor->SetActorLocation({ 785, 528 });
+		NewActor->SetActorLocation({ 300, 700 });
 	}
 }
 

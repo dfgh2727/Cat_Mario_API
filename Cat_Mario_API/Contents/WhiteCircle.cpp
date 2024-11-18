@@ -9,10 +9,18 @@
 #include <EngineCore/ImageManager.h>
 
 #include "GameMode_FirstMap.h"
+#include "Enum.h"
 
 
 WhiteCircle::WhiteCircle()
 {
+	{
+		MonsterRenderer = CreateDefaultSubObject<USpriteRenderer>();
+		MonsterRenderer->SetSprite("CMmon_Right.png");
+		MonsterRenderer->SetOrder(ERenderOrder::PLAYER);
+		MonsterRenderer->SetComponentScale({ 120, 120 });
+	}
+
 	MonsterRenderer->CreateAnimation("Mon_RunRight", "CMmon_Right.png", 0, 0, 0.5f);
 	MonsterRenderer->CreateAnimation("Mon_RunLeft", "CMmon_Left.png", 0, 0, 0.5f);
 
@@ -31,7 +39,7 @@ void WhiteCircle::BeginPlay()
 
 void WhiteCircle::Tick(float _DeltaTime)
 {
-	AddActorLocation(FVector2D::LEFT);
+	/*AddActorLocation(FVector2D::LEFT);*/
 }
 
 void WhiteCircle::PlayerGroundCheck(FVector2D _MovePos)
