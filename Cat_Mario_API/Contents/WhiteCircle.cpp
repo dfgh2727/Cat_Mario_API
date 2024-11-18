@@ -9,6 +9,10 @@
 
 WhiteCircle::WhiteCircle()
 {
+	USpriteRenderer* MonsterRenderer = CreateDefaultSubObject<USpriteRenderer>();
+	MonsterRenderer->SetSprite("BNormalBlock.png");
+	MonsterRenderer->SetOrder(ERenderOrder::OBJECT);
+	MonsterRenderer->SetComponentScale({ 60, 60 });
 }
 
 WhiteCircle::~WhiteCircle()
