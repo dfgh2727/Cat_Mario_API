@@ -19,6 +19,7 @@
 #include "GameMode_SeventhMap.h"
 #include "GameMode_EighthMap.h"
 
+#include "MapActor.h"
 #include "Enum.h"
 
 MarioCat::MarioCat()

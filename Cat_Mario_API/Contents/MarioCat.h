@@ -33,6 +33,7 @@ public:
 	void LevelChangeEnd();
 
 	void SetMapImage(std::string_view _MapImageName);
+	void SetColImage(std::string_view _ColImageName);
 
 	void Gravity(float _DeltaTime);
 

@@ -19,6 +19,9 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void SetColImage(std::string_view _ColImageName);
+	/*void SetMapImage(std::string_view _MapImageName);*/
+
 	void MonsterGroundCheck(FVector2D _MovePos);
 	void Gravity(float _DeltaTime);
 	bool OnTheBlock(float _DeltaTime);
