@@ -458,6 +458,7 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 		}
 	}
 
+	// 머리가 블럭에 닿는 순간 
 	AActor* Result = CollisionHead->CollisionOnce(ECollisionGroup::SquareBlock);
 	if (nullptr != Result)
 	{
