@@ -33,7 +33,7 @@ MarioCat::MarioCat()
 
 		{
 			CollisionHead = CreateDefaultSubObject<U2DCollision>();
-			CollisionHead->SetComponentScale({20, 8 });
+			CollisionHead->SetComponentScale({ 15, 8 });
 			CollisionHead->SetCollisionGroup(ECollisionGroup::PlayerHead);
 			CollisionHead->SetCollisionType(ECollisionType::Rect);
 			CollisionHead->SetComponentLocation(FVector2D{ 0, -30 });
@@ -174,7 +174,7 @@ void MarioCat::Gravity(float _DeltaTime)
 		// 증가시키고 
 		// 여기서 계산
 		AddActorLocation(GravityForce * _DeltaTime);
-		GravityForce += FVector2D::DOWN * _DeltaTime * 700.0f;
+		GravityForce += FVector2D::DOWN * _DeltaTime * 1200.0f;
 	}
 	else 
 	{
@@ -335,7 +335,7 @@ void MarioCat::Idle(float _DeltaTime)
 		DirVector *= MaxSpeed;
 	}
 
-	DirVector += -DirVector * _DeltaTime * 5.0f;
+	DirVector += -DirVector * _DeltaTime * 8.0f;
 
 	if (DirVector.Length() < MinSpeed)
 	{
@@ -457,7 +457,6 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 			AddActorLocation(FVector2D::RIGHT);
 		}
 	}
-	
 
 }
 
