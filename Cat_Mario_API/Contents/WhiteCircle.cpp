@@ -66,7 +66,7 @@ void WhiteCircle::Move(float _DeltaTime)
 	FVector2D MonsterPos = this->GetActorLocation();
 
 	TurnAround(MoveDir);
-	AddActorLocation(MoveDir * 50.0f);
+	AddActorLocation(MoveDir * 0.05f);
 }
 
 void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
@@ -155,10 +155,12 @@ void WhiteCircle::TurnAround(FVector2D _MovePos)
 		{
 			if (MoveDir == FVector2D::LEFT)
 			{
+				MonsterRenderer->ChangeAnimation("Mon_RunRight");
 				MoveDir = FVector2D::RIGHT;
 			}
 			else
 			{
+				MonsterRenderer->ChangeAnimation("Mon_RunLeft");
 				MoveDir = FVector2D::LEFT;
 			}
 			
