@@ -9,6 +9,7 @@ enum class PlayerState
 	Move,
 	Jump,
 	Stay,
+	Dead,
 };
 
 class MarioCat : public AMapActor
@@ -43,6 +44,11 @@ public:
 	void HitTheBlock(float _DeltaTime);
 	bool CatOnTheBlock(float _DeltaTime);
 
+	/*void CatIsKilled(float _DeltaTime);*/
+	void YouDied(float _DeltaTime);
+	void IsCatAlive(float _DeltaTime);
+
+
 	void DirCheck();
 
 protected:
@@ -73,6 +79,7 @@ private:
 	float MaxSpeed = 1000.0f;
 	float MinSpeed = 0.05f;
 	
+	bool IsCatDead = false;
 
 	std::string DirString = "Right";
 

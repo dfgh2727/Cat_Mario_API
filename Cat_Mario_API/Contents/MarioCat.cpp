@@ -60,6 +60,8 @@ MarioCat::MarioCat()
 		CatRenderer->CreateAnimation("Cat_StandLeft", "CMPlayer_Left.png", 0, 0, 0.5f);
 		CatRenderer->CreateAnimation("Cat_JumpRight", "CMPlayer_Right.png", 2, 2, 0.5f);
 		CatRenderer->CreateAnimation("Cat_JumpLeft", "CMPlayer_Left.png", 2, 2, 0.5f);
+		CatRenderer->CreateAnimation("Cat_IsDeadLeft", "CMPlayer_Left.png", 3, 3, 0.5f);
+		CatRenderer->CreateAnimation("Cat_IsDeadRight", "CMPlayer_Right.png", 3, 3, 0.5f);
 
 		CatRenderer->ChangeAnimation("Cat_StandRight");
 
@@ -227,6 +229,9 @@ void MarioCat::Tick(float _DeltaTime)
 	case PlayerState::Jump:
 		Jump(_DeltaTime);
 		break;
+	case PlayerState::Dead:
+		YouDied(_DeltaTime);
+		break;
 	default:
 		break;
 	}
@@ -235,6 +240,7 @@ void MarioCat::Tick(float _DeltaTime)
 	DirCheck();
 	DontOverlap(_DeltaTime);
 	HitTheBlock(_DeltaTime);
+	IsCatAlive(_DeltaTime);
 
 }
 
@@ -305,10 +311,11 @@ void MarioCat::MainCamera()
 			CatPos.Y = 0.0f;
 		}
 
-		// 이후 사망 처리시 제거
+		// 맵 아래로 떨어지면 죽는다
 		if (MapScale.Y <= CatPos.Y)
 		{
-			CatPos.Y = MapScale.Y;
+			ChangeState(PlayerState::Dead);
+			IsCatDead = true;
 		}
 
 		SetActorLocation(CatPos);
@@ -475,6 +482,26 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 		return;
 	}
 
+}
+//void MarioCat::CatIsKilled(float _DeltaTime)
+//{
+//}
+
+void MarioCat::IsCatAlive(float _DeltaTime)
+{
+	AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::MonsterBody);
+	if (nullptr != Result)
+	{
+		ChangeState(PlayerState::Dead);
+		IsCatDead = true;
+	}
+}
+
+void MarioCat::YouDied(float _DeltaTime)
+{
+	CatRenderer->ChangeAnimation("Cat_IsDead" + DirString);
+	FVector2D DeathMotion = /*JumpPower * 0.5f +*/ GravityForce * _DeltaTime;
+	AddActorLocation(DeathMotion);
 }
 
 
