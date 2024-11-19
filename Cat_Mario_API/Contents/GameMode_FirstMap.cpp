@@ -53,7 +53,7 @@ void GameMode_FirstMap::BeginPlay()
 	}
 	{
 		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
-		NewActor->SetActorLocation({ 300, 700 });
+		NewActor->SetActorLocation({ 450, 700 });
 		NewActor->SetColImage("1stColMap.png");
 	}
 }

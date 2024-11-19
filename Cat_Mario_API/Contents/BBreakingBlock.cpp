@@ -22,8 +22,8 @@ BBreakingBlock::BBreakingBlock()
 		CollisionComponent->SetComponentScale({ 60, 60 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
-		DebugOn();
 	}
+		DebugOn();
 
 }
 

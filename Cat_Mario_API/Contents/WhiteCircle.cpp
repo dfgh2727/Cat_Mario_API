@@ -7,6 +7,7 @@
 #include <EngineCore/Level.h>
 #include <EngineBase/EngineMath.h>
 #include <EngineCore/ImageManager.h>
+#include <EnginePlatform/EngineInput.h>
 
 #include "MapActor.h"
 
@@ -27,7 +28,6 @@ WhiteCircle::WhiteCircle()
 		MonsterBody->SetComponentScale({ 55, 53 });
 		MonsterBody->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		MonsterBody->SetCollisionType(ECollisionType::Rect);
-		DebugOn();
 	}
 
 	MonsterRenderer->CreateAnimation("Mon_RunRight", "CMmon_Right.png", 0, 0, 0.5f);
@@ -35,6 +35,7 @@ WhiteCircle::WhiteCircle()
 
 	MonsterRenderer->ChangeAnimation("Mon_RunLeft");
 
+	DebugOn();
 }
 
 WhiteCircle::~WhiteCircle()
@@ -43,11 +44,13 @@ WhiteCircle::~WhiteCircle()
 
 void WhiteCircle::BeginPlay()
 {
-
+	Super::BeginPlay();
 }
 
 void WhiteCircle::Tick(float _DeltaTime)
 {
+	Super::Tick(_DeltaTime);
+
 	Move(_DeltaTime);
 }
 
