@@ -24,9 +24,10 @@ WhiteCircle::WhiteCircle()
 	}
 	{
 		MonsterBody = CreateDefaultSubObject<U2DCollision>();
-		MonsterBody->SetComponentScale({ 60, 60 });
-		MonsterBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
+		MonsterBody->SetComponentScale({ 55, 53 });
+		MonsterBody->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		MonsterBody->SetCollisionType(ECollisionType::Rect);
+		DebugOn();
 	}
 
 	MonsterRenderer->CreateAnimation("Mon_RunRight", "CMmon_Right.png", 0, 0, 0.5f);
@@ -34,7 +35,6 @@ WhiteCircle::WhiteCircle()
 
 	MonsterRenderer->ChangeAnimation("Mon_RunLeft");
 
-	DebugOn();
 }
 
 WhiteCircle::~WhiteCircle()
@@ -45,11 +45,6 @@ void WhiteCircle::BeginPlay()
 {
 
 }
-
-//void WhiteCircle::SetColImage(std::string_view _ColImageName)
-//{
-//	ColImage = AMapActor::SetMapImage(_ColImageName);
-//}
 
 void WhiteCircle::Tick(float _DeltaTime)
 {
@@ -74,7 +69,7 @@ void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
 	{
 		// 픽셀충돌에서 제일 중요한건 애초에 박히지 않는것이다.
 		FVector2D MonsterScale = MonsterRenderer->GetTransform().Scale;
-		FVector2D NextPos = GetActorLocation() + _MovePos;
+		FVector2D NextPos = GetActorLocation()+ FVector2D{ 0, 22 } + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);

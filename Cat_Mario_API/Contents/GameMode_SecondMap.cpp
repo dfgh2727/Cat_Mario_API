@@ -25,7 +25,6 @@ void GameMode_SecondMap::BeginPlay()
 
 	{
 		SecondMap* NewActor = GetWorld()->SpawnActor<SecondMap>();
-
 	}
 }
 
