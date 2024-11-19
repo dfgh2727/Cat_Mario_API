@@ -36,5 +36,6 @@ private:
 	FVector2D GravityForce = FVector2D::ZERO;
 	bool IsGround = false;
 	FVector2D MoveDir = FVector2D::LEFT;
+	float PosOrN = -1.0f;
 	bool GoingLeft = true;
 };

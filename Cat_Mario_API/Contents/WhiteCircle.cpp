@@ -144,8 +144,8 @@ void WhiteCircle::TurnAround(FVector2D _MovePos)
 
 	if (nullptr != ColImage)
 	{
-		// 픽셀충돌에서 제일 중요한건 애초에 박히지 않는것이다.
-		FVector2D NextPos = MonsterPos + _MovePos;
+		// 미래의 몬스터 위치
+		FVector2D NextPos = MonsterPos + FVector2D{ 28.0f * PosOrN, 0.0 } + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);
@@ -153,24 +153,29 @@ void WhiteCircle::TurnAround(FVector2D _MovePos)
 		UColor Color = ColImage->GetColor(NextPos, UColor::WHITE);
 		if (Color == UColor::BLACK)
 		{
+			//왼쪽으로 가다가 픽셀 충돌할 시 오른쪽으로 방향 변경
 			if (MoveDir == FVector2D::LEFT)
 			{
 				MonsterRenderer->ChangeAnimation("Mon_RunRight");
 				MoveDir = FVector2D::RIGHT;
+				PosOrN = 1.0f;
 			}
+			//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
 			else
 			{
 				MonsterRenderer->ChangeAnimation("Mon_RunLeft");
 				MoveDir = FVector2D::LEFT;
+				PosOrN = -1.0f;
 			}
 			
 		}
 
 	}
-
+	//몬스터가 맵의 왼쪽 끝에 닿을 경우 방향 변경
 	if (MonsterPos.X <= 0.0)
 	{
 		MonsterRenderer->ChangeAnimation("Mon_RunRight");
 		MoveDir = FVector2D::RIGHT;
+		PosOrN = 1.0f;
 	}
 }
