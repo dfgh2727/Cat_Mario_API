@@ -21,6 +21,8 @@ public:
 
 	void DeathCounter();
 
+	int Count;
+
 protected:
 
 private:
