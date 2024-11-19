@@ -30,10 +30,11 @@ protected:
 private:
 	class USpriteRenderer* MonsterRenderer;
 	U2DCollision* MonsterBody;
+	bool IsGround = false;
 
 	void Move(float _DeltaTime);
+	
 	FVector2D GravityForce = FVector2D::ZERO;
-	bool IsGround = false;
 	FVector2D MoveDir = FVector2D::LEFT;
 	float PosOrN = -1.0f;
 };
