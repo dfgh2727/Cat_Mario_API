@@ -63,6 +63,10 @@ void WhiteCircle::Move(float _DeltaTime)
 	}
 	Gravity(_DeltaTime);
 
+	FVector2D MonsterPos = this->GetActorLocation();
+
+	TurnAround(MoveDir);
+	AddActorLocation(MoveDir * 50.0f);
 }
 
 void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
@@ -134,16 +138,9 @@ void WhiteCircle::IsKilled(float _DeltaTime)
 	}
 }
 
-void WhiteCircle::TurnAround(float _DeltaTime)
+void WhiteCircle::TurnAround(FVector2D _MovePos)
 {
 	FVector2D MonsterPos = this->GetActorLocation();
-
-	if (MonsterPos.X <= 0.0)
-	{
-		MonsterRenderer->ChangeAnimation("Mon_RunRight");
-		AddActorLocation(FVector2D::LEFT * _DeltaTime * 50.0f);
-	}
-
 
 	if (nullptr != ColImage)
 	{
@@ -156,8 +153,22 @@ void WhiteCircle::TurnAround(float _DeltaTime)
 		UColor Color = ColImage->GetColor(NextPos, UColor::WHITE);
 		if (Color == UColor::BLACK)
 		{
+			if (MoveDir == FVector2D::LEFT)
+			{
+				MoveDir = FVector2D::RIGHT;
+			}
+			else
+			{
+				MoveDir = FVector2D::LEFT;
+			}
 			
 		}
 
+	}
+
+	if (MonsterPos.X <= 0.0)
+	{
+		MonsterRenderer->ChangeAnimation("Mon_RunRight");
+		MoveDir = FVector2D::RIGHT;
 	}
 }

@@ -23,17 +23,18 @@ public:
 	void Gravity(float _DeltaTime);
 	bool OnTheBlock(float _DeltaTime);
 	void IsKilled(float _DeltaTime);
-	void TurnAround(float _DeltaTime);
+	void TurnAround(FVector2D _MovePos);
+	void MonDir();
 
 protected:
 
 private:
+	class USpriteRenderer* MonsterRenderer;
+	U2DCollision* MonsterBody;
 
 	void Move(float _DeltaTime);
 	FVector2D GravityForce = FVector2D::ZERO;
 	bool IsGround = false;
-
-	class USpriteRenderer* MonsterRenderer;
-	U2DCollision* MonsterBody;
-
+	FVector2D MoveDir = FVector2D::LEFT;
+	bool GoingLeft = true;
 };
