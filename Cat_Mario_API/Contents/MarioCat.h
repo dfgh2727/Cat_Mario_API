@@ -63,9 +63,6 @@ private:
 
 	void ChangeState(PlayerState _CurPlayerState);
 
-	//UEngineWinImage* MapImage;
-	//UEngineWinImage* ColImage;
-
 	class USpriteRenderer* CatRenderer;
 	U2DCollision* CollisionHead;
 	U2DCollision* CollisionBody;
