@@ -26,7 +26,7 @@ WhiteCircle::WhiteCircle()
 	{
 		MonsterBody = CreateDefaultSubObject<U2DCollision>();
 		MonsterBody->SetComponentScale({ 55, 53 });
-		MonsterBody->SetCollisionGroup(ECollisionGroup::SquareBlock);
+		MonsterBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
 		MonsterBody->SetCollisionType(ECollisionType::Rect);
 	}
 
@@ -50,8 +50,8 @@ void WhiteCircle::BeginPlay()
 void WhiteCircle::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
-
 	Move(_DeltaTime);
+	IsKilled(_DeltaTime);
 }
 
 void WhiteCircle::Move(float _DeltaTime)
@@ -122,4 +122,13 @@ bool WhiteCircle::OnTheBlock(float _DeltaTime)
 	bool IsOnTheBlock = MonsterBody
 		->Collision(static_cast<int>(ECollisionGroup::SquareBlock), SteppingBlock, GravityForce * _DeltaTime, 100);
 	return IsOnTheBlock;
+}
+
+void WhiteCircle::IsKilled(float _DeltaTime)
+{
+	AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::PlayerFoot);
+	if (nullptr != Result)
+	{
+		this->Destroy();
+	}
 }
