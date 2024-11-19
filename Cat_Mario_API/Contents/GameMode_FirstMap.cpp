@@ -12,9 +12,6 @@
 #include "BNormalBlock.h"
 #include "WhiteCircle.h"
 
-//#include "BParticleA.h"
-
-
 
 GameMode_FirstMap::GameMode_FirstMap()
 {
