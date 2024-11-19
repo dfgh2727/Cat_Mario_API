@@ -45,7 +45,7 @@ public:
 	void YouDied(float _DeltaTime);
 	/*void IsCatAlive(float _DeltaTime);*/
 
-	/*void DirCheck();*/
+	void DirCheck();
 
 	bool IsCatDead = false;
 
@@ -78,7 +78,7 @@ private:
 	float MinSpeed = 0.05f;
 	
 
-	/*std::string DirString = "Right";*/
+	std::string DirString = "Right";
 
 	FVector2D JumpPower = FVector2D(0.0f, -750.0f);
 	FVector2D PrevPos = FVector2D::ZERO;

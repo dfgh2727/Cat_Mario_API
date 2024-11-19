@@ -23,18 +23,5 @@ void AMapActor::SetColImage(std::string_view _ColImageName)
 	return;
 }
 
-void AMapActor::DirCheck()
-{
 
-	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
-	{
-		DirString = "Right";
-	}
-
-	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
-	{
-		DirString = "Left";
-	}
-
-}
 

@@ -85,20 +85,20 @@ void MarioCat::BeginPlay()
 
 }
 
-//void MarioCat::DirCheck()
-//{
-//
-//	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
-//	{
-//		DirString = "Right";
-//	}
-//
-//	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
-//	{
-//		DirString = "Left";
-//	}
-//
-//}
+void MarioCat::DirCheck()
+{
+
+	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
+	{
+		DirString = "Right";
+	}
+
+	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
+	{
+		DirString = "Left";
+	}
+
+}
 
 void MarioCat::DontOverlap(float _DeltaTime)
 {
