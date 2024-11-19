@@ -33,9 +33,6 @@ public:
 	void LevelChangeStart();
 	void LevelChangeEnd();
 
-	/*void SetMapImage(std::string_view _MapImageName);
-	void SetColImage(std::string_view _ColImageName);*/
-
 	void Gravity(float _DeltaTime);
 
 	void PlayerGroundCheck(FVector2D _MovePos);
@@ -47,7 +44,6 @@ public:
 	/*void CatIsKilled(float _DeltaTime);*/
 	void YouDied(float _DeltaTime);
 	void IsCatAlive(float _DeltaTime);
-
 
 	void DirCheck();
 

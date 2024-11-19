@@ -42,14 +42,14 @@ MarioCat::MarioCat()
 
 		{
 			CollisionFoot = CreateDefaultSubObject<U2DCollision>();
-			CollisionFoot->SetComponentScale({ 34, 8 });
+			CollisionFoot->SetComponentScale({ 34, 4 });
 			CollisionFoot->SetCollisionGroup(ECollisionGroup::PlayerFoot);
 			CollisionFoot->SetCollisionType(ECollisionType::Rect);
 			CollisionFoot->SetComponentLocation(FVector2D{ 0, 29 });
 		}
 		{
 			CollisionBody = CreateDefaultSubObject<U2DCollision>();
-			CollisionBody->SetComponentScale({ 55, 55 });
+			CollisionBody->SetComponentScale({ 50, 55 });
 			CollisionBody->SetCollisionGroup(ECollisionGroup::PlayerBody);
 			CollisionBody->SetCollisionType(ECollisionType::Rect);
 		}
@@ -113,7 +113,8 @@ void MarioCat::DirCheck()
 void MarioCat::DontOverlap(float _DeltaTime)
 {
 	//픽셀 충돌시 겹치지 않게 이동시키는 함수
-
+	if (nullptr != ColImage)
+	{
 	while (true)
 	{
 		UColor Color = ColImage->GetColor(GetActorLocation() + FVector2D{ 0, 29 }, UColor::WHITE);
@@ -150,6 +151,7 @@ void MarioCat::DontOverlap(float _DeltaTime)
 		{
 			break;
 		}
+	}
 	}
 }
 
@@ -314,7 +316,6 @@ void MarioCat::MainCamera()
 		// 맵 아래로 떨어지면 죽는다
 		if (MapScale.Y <= CatPos.Y)
 		{
-			ChangeState(PlayerState::Dead);
 			IsCatDead = true;
 		}
 
@@ -501,6 +502,7 @@ void MarioCat::YouDied(float _DeltaTime)
 {
 	CatRenderer->ChangeAnimation("Cat_IsDead" + DirString);
 	FVector2D DeathMotion = /*JumpPower * 0.5f +*/ GravityForce * _DeltaTime;
+	ColImage = nullptr;
 	AddActorLocation(DeathMotion);
 }
 
