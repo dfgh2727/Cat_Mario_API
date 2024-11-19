@@ -24,7 +24,6 @@ public:
 	bool OnTheBlock(float _DeltaTime);
 	void IsKilled(float _DeltaTime);
 	void TurnAround(FVector2D _MovePos);
-	void MonDir();
 
 protected:
 
@@ -37,5 +36,4 @@ private:
 	bool IsGround = false;
 	FVector2D MoveDir = FVector2D::LEFT;
 	float PosOrN = -1.0f;
-	bool GoingLeft = true;
 };
