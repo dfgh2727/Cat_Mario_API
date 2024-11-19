@@ -80,7 +80,7 @@ void CatMarioGame::BeginPlay()
 	UEngineAPICore::GetCore()->GetMainWindow().SetWindowPosAndScale({ 0, 0 }, { 960, 840 });
 
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_Title, AActor >("Title");
-	UEngineAPICore::GetCore()->CreateLevel< GameMode_FirstMap,MarioCat >("Play_FirstMap");
+	UEngineAPICore::GetCore()->CreateLevel< GameMode_FirstMap, MarioCat >("Play_FirstMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_SecondMap, MarioCat >("Play_SecondMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_ThirdMap, MarioCat >("Play_ThirdMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_FourthMap, MarioCat >("Play_FourthMap");
@@ -89,7 +89,6 @@ void CatMarioGame::BeginPlay()
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_SeventhMap, MarioCat >("Play_SeventhMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_EighthMap, MarioCat >("Play_EighthMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_DeathCount,AActor >("DeathCount");
-
 
 	UEngineAPICore::GetCore()->OpenLevel("Title");
 }
