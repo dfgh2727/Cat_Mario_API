@@ -66,7 +66,7 @@ void WhiteCircle::Move(float _DeltaTime)
 	FVector2D MonsterPos = this->GetActorLocation();
 
 	TurnAround(MoveDir);
-	AddActorLocation(MoveDir * 0.05f);
+	AddActorLocation(MoveDir * 0.08f);
 }
 
 void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
