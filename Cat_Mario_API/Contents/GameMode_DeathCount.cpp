@@ -22,7 +22,7 @@ GameMode_DeathCount::~GameMode_DeathCount()
 
 void GameMode_DeathCount::BeginPlay()
 {
-	
+	DeathCounter();
 
 	{
 		DeathCount* NewActor = GetWorld()->SpawnActor<DeathCount>();
@@ -36,8 +36,13 @@ void GameMode_DeathCount::BeginPlay()
 		NewActor->SetTextSpriteName("CMnum.PNG");
 		NewActor->SetOrder(ERenderOrder::UI);
 		NewActor->SetTextScale({ 128, 128 });
-		NewActor->SetValue(0);
+		NewActor->SetValue(/*Number*/10);
 		// 0까지는 바로 렌더 됨... 음수는 처리한 후에 넣어야 함
+	}
+
+	if (NumberIsNegative == true)
+	{
+
 	}
 
 }
@@ -55,6 +60,13 @@ void GameMode_DeathCount::Tick(float _DeltaTime)
 
 void GameMode_DeathCount::DeathCounter()
 {
+	Number = 2 - Count;
+
+	if (Number < 0)
+	{
+		Number = Number * (-1);
+		NumberIsNegative = true;
+	}
 	
 }
 

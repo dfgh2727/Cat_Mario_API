@@ -21,11 +21,12 @@ public:
 
 	void DeathCounter();
 
-	int Count;
+	int Count = 0;
 
 protected:
 
 private:
-
+	int Number = 2;
+	bool NumberIsNegative = false;
 };
 

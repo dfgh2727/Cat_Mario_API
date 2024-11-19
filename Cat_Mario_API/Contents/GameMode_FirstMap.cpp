@@ -13,6 +13,8 @@
 #include "WhiteCircle.h"
 #include "MapActor.h"
 
+#include "GameMode_DeathCount.h"
+
 
 
 GameMode_FirstMap::GameMode_FirstMap()
@@ -74,8 +76,13 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 void GameMode_FirstMap::ReStart(float _DeltaTime)
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	GameMode_DeathCount* Counter = GetWorld()->GetGameMode<GameMode_DeathCount>();
+
 	if (true == Player->IsCatDead)
 	{
+		UEngineAPICore::GetCore()->OpenLevel("DeathCount");
+		Counter->Count;
+		
 		UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_FirstMap");
 		UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");
 	}
