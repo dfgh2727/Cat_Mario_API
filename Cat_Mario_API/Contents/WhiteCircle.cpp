@@ -62,6 +62,7 @@ void WhiteCircle::Move(float _DeltaTime)
 		IsGround = true;
 	}
 	Gravity(_DeltaTime);
+
 }
 
 void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
@@ -130,5 +131,33 @@ void WhiteCircle::IsKilled(float _DeltaTime)
 	if (nullptr != Result)
 	{
 		this->Destroy();
+	}
+}
+
+void WhiteCircle::TurnAround(float _DeltaTime)
+{
+	FVector2D MonsterPos = this->GetActorLocation();
+
+	if (MonsterPos.X <= 0.0)
+	{
+		MonsterRenderer->ChangeAnimation("Mon_RunRight");
+		AddActorLocation(FVector2D::LEFT * _DeltaTime * 50.0f);
+	}
+
+
+	if (nullptr != ColImage)
+	{
+		// 픽셀충돌에서 제일 중요한건 애초에 박히지 않는것이다.
+		FVector2D NextPos = MonsterPos + _MovePos;
+
+		NextPos.X = floorf(NextPos.X);
+		NextPos.Y = floorf(NextPos.Y);
+
+		UColor Color = ColImage->GetColor(NextPos, UColor::WHITE);
+		if (Color == UColor::BLACK)
+		{
+			
+		}
+
 	}
 }

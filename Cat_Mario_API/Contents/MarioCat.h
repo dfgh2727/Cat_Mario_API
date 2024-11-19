@@ -41,11 +41,13 @@ public:
 	void HitTheBlock(float _DeltaTime);
 	bool CatOnTheBlock(float _DeltaTime);
 
-	/*void CatIsKilled(float _DeltaTime);*/
+	void CatIsKilled(float _DeltaTime);
 	void YouDied(float _DeltaTime);
-	void IsCatAlive(float _DeltaTime);
+	/*void IsCatAlive(float _DeltaTime);*/
 
-	void DirCheck();
+	/*void DirCheck();*/
+
+	bool IsCatDead = false;
 
 protected:
 
@@ -75,9 +77,8 @@ private:
 	float MaxSpeed = 1000.0f;
 	float MinSpeed = 0.05f;
 	
-	bool IsCatDead = false;
 
-	std::string DirString = "Right";
+	/*std::string DirString = "Right";*/
 
 	FVector2D JumpPower = FVector2D(0.0f, -750.0f);
 	FVector2D PrevPos = FVector2D::ZERO;

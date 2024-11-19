@@ -85,35 +85,25 @@ void MarioCat::BeginPlay()
 
 }
 
-//void MarioCat::SetMapImage(std::string_view _MapImageName)
+//void MarioCat::DirCheck()
 //{
-//	MapImage = AMapActor::SetMapImage(_MapImageName);
-//}
 //
-//void MarioCat::SetColImage(std::string_view _ColImageName)
-//{
-//	ColImage = AMapActor::SetMapImage(_ColImageName);
+//	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
+//	{
+//		DirString = "Right";
+//	}
+//
+//	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
+//	{
+//		DirString = "Left";
+//	}
+//
 //}
-
-void MarioCat::DirCheck()
-{
-
-	if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
-	{
-		DirString = "Right";
-	}
-
-	if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
-	{
-		DirString = "Left";
-	}
-
-}
 
 void MarioCat::DontOverlap(float _DeltaTime)
 {
 	//픽셀 충돌시 겹치지 않게 이동시키는 함수
-	if (nullptr != ColImage)
+	/*if (nullptr != ColImage)*/
 	{
 	while (true)
 	{
@@ -242,7 +232,7 @@ void MarioCat::Tick(float _DeltaTime)
 	DirCheck();
 	DontOverlap(_DeltaTime);
 	HitTheBlock(_DeltaTime);
-	IsCatAlive(_DeltaTime);
+	CatIsKilled(_DeltaTime);
 
 }
 
@@ -316,7 +306,7 @@ void MarioCat::MainCamera()
 		// 맵 아래로 떨어지면 죽는다
 		if (MapScale.Y <= CatPos.Y)
 		{
-			IsCatDead = true;
+			ChangeState(PlayerState::Dead);
 		}
 
 		SetActorLocation(CatPos);
@@ -484,26 +474,28 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 	}
 
 }
-//void MarioCat::CatIsKilled(float _DeltaTime)
-//{
-//}
 
-void MarioCat::IsCatAlive(float _DeltaTime)
+void MarioCat::CatIsKilled(float _DeltaTime)
 {
 	AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::MonsterBody);
 	if (nullptr != Result)
 	{
 		ChangeState(PlayerState::Dead);
-		IsCatDead = true;
 	}
 }
+
+//void MarioCat::IsCatAlive(float _DeltaTime)
+//{
+//	
+//}
 
 void MarioCat::YouDied(float _DeltaTime)
 {
 	CatRenderer->ChangeAnimation("Cat_IsDead" + DirString);
-	FVector2D DeathMotion = /*JumpPower * 0.5f +*/ GravityForce * _DeltaTime;
-	ColImage = nullptr;
+	FVector2D DeathMotion = GravityForce * _DeltaTime;
+	/*ColImage = nullptr;*/
 	AddActorLocation(DeathMotion);
+	IsCatDead = true;
 }
 
 

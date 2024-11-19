@@ -1,3 +1,4 @@
+#include "PreCompile.h"
 #pragma once
 
 #include <EngineCore/Actor.h>
@@ -18,6 +19,10 @@ public:
 
 	void SetColImage(std::string_view _ColImageName);
 	void SetMapImage(std::string_view _MapImageName);
+
+	void DirCheck();
+
+	std::string DirString = "Right";
 
 protected:
 	UEngineWinImage* ColImage = nullptr;

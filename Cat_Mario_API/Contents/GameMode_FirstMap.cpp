@@ -61,6 +61,8 @@ void GameMode_FirstMap::BeginPlay()
 void GameMode_FirstMap::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+	ReStart(_DeltaTime);
+
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -69,4 +71,13 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 
 }
 
+void GameMode_FirstMap::ReStart(float _DeltaTime)
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	if (true == Player->IsCatDead)
+	{
+		UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_FirstMap");
+		UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");
+	}
+}
 
