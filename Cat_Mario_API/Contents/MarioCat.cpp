@@ -64,7 +64,6 @@ MarioCat::MarioCat()
 		CatRenderer->ChangeAnimation("Cat_StandRight");
 
 	}
-
 		DebugOn();    
 }
 
@@ -82,6 +81,16 @@ void MarioCat::BeginPlay()
 
 	/*BGMPlayer = UEngineSound::Play("Field.MP3");*/
 
+}
+
+void MarioCat::SetMapImage(std::string_view _MapImageName)
+{
+	MapImage = AMapActor::SetMapImage(_MapImageName);
+}
+
+void MarioCat::SetColImage(std::string_view _ColImageName)
+{
+	ColImage = AMapActor::SetMapImage(_ColImageName);
 }
 
 void MarioCat::DirCheck()
@@ -468,15 +477,6 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 
 }
 
-void MarioCat::SetMapImage(std::string_view _MapImageName)
-{
-	MapImage = AMapActor::SetMapImage(_MapImageName);
-}
-
-void MarioCat::SetColImage(std::string_view _ColImageName)
-{
-	ColImage = UImageManager::GetInst().FindImage(_ColImageName);
-}
 
 void MarioCat::LevelChangeStart()
 {

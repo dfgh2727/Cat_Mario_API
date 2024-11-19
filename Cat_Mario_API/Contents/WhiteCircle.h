@@ -3,7 +3,7 @@
 #include <EngineCore/2DCollision.h>
 
 // Ό³Έν :
-class WhiteCircle : public AActor
+class WhiteCircle : public AMapActor
 {
 public:
 	// constrcuter destructer

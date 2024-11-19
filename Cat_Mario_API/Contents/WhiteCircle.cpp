@@ -46,6 +46,11 @@ void WhiteCircle::BeginPlay()
 
 }
 
+void WhiteCircle::SetColImage(std::string_view _ColImageName)
+{
+	ColImage = AMapActor::SetMapImage(_ColImageName);
+}
+
 void WhiteCircle::Tick(float _DeltaTime)
 {
 	Move(_DeltaTime);
@@ -119,9 +124,4 @@ bool WhiteCircle::OnTheBlock(float _DeltaTime)
 	bool IsOnTheBlock = MonsterBody
 		->Collision(static_cast<int>(ECollisionGroup::SquareBlock), SteppingBlock, GravityForce * _DeltaTime, 100);
 	return IsOnTheBlock;
-}
-
-void WhiteCircle::SetColImage(std::string_view _ColImageName)
-{
-	ColImage = UImageManager::GetInst().FindImage(_ColImageName);
 }
