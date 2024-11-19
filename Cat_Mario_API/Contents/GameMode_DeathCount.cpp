@@ -53,5 +53,9 @@ void GameMode_DeathCount::Tick(float _DeltaTime)
 
 }
 
+void GameMode_DeathCount::DeathCounter()
+{
+
+}
 
 

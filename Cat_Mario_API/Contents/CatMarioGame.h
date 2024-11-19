@@ -19,7 +19,6 @@ public:
 protected:
 	void BeginPlay() override;
 	void Tick() override;
- 
 
 private:
 	ULevel* TitleLevel;
