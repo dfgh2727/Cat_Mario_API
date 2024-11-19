@@ -83,15 +83,15 @@ void MarioCat::BeginPlay()
 
 }
 
-void MarioCat::SetMapImage(std::string_view _MapImageName)
-{
-	MapImage = AMapActor::SetMapImage(_MapImageName);
-}
-
-void MarioCat::SetColImage(std::string_view _ColImageName)
-{
-	ColImage = AMapActor::SetMapImage(_ColImageName);
-}
+//void MarioCat::SetMapImage(std::string_view _MapImageName)
+//{
+//	MapImage = AMapActor::SetMapImage(_MapImageName);
+//}
+//
+//void MarioCat::SetColImage(std::string_view _ColImageName)
+//{
+//	ColImage = AMapActor::SetMapImage(_ColImageName);
+//}
 
 void MarioCat::DirCheck()
 {

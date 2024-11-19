@@ -32,8 +32,8 @@ public:
 	void LevelChangeStart();
 	void LevelChangeEnd();
 
-	void SetMapImage(std::string_view _MapImageName);
-	void SetColImage(std::string_view _ColImageName);
+	/*void SetMapImage(std::string_view _MapImageName);
+	void SetColImage(std::string_view _ColImageName);*/
 
 	void Gravity(float _DeltaTime);
 
@@ -63,8 +63,8 @@ private:
 
 	void ChangeState(PlayerState _CurPlayerState);
 
-	UEngineWinImage* MapImage;
-	UEngineWinImage* ColImage;
+	//UEngineWinImage* MapImage;
+	//UEngineWinImage* ColImage;
 
 	class USpriteRenderer* CatRenderer;
 	U2DCollision* CollisionHead;

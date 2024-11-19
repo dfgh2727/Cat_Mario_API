@@ -46,10 +46,10 @@ void WhiteCircle::BeginPlay()
 
 }
 
-void WhiteCircle::SetColImage(std::string_view _ColImageName)
-{
-	ColImage = AMapActor::SetMapImage(_ColImageName);
-}
+//void WhiteCircle::SetColImage(std::string_view _ColImageName)
+//{
+//	ColImage = AMapActor::SetMapImage(_ColImageName);
+//}
 
 void WhiteCircle::Tick(float _DeltaTime)
 {

@@ -10,15 +10,15 @@ AMapActor::~AMapActor()
 {
 }
 
-UEngineWinImage* AMapActor::SetMapImage(std::string_view _MapImageName)
+void AMapActor::SetMapImage(std::string_view _MapImageName)
 {
-	UEngineWinImage* MapImage = UImageManager::GetInst().FindImage(_MapImageName);
-	return MapImage;
+	this->MapImage = UImageManager::GetInst().FindImage(_MapImageName);
+	return ;
 }
 
-UEngineWinImage* AMapActor::SetColImage(std::string_view _ColImageName)
+void AMapActor::SetColImage(std::string_view _ColImageName)
 {
-	UEngineWinImage* ColImage = UImageManager::GetInst().FindImage(_ColImageName);
-	return ColImage;
+	this->ColImage = UImageManager::GetInst().FindImage(_ColImageName);
+	return;
 }
 
