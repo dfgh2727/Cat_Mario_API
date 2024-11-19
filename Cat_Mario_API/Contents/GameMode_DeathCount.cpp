@@ -36,7 +36,7 @@ void GameMode_DeathCount::BeginPlay()
 		NewActor->SetTextSpriteName("CMnum.PNG");
 		NewActor->SetOrder(ERenderOrder::UI);
 		NewActor->SetTextScale({ 128, 128 });
-		NewActor->SetValue(/*Number*/10);
+		NewActor->SetValue(/*Number*/11);
 		// 0까지는 바로 렌더 됨... 음수는 처리한 후에 넣어야 함
 	}
 
