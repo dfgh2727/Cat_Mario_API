@@ -11,6 +11,8 @@
 #include "GoingUpBlock.h"
 #include "BNormalBlock.h"
 #include "WhiteCircle.h"
+#include "MapActor.h"
+
 
 
 GameMode_FirstMap::GameMode_FirstMap()
@@ -23,10 +25,9 @@ GameMode_FirstMap::~GameMode_FirstMap()
 
 void GameMode_FirstMap::BeginPlay()
 {
-	Player = GetWorld()->GetPawn<MarioCat>();
+	AMapActor* Player = GetWorld()->GetPawn<AMapActor>();
 	Player->SetMapImage("1stMap.png");
 	Player->SetColImage("1stColMap.png");
-
 	
 	FirstMap* NewActor = GetWorld()->SpawnActor<FirstMap>();
 

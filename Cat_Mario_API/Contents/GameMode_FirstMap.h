@@ -21,6 +21,6 @@ public:
 protected:
 
 private:
-	MarioCat* Player;
+	
 };
 
