@@ -22,6 +22,8 @@
 #include "MapActor.h"
 #include "Enum.h"
 
+bool TouchFlag = false;
+
 MarioCat::MarioCat()
 {
 	/*SetActorLocation({ 300, 700 });*/

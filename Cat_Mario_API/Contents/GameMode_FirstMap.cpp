@@ -12,6 +12,7 @@
 #include "BNormalBlock.h"
 #include "WhiteCircle.h"
 #include "MapActor.h"
+#include "Flag.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -27,10 +28,20 @@ GameMode_FirstMap::~GameMode_FirstMap()
 
 void GameMode_FirstMap::BeginPlay()
 {
+	FVector2D FlagPos = { 959, 443 };
+	
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	Player->SetMapImage("1stMap.png");
 	Player->SetColImage("1stColMap.png");
-	Player->SetActorLocation({ 300, 700 });
+
+	if (MarioCat::TouchFlag == false)
+	{
+		SetActorLocation({ 300, 700 });
+	}
+	else
+	{
+		SetActorLocation(FlagPos);
+	}
 	
 	FirstMap* NewActor = GetWorld()->SpawnActor<FirstMap>();
 
@@ -59,13 +70,19 @@ void GameMode_FirstMap::BeginPlay()
 		NewActor->SetActorLocation({ 450, 700 });
 		NewActor->SetColImage("1stColMap.png");
 	}
+
+	if(MarioCat::TouchFlag == false)
+	{
+		MiddlePointFlag = GetWorld()->SpawnActor<Flag>();
+		MiddlePointFlag->SetActorLocation(FlagPos);
+	}
 }
 
 void GameMode_FirstMap::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 	ReStart(_DeltaTime);
-
+	IsFlagGone();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -89,3 +106,10 @@ void GameMode_FirstMap::ReStart(float _DeltaTime)
 	}
 }
 
+void GameMode_FirstMap::IsFlagGone()
+{
+	if (MiddlePointFlag = nullptr)
+	{
+		MarioCat::TouchFlag = true;
+	}
+}

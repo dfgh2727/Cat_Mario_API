@@ -19,9 +19,13 @@ public:
 	void Tick(float _DeltaTime) override;
 	void ReStart(float _DeltaTime);
 
+	void IsFlagGone();
+
 protected:
 
 private:
+
+	class Flag* MiddlePointFlag = nullptr;
 	
 };
 

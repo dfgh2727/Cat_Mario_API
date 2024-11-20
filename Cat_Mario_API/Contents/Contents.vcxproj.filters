@@ -92,6 +92,9 @@
     <ClCompile Include="MapActor.cpp">
       <Filter>InterActive Things</Filter>
     </ClCompile>
+    <ClCompile Include="Flag.cpp">
+      <Filter>InterActive Things</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -183,6 +186,9 @@
       <Filter>InterActive Things\Monster</Filter>
     </ClInclude>
     <ClInclude Include="MapActor.h">
+      <Filter>InterActive Things</Filter>
+    </ClInclude>
+    <ClInclude Include="Flag.h">
       <Filter>InterActive Things</Filter>
     </ClInclude>
   </ItemGroup>

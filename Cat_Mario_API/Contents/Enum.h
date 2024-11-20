@@ -18,4 +18,5 @@ enum class ECollisionGroup
 	PlayerFoot,
 	MonsterBody,
 	SquareBlock,
+	Prop,
 };

@@ -49,6 +49,8 @@ public:
 
 	bool IsCatDead = false;
 
+	static bool TouchFlag;
+
 protected:
 
 private:
