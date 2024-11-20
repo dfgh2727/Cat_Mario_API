@@ -77,13 +77,11 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 void GameMode_FirstMap::ReStart(float _DeltaTime)
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-	GameMode_DeathCount* Counter = GetWorld()->GetGameMode<GameMode_DeathCount>();
 
 	if (true == Player->IsCatDead)
 	{
-		int Number = Counter->Count;
-		Number++;
-		Counter->Count = Number;
+		--GameMode_DeathCount::Number;
+
 		UEngineAPICore::GetCore()->OpenLevel("DeathCount");
 		
 		/*UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_FirstMap");

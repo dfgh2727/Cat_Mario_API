@@ -11,6 +11,7 @@
 #include "Enum.h"
 
 
+int GameMode_DeathCount::Number = 2;
 
 GameMode_DeathCount::GameMode_DeathCount()
 {
@@ -24,28 +25,21 @@ void GameMode_DeathCount::BeginPlay()
 {
 	Super::BeginPlay();
 
-	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-	Player->SetMapImage("DeathCount.png");
-	Player->SetColImage("DeathCount.png");
-
-	DeathCounter();
-
 	{
 		DeathCount* NewActor = GetWorld()->SpawnActor<DeathCount>();
 	}
 
 	{
-		CountDown* NewActor = GetWorld()->SpawnActor<CountDown>();
+		Counter = GetWorld()->SpawnActor<CountDown>();
 		if (NumberIsNegative == true)
 		{
-			NewActor->ShowMinus();
+			Counter->ShowMinus();
 		}
-		NewActor->SetActorLocation({540, 420});
-		NewActor->SetTextSpriteName("CMnum.PNG");
-		NewActor->SetOrder(ERenderOrder::UI);
-		NewActor->SetTextScale({ 25, 50 });
-		NewActor->SetValue(Number);
-		// 0까지는 바로 렌더 됨... 음수는 처리한 후에 넣어야 함
+		Counter->SetActorLocation({540, 420});
+		Counter->SetTextSpriteName("CMnum.PNG");
+		Counter->SetOrder(ERenderOrder::UI);
+		Counter->SetTextScale({ 25, 50 });
+		Counter->SetValue(Number);
 	}
 
 
@@ -54,6 +48,8 @@ void GameMode_DeathCount::BeginPlay()
 void GameMode_DeathCount::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+	
+	DeathCounter();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -64,13 +60,9 @@ void GameMode_DeathCount::Tick(float _DeltaTime)
 
 void GameMode_DeathCount::DeathCounter()
 {
-	Number = 2 - Count;
+	/*--Number;*/
 
-	if (Number < 0)
-	{
-		Number *= (-1);
-		NumberIsNegative = true;
-	}	
+	Counter->SetValue(Number);
 }
 
 

@@ -30,7 +30,7 @@ void BParticleA::Tick(float _DeltaTime)
 
 void BParticleA::FallApart(float _DeltaTime)
 {
-	FVector2D MoveVec = { -0.1f, /*(- 5.0f + */0.2f /** _DeltaTime)*/};
+	FVector2D MoveVec = { -0.1f, 0.2f};
 	AddActorLocation(MoveVec);
 }
 

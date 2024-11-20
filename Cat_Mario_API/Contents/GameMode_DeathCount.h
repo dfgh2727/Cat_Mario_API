@@ -1,5 +1,6 @@
 #pragma once
 #include <EngineCore/GameMode.h>
+#include "CountDown.h"
 
 // Ό³Έν :
 class GameMode_DeathCount : public AGameMode
@@ -20,13 +21,12 @@ public:
 	void Tick(float _DeltaTime) override;
 
 	void DeathCounter();
-
-	int Count = 0;
+	static int Number;
 
 protected:
 
 private:
-	int Number = 2;
+	CountDown* Counter;
 	bool NumberIsNegative = false;
 };
 
