@@ -37,6 +37,8 @@ public:
 
 	void SetValue(int _Score);
 
+	void ShowMinus();
+
 
 protected:
 
@@ -47,6 +49,7 @@ private:
 
 	std::string TextSpriteName;
 	FVector2D TextScale;
+	class USpriteRenderer* MinusRenderer;
 	std::vector<class USpriteRenderer*> NumRenderer;
 
 };

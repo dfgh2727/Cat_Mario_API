@@ -1,6 +1,7 @@
 #include "PreCompile.h"
 
 #include "CountDown.h"
+#include "Enum.h"
 
 CountDown::CountDown()
 {
@@ -73,5 +74,12 @@ void CountDown::SetValue(int _Score)
 		NumRenderer[i]->SetActive(false);
 	}
 
+}
+
+void CountDown::ShowMinus()
+{
+	MinusRenderer->SetSprite("CMnumMinus.png");
+	MinusRenderer->SetOrder(ERenderOrder::UI);
+	MinusRenderer->SetComponentScale({ 25, 50 });
 }
 

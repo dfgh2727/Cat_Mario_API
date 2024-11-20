@@ -80,9 +80,9 @@ void GameMode_FirstMap::ReStart(float _DeltaTime)
 
 	if (true == Player->IsCatDead)
 	{
-		UEngineAPICore::GetCore()->OpenLevel("DeathCount");
+		/*UEngineAPICore::GetCore()->OpenLevel("DeathCount");
 		Counter->Count;
-		
+		*/
 		UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_FirstMap");
 		UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");
 	}

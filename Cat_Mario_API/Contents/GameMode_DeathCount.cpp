@@ -32,17 +32,16 @@ void GameMode_DeathCount::BeginPlay()
 	{
 		CountDown* NewActor = GetWorld()->SpawnActor<CountDown>();
 
+		if (NumberIsNegative == true)
+		{
+			NewActor->ShowMinus();
+		}
 		NewActor->SetActorLocation({540, 420});
 		NewActor->SetTextSpriteName("CMnum.PNG");
 		NewActor->SetOrder(ERenderOrder::UI);
-		NewActor->SetTextScale({ 128, 128 });
-		NewActor->SetValue(/*Number*/11);
+		NewActor->SetTextScale({ 25, 50 });
+		NewActor->SetValue(Number);
 		// 0까지는 바로 렌더 됨... 음수는 처리한 후에 넣어야 함
-	}
-
-	if (NumberIsNegative == true)
-	{
-
 	}
 
 }
@@ -60,11 +59,11 @@ void GameMode_DeathCount::Tick(float _DeltaTime)
 
 void GameMode_DeathCount::DeathCounter()
 {
-	Number = 2 - Count;
+	Number = -3; /*2 - Count;*/
 
 	if (Number < 0)
 	{
-		Number = Number * (-1);
+		Number *= (-1);
 		NumberIsNegative = true;
 	}
 	
