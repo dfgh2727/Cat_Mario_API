@@ -49,11 +49,9 @@ public:
 
 	bool IsCatDead = false;
 
-	static bool TouchFlag;
+	/*static bool TouchFlag;*/
 
 	static FVector2D StartPos;
-
-
 
 protected:
 
