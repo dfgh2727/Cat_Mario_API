@@ -22,7 +22,9 @@
 #include "MapActor.h"
 #include "Enum.h"
 
-bool TouchFlag = false;
+bool MarioCat::TouchFlag = false;
+FVector2D MarioCat::StartPos = FVector2D::ZERO;
+
 
 MarioCat::MarioCat()
 {
@@ -502,13 +504,11 @@ void MarioCat::YouDied(float _DeltaTime)
 void MarioCat::LevelChangeStart()
 {
 	Super::LevelChangeStart();
+
+	SetActorLocation(StartPos);
 }
 
 void MarioCat::LevelChangeEnd()
 {
 	Super::LevelChangeEnd();
 }
-
-
-
-

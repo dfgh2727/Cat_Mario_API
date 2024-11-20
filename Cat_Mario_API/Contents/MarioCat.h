@@ -51,6 +51,10 @@ public:
 
 	static bool TouchFlag;
 
+	static FVector2D StartPos;
+
+
+
 protected:
 
 private:

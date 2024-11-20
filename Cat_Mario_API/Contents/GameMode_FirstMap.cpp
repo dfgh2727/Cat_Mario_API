@@ -28,22 +28,18 @@ GameMode_FirstMap::~GameMode_FirstMap()
 
 void GameMode_FirstMap::BeginPlay()
 {
-	FVector2D FlagPos = { 959, 443 };
+	FirstMap* NewActor = GetWorld()->SpawnActor<FirstMap>();
 	
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	Player->SetMapImage("1stMap.png");
 	Player->SetColImage("1stColMap.png");
 
-	if (MarioCat::TouchFlag == false)
+
+	if(MarioCat::TouchFlag == false)
 	{
-		SetActorLocation({ 300, 700 });
+		MiddlePointFlag = GetWorld()->SpawnActor<Flag>();
+		MiddlePointFlag->SetActorLocation({ 959, 443 });
 	}
-	else
-	{
-		SetActorLocation(FlagPos);
-	}
-	
-	FirstMap* NewActor = GetWorld()->SpawnActor<FirstMap>();
 
 	{
 		GoingUpBlock* NewActor = GetWorld()->SpawnActor<GoingUpBlock>();
@@ -71,11 +67,6 @@ void GameMode_FirstMap::BeginPlay()
 		NewActor->SetColImage("1stColMap.png");
 	}
 
-	if(MarioCat::TouchFlag == false)
-	{
-		MiddlePointFlag = GetWorld()->SpawnActor<Flag>();
-		MiddlePointFlag->SetActorLocation(FlagPos);
-	}
 }
 
 void GameMode_FirstMap::Tick(float _DeltaTime)
@@ -113,3 +104,17 @@ void GameMode_FirstMap::IsFlagGone()
 		MarioCat::TouchFlag = true;
 	}
 }
+
+void GameMode_FirstMap::LevelChangeStart()
+{
+	Super::LevelChangeStart();
+
+	static bool /*GameMode_FirstMap::*/Check = false;
+
+	if (Check == false)
+	{
+		MarioCat::StartPos = { 300, 700 };
+		Check = true;
+	}
+}
+

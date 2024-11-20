@@ -21,6 +21,8 @@ public:
 
 	void IsFlagGone();
 
+	void LevelChangeStart() override;
+
 protected:
 
 private:

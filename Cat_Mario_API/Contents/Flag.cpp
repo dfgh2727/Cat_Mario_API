@@ -7,6 +7,8 @@
 #include <EngineCore/EngineCoreDebug.h>
 #include <EngineCore/Level.h>
 
+#include "MarioCat.h"
+
 Flag::Flag()
 {
 	USpriteRenderer* FlagRenderer = CreateDefaultSubObject<USpriteRenderer>();
@@ -15,9 +17,9 @@ Flag::Flag()
 	FlagRenderer->SetComponentScale({ 79, 120 });
 
 	{
-		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent->SetComponentScale({ 65, 100 });
-		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
+		CollisionComponent->SetCollisionGroup(ECollisionGroup::Prop);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}
 		DebugOn();
@@ -39,6 +41,7 @@ void Flag::Tick(float _DeltaTime)
 	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerBody);
 	if (nullptr != Result)
 	{
+		MarioCat::StartPos = GetActorLocation();
 		this->Destroy();
 	}
 
