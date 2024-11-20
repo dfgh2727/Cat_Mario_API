@@ -35,12 +35,11 @@ void GameMode_FirstMap::BeginPlay()
 	Player->SetColImage("1stColMap.png");
 
 
-	if(MarioCat::TouchFlag == false)
+	/*if(MarioCat::TouchFlag == false)*/
 	{
-		MiddlePointFlag = GetWorld()->SpawnActor<Flag>();
+		Flag* MiddlePointFlag = GetWorld()->SpawnActor<Flag>();
 		MiddlePointFlag->SetActorLocation({ 959, 443 });
 	}
-
 	{
 		GoingUpBlock* NewActor = GetWorld()->SpawnActor<GoingUpBlock>();
 		NewActor->SetActorLocation({ 494, 528 });
@@ -73,7 +72,7 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 	ReStart(_DeltaTime);
-	IsFlagGone();
+	/*IsFlagGone();*/
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -97,13 +96,13 @@ void GameMode_FirstMap::ReStart(float _DeltaTime)
 	}
 }
 
-void GameMode_FirstMap::IsFlagGone()
-{
-	if (MiddlePointFlag = nullptr)
-	{
-		MarioCat::TouchFlag = true;
-	}
-}
+//void GameMode_FirstMap::IsFlagGone()
+//{
+//	if (MiddlePointFlag = nullptr)
+//	{
+//		MarioCat::TouchFlag = true;
+//	}
+//}
 
 void GameMode_FirstMap::LevelChangeStart()
 {

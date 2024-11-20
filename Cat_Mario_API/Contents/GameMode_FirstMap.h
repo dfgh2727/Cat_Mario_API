@@ -18,8 +18,7 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 	void ReStart(float _DeltaTime);
-
-	void IsFlagGone();
+	/*void IsFlagGone();*/
 
 	void LevelChangeStart() override;
 
@@ -27,7 +26,7 @@ protected:
 
 private:
 
-	class Flag* MiddlePointFlag = nullptr;
+	//class Flag* MiddlePointFlag = nullptr;
 	
 };
 
