@@ -31,10 +31,10 @@ void GameMode_DeathCount::BeginPlay()
 
 	{
 		CountDown* NewActor = GetWorld()->SpawnActor<CountDown>();
-		/*if (NumberIsNegative == true)
+		if (NumberIsNegative == true)
 		{
 			NewActor->ShowMinus();
-		}*/
+		}
 		NewActor->SetActorLocation({540, 420});
 		NewActor->SetTextSpriteName("CMnum.PNG");
 		NewActor->SetOrder(ERenderOrder::UI);
@@ -59,7 +59,7 @@ void GameMode_DeathCount::Tick(float _DeltaTime)
 
 void GameMode_DeathCount::DeathCounter()
 {
-	Number = -3; /*2 - Count;*/
+	Number = 3; /*2 - Count;*/
 
 	if (Number < 0)
 	{

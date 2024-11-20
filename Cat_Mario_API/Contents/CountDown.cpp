@@ -72,6 +72,8 @@ void CountDown::SetValue(int _Score)
 		NumRenderer[i]->SetActive(true);
 	}
 
+	MinusRenderer->SetComponentLocation({ -TextScale.X, 0.0f});
+
 	for (size_t i = Number.size(); i < NumRenderer.size(); i++)
 	{
 		NumRenderer[i]->SetActive(false);
