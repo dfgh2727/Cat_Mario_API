@@ -17,7 +17,7 @@ Flag::Flag()
 	{
 		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent->SetComponentScale({ 65, 100 });
-		CollisionComponent->SetCollisionGroup(ECollisionGroup::Prop);
+		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}
 		DebugOn();
