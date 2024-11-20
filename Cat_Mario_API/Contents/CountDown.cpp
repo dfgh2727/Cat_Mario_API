@@ -5,6 +5,9 @@
 
 CountDown::CountDown()
 {
+	MinusRenderer = CreateDefaultSubObject<USpriteRenderer>();
+	MinusRenderer->SetSprite("CMnumMinus.png");
+
 	for (size_t i = 0; i < 12; i++)
 	{
 		// 카메라가 움직여도 이녀석은 움직이지 않는다.
@@ -78,7 +81,6 @@ void CountDown::SetValue(int _Score)
 
 void CountDown::ShowMinus()
 {
-	MinusRenderer->SetSprite("CMnumMinus.png");
 	MinusRenderer->SetOrder(ERenderOrder::UI);
 	MinusRenderer->SetComponentScale({ 25, 50 });
 }

@@ -22,20 +22,19 @@ GameMode_DeathCount::~GameMode_DeathCount()
 
 void GameMode_DeathCount::BeginPlay()
 {
+	Super::BeginPlay();
 	DeathCounter();
 
 	{
 		DeathCount* NewActor = GetWorld()->SpawnActor<DeathCount>();
-
 	}
 
 	{
 		CountDown* NewActor = GetWorld()->SpawnActor<CountDown>();
-
-		if (NumberIsNegative == true)
+		/*if (NumberIsNegative == true)
 		{
 			NewActor->ShowMinus();
-		}
+		}*/
 		NewActor->SetActorLocation({540, 420});
 		NewActor->SetTextSpriteName("CMnum.PNG");
 		NewActor->SetOrder(ERenderOrder::UI);
@@ -43,6 +42,7 @@ void GameMode_DeathCount::BeginPlay()
 		NewActor->SetValue(Number);
 		// 0까지는 바로 렌더 됨... 음수는 처리한 후에 넣어야 함
 	}
+
 
 }
 
