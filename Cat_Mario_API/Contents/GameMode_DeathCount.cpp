@@ -10,6 +10,8 @@
 #include "CountDown.h"
 #include "Enum.h"
 
+#include "GameMode_FirstMap.h"
+
 
 int GameMode_DeathCount::Number = 2;
 
@@ -31,18 +33,16 @@ void GameMode_DeathCount::BeginPlay()
 
 	{
 		Counter = GetWorld()->SpawnActor<CountDown>();
-		if (NumberIsNegative == true)
+		/*if (NumberIsNegative == true)
 		{
 			Counter->ShowMinus();
-		}
-		Counter->SetActorLocation({540, 420});
+		}*/
+		Counter->SetActorLocation({550, 420});
 		Counter->SetTextSpriteName("CMnum.PNG");
 		Counter->SetOrder(ERenderOrder::UI);
 		Counter->SetTextScale({ 25, 50 });
 		Counter->SetValue(Number);
 	}
-
-
 }
 
 void GameMode_DeathCount::Tick(float _DeltaTime)
@@ -60,9 +60,28 @@ void GameMode_DeathCount::Tick(float _DeltaTime)
 
 void GameMode_DeathCount::DeathCounter()
 {
-	/*--Number;*/
+	Count = Number;
 
-	Counter->SetValue(Number);
+	if (Number < 0)
+	{
+		Count = Number * (-1);
+		Counter->ShowMinus();
+	}
+
+	Counter->SetValue(Count);
 }
 
 
+void GameMode_DeathCount::ChangeLevel()
+{
+	UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_FirstMap");
+	UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");
+}
+
+void GameMode_DeathCount::LevelChangeStart()
+{
+	Super::LevelChangeStart();
+	int a = 0;
+
+	TimeEventer.PushEvent(2.0f, std::bind(&GameMode_DeathCount::ChangeLevel, this));
+}

@@ -18,6 +18,10 @@ public:
 
 	void BeginPlay() override;
 
+	void LevelChangeStart() override;
+
+	void ChangeLevel();
+
 	void Tick(float _DeltaTime) override;
 
 	void DeathCounter();
@@ -26,6 +30,7 @@ public:
 protected:
 
 private:
+	int Count = 0;
 	CountDown* Counter;
 	bool NumberIsNegative = false;
 };
