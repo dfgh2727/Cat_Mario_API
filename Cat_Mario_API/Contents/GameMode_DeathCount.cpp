@@ -23,6 +23,11 @@ GameMode_DeathCount::~GameMode_DeathCount()
 void GameMode_DeathCount::BeginPlay()
 {
 	Super::BeginPlay();
+
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	Player->SetMapImage("DeathCount.png");
+	Player->SetColImage("DeathCount.png");
+
 	DeathCounter();
 
 	{
@@ -59,14 +64,13 @@ void GameMode_DeathCount::Tick(float _DeltaTime)
 
 void GameMode_DeathCount::DeathCounter()
 {
-	Number = 3; /*2 - Count;*/
+	Number = 2 - Count;
 
 	if (Number < 0)
 	{
 		Number *= (-1);
 		NumberIsNegative = true;
-	}
-	
+	}	
 }
 
 

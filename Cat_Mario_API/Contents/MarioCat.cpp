@@ -24,7 +24,7 @@
 
 MarioCat::MarioCat()
 {
-	SetActorLocation({ 300, 700 });
+	/*SetActorLocation({ 300, 700 });*/
 
 	{
 		CatRenderer = CreateDefaultSubObject<USpriteRenderer>();
@@ -49,7 +49,7 @@ MarioCat::MarioCat()
 		}
 		{
 			CollisionBody = CreateDefaultSubObject<U2DCollision>();
-			CollisionBody->SetComponentScale({ 50, 55 });
+			CollisionBody->SetComponentScale({ 47, 55 });
 			CollisionBody->SetCollisionGroup(ECollisionGroup::PlayerBody);
 			CollisionBody->SetCollisionType(ECollisionType::Rect);
 		}
@@ -202,8 +202,6 @@ void MarioCat::Tick(float _DeltaTime)
 	//	//UEngineAPICore::GetCore()->ResetLevel<APlayGameMode, ANewPlayer>("Play");
 	//	//UEngineAPICore::GetCore()->OpenLevel("Play");
 	//}
-
-	/*BreakTheBlock(_DeltaTime);*/
 
 	if (true == UEngineInput::GetInst().IsDown('R'))
 	{
@@ -493,7 +491,7 @@ void MarioCat::YouDied(float _DeltaTime)
 {
 	CatRenderer->ChangeAnimation("Cat_IsDead" + DirString);
 	FVector2D DeathMotion = GravityForce * _DeltaTime;
-	/*ColImage = nullptr;*/
+	
 	AddActorLocation(DeathMotion);
 	IsCatDead = true;
 }

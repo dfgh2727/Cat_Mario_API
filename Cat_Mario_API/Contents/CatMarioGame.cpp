@@ -88,7 +88,7 @@ void CatMarioGame::BeginPlay()
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_SixthMap, MarioCat >("Play_SixthMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_SeventhMap, MarioCat >("Play_SeventhMap");
 	UEngineAPICore::GetCore()->CreateLevel< GameMode_EighthMap, MarioCat >("Play_EighthMap");
-	UEngineAPICore::GetCore()->CreateLevel< GameMode_DeathCount,AActor >("DeathCount");
+	UEngineAPICore::GetCore()->CreateLevel< GameMode_DeathCount, MarioCat >("DeathCount");
 
 	UEngineAPICore::GetCore()->OpenLevel("Title");
 }

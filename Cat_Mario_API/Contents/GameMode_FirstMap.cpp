@@ -30,6 +30,7 @@ void GameMode_FirstMap::BeginPlay()
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	Player->SetMapImage("1stMap.png");
 	Player->SetColImage("1stColMap.png");
+	Player->SetActorLocation({ 300, 700 });
 	
 	FirstMap* NewActor = GetWorld()->SpawnActor<FirstMap>();
 
@@ -80,11 +81,13 @@ void GameMode_FirstMap::ReStart(float _DeltaTime)
 
 	if (true == Player->IsCatDead)
 	{
-		/*UEngineAPICore::GetCore()->OpenLevel("DeathCount");
-		Counter->Count;
-		*/
-		UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_FirstMap");
-		UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");
+		int Number = Counter->Count;
+		Number++;
+		Counter->Count = Number;
+		UEngineAPICore::GetCore()->OpenLevel("DeathCount");
+		
+		/*UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_FirstMap");
+		UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");*/
 	}
 }
 
