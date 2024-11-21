@@ -23,6 +23,7 @@ public:
 protected:
 
 private:
+	float Time = 0.0f;
 
 };
 

@@ -7,6 +7,8 @@
 #include <EngineCore/EngineCoreDebug.h>
 #include <EngineCore/Level.h>
 
+#include <EngineCore/EngineAPICore.h>
+
 Coin::Coin()
 {
 	USpriteRenderer* CoinRenderer = CreateDefaultSubObject<USpriteRenderer>();
@@ -27,6 +29,7 @@ void Coin::BeginPlay()
 
 void Coin::Tick(float _DeltaTime)
 {
+	float DeltaTime = UEngineAPICore::GetCore()->GetDeltaTime();
 	Super::Tick(_DeltaTime);
 	RiseUp();
 }
