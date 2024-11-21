@@ -263,15 +263,11 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="MBwithCoin.cpp">
+    <ClCompile Include="QBlockwithCoin.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="MBwithWhiteCircle.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="MysteryBox.cpp">
+    <ClCompile Include="CoinBox.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -406,15 +402,11 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="MBwithCoin.h">
+    <ClInclude Include="QBlockwithCoin.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="MBwithWhiteCircle.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="MysteryBox.h">
+    <ClInclude Include="CoinBox.h">
       <SubType>
       </SubType>
     </ClInclude>
