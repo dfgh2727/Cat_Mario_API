@@ -91,7 +91,7 @@ void GameMode_FirstMap::BeginPlay()
 		NewActor->SetActorLocation({ 1221, 586 });
 	}
 	{
-		Seal* Seal1 = GetWorld()->SpawnActor<Seal>();
+		Seal1 = GetWorld()->SpawnActor<Seal>();
 		Seal1->SetActorLocation({ 1281, 540 });
 	}
 
@@ -172,7 +172,7 @@ void GameMode_FirstMap::SealGoUp()
 {
 	if (Seal1Lever == true)
 	{
-		Seal1->AddActorLocation(FVector2D::UP * 10.0f);
+		Seal1->AddActorLocation(FVector2D::UP * 0.8f);
 	}
 }
 
