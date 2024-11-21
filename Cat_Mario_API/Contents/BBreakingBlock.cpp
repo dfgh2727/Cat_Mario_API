@@ -8,6 +8,7 @@
 #include <EngineCore/Level.h>
 
 #include "BParticleA.h"
+#include "BParticleB.h"
 
 
 BBreakingBlock::BBreakingBlock()
@@ -45,17 +46,16 @@ void BBreakingBlock::Tick(float _DeltaTime)
 	{
 		{
 			FVector2D PresentPos = this->GetActorLocation();
-			Particle = GetWorld()->SpawnActor<BParticleA>();
+			BParticleA* Particle = GetWorld()->SpawnActor<BParticleA>();
 			Particle->SetActorLocation(PresentPos);
-			//AddActorLocation(FVector2D{ -500.0f * _DeltaTime, -100.0f * _DeltaTime });
+		}
+		{
+			FVector2D PresentPos = this->GetActorLocation();
+			BParticleB* Particle = GetWorld()->SpawnActor<BParticleB>();
+			Particle->SetActorLocation(PresentPos);
 		}
 		Broken = true;
 		this->Destroy();
 	}
-	/*if (Broken == true)
-	{
-		Particle->AddActorLocation(FVector2D{ -500.0f * _DeltaTime, -100.0f * _DeltaTime });
-
-	}*/
-
+	
 }

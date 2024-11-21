@@ -1,12 +1,11 @@
 #include "PreCompile.h"
-#include "BParticleA.h"
+#include "BParticleB.h"
 
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineBase/EngineRandom.h>
-
 #include "Enum.h"
 
-BParticleA::BParticleA()
+BParticleB::BParticleB()
 {
 	BParticleARenderer = CreateDefaultSubObject<USpriteRenderer>();
 	BParticleARenderer->SetSprite("BParticle.png");
@@ -14,23 +13,24 @@ BParticleA::BParticleA()
 	BParticleARenderer->SetComponentScale({ 20, 20 });
 }
 
-BParticleA::~BParticleA()
+BParticleB::~BParticleB()
 {
 }
 
-void BParticleA::BeginPlay()
+
+void BParticleB::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-void BParticleA::Tick(float _DeltaTime)
+void BParticleB::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 	Gravity(_DeltaTime);
-	AddActorLocation(FVector2D{ -300.0f * _DeltaTime, -100.0f *_DeltaTime});
+	AddActorLocation(FVector2D{ 300.0f * _DeltaTime, -100.0f * _DeltaTime });
 }
 
-void BParticleA::Gravity(float _DeltaTime)
+void BParticleB::Gravity(float _DeltaTime)
 {
 	AddActorLocation(GravityForce * _DeltaTime);
 	GravityForce += FVector2D::DOWN * _DeltaTime * 1200.0f;

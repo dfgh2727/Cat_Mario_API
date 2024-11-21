@@ -18,7 +18,6 @@ public:
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
-	class BParticleA* Particle = nullptr;
 
 protected:
 
@@ -27,7 +26,6 @@ private:
 	class USpriteRenderer* BBreakingBlockRenderer;
 	U2DCollision* CollisionComponent;
 
-	USpriteRenderer* ParticleRenderer;
 	bool Broken = false;
 };
 

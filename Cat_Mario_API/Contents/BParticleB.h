@@ -2,18 +2,18 @@
 #include <EngineCore/Actor.h>
 
 // Ό³Έν :
-class BParticleA : public AActor
+class BParticleB : public AActor
 {
 public:
 	// constrcuter destructer
-	BParticleA();
-	~BParticleA();
+	BParticleB();
+	~BParticleB();
 
 	// delete Function
-	BParticleA(const BParticleA& _Other) = delete;
-	BParticleA(BParticleA&& _Other) noexcept = delete;
-	BParticleA& operator=(const BParticleA& _Other) = delete;
-	BParticleA& operator=(BParticleA&& _Other) noexcept = delete;
+	BParticleB(const BParticleB& _Other) = delete;
+	BParticleB(BParticleB&& _Other) noexcept = delete;
+	BParticleB& operator=(const BParticleB& _Other) = delete;
+	BParticleB& operator=(BParticleB&& _Other) noexcept = delete;
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;

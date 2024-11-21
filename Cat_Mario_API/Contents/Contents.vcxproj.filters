@@ -107,6 +107,9 @@
     <ClCompile Include="QuestionMark.cpp">
       <Filter>InterActive Things\Blocks</Filter>
     </ClCompile>
+    <ClCompile Include="BParticleB.cpp">
+      <Filter>InterActive Things\Blocks\BParticles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -214,6 +217,9 @@
     </ClInclude>
     <ClInclude Include="QuestionMark.h">
       <Filter>InterActive Things\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="BParticleB.h">
+      <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
