@@ -8,10 +8,10 @@
 
 BParticleA::BParticleA()
 {
-	BParticleARenderer = CreateDefaultSubObject<USpriteRenderer>();
-	BParticleARenderer->SetSprite("BParticle.png");
-	BParticleARenderer->SetOrder(ERenderOrder::PLAYER);
-	BParticleARenderer->SetComponentScale({ 20, 20 });
+	BParticleRenderer = CreateDefaultSubObject<USpriteRenderer>();
+	BParticleRenderer->SetSprite("BParticle.png");
+	BParticleRenderer->SetOrder(ERenderOrder::PLAYER);
+	BParticleRenderer->SetComponentScale({ 20, 20 });
 }
 
 BParticleA::~BParticleA()

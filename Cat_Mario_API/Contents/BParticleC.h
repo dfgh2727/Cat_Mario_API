@@ -2,18 +2,18 @@
 #include <EngineCore/Actor.h>
 
 // Ό³Έν :
-class BParticleA : public AActor
+class BParticleC : public AActor
 {
 public:
 	// constrcuter destructer
-	BParticleA();
-	~BParticleA();
+	BParticleC();
+	~BParticleC();
 
 	// delete Function
-	BParticleA(const BParticleA& _Other) = delete;
-	BParticleA(BParticleA&& _Other) noexcept = delete;
-	BParticleA& operator=(const BParticleA& _Other) = delete;
-	BParticleA& operator=(BParticleA&& _Other) noexcept = delete;
+	BParticleC(const BParticleC& _Other) = delete;
+	BParticleC(BParticleC&& _Other) noexcept = delete;
+	BParticleC& operator=(const BParticleC& _Other) = delete;
+	BParticleC& operator=(BParticleC&& _Other) noexcept = delete;
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
@@ -23,7 +23,6 @@ public:
 protected:
 
 private:
-
 	class USpriteRenderer* BParticleRenderer;
 	FVector2D MoveVec = FVector2D::ZERO;
 	FVector2D GravityForce = FVector2D::ZERO;

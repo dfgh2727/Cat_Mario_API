@@ -23,8 +23,7 @@ public:
 protected:
 
 private:
-
-	class USpriteRenderer* BParticleARenderer;
+	class USpriteRenderer* BParticleRenderer;
 	FVector2D MoveVec = FVector2D::ZERO;
 	FVector2D GravityForce = FVector2D::ZERO;
 };

@@ -175,6 +175,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="BParticleC.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="CatMarioGame.cpp">
       <SubType>
       </SubType>
@@ -319,6 +323,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="BParticleB.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="BParticleC.h">
       <SubType>
       </SubType>
     </ClInclude>

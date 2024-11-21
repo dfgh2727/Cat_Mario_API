@@ -9,6 +9,7 @@
 
 #include "BParticleA.h"
 #include "BParticleB.h"
+#include "BParticleC.h"
 
 
 BBreakingBlock::BBreakingBlock()
@@ -52,6 +53,11 @@ void BBreakingBlock::Tick(float _DeltaTime)
 		{
 			FVector2D PresentPos = this->GetActorLocation();
 			BParticleB* Particle = GetWorld()->SpawnActor<BParticleB>();
+			Particle->SetActorLocation(PresentPos);
+		}
+		{
+			FVector2D PresentPos = this->GetActorLocation();
+			BParticleC* Particle = GetWorld()->SpawnActor<BParticleC>();
 			Particle->SetActorLocation(PresentPos);
 		}
 		Broken = true;
