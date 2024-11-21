@@ -175,6 +175,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="CountDown.cpp">
       <SubType>
       </SubType>
@@ -259,6 +263,14 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="MBwithCoin.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="MysteryBox.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="SecondMap.cpp">
       <SubType>
       </SubType>
@@ -299,6 +311,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="CatMarioGame.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -383,6 +399,14 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="MarioCat.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="MBwithCoin.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="MysteryBox.h">
       <SubType>
       </SubType>
     </ClInclude>

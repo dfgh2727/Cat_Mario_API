@@ -92,8 +92,17 @@
     <ClCompile Include="MapActor.cpp">
       <Filter>InterActive Things</Filter>
     </ClCompile>
+    <ClCompile Include="MysteryBox.cpp">
+      <Filter>InterActive Things\MysteryBox</Filter>
+    </ClCompile>
+    <ClCompile Include="MBwithCoin.cpp">
+      <Filter>InterActive Things\MysteryBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>InterActive Things\Props</Filter>
+    </ClCompile>
     <ClCompile Include="Flag.cpp">
-      <Filter>InterActive Things</Filter>
+      <Filter>InterActive Things\Props</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -188,8 +197,17 @@
     <ClInclude Include="MapActor.h">
       <Filter>InterActive Things</Filter>
     </ClInclude>
+    <ClInclude Include="MysteryBox.h">
+      <Filter>InterActive Things\MysteryBox</Filter>
+    </ClInclude>
+    <ClInclude Include="MBwithCoin.h">
+      <Filter>InterActive Things\MysteryBox</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
+      <Filter>InterActive Things\Props</Filter>
+    </ClInclude>
     <ClInclude Include="Flag.h">
-      <Filter>InterActive Things</Filter>
+      <Filter>InterActive Things\Props</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +240,12 @@
     </Filter>
     <Filter Include="InterActive Things\MainPlayer_MarioCat">
       <UniqueIdentifier>{ef9b344d-efab-4e3f-8d97-9f22a1def2ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\MysteryBox">
+      <UniqueIdentifier>{e1b53efd-4e1d-4985-a644-9599169e2457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Props">
+      <UniqueIdentifier>{070f619f-4f14-472e-9c95-a1e83a75c9bb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
