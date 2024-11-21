@@ -13,7 +13,7 @@ Flag::Flag()
 {
 	USpriteRenderer* FlagRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	FlagRenderer->SetSprite("Flag.png");
-	FlagRenderer->SetOrder(ERenderOrder::OBJECT);
+	FlagRenderer->SetOrder(ERenderOrder::PROP);
 	FlagRenderer->SetComponentScale({ 79, 120 });
 
 	{

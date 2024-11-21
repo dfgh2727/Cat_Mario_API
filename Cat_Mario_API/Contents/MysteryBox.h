@@ -17,8 +17,9 @@ public:
 	MysteryBox& operator=(MysteryBox&& _Other) noexcept = delete;
 
 	void RenderQBlock();
-	void Disapper();
+	void BlockDisappear();
 	virtual void Show();
+	void RiseUp();
 
 protected:
 

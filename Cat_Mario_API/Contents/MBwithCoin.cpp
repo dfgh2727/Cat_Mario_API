@@ -26,7 +26,7 @@ void MBwithCoin::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	Disapper();
+	BlockDisappear();
 }
 
 void MBwithCoin::Show()

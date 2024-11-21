@@ -19,6 +19,7 @@ void MysteryBox::RenderQBlock()
 {
 	QBlockRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	QBlockRenderer->SetSprite("QBlock.png");
+	QBlockRenderer->SetOrder(ERenderOrder::BLOCK);
 	QBlockRenderer->SetComponentScale({ 60, 60 });
 
 	{
@@ -30,7 +31,7 @@ void MysteryBox::RenderQBlock()
 	}
 }
 
-void MysteryBox::Disapper()
+void MysteryBox::BlockDisappear()
 {
 	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
 	if (nullptr != Result)
@@ -43,4 +44,10 @@ void MysteryBox::Disapper()
 void MysteryBox::Show()
 {
 
+}
+
+
+void MysteryBox::RiseUp()
+{
+	AddActorLocation(FVector2D::UP * 0.25f);
 }

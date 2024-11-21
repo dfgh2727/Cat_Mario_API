@@ -6,8 +6,9 @@ enum class ERenderOrder
 	COLLISION = -10,
 	HIDDEN = -9,
 	MAP = -8,
+	PROP = -1,
 	PLAYER = 0,
-	OBJECT = 0,
+	BLOCK = 0,
 	UI = 10
 };
 

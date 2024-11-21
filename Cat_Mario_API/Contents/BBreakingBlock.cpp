@@ -14,7 +14,7 @@ BBreakingBlock::BBreakingBlock()
 {
 	USpriteRenderer* BBreakingBlockRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	BBreakingBlockRenderer->SetSprite("BBreakingBlock.png");
-	BBreakingBlockRenderer->SetOrder(ERenderOrder::OBJECT);
+	BBreakingBlockRenderer->SetOrder(ERenderOrder::BLOCK);
 	BBreakingBlockRenderer->SetComponentScale({ 60, 60 });
 
 	{

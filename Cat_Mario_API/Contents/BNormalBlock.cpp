@@ -10,7 +10,7 @@ BNormalBlock::BNormalBlock()
 {
 	USpriteRenderer* BBreakingBlockRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	BBreakingBlockRenderer->SetSprite("BNormalBlock.png");
-	BBreakingBlockRenderer->SetOrder(ERenderOrder::OBJECT);
+	BBreakingBlockRenderer->SetOrder(ERenderOrder::BLOCK);
 	BBreakingBlockRenderer->SetComponentScale({ 60, 60 });
 
 	{

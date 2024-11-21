@@ -13,7 +13,7 @@ Coin::Coin()
 {
 	USpriteRenderer* CoinRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	CoinRenderer->SetSprite("Coin.png");
-	CoinRenderer->SetOrder(ERenderOrder::OBJECT);
+	CoinRenderer->SetOrder(ERenderOrder::PROP);
 	CoinRenderer->SetComponentScale({ 35, 50 });
 
 }
