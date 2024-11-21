@@ -32,8 +32,7 @@ void MBwithCoin::Tick(float _DeltaTime)
 void MBwithCoin::Show()
 {
 	FVector2D PresentPos = this->GetActorLocation();
-	Coin* Coin = GetWorld()->SpawnActor<Coin>();
-	Coin->SetActorLocation(PresentPos);
-	/*Particle->AddActorLocation();*/
+	Coin* TheCoin = GetWorld()->SpawnActor<TheCoin>();
+	TheCoin->SetActorLocation(PresentPos);
 }
 
