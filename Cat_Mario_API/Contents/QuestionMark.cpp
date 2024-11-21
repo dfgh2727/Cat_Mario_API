@@ -39,6 +39,7 @@ void QuestionMark::Tick(float _DeltaTime)
 	if (nullptr != Result)
 	{
 		this->Destroy();
+		IsQGone = true;
 	}
 
 }

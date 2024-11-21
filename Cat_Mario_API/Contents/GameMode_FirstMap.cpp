@@ -14,6 +14,7 @@
 #include "MapActor.h"
 #include "Flag.h"
 #include "QBlockwithCoin.h"
+#include "QuestionMark.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -66,8 +67,8 @@ void GameMode_FirstMap::BeginPlay()
 		NewActor->SetActorLocation({ 901, 528 });
 	}
 	{
-		/*MBwithWhiteCircle* NewActor = GetWorld()->SpawnActor<MBwithWhiteCircle>();
-		NewActor->SetActorLocation({ 785, 528 });*/
+		QuestionMark* NewActor = GetWorld()->SpawnActor<QuestionMark>();
+		NewActor->SetActorLocation({ 785, 528 });
 	}
 	{
 		QBlockwithCoin* NewActor = GetWorld()->SpawnActor<QBlockwithCoin>();

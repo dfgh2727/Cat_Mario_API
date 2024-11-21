@@ -18,11 +18,14 @@ public:
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
+	
+	bool IsQGone = false;
 
 protected:
 
 private:
 	class USpriteRenderer* QMarkRenderer;
 	U2DCollision* CollisionComponent;
+	
 };
 
