@@ -38,8 +38,9 @@ void QuestionMark::Tick(float _DeltaTime)
 	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
 	if (nullptr != Result)
 	{
-		this->Destroy();
 		IsQGone = true;
+		
+		this->Destroy();
 	}
 
 }

@@ -179,3 +179,8 @@ void WhiteCircle::TurnAround(FVector2D _MovePos)
 		PosOrN = 1.0f;
 	}
 }
+
+void WhiteCircle::RiseUp()
+{
+	AddActorLocation(FVector2D::UP * 0.25f);
+}

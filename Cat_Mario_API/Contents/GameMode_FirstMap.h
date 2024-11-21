@@ -25,7 +25,7 @@ public:
 protected:
 
 private:
-
+	class QuestionMark* TheQ = nullptr;
 	//class Flag* MiddlePointFlag = nullptr;
 	
 };

@@ -61,14 +61,18 @@ void GameMode_FirstMap::BeginPlay()
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
 		NewActor->SetActorLocation({ 785, 528 });
+
+		TheQ = GetWorld()->SpawnActor<QuestionMark>();
+		TheQ->SetActorLocation({ 785, 528 });
+
 	}
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
 		NewActor->SetActorLocation({ 901, 528 });
 	}
 	{
-		QuestionMark* NewActor = GetWorld()->SpawnActor<QuestionMark>();
-		NewActor->SetActorLocation({ 785, 528 });
+		/*QuestionMark* TheQ = GetWorld()->SpawnActor<QuestionMark>();
+		TheQ->SetActorLocation({ 785, 528 });*/
 	}
 	{
 		QBlockwithCoin* NewActor = GetWorld()->SpawnActor<QBlockwithCoin>();
@@ -87,6 +91,14 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 	Super::Tick(_DeltaTime);
 	ReStart(_DeltaTime);
 	/*IsFlagGone();*/
+
+	/*if (TheQ = nullptr)
+	{
+		WhiteCircle* Monster = GetWorld()->SpawnActor<WhiteCircle>();
+		Monster->SetActorLocation({ 785, 528 });
+		Monster->SetColImage("1stColMap.png");
+		Monster->RiseUp();
+	}*/
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -130,4 +142,6 @@ void GameMode_FirstMap::LevelChangeStart()
 		Check = true;
 	}
 }
+
+
 
