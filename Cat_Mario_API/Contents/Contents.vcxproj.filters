@@ -104,6 +104,9 @@
     <ClCompile Include="Flag.cpp">
       <Filter>InterActive Things\Props</Filter>
     </ClCompile>
+    <ClCompile Include="QuestionMark.cpp">
+      <Filter>InterActive Things\Blocks</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -208,6 +211,9 @@
     </ClInclude>
     <ClInclude Include="Flag.h">
       <Filter>InterActive Things\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestionMark.h">
+      <Filter>InterActive Things\Blocks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
