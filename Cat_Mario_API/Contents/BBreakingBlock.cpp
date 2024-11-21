@@ -45,13 +45,17 @@ void BBreakingBlock::Tick(float _DeltaTime)
 	{
 		{
 			FVector2D PresentPos = this->GetActorLocation();
-			BParticleA* Particle = GetWorld()->SpawnActor<BParticleA>();
+			Particle = GetWorld()->SpawnActor<BParticleA>();
 			Particle->SetActorLocation(PresentPos);
-			Particle->AddActorLocation(FVector2D{ -100.0f * _DeltaTime, -100.0f} );
+			//AddActorLocation(FVector2D{ -500.0f * _DeltaTime, -100.0f * _DeltaTime });
 		}
-
+		Broken = true;
 		this->Destroy();
 	}
+	/*if (Broken == true)
+	{
+		Particle->AddActorLocation(FVector2D{ -500.0f * _DeltaTime, -100.0f * _DeltaTime });
 
+	}*/
 
 }

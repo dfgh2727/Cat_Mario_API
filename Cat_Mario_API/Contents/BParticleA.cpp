@@ -27,7 +27,7 @@ void BParticleA::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 	Gravity(_DeltaTime);
-	AddActorLocation(FVector2D{ -100.0f * _DeltaTime, -100.0f });
+	AddActorLocation(FVector2D{ -500.0f * _DeltaTime, -100.0f *_DeltaTime});
 }
 
 //void BParticleA::FallApart(float _DeltaTime)
