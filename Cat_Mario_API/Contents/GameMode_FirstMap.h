@@ -22,11 +22,18 @@ public:
 
 	void LevelChangeStart() override;
 
+	void Seal1Swtich();
+	void SealGoUp();
+	void SealGoDown();
+
 protected:
 
 private:
 	class QuestionMark* TheQ = nullptr;
 	//class Flag* MiddlePointFlag = nullptr;
-	
+	class Seal* Seal1;
+	Seal* Seal2;
+	bool Seal1Lever = false;
+	bool Seal2Lever = false;
 };
 

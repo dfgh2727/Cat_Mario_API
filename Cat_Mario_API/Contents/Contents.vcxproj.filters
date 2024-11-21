@@ -119,6 +119,9 @@
     <ClCompile Include="PipeHead.cpp">
       <Filter>InterActive Things</Filter>
     </ClCompile>
+    <ClCompile Include="Seal.cpp">
+      <Filter>InterActive Things\Monster</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -238,6 +241,9 @@
     </ClInclude>
     <ClInclude Include="PipeHead.h">
       <Filter>InterActive Things</Filter>
+    </ClInclude>
+    <ClInclude Include="Seal.h">
+      <Filter>InterActive Things\Monster</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

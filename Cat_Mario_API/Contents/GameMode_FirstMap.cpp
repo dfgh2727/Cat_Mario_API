@@ -16,6 +16,7 @@
 #include "QBlockwithCoin.h"
 #include "QuestionMark.h"
 #include "PipeHead.h"
+#include "Seal.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -89,6 +90,10 @@ void GameMode_FirstMap::BeginPlay()
 		PipeHead* NewActor = GetWorld()->SpawnActor<PipeHead>();
 		NewActor->SetActorLocation({ 1221, 586 });
 	}
+	{
+		Seal* Seal1 = GetWorld()->SpawnActor<Seal>();
+		Seal1->SetActorLocation({ 1281, 540 });
+	}
 
 }
 
@@ -96,6 +101,9 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 	ReStart(_DeltaTime);
+
+	Seal1Swtich();
+	SealGoUp();
 	/*IsFlagGone();*/
 
 	/*if (TheQ = nullptr)
@@ -149,5 +157,28 @@ void GameMode_FirstMap::LevelChangeStart()
 	}
 }
 
+void GameMode_FirstMap::Seal1Swtich()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if(PlayerPos.X >= 1290.0f)
+	{
+		Seal1Lever = true;
+	}
+}
+
+
+void GameMode_FirstMap::SealGoUp()
+{
+	if (Seal1Lever == true)
+	{
+		Seal1->AddActorLocation(FVector2D::UP * 10.0f);
+	}
+}
+
+void GameMode_FirstMap::SealGoDown()
+{
+
+}
 
 
