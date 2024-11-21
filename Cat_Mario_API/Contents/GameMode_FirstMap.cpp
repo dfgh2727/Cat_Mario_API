@@ -15,6 +15,7 @@
 #include "Flag.h"
 #include "QBlockwithCoin.h"
 #include "QuestionMark.h"
+#include "PipeHead.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -82,6 +83,11 @@ void GameMode_FirstMap::BeginPlay()
 		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
 		NewActor->SetActorLocation({ 450, 700 });
 		NewActor->SetColImage("1stColMap.png");
+	}
+
+	{
+		PipeHead* NewActor = GetWorld()->SpawnActor<PipeHead>();
+		NewActor->SetActorLocation({ 1221, 586 });
 	}
 
 }
