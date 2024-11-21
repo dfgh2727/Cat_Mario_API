@@ -29,12 +29,15 @@ void Coin::BeginPlay()
 
 void Coin::Tick(float _DeltaTime)
 {
-	float DeltaTime = UEngineAPICore::GetCore()->GetDeltaTime();
+	Time = UEngineAPICore::GetCore()->GetDeltaTime();
 	Super::Tick(_DeltaTime);
+
 	RiseUp();
+	Destroy(0.5f);
+	
 }
 
 void Coin::RiseUp()
 {
-	AddActorLocation(FVector2D::UP * 0.5f);
+	AddActorLocation(FVector2D::UP * 0.25f);
 }
