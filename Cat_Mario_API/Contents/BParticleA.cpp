@@ -20,18 +20,26 @@ BParticleA::~BParticleA()
 
 void BParticleA::BeginPlay()
 {
-
+	Super::BeginPlay();
 }
 
 void BParticleA::Tick(float _DeltaTime)
 {
-	FallApart(_DeltaTime);
+	Super::Tick(_DeltaTime);
+	Gravity(_DeltaTime);
+	AddActorLocation(FVector2D{ -100.0f * _DeltaTime, -100.0f });
 }
 
-void BParticleA::FallApart(float _DeltaTime)
+//void BParticleA::FallApart(float _DeltaTime)
+//{
+//	FVector2D MoveVec = { -0.1f, 0.2f};
+//	AddActorLocation(MoveVec);
+//
+//}
+
+
+void BParticleA::Gravity(float _DeltaTime)
 {
-	FVector2D MoveVec = { -0.1f, 0.2f};
-	AddActorLocation(MoveVec);
+	AddActorLocation(GravityForce * _DeltaTime);
+	GravityForce += FVector2D::DOWN * _DeltaTime * 1200.0f;
 }
-
-

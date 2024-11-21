@@ -18,7 +18,8 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
-	void FallApart(float _DeltaTime);
+	void Gravity(float _DeltaTime);
+	/*void FallApart(float _DeltaTime);*/
 
 protected:
 
@@ -26,5 +27,6 @@ private:
 
 	class USpriteRenderer* BParticleARenderer;
 	FVector2D MoveVec = FVector2D::ZERO;
+	FVector2D GravityForce = FVector2D::ZERO;
 };
 
