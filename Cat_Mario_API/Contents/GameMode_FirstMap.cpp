@@ -13,6 +13,7 @@
 #include "WhiteCircle.h"
 #include "MapActor.h"
 #include "Flag.h"
+#include "MBwithCoin.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -59,6 +60,10 @@ void GameMode_FirstMap::BeginPlay()
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
 		NewActor->SetActorLocation({ 785, 528 });
+	}
+	{
+		MBwithCoin* NewActor = GetWorld()->SpawnActor<MBwithCoin>();
+		NewActor->SetActorLocation({ 901, 528 });
 	}
 	{
 		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();

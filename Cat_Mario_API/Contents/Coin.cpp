@@ -12,7 +12,7 @@ Coin::Coin()
 	USpriteRenderer* CoinRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	CoinRenderer->SetSprite("Coin.png");
 	CoinRenderer->SetOrder(ERenderOrder::OBJECT);
-	CoinRenderer->SetComponentScale({ 79, 120 });
+	CoinRenderer->SetComponentScale({ 35, 50 });
 }
 
 Coin::~Coin()
@@ -27,5 +27,6 @@ void Coin::BeginPlay()
 void Coin::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+
 
 }
