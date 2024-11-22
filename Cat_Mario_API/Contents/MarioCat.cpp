@@ -235,11 +235,13 @@ void MarioCat::Tick(float _DeltaTime)
 	DontOverlap(_DeltaTime);
 	HitTheBlock(_DeltaTime);
 	CatIsKilled(_DeltaTime);
-
+	Bounce(_DeltaTime);
 }
 
 void MarioCat::ChangeState(PlayerState _CurPlayerState)
 {
+
+
 	CurPlayerState = _CurPlayerState;
 }
 
@@ -391,6 +393,7 @@ void MarioCat::Move(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsPress(VK_UP))
 	{
+		JumpPower = FVector2D(0.0f, -750.0f);
 		ChangeState(PlayerState::Jump);
 		return;
 	}
@@ -479,13 +482,15 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 
 void MarioCat::Bounce(float _DeltaTime)
 {
-	//AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::BouncyObject);
-	//if (nullptr != Result)
-	//{
-	//	/*Bounce(_DeltaTime);*/
-	//	AddActorLocation()
-	//	//MonsterIsKilled = true;
-	//}
+	AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::BouncyObject);
+	if (nullptr != Result)
+	{
+		/*FVector2D Hop = FVector2D::UP * 1000.0f * _DeltaTime;*/
+		ChangeState(PlayerState::Jump);
+		GravityForce = FVector2D::ZERO;
+		JumpPower = FVector2D(0.0f, -400.0f);
+		/*AddActorLocation(Hop);*/
+	}
 }
 
 void MarioCat::CatIsKilled(float _DeltaTime)
@@ -518,6 +523,7 @@ void MarioCat::YouDied(float _DeltaTime)
 		AddActorLocation(DeathMotion);
 		TimeEventer.PushEvent(2.0f, std::bind(&MarioCat::DeathCheck, this));
 	}
+	
 }
 
 void MarioCat::TurnOffTheSwitch()

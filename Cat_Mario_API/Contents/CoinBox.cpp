@@ -27,6 +27,14 @@ void CoinBox::RenderCollisionComponent()
 	DebugOn();
 }
 
+//bool CoinBox::CollideWithCat(float _DeltaTime)
+//{
+//	std::vector<AActor*> HitTheBlock;
+//	IsHit = CollisionComponent
+//		->Collision(static_cast<int>(ECollisionGroup::PlayerHead), HitTheBlock, FVector2D::UP, 100);
+//	return IsHit;
+//}
+
 void CoinBox::BlockDisappear(float _DeltaTime)
 {
 	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
@@ -35,14 +43,14 @@ void CoinBox::BlockDisappear(float _DeltaTime)
 		CoinShowUP();
 		this->Destroy();
 	}
-	/*std::vector<AActor*> HitTheBlock;
-	bool IsHit = CollisionComponent
-		->Collision(static_cast<int>(ECollisionGroup::PlayerHead), HitTheBlock, FVector2D::UP, 100);
-	if (IsHit = true)
-	{
-		CoinShowUP();
-		this->Destroy();
-	}*/
+	//std::vector<AActor*> HitTheBlock;
+	//bool IsHit = CollisionComponent
+	//	->Collision(static_cast<int>(ECollisionGroup::PlayerHead), HitTheBlock, FVector2D::UP, 100);
+	//if (true == CollideWithCat(_DeltaTime))
+	//{
+	//	CoinShowUP();
+	//	this->Destroy();
+	//}
 }
 
 void CoinBox::CoinShowUP()

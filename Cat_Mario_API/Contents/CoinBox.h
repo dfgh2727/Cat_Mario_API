@@ -20,12 +20,13 @@ public:
 	void RenderCollisionComponent();
 	void BlockDisappear(float _DeltaTime);
 	void CoinShowUP();
-
+	//bool CollideWithCat(float _DeltaTime);
 
 protected:
 
 private:
 	class USpriteRenderer* QBlockRenderer;
 	U2DCollision* CollisionComponent;
+	//bool IsHit = false;
 };
 
