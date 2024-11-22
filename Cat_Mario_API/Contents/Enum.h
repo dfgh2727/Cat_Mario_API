@@ -9,6 +9,7 @@ enum class ERenderOrder
 	PROP = -1,
 	PLAYER = 0,
 	BLOCK = 0,
+	PIPE = 9,
 	UI = 10
 };
 

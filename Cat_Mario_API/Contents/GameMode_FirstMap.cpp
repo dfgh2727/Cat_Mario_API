@@ -92,7 +92,7 @@ void GameMode_FirstMap::BeginPlay()
 	}
 	{
 		Seal1 = GetWorld()->SpawnActor<Seal>();
-		Seal1->SetActorLocation({ 1281, 540 });
+		Seal1->SetActorLocation({ 1221, 640 });
 	}
 
 }
@@ -161,7 +161,7 @@ void GameMode_FirstMap::Seal1Swtich()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if(PlayerPos.X >= 1100.0f)
+	if(PlayerPos.X >= 1100.0f && PlayerPos.Y >= 520.0f)
 	{
 		Seal1Lever = true;
 	}

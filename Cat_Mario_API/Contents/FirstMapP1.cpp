@@ -8,7 +8,7 @@ FirstMapP1::FirstMapP1()
 {
 	USpriteRenderer* FirstMapP1Renderer = CreateDefaultSubObject<USpriteRenderer>();
 	FirstMapP1Renderer->SetSprite("1stMapP1.png");
-	FirstMapP1Renderer->SetOrder(ERenderOrder::BLOCK);
+	FirstMapP1Renderer->SetOrder(ERenderOrder::PIPE);
 	FirstMapP1Renderer->SetComponentScale({ 120, 178 });
 
 }
