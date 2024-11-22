@@ -26,12 +26,14 @@ public:
 	void IsKilled(float _DeltaTime);
 	void TurnAround(FVector2D _MovePos);
 	void RiseUp();
+	void Bounce(float _DeltaTime);
 
 protected:
 
 private:
 	class USpriteRenderer* MonsterRenderer;
 	U2DCollision* MonsterBody;
+	U2DCollision* BouncyBody;
 	bool IsGround = false;
 
 	void Move(float _DeltaTime);
@@ -39,4 +41,6 @@ private:
 	FVector2D GravityForce = FVector2D::ZERO;
 	FVector2D MoveDir = FVector2D::LEFT;
 	float PosOrN = -1.0f;
+
+	bool MonsterIsKilled = false;
 };

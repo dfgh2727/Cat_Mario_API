@@ -477,6 +477,17 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 
 }
 
+void MarioCat::Bounce(float _DeltaTime)
+{
+	//AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::BouncyObject);
+	//if (nullptr != Result)
+	//{
+	//	/*Bounce(_DeltaTime);*/
+	//	AddActorLocation()
+	//	//MonsterIsKilled = true;
+	//}
+}
+
 void MarioCat::CatIsKilled(float _DeltaTime)
 {
 	AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::MonsterBody);

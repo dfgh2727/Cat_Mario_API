@@ -48,6 +48,7 @@ public:
 	void DirCheck();
 
 	bool IsCatDead = false;
+	void Bounce(float _DeltaTime);
 
 	/*static bool TouchFlag;*/
 

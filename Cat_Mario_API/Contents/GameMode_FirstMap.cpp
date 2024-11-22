@@ -17,6 +17,7 @@
 #include "QuestionMark.h"
 #include "FirstMapP1.h"
 #include "Seal.h"
+#include "HiddenBoxS.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -95,6 +96,10 @@ void GameMode_FirstMap::BeginPlay()
 		Seal1->SetActorLocation({ 1221, 640 });
 	}
 
+	{
+		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
+		NewActor->SetActorLocation({ 2358, 528 });
+	}
 }
 
 void GameMode_FirstMap::Tick(float _DeltaTime)

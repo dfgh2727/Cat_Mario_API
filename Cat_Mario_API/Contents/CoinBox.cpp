@@ -21,20 +21,28 @@ void CoinBox::RenderCollisionComponent()
 {
 	CollisionComponent = CreateDefaultSubObject<U2DCollision>();
 	CollisionComponent->SetComponentScale({ 60, 60 });
-	CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
+	CollisionComponent->SetCollisionGroup(ECollisionGroup::CoinBox);
 	CollisionComponent->SetCollisionType(ECollisionType::Rect);
 
 	DebugOn();
 }
 
-void CoinBox::BlockDisappear()
+void CoinBox::BlockDisappear(float _DeltaTime)
 {
-	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
+	/*AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
 	if (nullptr != Result)
 	{
 		CoinShowUP();
 		this->Destroy();
-	}
+	}*/
+	std::vector<AActor*> HitTheBlock;
+	bool IsHit = CollisionComponent
+		->Collision(static_cast<int>(ECollisionGroup::PlayerHead), HitTheBlock, FVector2D::UP, 100);
+	//if (IsHit = true)
+	//{
+	//	CoinShowUP();
+	//	this->Destroy();
+	//}
 }
 
 void CoinBox::CoinShowUP()

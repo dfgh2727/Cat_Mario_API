@@ -3,8 +3,8 @@
 // Ό³Έν :
 enum class ERenderOrder
 {
+	HIDDEN = -11,
 	COLLISION = -10,
-	HIDDEN = -9,
 	MAP = -8,
 	PROP = -1,
 	PLAYER = 0,
@@ -19,6 +19,9 @@ enum class ECollisionGroup
 	PlayerBody,
 	PlayerFoot,
 	MonsterBody,
+	BouncyObject,
 	SquareBlock,
+	CoinBox,
 	Prop,
+
 };

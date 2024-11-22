@@ -13,6 +13,7 @@
 
 #include "GameMode_FirstMap.h"
 #include "Enum.h"
+//#include "MarioCat.h"
 
 
 WhiteCircle::WhiteCircle()
@@ -28,6 +29,12 @@ WhiteCircle::WhiteCircle()
 		MonsterBody->SetComponentScale({ 55, 53 });
 		MonsterBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
 		MonsterBody->SetCollisionType(ECollisionType::Rect);
+	}
+	{
+		BouncyBody = CreateDefaultSubObject<U2DCollision>();
+		BouncyBody->SetComponentScale({ 55, 53 });
+		BouncyBody->SetCollisionGroup(ECollisionGroup::BouncyObject);
+		BouncyBody->SetCollisionType(ECollisionType::Rect);
 	}
 
 	MonsterRenderer->CreateAnimation("Mon_RunRight", "CMmon_Right.png", 0, 0, 0.5f);
@@ -134,7 +141,9 @@ void WhiteCircle::IsKilled(float _DeltaTime)
 	AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::PlayerFoot);
 	if (nullptr != Result)
 	{
+		/*Bounce(_DeltaTime);*/
 		this->Destroy();
+		//MonsterIsKilled = true;
 	}
 }
 
@@ -184,3 +193,10 @@ void WhiteCircle::RiseUp()
 {
 	AddActorLocation(FVector2D::UP * 0.25f);
 }
+
+//void WhiteCircle::Bounce(float _DeltaTime)
+//{
+//	FVector2D GoUp = FVector2D::UP * 25.0f;
+//	MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
+//	MainPlayer->AddActorLocation(GoUp);
+//}

@@ -122,6 +122,9 @@
     <ClCompile Include="Seal.cpp">
       <Filter>InterActive Things\Monster</Filter>
     </ClCompile>
+    <ClCompile Include="HiddenBoxS.cpp">
+      <Filter>InterActive Things\Blocks\CoinBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -244,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="Seal.h">
       <Filter>InterActive Things\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="HiddenBoxS.h">
+      <Filter>InterActive Things\Blocks\CoinBox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

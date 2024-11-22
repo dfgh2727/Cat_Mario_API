@@ -32,7 +32,7 @@ void QBlockwithCoin::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	BlockDisappear();
+	BlockDisappear(_DeltaTime);
 }
 
 

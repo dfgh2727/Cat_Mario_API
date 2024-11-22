@@ -18,7 +18,7 @@ public:
 
 
 	void RenderCollisionComponent();
-	void BlockDisappear();
+	void BlockDisappear(float _DeltaTime);
 	void CoinShowUP();
 
 
