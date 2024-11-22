@@ -49,6 +49,8 @@ public:
 
 	bool IsCatDead = false;
 	void Bounce(float _DeltaTime);
+	void SueprBounce(float _DeltaTime);
+
 	void RightBeforeDeath(float _DeltaTime);
 	void TurnOffTheSwitch();
 	void DeathCheck();

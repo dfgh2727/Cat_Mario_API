@@ -1,5 +1,5 @@
 #include "PreCompile.h"
-#include "WhiteCircle.h"
+#include "SuperBouncyWC.h"
 
 #include <EngineCore/EngineAPICore.h>
 #include <EngineCore/SpriteRenderer.h>
@@ -13,10 +13,8 @@
 
 #include "GameMode_FirstMap.h"
 #include "Enum.h"
-//#include "MarioCat.h"
 
-
-WhiteCircle::WhiteCircle()
+SuperBouncyWC::SuperBouncyWC()
 {
 	{
 		MonsterRenderer = CreateDefaultSubObject<USpriteRenderer>();
@@ -31,10 +29,10 @@ WhiteCircle::WhiteCircle()
 		MonsterBody->SetCollisionType(ECollisionType::Rect);
 	}
 	{
-		BouncyBody = CreateDefaultSubObject<U2DCollision>();
-		BouncyBody->SetComponentScale({ 55, 53 });
-		BouncyBody->SetCollisionGroup(ECollisionGroup::BouncyObject);
-		BouncyBody->SetCollisionType(ECollisionType::Rect);
+		SuperBouncyBody = CreateDefaultSubObject<U2DCollision>();
+		SuperBouncyBody->SetComponentScale({ 55, 53 });
+		SuperBouncyBody->SetCollisionGroup(ECollisionGroup::SuperBouncyObject);
+		SuperBouncyBody->SetCollisionType(ECollisionType::Rect);
 	}
 
 	MonsterRenderer->CreateAnimation("Mon_RunRight", "CMmon_Right.png", 0, 0, 0.5f);
@@ -45,38 +43,22 @@ WhiteCircle::WhiteCircle()
 	DebugOn();
 }
 
-WhiteCircle::~WhiteCircle()
+SuperBouncyWC::~SuperBouncyWC()
 {
 }
 
-void WhiteCircle::BeginPlay()
+void SuperBouncyWC::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-void WhiteCircle::Tick(float _DeltaTime)
+void SuperBouncyWC::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 	Move(_DeltaTime);
-	IsKilled(_DeltaTime);
 }
 
-void WhiteCircle::Move(float _DeltaTime)
-{
-	MonsterGroundCheck(GravityForce * _DeltaTime);
-	if (true == OnTheBlock(_DeltaTime))
-	{
-		IsGround = true;
-	}
-	Gravity(_DeltaTime);
-
-	FVector2D MonsterPos = this->GetActorLocation();
-
-	TurnAround(MoveDir);
-	AddActorLocation(MoveDir * 0.08f);
-}
-
-void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
+void SuperBouncyWC::MonsterGroundCheck(FVector2D _MovePos)
 {
 	IsGround = false;
 
@@ -84,7 +66,7 @@ void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
 	{
 		// 픽셀충돌에서 제일 중요한건 애초에 박히지 않는것이다.
 		FVector2D MonsterScale = MonsterRenderer->GetTransform().Scale;
-		FVector2D NextPos = GetActorLocation()+ FVector2D{ 0, 22 } + _MovePos;
+		FVector2D NextPos = GetActorLocation() + FVector2D{ 0, 22 } + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);
@@ -114,7 +96,7 @@ void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
 	}
 }
 
-void WhiteCircle::Gravity(float _DeltaTime)
+void SuperBouncyWC::Gravity(float _DeltaTime)
 {
 	if (false == IsGround)
 	{
@@ -128,24 +110,22 @@ void WhiteCircle::Gravity(float _DeltaTime)
 
 }
 
-bool WhiteCircle::OnTheBlock(float _DeltaTime)
+void SuperBouncyWC::Move(float _DeltaTime)
 {
-	std::vector<AActor*> SteppingBlock;
-	bool IsOnTheBlock = MonsterBody
-		->Collision(static_cast<int>(ECollisionGroup::SquareBlock), SteppingBlock, GravityForce * _DeltaTime, 100);
-	return IsOnTheBlock;
-}
-
-void WhiteCircle::IsKilled(float _DeltaTime)
-{
-	AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::PlayerFoot);
-	if (nullptr != Result)
+	MonsterGroundCheck(GravityForce * _DeltaTime);
+	/*if (true == OnTheBlock(_DeltaTime))
 	{
-		this->Destroy();
-	}
+		IsGround = true;
+	}*/
+	Gravity(_DeltaTime);
+
+	FVector2D MonsterPos = this->GetActorLocation();
+
+	TurnAround(MoveDir);
+	AddActorLocation(MoveDir * 0.08f);
 }
 
-void WhiteCircle::TurnAround(FVector2D _MovePos)
+void SuperBouncyWC::TurnAround(FVector2D _MovePos)
 {
 	FVector2D MonsterPos = this->GetActorLocation();
 
@@ -174,7 +154,7 @@ void WhiteCircle::TurnAround(FVector2D _MovePos)
 				MoveDir = FVector2D::LEFT;
 				PosOrN = -1.0f;
 			}
-			
+
 		}
 
 	}
@@ -187,7 +167,3 @@ void WhiteCircle::TurnAround(FVector2D _MovePos)
 	}
 }
 
-void WhiteCircle::RiseUp()
-{
-	AddActorLocation(FVector2D::UP * 0.25f);
-}

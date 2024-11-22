@@ -211,6 +211,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="FirstMapP2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Flag.cpp">
       <SubType>
       </SubType>
@@ -311,6 +315,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="SuperBouncyWC.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="ThirdMap.cpp">
       <SubType>
       </SubType>
@@ -375,6 +383,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="FifthMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="FirstMapP2.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -475,6 +487,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="SixthMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="SuperBouncyWC.h">
       <SubType>
       </SubType>
     </ClInclude>

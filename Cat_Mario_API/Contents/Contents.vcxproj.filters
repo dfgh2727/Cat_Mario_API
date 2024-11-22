@@ -86,9 +86,6 @@
     <ClCompile Include="BParticleA.cpp">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClCompile>
-    <ClCompile Include="WhiteCircle.cpp">
-      <Filter>InterActive Things\Monster</Filter>
-    </ClCompile>
     <ClCompile Include="MapActor.cpp">
       <Filter>InterActive Things</Filter>
     </ClCompile>
@@ -116,14 +113,23 @@
     <ClCompile Include="BParticleD.cpp">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClCompile>
-    <ClCompile Include="FirstMapP1.cpp">
-      <Filter>InterActive Things</Filter>
-    </ClCompile>
     <ClCompile Include="Seal.cpp">
       <Filter>InterActive Things\Monster</Filter>
     </ClCompile>
     <ClCompile Include="HiddenBoxS.cpp">
       <Filter>InterActive Things\Blocks\CoinBox</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteCircle.cpp">
+      <Filter>InterActive Things\Monster\WhiteCircle</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperBouncyWC.cpp">
+      <Filter>InterActive Things\Monster\WhiteCircle</Filter>
+    </ClCompile>
+    <ClCompile Include="FirstMapP1.cpp">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClCompile>
+    <ClCompile Include="FirstMapP2.cpp">
+      <Filter>InterActive Things\Pipes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -212,9 +218,6 @@
     <ClInclude Include="BParticleA.h">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClInclude>
-    <ClInclude Include="WhiteCircle.h">
-      <Filter>InterActive Things\Monster</Filter>
-    </ClInclude>
     <ClInclude Include="MapActor.h">
       <Filter>InterActive Things</Filter>
     </ClInclude>
@@ -242,14 +245,23 @@
     <ClInclude Include="BParticleD.h">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClInclude>
-    <ClInclude Include="FirstMapP1.h">
-      <Filter>InterActive Things</Filter>
-    </ClInclude>
     <ClInclude Include="Seal.h">
       <Filter>InterActive Things\Monster</Filter>
     </ClInclude>
     <ClInclude Include="HiddenBoxS.h">
       <Filter>InterActive Things\Blocks\CoinBox</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteCircle.h">
+      <Filter>InterActive Things\Monster\WhiteCircle</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperBouncyWC.h">
+      <Filter>InterActive Things\Monster\WhiteCircle</Filter>
+    </ClInclude>
+    <ClInclude Include="FirstMapP1.h">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClInclude>
+    <ClInclude Include="FirstMapP2.h">
+      <Filter>InterActive Things\Pipes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -288,6 +300,12 @@
     </Filter>
     <Filter Include="InterActive Things\Blocks\CoinBox">
       <UniqueIdentifier>{e1b53efd-4e1d-4985-a644-9599169e2457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Monster\WhiteCircle">
+      <UniqueIdentifier>{294534b1-e991-428c-bf11-bcdcc7f06b5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Pipes">
+      <UniqueIdentifier>{ec8ca562-403d-4494-aaa6-b4d71924ebc1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

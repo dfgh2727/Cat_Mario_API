@@ -20,6 +20,7 @@ enum class ECollisionGroup
 	PlayerFoot,
 	MonsterBody,
 	BouncyObject,
+	SuperBouncyObject,
 	SquareBlock,
 	CoinBox,
 	Prop,
