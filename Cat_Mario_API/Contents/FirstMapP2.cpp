@@ -14,7 +14,7 @@ FirstMapP2::FirstMapP2()
 	FirstMapP1Renderer->SetComponentScale({ 120, 234 });
 	{
 		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentScale({ 60, 60 });
+		CollisionComponent->SetComponentScale({ 60, 234 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}

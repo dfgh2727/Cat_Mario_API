@@ -16,6 +16,7 @@
 #include "QBlockwithCoin.h"
 #include "QuestionMark.h"
 #include "FirstMapP1.h"
+#include "FirstMapP2.h"
 #include "Seal.h"
 #include "HiddenBoxS.h"
 
@@ -99,6 +100,11 @@ void GameMode_FirstMap::BeginPlay()
 	{
 		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
 		NewActor->SetActorLocation({ 2358, 528 });
+	}
+
+	{
+		FirstMapP2* NewActor = GetWorld()->SpawnActor<FirstMapP2>();
+		NewActor->SetActorLocation({ 2000, 600 });
 	}
 }
 
