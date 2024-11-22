@@ -116,7 +116,7 @@
     <ClCompile Include="BParticleD.cpp">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClCompile>
-    <ClCompile Include="PipeHead.cpp">
+    <ClCompile Include="FirstMapP1.cpp">
       <Filter>InterActive Things</Filter>
     </ClCompile>
     <ClCompile Include="Seal.cpp">
@@ -239,7 +239,7 @@
     <ClInclude Include="BParticleD.h">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClInclude>
-    <ClInclude Include="PipeHead.h">
+    <ClInclude Include="FirstMapP1.h">
       <Filter>InterActive Things</Filter>
     </ClInclude>
     <ClInclude Include="Seal.h">

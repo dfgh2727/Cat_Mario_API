@@ -275,7 +275,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="PipeHead.cpp">
+    <ClCompile Include="FirstMapP1.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -438,7 +438,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="PipeHead.h">
+    <ClInclude Include="FirstMapP1.h">
       <SubType>
       </SubType>
     </ClInclude>

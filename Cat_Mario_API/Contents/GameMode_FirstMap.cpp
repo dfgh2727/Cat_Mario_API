@@ -15,7 +15,7 @@
 #include "Flag.h"
 #include "QBlockwithCoin.h"
 #include "QuestionMark.h"
-#include "PipeHead.h"
+#include "FirstMapP1.h"
 #include "Seal.h"
 
 #include "GameMode_DeathCount.h"
@@ -87,8 +87,8 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	{
-		PipeHead* NewActor = GetWorld()->SpawnActor<PipeHead>();
-		NewActor->SetActorLocation({ 1221, 586 });
+		FirstMapP1* NewActor = GetWorld()->SpawnActor<FirstMapP1>();
+		NewActor->SetActorLocation({ 1221, 646 });
 	}
 	{
 		Seal1 = GetWorld()->SpawnActor<Seal>();
