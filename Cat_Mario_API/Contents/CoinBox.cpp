@@ -29,20 +29,20 @@ void CoinBox::RenderCollisionComponent()
 
 void CoinBox::BlockDisappear(float _DeltaTime)
 {
-	/*AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
+	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
 	if (nullptr != Result)
 	{
 		CoinShowUP();
 		this->Destroy();
-	}*/
-	std::vector<AActor*> HitTheBlock;
+	}
+	/*std::vector<AActor*> HitTheBlock;
 	bool IsHit = CollisionComponent
 		->Collision(static_cast<int>(ECollisionGroup::PlayerHead), HitTheBlock, FVector2D::UP, 100);
-	//if (IsHit = true)
-	//{
-	//	CoinShowUP();
-	//	this->Destroy();
-	//}
+	if (IsHit = true)
+	{
+		CoinShowUP();
+		this->Destroy();
+	}*/
 }
 
 void CoinBox::CoinShowUP()

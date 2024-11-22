@@ -12,7 +12,7 @@ HiddenBoxS::HiddenBoxS()
 {
 	SkyRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	SkyRenderer->SetSprite("SkyBlock.png");
-	SkyRenderer->SetOrder(ERenderOrder::BLOCK);
+	SkyRenderer->SetOrder(ERenderOrder::HIDDEN);
 	SkyRenderer->SetComponentScale({ 60, 60 });
 
 	RenderCollisionComponent();
