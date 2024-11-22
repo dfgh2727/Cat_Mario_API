@@ -224,7 +224,7 @@ void MarioCat::Tick(float _DeltaTime)
 		Jump(_DeltaTime);
 		break;
 	case PlayerState::Dead:
-		YouDied(_DeltaTime);
+		RightBeforeDeath(_DeltaTime);
 		break;
 	default:
 		break;
@@ -493,24 +493,42 @@ void MarioCat::CatIsKilled(float _DeltaTime)
 	AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::MonsterBody);
 	if (nullptr != Result)
 	{
+		//CatRenderer->ChangeAnimation("Cat_IsDead" + DirString);
 		ChangeState(PlayerState::Dead);
 	}
 }
 
-//void MarioCat::IsCatAlive(float _DeltaTime)
-//{
-//	
-//}
+void MarioCat::RightBeforeDeath(float _DeltaTime)
+{
+	CatRenderer->ChangeAnimation("Cat_IsDead" + DirString);
+	TimeEventer.PushEvent(0.5f, std::bind(&MarioCat::YouDied, this, _DeltaTime));
+}
 
 void MarioCat::YouDied(float _DeltaTime)
 {
+	GravityForce += FVector2D::DOWN * _DeltaTime * 1200.0f;
+	AddActorLocation(GravityForce * _DeltaTime);
+
 	CatRenderer->ChangeAnimation("Cat_IsDead" + DirString);
-	FVector2D DeathMotion = GravityForce * _DeltaTime;
+	FVector2D DeathMotion = FVector2D::UP * 500.0f * _DeltaTime;
+	TimeEventer.PushEvent(0.25f, std::bind(&MarioCat::TurnOffTheSwitch, this));
 	
-	AddActorLocation(DeathMotion);
-	IsCatDead = true;
+	if (DeathMotionSwitch == true)
+	{
+		AddActorLocation(DeathMotion);
+		TimeEventer.PushEvent(2.0f, std::bind(&MarioCat::DeathCheck, this));
+	}
 }
 
+void MarioCat::TurnOffTheSwitch()
+{
+	DeathMotionSwitch = false;
+}
+
+void MarioCat::DeathCheck()
+{
+	IsCatDead = true;
+}
 
 void MarioCat::LevelChangeStart()
 {

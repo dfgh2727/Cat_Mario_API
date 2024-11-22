@@ -49,6 +49,9 @@ public:
 
 	bool IsCatDead = false;
 	void Bounce(float _DeltaTime);
+	void RightBeforeDeath(float _DeltaTime);
+	void TurnOffTheSwitch();
+	void DeathCheck();
 
 	/*static bool TouchFlag;*/
 
@@ -87,6 +90,7 @@ private:
 
 	FVector2D JumpPower = FVector2D(0.0f, -750.0f);
 	FVector2D PrevPos = FVector2D::ZERO;
+	bool DeathMotionSwitch = true;
 	/*USoundPlayer BGMPlayer;*/
 
 };
