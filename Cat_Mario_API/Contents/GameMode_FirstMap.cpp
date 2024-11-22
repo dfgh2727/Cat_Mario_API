@@ -19,6 +19,7 @@
 #include "FirstMapP2.h"
 #include "Seal.h"
 #include "HiddenBoxS.h"
+#include "SuperBouncyWC.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -104,7 +105,12 @@ void GameMode_FirstMap::BeginPlay()
 
 	{
 		FirstMapP2* NewActor = GetWorld()->SpawnActor<FirstMapP2>();
-		NewActor->SetActorLocation({ 2000, 600 });
+		NewActor->SetActorLocation({ 1753, 618 });
+	}
+	{
+		SuperBouncyWC* NewActor = GetWorld()->SpawnActor<SuperBouncyWC>();
+		NewActor->SetActorLocation({ 1450, 700 });
+		NewActor->SetColImage("1stColMap.png");
 	}
 }
 
