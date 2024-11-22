@@ -493,7 +493,6 @@ void MarioCat::CatIsKilled(float _DeltaTime)
 	AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::MonsterBody);
 	if (nullptr != Result)
 	{
-		//CatRenderer->ChangeAnimation("Cat_IsDead" + DirString);
 		ChangeState(PlayerState::Dead);
 	}
 }
@@ -506,12 +505,13 @@ void MarioCat::RightBeforeDeath(float _DeltaTime)
 
 void MarioCat::YouDied(float _DeltaTime)
 {
-	GravityForce += FVector2D::DOWN * _DeltaTime * 1200.0f;
+	/*IsGround = true;*/
+	GravityForce += FVector2D::DOWN * _DeltaTime * 1000.0f;
 	AddActorLocation(GravityForce * _DeltaTime);
 
 	CatRenderer->ChangeAnimation("Cat_IsDead" + DirString);
 	FVector2D DeathMotion = FVector2D::UP * 500.0f * _DeltaTime;
-	TimeEventer.PushEvent(0.25f, std::bind(&MarioCat::TurnOffTheSwitch, this));
+	TimeEventer.PushEvent(0.5f, std::bind(&MarioCat::TurnOffTheSwitch, this));
 	
 	if (DeathMotionSwitch == true)
 	{
