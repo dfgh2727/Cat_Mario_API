@@ -236,6 +236,7 @@ void MarioCat::Tick(float _DeltaTime)
 	HitTheBlock(_DeltaTime);
 	CatIsKilled(_DeltaTime);
 	Bounce(_DeltaTime);
+	SueprBounce(_DeltaTime);
 }
 
 void MarioCat::ChangeState(PlayerState _CurPlayerState)
