@@ -21,7 +21,6 @@ public:
 
 	void MonsterGroundCheck(FVector2D _MovePos);
 	void Gravity(float _DeltaTime);
-
 	void TurnAround(FVector2D _MovePos);
 
 protected:
