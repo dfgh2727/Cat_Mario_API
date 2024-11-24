@@ -67,17 +67,13 @@ void GameMode_FirstMap::BeginPlay()
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
 		NewActor->SetActorLocation({ 785, 528 });
 
-		TheQ = GetWorld()->SpawnActor<QuestionMark>();
-		TheQ->SetActorLocation({ 785, 528 });
+		QMark = GetWorld()->SpawnActor<QuestionMark>();
+		QMark->SetActorLocation({ 785, 528 });
 
 	}
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
 		NewActor->SetActorLocation({ 901, 528 });
-	}
-	{
-		/*QuestionMark* TheQ = GetWorld()->SpawnActor<QuestionMark>();
-		TheQ->SetActorLocation({ 785, 528 });*/
 	}
 	{
 		QBlockwithCoin* NewActor = GetWorld()->SpawnActor<QBlockwithCoin>();
@@ -86,6 +82,13 @@ void GameMode_FirstMap::BeginPlay()
 	{
 		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
 		NewActor->SetActorLocation({ 450, 700 });
+		NewActor->SetColImage("1stColMap.png");
+	}
+
+	//테스트용
+	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 785, 528 });
 		NewActor->SetColImage("1stColMap.png");
 	}
 
@@ -121,6 +124,15 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 
 	Seal1Swtich();
 	SealGoUp();
+	/*
+	if (QMark->IsQGone == true)
+	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 785, 528 });
+		NewActor->SetColImage("1stColMap.png");
+	}*/
+
+	SpawnMonster(_DeltaTime);
 	/*IsFlagGone();*/
 
 	/*if (TheQ = nullptr)
@@ -130,6 +142,7 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 		Monster->SetColImage("1stColMap.png");
 		Monster->RiseUp();
 	}*/
+
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -198,4 +211,9 @@ void GameMode_FirstMap::SealGoDown()
 
 }
 
+void GameMode_FirstMap::SpawnMonster(float _DeltaTime)
+{
+	
+
+}
 

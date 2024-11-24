@@ -131,6 +131,9 @@
     <ClCompile Include="FirstMapP2.cpp">
       <Filter>InterActive Things\Pipes</Filter>
     </ClCompile>
+    <ClCompile Include="QBlockwithWC.cpp">
+      <Filter>InterActive Things\Blocks\MysteryBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -263,6 +266,9 @@
     <ClInclude Include="FirstMapP2.h">
       <Filter>InterActive Things\Pipes</Filter>
     </ClInclude>
+    <ClInclude Include="QBlockwithWC.h">
+      <Filter>InterActive Things\Blocks\MysteryBox</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -306,6 +312,9 @@
     </Filter>
     <Filter Include="InterActive Things\Pipes">
       <UniqueIdentifier>{ec8ca562-403d-4494-aaa6-b4d71924ebc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Blocks\MysteryBox">
+      <UniqueIdentifier>{fea07ce6-0cbf-4cf0-b8a0-4312a0f1fb8b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -25,7 +25,9 @@ public:
 
 	void IsKilled(float _DeltaTime);
 	void TurnAround(FVector2D _MovePos);
-	void RiseUp();
+	
+	bool GetOutOfBox(float _DeltaTime);
+	void RiseUp(float _DeltaTime);
 
 protected:
 

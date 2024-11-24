@@ -18,8 +18,14 @@ BNormalBlock::BNormalBlock()
 		CollisionComponent->SetComponentScale({ 60, 60 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
-		DebugOn();
 	}
+	{
+		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent->SetComponentScale({ 60, 60 });
+		CollisionComponent->SetCollisionGroup(ECollisionGroup::MysteryBox);
+		CollisionComponent->SetCollisionType(ECollisionType::Rect);
+	}
+		DebugOn();
 }
 
 BNormalBlock::~BNormalBlock()

@@ -15,8 +15,11 @@ public:
 	HiddenBoxS& operator=(const HiddenBoxS& _Other) = delete;
 	HiddenBoxS& operator=(HiddenBoxS&& _Other) noexcept = delete;
 
-	void BeginPlay();
-	void Tick(float _DeltaTime);
+	void BeginPlay() override;
+	void Tick(float _DeltaTime) override;
+
+	void BlockDisappear(float _DeltaTime) override;
+	void BlockShowUP();
 
 protected:
 

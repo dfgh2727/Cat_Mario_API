@@ -26,10 +26,13 @@ public:
 	void SealGoUp();
 	void SealGoDown();
 
+	void SpawnMonster(float _DeltaTime);
+
+
 protected:
 
 private:
-	class QuestionMark* TheQ = nullptr;
+	class QuestionMark* QMark = nullptr;
 	//class Flag* MiddlePointFlag = nullptr;
 	class Seal* Seal1;
 	Seal* Seal2;

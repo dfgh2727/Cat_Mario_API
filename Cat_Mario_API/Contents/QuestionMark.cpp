@@ -20,6 +20,13 @@ QuestionMark::QuestionMark()
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}
+
+	/*{
+		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent->SetComponentScale({ 60, 60 });
+		CollisionComponent->SetCollisionGroup(ECollisionGroup::MysteryBox);
+		CollisionComponent->SetCollisionType(ECollisionType::Rect);
+	}*/
 	DebugOn();
 }
 

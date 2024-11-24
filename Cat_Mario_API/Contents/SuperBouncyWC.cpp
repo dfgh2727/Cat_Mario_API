@@ -56,7 +56,6 @@ void SuperBouncyWC::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 	Move(_DeltaTime);
-	Blocking(_DeltaTime);
 }
 
 void SuperBouncyWC::MonsterGroundCheck(FVector2D _MovePos)

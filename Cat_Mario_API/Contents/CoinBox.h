@@ -18,15 +18,15 @@ public:
 
 
 	void RenderCollisionComponent();
-	void BlockDisappear(float _DeltaTime);
+	virtual void BlockDisappear(float _DeltaTime);
 	void CoinShowUP();
 	//bool CollideWithCat(float _DeltaTime);
 
 protected:
+	U2DCollision* CollisionComponent;
 
 private:
 	class USpriteRenderer* QBlockRenderer;
-	U2DCollision* CollisionComponent;
 	//bool IsHit = false;
 };
 

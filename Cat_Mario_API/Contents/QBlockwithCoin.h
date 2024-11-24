@@ -15,8 +15,8 @@ public:
 	QBlockwithCoin& operator=(const QBlockwithCoin& _Other) = delete;
 	QBlockwithCoin& operator=(QBlockwithCoin&& _Other) noexcept = delete;
 
-	void BeginPlay();
-	void Tick(float _DeltaTime);
+	void BeginPlay() override;
+	void Tick(float _DeltaTime) override;
 
 protected:
 

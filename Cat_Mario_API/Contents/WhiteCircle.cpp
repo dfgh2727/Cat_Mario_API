@@ -58,8 +58,10 @@ void WhiteCircle::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 	Move(_DeltaTime);
-	Blocking(_DeltaTime);
 	IsKilled(_DeltaTime);
+
+	GetOutOfBox(_DeltaTime);
+	RiseUp(_DeltaTime);
 }
 
 void WhiteCircle::Move(float _DeltaTime)
@@ -207,7 +209,17 @@ void WhiteCircle::TurnAround(FVector2D _MovePos)
 	}
 }
 
-void WhiteCircle::RiseUp()
+bool WhiteCircle::GetOutOfBox(float _DeltaTime)
 {
+	std::vector<AActor*> InsideOfBox;
+	bool InTheBox = MonsterBody
+		->Collision(static_cast<int>(ECollisionGroup::MysteryBox), InsideOfBox, FVector2D::DOWN, 100);
+	return InTheBox;
+}
+
+
+void WhiteCircle::RiseUp(float _DeltaTime)
+{
+	if (true == GetOutOfBox(_DeltaTime))
 	AddActorLocation(FVector2D::UP * 0.25f);
 }
