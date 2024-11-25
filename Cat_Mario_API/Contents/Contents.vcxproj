@@ -331,6 +331,14 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="Turtle.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="TurtleShell.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="WhiteCircle.cpp">
       <SubType>
       </SubType>
@@ -507,6 +515,14 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="TitleImage.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Turtle.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="TurtleShell.h">
       <SubType>
       </SubType>
     </ClInclude>

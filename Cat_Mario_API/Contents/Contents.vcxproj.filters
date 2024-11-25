@@ -134,6 +134,12 @@
     <ClCompile Include="QBlockwithWC.cpp">
       <Filter>InterActive Things\Blocks\MysteryBox</Filter>
     </ClCompile>
+    <ClCompile Include="Turtle.cpp">
+      <Filter>InterActive Things\Monster\Turtle</Filter>
+    </ClCompile>
+    <ClCompile Include="TurtleShell.cpp">
+      <Filter>InterActive Things\Monster\Turtle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -269,6 +275,12 @@
     <ClInclude Include="QBlockwithWC.h">
       <Filter>InterActive Things\Blocks\MysteryBox</Filter>
     </ClInclude>
+    <ClInclude Include="Turtle.h">
+      <Filter>InterActive Things\Monster\Turtle</Filter>
+    </ClInclude>
+    <ClInclude Include="TurtleShell.h">
+      <Filter>InterActive Things\Monster\Turtle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -315,6 +327,9 @@
     </Filter>
     <Filter Include="InterActive Things\Blocks\MysteryBox">
       <UniqueIdentifier>{fea07ce6-0cbf-4cf0-b8a0-4312a0f1fb8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Monster\Turtle">
+      <UniqueIdentifier>{0307f947-5f18-4b99-801a-cb6b66dc5bfe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
