@@ -21,6 +21,7 @@
 #include "HiddenBoxS.h"
 #include "SuperBouncyWC.h"
 #include "Turtle.h"
+#include "Staff.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -126,7 +127,11 @@ void GameMode_FirstMap::BeginPlay()
 
 	{
 		Seal2 = GetWorld()->SpawnActor<Seal>();
-		Seal2->SetActorLocation({ 8000, -100 });
+		Seal2->SetActorLocation({ 7500, -100 });
+	}
+	{
+		Staff* TheStaff = GetWorld()->SpawnActor<Staff>();
+		TheStaff->SetActorLocation({ 7161, 374 });
 	}
 }
 
@@ -137,8 +142,6 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 
 	Seal1Swtich();
 	SealGoUp();
-
-	SpawnMonster(_DeltaTime);
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{

@@ -27,8 +27,6 @@ public:
 	void SealGoUp();
 	void SealGoDown();
 
-	void SpawnMonster(float _DeltaTime);
-
 
 protected:
 

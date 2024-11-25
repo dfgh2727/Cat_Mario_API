@@ -11,6 +11,19 @@
 
 Staff::Staff()
 {
+	USpriteRenderer* StaffRenderer = CreateDefaultSubObject<USpriteRenderer>();
+	StaffRenderer->SetSprite("Staff.png");
+	StaffRenderer->SetOrder(ERenderOrder::PROP);
+	StaffRenderer->SetComponentScale({ 44, 604 });
+
+	{
+		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent->SetComponentScale({ 44, 604 });
+		CollisionComponent->SetCollisionGroup(ECollisionGroup::Prop);
+		CollisionComponent->SetCollisionType(ECollisionType::Rect);
+	}
+
+	DebugOn();
 }
 
 Staff::~Staff()
@@ -29,7 +42,7 @@ void Staff::Tick(float _DeltaTime)
 	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerBody);
 	if (nullptr != Result)
 	{
-		MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
+		//MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
 		this->Destroy();
 	}
 
