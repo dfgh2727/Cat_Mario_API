@@ -24,6 +24,7 @@ enum class ECollisionGroup
 	SquareBlock,
 	CoinBox,
 	Prop,
-	MysteryBox
+	MysteryBox,
+	Dozer,
 
 };

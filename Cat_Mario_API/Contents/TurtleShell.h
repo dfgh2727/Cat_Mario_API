@@ -19,6 +19,7 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void DirOfCollision(float _DeltaTime);
 	void Move(float _DeltaTime);
 
 	void MonsterGroundCheck(FVector2D _MovePos);
@@ -39,5 +40,7 @@ private:
 	FVector2D GravityForce = FVector2D::ZERO;
 	FVector2D MoveDir = FVector2D::LEFT;
 	float PosOrN = -1.0f;
+
+	bool ShellMoves = false;
 };
 

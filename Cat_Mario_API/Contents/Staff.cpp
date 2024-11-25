@@ -42,7 +42,8 @@ void Staff::Tick(float _DeltaTime)
 	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerBody);
 	if (nullptr != Result)
 	{
-		//MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
+		MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
+		/*MainPlayer->*/
 		this->Destroy();
 	}
 
