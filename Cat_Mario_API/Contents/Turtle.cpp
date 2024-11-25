@@ -213,5 +213,14 @@ void Turtle::SpawnShell()
 	TurtleShell* TheShell = GetWorld()->SpawnActor<TurtleShell>();
 	TheShell->SetActorLocation(PresentPos);
 	TheShell->ColImage = ColImageForShell;
+
+	if (PosOrN > 0)
+	{
+		TheShell->MonsterRenderer->SetSprite("CMshell_Right.png");
+	}
+	else
+	{
+		TheShell->MonsterRenderer->SetSprite("CMshell_Left.png");
+	}
 }
 

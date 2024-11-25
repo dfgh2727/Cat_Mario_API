@@ -36,9 +36,9 @@ private:
 	U2DCollision* BouncyBody;
 	bool IsGround = false;
 
+	float PosOrN = -1.0f;
 	FVector2D GravityForce = FVector2D::ZERO;
 	FVector2D MoveDir = FVector2D::LEFT;
-	float PosOrN = -1.0f;
 
 	bool MonsterIsKilled = false;
 };

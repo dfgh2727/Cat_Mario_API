@@ -19,14 +19,17 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void Move(float _DeltaTime);
+
 	void MonsterGroundCheck(FVector2D _MovePos);
 	void Gravity(float _DeltaTime);
 	bool OnTheBlock(float _DeltaTime);
 	void TurnAround(FVector2D _MovePos);
+	
+	class USpriteRenderer* MonsterRenderer;
 protected:
 
 private:
-	class USpriteRenderer* MonsterRenderer;
 	U2DCollision* MonsterBody;
 	U2DCollision* BouncyBody;
 	bool IsGround = false;

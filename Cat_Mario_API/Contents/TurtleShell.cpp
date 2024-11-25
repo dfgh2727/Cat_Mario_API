@@ -13,6 +13,26 @@
 
 TurtleShell::TurtleShell()
 {
+	{
+		MonsterRenderer = CreateDefaultSubObject<USpriteRenderer>();
+		MonsterRenderer->SetSprite("CMshell_Right.png");
+		MonsterRenderer->SetOrder(ERenderOrder::PLAYER);
+		MonsterRenderer->SetComponentScale({ 60, 54 });
+	}
+	{
+		MonsterBody = CreateDefaultSubObject<U2DCollision>();
+		MonsterBody->SetComponentScale({ 60, 54 });
+		MonsterBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
+		MonsterBody->SetCollisionType(ECollisionType::Rect);
+	}
+	{
+		BouncyBody = CreateDefaultSubObject<U2DCollision>();
+		BouncyBody->SetComponentScale({ 60, 54 });
+		BouncyBody->SetCollisionGroup(ECollisionGroup::BouncyObject);
+		BouncyBody->SetCollisionType(ECollisionType::Rect);
+	}
+
+	DebugOn();
 }
 
 TurtleShell::~TurtleShell()
@@ -27,6 +47,11 @@ void TurtleShell::BeginPlay()
 void TurtleShell::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+} 
+
+void TurtleShell::Move(float _DeltaTime)
+{
+
 }
 
 void TurtleShell::MonsterGroundCheck(FVector2D _MovePos)
@@ -37,7 +62,7 @@ void TurtleShell::MonsterGroundCheck(FVector2D _MovePos)
 	{
 		// 픽셀충돌에서 제일 중요한건 애초에 박히지 않는것이다.
 		FVector2D MonsterScale = MonsterRenderer->GetTransform().Scale;
-		FVector2D NextPos = GetActorLocation() + FVector2D{ 0, 40 } + _MovePos;
+		FVector2D NextPos = GetActorLocation() + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);
@@ -96,7 +121,7 @@ void TurtleShell::TurnAround(FVector2D _MovePos)
 	if (nullptr != ColImage)
 	{
 		// 미래의 몬스터 위치
-		FVector2D NextPos = MonsterPos + FVector2D{ 26.0f * PosOrN, 0.0 } + _MovePos;
+		FVector2D NextPos = MonsterPos + FVector2D{ 27.0f * PosOrN, 0.0 } + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);
@@ -107,14 +132,14 @@ void TurtleShell::TurnAround(FVector2D _MovePos)
 			//왼쪽으로 가다가 픽셀 충돌할 시 오른쪽으로 방향 변경
 			if (MoveDir == FVector2D::LEFT)
 			{
-				MonsterRenderer->ChangeAnimation("Turtle_RunRight");
+				MonsterRenderer->SetSprite("CMshell_Right.png");
 				MoveDir = FVector2D::RIGHT;
 				PosOrN = 1.0f;
 			}
 			//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
 			else
 			{
-				MonsterRenderer->ChangeAnimation("Turtle_RunLeft");
+				MonsterRenderer->ChangeAnimation("CMshell_Left.png");
 				MoveDir = FVector2D::LEFT;
 				PosOrN = -1.0f;
 			}
@@ -128,14 +153,14 @@ void TurtleShell::TurnAround(FVector2D _MovePos)
 	{
 		if (MoveDir == FVector2D::LEFT)
 		{
-			MonsterRenderer->ChangeAnimation("Turtle_RunRight");
+			MonsterRenderer->ChangeAnimation("CMshell_Right.png");
 			MoveDir = FVector2D::RIGHT;
 			PosOrN = 1.0f;
 		}
 		//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
 		else
 		{
-			MonsterRenderer->ChangeAnimation("Turtle_RunLeft");
+			MonsterRenderer->ChangeAnimation("CMshell_Left.png");
 			MoveDir = FVector2D::LEFT;
 			PosOrN = -1.0f;
 		}
@@ -144,7 +169,7 @@ void TurtleShell::TurnAround(FVector2D _MovePos)
 	//몬스터가 맵의 왼쪽 끝에 닿을 경우 방향 변경
 	if (MonsterPos.X <= 0.0)
 	{
-		MonsterRenderer->ChangeAnimation("Turtle_RunRight");
+		MonsterRenderer->ChangeAnimation("CMshell_Right.png");
 		MoveDir = FVector2D::RIGHT;
 		PosOrN = 1.0f;
 	}
