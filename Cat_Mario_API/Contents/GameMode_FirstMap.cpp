@@ -185,6 +185,16 @@ void GameMode_FirstMap::Seal1Swtich()
 	}
 }
 
+void GameMode_FirstMap::Seal2Swtich()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (PlayerPos.X >= 1120.0f && PlayerPos.Y <= 520.0f)
+	{
+		Seal1Lever = true;
+	}
+}
+
 
 void GameMode_FirstMap::SealGoUp()
 {
@@ -196,6 +206,9 @@ void GameMode_FirstMap::SealGoUp()
 
 void GameMode_FirstMap::SealGoDown()
 {
-
+	if (Seal2Lever == true)
+	{
+		Seal1->AddActorLocation(FVector2D::UP * 0.8f);
+	}
 }
 

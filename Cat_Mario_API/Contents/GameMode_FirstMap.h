@@ -23,6 +23,7 @@ public:
 	void LevelChangeStart() override;
 
 	void Seal1Swtich();
+	void Seal2Swtich();
 	void SealGoUp();
 	void SealGoDown();
 
