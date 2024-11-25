@@ -66,18 +66,26 @@ void GameMode_FirstMap::BeginPlay()
 	}
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
-		NewActor->SetActorLocation({ 785, 528 });
+		NewActor->SetActorLocation({ 843, 296 });
 
 		QBlockwithWC* QMark = GetWorld()->SpawnActor<QBlockwithWC>();
-		QMark->SetActorLocation({ 785, 528 });
+		QMark->SetActorLocation({ 843, 296 });
 		QMark->SetColImage("1stColMap.png");
 	}
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
-		NewActor->SetActorLocation({ 901, 528 });
+		NewActor->SetActorLocation({ 785, 528 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		NewActor->SetActorLocation({ 785, 528 });
 	}
+
+	//QMark->SetActorLocation({ 785, 528 });
 	{
-		QBlockwithCoin* NewActor = GetWorld()->SpawnActor<QBlockwithCoin>();
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 901, 528 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
 		NewActor->SetActorLocation({ 901, 528 });
 	}
 	{
