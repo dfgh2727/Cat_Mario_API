@@ -46,28 +46,33 @@ void BBreakingBlock::Tick(float _DeltaTime)
 	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
 	if (nullptr != Result)
 	{
-		{
-			FVector2D PresentPos = this->GetActorLocation();
-			BParticleA* Particle = GetWorld()->SpawnActor<BParticleA>();
-			Particle->SetActorLocation(PresentPos);
-		}
-		{
-			FVector2D PresentPos = this->GetActorLocation();
-			BParticleB* Particle = GetWorld()->SpawnActor<BParticleB>();
-			Particle->SetActorLocation(PresentPos);
-		}
-		{
-			FVector2D PresentPos = this->GetActorLocation();
-			BParticleC* Particle = GetWorld()->SpawnActor<BParticleC>();
-			Particle->SetActorLocation(PresentPos);
-		}
-		{
-			FVector2D PresentPos = this->GetActorLocation();
-			BParticleD* Particle = GetWorld()->SpawnActor<BParticleD>();
-			Particle->SetActorLocation(PresentPos);
-		}
-		Broken = true;
-		this->Destroy();
+		ItsBroken();
 	}
 	
+}
+
+void BBreakingBlock::ItsBroken()
+{
+	{
+		FVector2D PresentPos = this->GetActorLocation();
+		BParticleA* Particle = GetWorld()->SpawnActor<BParticleA>();
+		Particle->SetActorLocation(PresentPos);
+	}
+	{
+		FVector2D PresentPos = this->GetActorLocation();
+		BParticleB* Particle = GetWorld()->SpawnActor<BParticleB>();
+		Particle->SetActorLocation(PresentPos);
+	}
+	{
+		FVector2D PresentPos = this->GetActorLocation();
+		BParticleC* Particle = GetWorld()->SpawnActor<BParticleC>();
+		Particle->SetActorLocation(PresentPos);
+	}
+	{
+		FVector2D PresentPos = this->GetActorLocation();
+		BParticleD* Particle = GetWorld()->SpawnActor<BParticleD>();
+		Particle->SetActorLocation(PresentPos);
+	}
+	Broken = true;
+	this->Destroy();
 }

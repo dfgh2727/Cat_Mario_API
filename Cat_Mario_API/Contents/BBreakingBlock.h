@@ -19,6 +19,9 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void ItsBroken();
+
+
 protected:
 
 private:
