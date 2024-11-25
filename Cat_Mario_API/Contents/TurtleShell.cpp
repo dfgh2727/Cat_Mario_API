@@ -31,6 +31,20 @@ TurtleShell::TurtleShell()
 		BouncyBody->SetCollisionGroup(ECollisionGroup::BouncyObject);
 		BouncyBody->SetCollisionType(ECollisionType::Rect);
 	}
+	{
+		LeftBody = CreateDefaultSubObject<U2DCollision>();
+		LeftBody->SetComponentScale({ 30, 54 });
+		LeftBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
+		LeftBody->SetCollisionType(ECollisionType::Rect);
+		LeftBody->SetComponentLocation({ -15, 0 });
+	}
+	{
+		RightBody = CreateDefaultSubObject<U2DCollision>();
+		RightBody->SetComponentScale({ 30, 54 });
+		RightBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
+		RightBody->SetCollisionType(ECollisionType::Rect);
+		RightBody->SetComponentLocation({ 15, 0 });
+	}
 
 	DebugOn();
 }
@@ -62,7 +76,7 @@ void TurtleShell::MonsterGroundCheck(FVector2D _MovePos)
 	{
 		// 픽셀충돌에서 제일 중요한건 애초에 박히지 않는것이다.
 		FVector2D MonsterScale = MonsterRenderer->GetTransform().Scale;
-		FVector2D NextPos = GetActorLocation() + _MovePos;
+		FVector2D NextPos = GetActorLocation() + FVector2D{0, -10} + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);

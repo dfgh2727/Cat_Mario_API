@@ -31,6 +31,8 @@ protected:
 
 private:
 	U2DCollision* MonsterBody;
+	U2DCollision* LeftBody;
+	U2DCollision* RightBody;
 	U2DCollision* BouncyBody;
 	bool IsGround = false;
 
