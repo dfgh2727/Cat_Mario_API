@@ -1,8 +1,8 @@
 #include "PreCompile.h"
 #include "QBlockwithWC.h"
-#include "Enum.h"
 #include "WhiteCircle.h"
 
+#include "Enum.h"
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineInput.h>
 #include <EngineCore/EngineCoreDebug.h>
@@ -11,15 +11,15 @@
 
 QBlockwithWC::QBlockwithWC()
 {
-	USpriteRenderer* QBlockRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	QBlockRenderer->SetSprite("QBlock.png");
-	QBlockRenderer->SetOrder(ERenderOrder::BLOCK);
-	QBlockRenderer->SetComponentScale({ 60, 60 });
+	USpriteRenderer* QMarkRenderer = CreateDefaultSubObject<USpriteRenderer>();
+	QMarkRenderer->SetSprite("QBlock.png");
+	QMarkRenderer->SetOrder(ERenderOrder::BLOCK);
+	QMarkRenderer->SetComponentScale({ 60, 60 });
 
 	{
 		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent->SetComponentScale({ 60, 60 });
-		CollisionComponent->SetCollisionGroup(ECollisionGroup::CoinBox);
+		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}
 
@@ -38,24 +38,30 @@ void QBlockwithWC::BeginPlay()
 void QBlockwithWC::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
-}
-//void QBlockwithWC::BlockDisappear(float _DeltaTime)
-//{
-//	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
-//	if (nullptr != Result)
-//	{
-//		CoinShowUP();
-//		this->Destroy();
-//	}
-//	
-//}
+	BlockDisappear(_DeltaTime);
 
-//void QBlockwithWC::CoinShowUP()
-//{
-//	FVector2D PresentPos = this->GetActorLocation();
-//	WhiteCircle* TheMonster = GetWorld()->SpawnActor<WhiteCircle>();
-//	TheCoin->SetActorLocation(PresentPos);
-//	AddActorLocation(FVector2D::UP * 0.25f);
-//}
+}
+
+void QBlockwithWC::BlockDisappear(float _DeltaTime)
+{
+	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
+	if (nullptr != Result)
+	{
+		MonsterShowUP();
+		this->Destroy();
+	}
+	
+}
+
+void QBlockwithWC::MonsterShowUP()
+{
+	FVector2D PresentPos = this->GetActorLocation();
+	UEngineWinImage* ColImageForWC = this->GetColImage();
+
+	WhiteCircle* TheMonster = GetWorld()->SpawnActor<WhiteCircle>();
+	TheMonster->SetActorLocation(PresentPos);
+	TheMonster->ColImage = ColImageForWC;
+	AddActorLocation(FVector2D::UP * 0.25f);
+}
 
 

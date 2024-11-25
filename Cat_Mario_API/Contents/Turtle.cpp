@@ -60,3 +60,8 @@ void Turtle::Tick(float _DeltaTime)
 	GetOutOfBox(_DeltaTime);
 	RiseUp(_DeltaTime);
 }
+
+void Turtle::IsKilled(float _DeltaTime)
+{
+
+}

@@ -1,9 +1,9 @@
 #pragma once
-#include <EngineCore/Actor.h>
+#include "MapActor.h"
 #include <EngineCore/2DCollision.h>
 
 // Ό³Έν :
-class QBlockwithWC : public AActor
+class QBlockwithWC : public AMapActor
 {
 public:
 	// constrcuter destructer
@@ -19,8 +19,8 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
-	/*void BlockDisappear(float _DeltaTime);
-	void CoinShowUP();*/
+	void BlockDisappear(float _DeltaTime);
+	void MonsterShowUP();
 
 protected:
 

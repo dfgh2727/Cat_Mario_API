@@ -19,9 +19,11 @@ public:
 
 	void SetColImage(std::string_view _ColImageName);
 	void SetMapImage(std::string_view _MapImageName);
+	UEngineWinImage* GetColImage();
+	
+	UEngineWinImage* ColImage = nullptr;
 
 protected:
-	UEngineWinImage* ColImage = nullptr;
 	UEngineWinImage* MapImage = nullptr;
 
 private:

@@ -32,7 +32,7 @@ public:
 protected:
 
 private:
-	class QuestionMark* QMark = nullptr;
+	//class QuestionMark* QMark = nullptr;
 	//class Flag* MiddlePointFlag = nullptr;
 	class Seal* Seal1;
 	Seal* Seal2;

@@ -24,7 +24,7 @@ public:
 	void Gravity(float _DeltaTime);
 	bool OnTheBlock(float _DeltaTime);
 
-	void IsKilled(float _DeltaTime);
+	virtual void IsKilled(float _DeltaTime);
 	void TurnAround(FVector2D _MovePos);
 	
 	bool GetOutOfBox(float _DeltaTime);

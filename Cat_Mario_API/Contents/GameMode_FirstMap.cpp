@@ -14,7 +14,7 @@
 #include "MapActor.h"
 #include "Flag.h"
 #include "QBlockwithCoin.h"
-#include "QuestionMark.h"
+#include "QBlockwithWC.h"
 #include "FirstMapP1.h"
 #include "FirstMapP2.h"
 #include "Seal.h"
@@ -67,9 +67,9 @@ void GameMode_FirstMap::BeginPlay()
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
 		NewActor->SetActorLocation({ 785, 528 });
 
-		QMark = GetWorld()->SpawnActor<QuestionMark>();
+		QBlockwithWC* QMark = GetWorld()->SpawnActor<QBlockwithWC>();
 		QMark->SetActorLocation({ 785, 528 });
-
+		QMark->SetColImage("1stColMap.png");
 	}
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
@@ -87,9 +87,9 @@ void GameMode_FirstMap::BeginPlay()
 
 	//테스트용
 	{
-		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		/*WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
 		NewActor->SetActorLocation({ 785, 528 });
-		NewActor->SetColImage("1stColMap.png");
+		NewActor->SetColImage("1stColMap.png");*/
 	}
 
 	{
@@ -124,25 +124,8 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 
 	Seal1Swtich();
 	SealGoUp();
-	/*
-	if (QMark->IsQGone == true)
-	{
-		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
-		NewActor->SetActorLocation({ 785, 528 });
-		NewActor->SetColImage("1stColMap.png");
-	}*/
 
 	SpawnMonster(_DeltaTime);
-	/*IsFlagGone();*/
-
-	/*if (TheQ = nullptr)
-	{
-		WhiteCircle* Monster = GetWorld()->SpawnActor<WhiteCircle>();
-		Monster->SetActorLocation({ 785, 528 });
-		Monster->SetColImage("1stColMap.png");
-		Monster->RiseUp();
-	}*/
-
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -165,14 +148,6 @@ void GameMode_FirstMap::ReStart(float _DeltaTime)
 		UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");*/
 	}
 }
-
-//void GameMode_FirstMap::IsFlagGone()
-//{
-//	if (MiddlePointFlag = nullptr)
-//	{
-//		MarioCat::TouchFlag = true;
-//	}
-//}
 
 void GameMode_FirstMap::LevelChangeStart()
 {

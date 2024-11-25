@@ -8,7 +8,7 @@ enum class ERenderOrder
 	MAP = -8,
 	PROP = -1,
 	PLAYER = 0,
-	BLOCK = 0,
+	BLOCK = 1,
 	PIPE = 9,
 	UI = 10
 };

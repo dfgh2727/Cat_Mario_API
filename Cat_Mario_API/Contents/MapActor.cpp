@@ -23,5 +23,9 @@ void AMapActor::SetColImage(std::string_view _ColImageName)
 	return;
 }
 
+UEngineWinImage* AMapActor::GetColImage()
+{
+	return ColImage;
+}
 
 

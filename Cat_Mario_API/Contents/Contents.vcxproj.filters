@@ -101,9 +101,6 @@
     <ClCompile Include="Flag.cpp">
       <Filter>InterActive Things\Props</Filter>
     </ClCompile>
-    <ClCompile Include="QuestionMark.cpp">
-      <Filter>InterActive Things\Blocks</Filter>
-    </ClCompile>
     <ClCompile Include="BParticleB.cpp">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClCompile>
@@ -241,9 +238,6 @@
     </ClInclude>
     <ClInclude Include="Flag.h">
       <Filter>InterActive Things\Props</Filter>
-    </ClInclude>
-    <ClInclude Include="QuestionMark.h">
-      <Filter>InterActive Things\Blocks</Filter>
     </ClInclude>
     <ClInclude Include="BParticleB.h">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
