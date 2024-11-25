@@ -77,9 +77,6 @@
     <ClCompile Include="GoingUpBlock.cpp">
       <Filter>InterActive Things\Blocks</Filter>
     </ClCompile>
-    <ClCompile Include="BBreakingBlock.cpp">
-      <Filter>InterActive Things\Blocks</Filter>
-    </ClCompile>
     <ClCompile Include="BNormalBlock.cpp">
       <Filter>InterActive Things\Blocks</Filter>
     </ClCompile>
@@ -139,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="Staff.cpp">
       <Filter>InterActive Things\Props</Filter>
+    </ClCompile>
+    <ClCompile Include="BBreakingBlock.cpp">
+      <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -218,9 +218,6 @@
     <ClInclude Include="GoingUpBlock.h">
       <Filter>InterActive Things\Blocks</Filter>
     </ClInclude>
-    <ClInclude Include="BBreakingBlock.h">
-      <Filter>InterActive Things\Blocks</Filter>
-    </ClInclude>
     <ClInclude Include="BNormalBlock.h">
       <Filter>InterActive Things\Blocks</Filter>
     </ClInclude>
@@ -281,6 +278,9 @@
     <ClInclude Include="Staff.h">
       <Filter>InterActive Things\Props</Filter>
     </ClInclude>
+    <ClInclude Include="BBreakingBlock.h">
+      <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -330,6 +330,9 @@
     </Filter>
     <Filter Include="InterActive Things\Monster\Turtle">
       <UniqueIdentifier>{0307f947-5f18-4b99-801a-cb6b66dc5bfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Blocks\BreakingBlock">
+      <UniqueIdentifier>{0db5b076-5eaa-405c-9383-7ef8340ab91b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

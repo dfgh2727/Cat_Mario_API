@@ -26,6 +26,8 @@ public:
 	void Gravity(float _DeltaTime);
 	bool OnTheBlock(float _DeltaTime);
 	void TurnAround(FVector2D _MovePos);
+
+	void KillAll(float _DeltaTime);
 	
 	class USpriteRenderer* MonsterRenderer;
 protected:

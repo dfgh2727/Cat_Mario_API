@@ -22,7 +22,7 @@ TurtleShell::TurtleShell()
 	{
 		MonsterBody = CreateDefaultSubObject<U2DCollision>();
 		MonsterBody->SetComponentScale({ 60, 54 });
-		MonsterBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
+		MonsterBody->SetCollisionGroup(ECollisionGroup::TurtleShell);
 		MonsterBody->SetCollisionType(ECollisionType::Rect);
 	}
 	{
@@ -34,14 +34,14 @@ TurtleShell::TurtleShell()
 	{
 		LeftBody = CreateDefaultSubObject<U2DCollision>();
 		LeftBody->SetComponentScale({ 30, 54 });
-		LeftBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
+		LeftBody->SetCollisionGroup(ECollisionGroup::Dozer);
 		LeftBody->SetCollisionType(ECollisionType::Rect);
 		LeftBody->SetComponentLocation({ -15, 0 });
 	}
 	{
 		RightBody = CreateDefaultSubObject<U2DCollision>();
 		RightBody->SetComponentScale({ 30, 54 });
-		RightBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
+		RightBody->SetCollisionGroup(ECollisionGroup::Dozer);
 		RightBody->SetCollisionType(ECollisionType::Rect);
 		RightBody->SetComponentLocation({ 15, 0 });
 	}
@@ -63,6 +63,7 @@ void TurtleShell::Tick(float _DeltaTime)
 	Super::Tick(_DeltaTime);
 	DirOfCollision(_DeltaTime);
 	Move(_DeltaTime);
+	KillAll(_DeltaTime);
 } 
 
 void TurtleShell::Move(float _DeltaTime)
@@ -228,4 +229,16 @@ void TurtleShell::DirOfCollision(float _DeltaTime)
 	}
 }
 
+
+void TurtleShell::KillAll(float _DeltaTime)
+{
+	if (ShellMoves == true)
+	{
+		AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::MonsterBody);
+		if (nullptr != Result)
+		{
+			Result->Destroy();
+		}
+	}
+}
 

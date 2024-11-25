@@ -25,6 +25,8 @@ enum class ECollisionGroup
 	CoinBox,
 	Prop,
 	MysteryBox,
+	TurtleShell,
 	Dozer,
+	BreakingBlock,
 
 };

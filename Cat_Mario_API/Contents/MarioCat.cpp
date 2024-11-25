@@ -504,11 +504,22 @@ void MarioCat::SueprBounce(float _DeltaTime)
 
 void MarioCat::CatIsKilled(float _DeltaTime)
 {
-	AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::MonsterBody);
-	if (nullptr != Result)
 	{
-		ChangeState(PlayerState::Dead);
+		AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::MonsterBody);
+		if (nullptr != Result)
+		{
+			ChangeState(PlayerState::Dead);
+		}
 	}
+
+	{
+		AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::TurtleShell);
+		if (nullptr != Result)
+		{
+			ChangeState(PlayerState::Dead);
+		}
+	}
+	
 }
 
 void MarioCat::RightBeforeDeath(float _DeltaTime)
