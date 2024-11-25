@@ -19,9 +19,20 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void MonsterGroundCheck(FVector2D _MovePos);
+	void Gravity(float _DeltaTime);
+	bool OnTheBlock(float _DeltaTime);
+	void TurnAround(FVector2D _MovePos);
 protected:
 
 private:
+	class USpriteRenderer* MonsterRenderer;
+	U2DCollision* MonsterBody;
+	U2DCollision* BouncyBody;
+	bool IsGround = false;
 
+	FVector2D GravityForce = FVector2D::ZERO;
+	FVector2D MoveDir = FVector2D::LEFT;
+	float PosOrN = -1.0f;
 };
 
