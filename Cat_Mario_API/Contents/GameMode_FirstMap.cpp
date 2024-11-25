@@ -20,6 +20,7 @@
 #include "Seal.h"
 #include "HiddenBoxS.h"
 #include "SuperBouncyWC.h"
+#include "Turtle.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -87,9 +88,9 @@ void GameMode_FirstMap::BeginPlay()
 
 	//테스트용
 	{
-		/*WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
-		NewActor->SetActorLocation({ 785, 528 });
-		NewActor->SetColImage("1stColMap.png");*/
+		Turtle* NewActor = GetWorld()->SpawnActor<Turtle>();
+		NewActor->SetActorLocation({ 400, 700 });
+		NewActor->SetColImage("1stColMap.png");
 	}
 
 	{

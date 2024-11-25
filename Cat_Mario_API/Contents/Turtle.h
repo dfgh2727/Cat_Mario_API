@@ -1,9 +1,9 @@
 #pragma once
-#include "WhiteCircle.h"
+#include "MapActor.h"
 #include <EngineCore/2DCollision.h>
 
 // Ό³Έν :
-class Turtle : public WhiteCircle
+class Turtle : public AMapActor
 {
 public:
 	// constrcuter destructer
@@ -19,7 +19,14 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
-	void IsKilled(float _DeltaTime) override;
+	void Move(float _DeltaTime);
+	void MonsterGroundCheck(FVector2D _MovePos);
+	void Gravity(float _DeltaTime);
+	bool OnTheBlock(float _DeltaTime);
+	void TurnAround(FVector2D _MovePos);
+
+	void IsKilled(float _DeltaTime);
+	void SpawnShell();
 
 protected:
 
