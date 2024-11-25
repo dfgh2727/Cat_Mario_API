@@ -127,7 +127,7 @@ void GameMode_FirstMap::BeginPlay()
 
 	{
 		Seal2 = GetWorld()->SpawnActor<Seal>();
-		Seal2->SetActorLocation({ 7500, -100 });
+		Seal2->SetActorLocation({ 7280, -100 });
 	}
 	{
 		Staff* TheStaff = GetWorld()->SpawnActor<Staff>();

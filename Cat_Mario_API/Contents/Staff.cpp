@@ -18,7 +18,7 @@ Staff::Staff()
 
 	{
 		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentScale({ 44, 604 });
+		CollisionComponent->SetComponentScale({ 20, 604 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::Prop);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}
@@ -44,8 +44,6 @@ void Staff::Tick(float _DeltaTime)
 	{
 		MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
 		/*MainPlayer->*/
-		this->Destroy();
 	}
-
 }
 
