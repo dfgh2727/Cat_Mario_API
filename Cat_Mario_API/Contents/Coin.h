@@ -1,6 +1,5 @@
 #pragma once
 #include <EngineCore/Actor.h>
-#include <EngineCore/2DCollision.h>
 
 // Ό³Έν :
 class Coin : public AActor

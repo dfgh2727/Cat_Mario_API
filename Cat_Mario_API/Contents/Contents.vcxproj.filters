@@ -137,6 +137,9 @@
     <ClCompile Include="TurtleShell.cpp">
       <Filter>InterActive Things\Monster\Turtle</Filter>
     </ClCompile>
+    <ClCompile Include="Staff.cpp">
+      <Filter>InterActive Things\Props</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -274,6 +277,9 @@
     </ClInclude>
     <ClInclude Include="TurtleShell.h">
       <Filter>InterActive Things\Monster\Turtle</Filter>
+    </ClInclude>
+    <ClInclude Include="Staff.h">
+      <Filter>InterActive Things\Props</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -61,6 +61,7 @@ void TurtleShell::BeginPlay()
 void TurtleShell::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+
 } 
 
 void TurtleShell::Move(float _DeltaTime)

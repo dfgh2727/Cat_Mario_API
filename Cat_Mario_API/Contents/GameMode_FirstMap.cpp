@@ -46,7 +46,7 @@ void GameMode_FirstMap::BeginPlay()
 	/*if(MarioCat::TouchFlag == false)*/
 	{
 		Flag* MiddlePointFlag = GetWorld()->SpawnActor<Flag>();
-		MiddlePointFlag->SetActorLocation({ 959, 443 });
+		MiddlePointFlag->SetActorLocation({ 3860, 440 });
 	}
 	{
 		GoingUpBlock* NewActor = GetWorld()->SpawnActor<GoingUpBlock>();
@@ -123,6 +123,11 @@ void GameMode_FirstMap::BeginPlay()
 		NewActor->SetActorLocation({ 1450, 700 });
 		NewActor->SetColImage("1stColMap.png");
 	}
+
+	{
+		Seal2 = GetWorld()->SpawnActor<Seal>();
+		Seal2->SetActorLocation({ 8000, -100 });
+	}
 }
 
 void GameMode_FirstMap::Tick(float _DeltaTime)
@@ -191,12 +196,6 @@ void GameMode_FirstMap::SealGoUp()
 
 void GameMode_FirstMap::SealGoDown()
 {
-
-}
-
-void GameMode_FirstMap::SpawnMonster(float _DeltaTime)
-{
-	
 
 }
 

@@ -315,6 +315,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="Staff.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="SuperBouncyWC.cpp">
       <SubType>
       </SubType>
@@ -495,6 +499,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="SixthMap.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Staff.h">
       <SubType>
       </SubType>
     </ClInclude>

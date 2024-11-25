@@ -14,7 +14,7 @@ Flag::Flag()
 	USpriteRenderer* FlagRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	FlagRenderer->SetSprite("Flag.png");
 	FlagRenderer->SetOrder(ERenderOrder::PROP);
-	FlagRenderer->SetComponentScale({ 79, 120 });
+	FlagRenderer->SetComponentScale({ 62, 120 });
 
 	{
 		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
