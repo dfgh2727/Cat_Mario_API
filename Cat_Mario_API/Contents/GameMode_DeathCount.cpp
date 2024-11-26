@@ -73,16 +73,29 @@ void GameMode_DeathCount::DeathCounter()
 }
 
 
-void GameMode_DeathCount::ChangeLevel()
+void GameMode_DeathCount::GoToNextLevel()
 {
-	//UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_" + MapNameString + "Map");
+	UEngineAPICore::GetCore()->OpenLevel("Play_" + MapNameString + "Map");
+}
+
+void GameMode_DeathCount::RestartLevel()
+{
+	UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_" + MapNameString + "Map");
 	UEngineAPICore::GetCore()->OpenLevel("Play_" + MapNameString + "Map");
 }
 
 void GameMode_DeathCount::LevelChangeStart()
 {
 	Super::LevelChangeStart();
-	int a = 0;
 
-	TimeEventer.PushEvent(2.0f, std::bind(&GameMode_DeathCount::ChangeLevel, this));
+	if (MarioCat::IsCatDead == true)
+	{
+		TimeEventer.PushEvent(2.0f, std::bind(&GameMode_DeathCount::RestartLevel, this));
+	}
+	else
+	{
+		TimeEventer.PushEvent(2.0f, std::bind(&GameMode_DeathCount::GoToNextLevel, this));
+	}
+
+	MarioCat::IsCatDead = false;
 }

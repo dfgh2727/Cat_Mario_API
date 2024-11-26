@@ -20,7 +20,8 @@ public:
 
 	void LevelChangeStart() override;
 
-	void ChangeLevel();
+	void GoToNextLevel();
+	void RestartLevel();
 
 	void Tick(float _DeltaTime) override;
 

@@ -126,8 +126,13 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	{
-		Seal2 = GetWorld()->SpawnActor<Seal>();
-		Seal2->SetActorLocation({ 7280, -100 });
+		/*Seal2 = GetWorld()->SpawnActor<Seal>();
+		Seal2->SetActorLocation({ 7280, -100 });*/
+	}
+
+	{
+		Seal3 = GetWorld()->SpawnActor<Seal>();
+		Seal3->SetActorLocation({ 7280, -100 });
 	}
 	{
 		Staff* TheStaff = GetWorld()->SpawnActor<Staff>();
@@ -140,8 +145,9 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 	Super::Tick(_DeltaTime);
 	ReStart(_DeltaTime);
 
-	Seal1Swtich();
+	SealSwtich();
 	//SealGoUp();
+	//SealGoDown();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -174,12 +180,12 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { 300, 700/*7200, 10*/ };
+		MarioCat::StartPos = { 300, 700 /*7200, 10*/ };
 		Check = true;
 	}
 }
 
-void GameMode_FirstMap::Seal1Swtich()
+void GameMode_FirstMap::SealSwtich()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
@@ -187,18 +193,17 @@ void GameMode_FirstMap::Seal1Swtich()
 	{
 		Seal1Lever = true;
 	}
-}
 
-void GameMode_FirstMap::Seal2Swtich()
-{
-	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-	FVector2D PlayerPos = Player->GetActorLocation();
 	if (PlayerPos.X >= 1120.0f && PlayerPos.Y <= 520.0f)
 	{
-		Seal1Lever = true;
+		Seal2Lever = true;
+	}
+
+	if (PlayerPos.X >= 1120.0f)
+	{
+		Seal3Lever = true;
 	}
 }
-
 
 void GameMode_FirstMap::SealGoUp()
 {
@@ -212,7 +217,12 @@ void GameMode_FirstMap::SealGoDown()
 {
 	if (Seal2Lever == true)
 	{
-		Seal1->AddActorLocation(FVector2D::UP * 0.8f);
+		Seal2->AddActorLocation(FVector2D::DOWN * 0.8f);
+	}
+
+	if (Seal3Lever == true)
+	{
+		Seal1->AddActorLocation(FVector2D::DOWN * 0.8f);
 	}
 }
 

@@ -22,8 +22,8 @@ public:
 
 	void LevelChangeStart() override;
 
-	void Seal1Swtich();
-	void Seal2Swtich();
+	void SealSwtich();
+
 	void SealGoUp();
 	void SealGoDown();
 
@@ -38,7 +38,9 @@ private:
 	//class Flag* MiddlePointFlag = nullptr;
 	class Seal* Seal1;
 	Seal* Seal2;
+	Seal* Seal3;
 	bool Seal1Lever = false;
 	bool Seal2Lever = false;
+	bool Seal3Lever = false;
 };
 

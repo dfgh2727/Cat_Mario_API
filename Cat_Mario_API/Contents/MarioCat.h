@@ -50,7 +50,6 @@ public:
 
 	void DirCheck();
 
-	bool IsCatDead = false;
 	void Bounce(float _DeltaTime);
 	void SueprBounce(float _DeltaTime);
 
@@ -60,6 +59,8 @@ public:
 
 	/*static bool TouchFlag;*/
 
+	static bool IsCatDead;
+	
 	static FVector2D StartPos;
 
 	bool StaffTouched = false;

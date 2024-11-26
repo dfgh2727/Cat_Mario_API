@@ -22,7 +22,7 @@
 #include "MapActor.h"
 #include "Enum.h"
 
-//bool MarioCat::TouchFlag = false;
+bool MarioCat::IsCatDead = false;
 FVector2D MarioCat::StartPos = FVector2D::ZERO;
 
 
