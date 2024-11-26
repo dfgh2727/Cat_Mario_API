@@ -71,6 +71,8 @@ public:
 	void EndMotion2(float _DeltaTime);
 	void YouCleared(float _DeltaTime);
 
+	bool OverTheStaff = false;
+	bool AtTheDoor = false;
 	bool Cleared = false;
 
 	PlayerState GetPlayerState() 

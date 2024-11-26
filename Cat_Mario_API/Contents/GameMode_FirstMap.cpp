@@ -141,7 +141,7 @@ void GameMode_FirstMap::BeginPlay()
 
 	{
 		Seal3 = GetWorld()->SpawnActor<DownSeal>();
-		Seal3->SetActorLocation({ 7280, -100 });
+		Seal3->SetActorLocation({ 7380, -100 });
 	}
 	{
 		Staff* TheStaff = GetWorld()->SpawnActor<Staff>();
@@ -205,7 +205,7 @@ void GameMode_FirstMap::SealSwtich()
 		Seal2Lever = true;
 	}
 
-	if (PlayerPos.X >= 7200.0f)
+	if (PlayerPos.X >= 7250.0f)
 	{
 		Seal3Lever = true;
 	}
@@ -232,18 +232,21 @@ void GameMode_FirstMap::SealGoDown()
 	}
 }
 
-void GameMode_FirstMap::AtTheDoor()
+void GameMode_FirstMap::OverTheStaff()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if (PlayerPos.X >= 7510.0f)
+	if (PlayerPos.X >= 7161.0f)
 	{
-		Player->Cleared = true;
-		GameMode_DeathCount::MapNameString = "Second";
-	
-		MarioCat::StartPos = { 300, 700 };
-		TimeEventer.PushEvent(2.0f, std::bind(&GameMode_FirstMap::GoToDeathCount, this));
+		Player->OverTheStaff = true;
 	}	
+}
+
+void GameMode_FirstMap::Clear()
+{
+	GameMode_DeathCount::MapNameString = "Second";
+	MarioCat::StartPos = { 300, 700 };
+	TimeEventer.PushEvent(2.0f, std::bind(&GameMode_FirstMap::GoToDeathCount, this));
 }
 
 void GameMode_FirstMap::GoToDeathCount()

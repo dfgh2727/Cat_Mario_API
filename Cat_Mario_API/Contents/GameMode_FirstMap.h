@@ -27,7 +27,8 @@ public:
 	void SealGoUp();
 	void SealGoDown();
 
-	void AtTheDoor();
+	void OverTheStaff();
+	void Clear();
 
 	void GoToDeathCount();
 

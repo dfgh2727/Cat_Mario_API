@@ -567,7 +567,7 @@ void MarioCat::DeathCheck()
 
 void MarioCat::StartEndMotion()
 {
-	if (StaffTouched == true /*&& StaffBlockTouched == false*/)
+	if (StaffTouched == true)
 	{
 		ChangeState(PlayerState::SlipDown);
 		StaffTouched = false;
@@ -579,7 +579,7 @@ void MarioCat::EndMotion1(float _DeltaTime)
 	if (StaffBlockTouched == false)
 	{
 		CatRenderer->ChangeAnimation("Cat_JumpRight");
-		AddActorLocation(FVector2D::DOWN * 100.0f * _DeltaTime);
+		AddActorLocation(FVector2D::DOWN * 200.0f * _DeltaTime);
 	}
 	if (StaffBlockTouched == true)
 	{
@@ -594,7 +594,7 @@ void MarioCat::EndMotion2(float _DeltaTime)
 	PlayerGroundCheck(GravityForce * _DeltaTime);
 
 	CatRenderer->ChangeAnimation("Cat_RunRight");
-	AddActorLocation(FVector2D::RIGHT * 100.0f * _DeltaTime);
+	AddActorLocation(FVector2D::RIGHT * 150.0f * _DeltaTime);
 
 	if (Cleared == true)
 	{
