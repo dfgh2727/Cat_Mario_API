@@ -230,7 +230,7 @@ void GameMode_FirstMap::SealGoDown()
 
 	if (Seal3Lever == true)
 	{
-		Seal3->AddActorLocation(FVector2D::DOWN * 5.0f);
+		Seal3->AddActorLocation(FVector2D::DOWN * 0.8f);
 	}
 }
 
