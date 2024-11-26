@@ -43,6 +43,9 @@ void GameMode_SecondMap::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
+	SealSwitch();
+	LaunchTheSeal();
+
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("Play_ThirdMap");
@@ -62,3 +65,23 @@ void GameMode_SecondMap::LevelChangeStart()
 		Check = true;
 	}
 }
+
+void GameMode_SecondMap::SealSwitch()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (PlayerPos.X >= 800.0f)
+	{
+		SwitchLever = true;
+	}
+}
+
+
+void GameMode_SecondMap::LaunchTheSeal()
+{
+	if (SwitchLever == true)
+	{
+		Seal->AddActorLocation(FVector2D::UP * 0.8f);
+	}
+}
+

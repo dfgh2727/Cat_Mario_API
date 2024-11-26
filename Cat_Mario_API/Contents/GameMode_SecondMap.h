@@ -20,10 +20,15 @@ public:
 	void Tick(float _DeltaTime) override;
 
 	void LevelChangeStart() override;
+	void SealSwitch();
+	void LaunchTheSeal();
 
 protected:
 
 private:
 	class UpSeal* Seal;
+
+	bool SwitchLever = false;
+
 };
 
