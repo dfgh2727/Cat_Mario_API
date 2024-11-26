@@ -48,9 +48,10 @@ void SecondMapP2::CatCheck(float _DeltaTime)
 	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerFoot);
 	if (nullptr != Result)
 	{
-		if (true == UEngineInput::GetInst().IsPress(VK_SPACE))
+		if (true == UEngineInput::GetInst().IsDown(VK_DOWN))
 		{
 			Player->OnThePipe = true;
+			int a = 0;
 		}
 	}
 }

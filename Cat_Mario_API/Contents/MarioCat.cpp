@@ -48,7 +48,7 @@ MarioCat::MarioCat()
 			CollisionFoot->SetComponentScale({ 30, 8 });
 			CollisionFoot->SetCollisionGroup(ECollisionGroup::PlayerFoot);
 			CollisionFoot->SetCollisionType(ECollisionType::Rect);
-			CollisionFoot->SetComponentLocation(FVector2D{ 0, 29 });
+			CollisionFoot->SetComponentLocation(FVector2D{ 0, 30 });
 		}
 		{
 			CollisionBody = CreateDefaultSubObject<U2DCollision>();
