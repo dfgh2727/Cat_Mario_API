@@ -569,7 +569,7 @@ void MarioCat::DeathCheck()
 
 void MarioCat::StartEndMotion()
 {
-	if (StaffTouched == true && StaffBlockTouched == false)
+	if (StaffTouched == true /*&& StaffBlockTouched == false*/)
 	{
 		ChangeState(PlayerState::SlipDown);
 		StaffTouched = false;

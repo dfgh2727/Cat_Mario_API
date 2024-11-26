@@ -75,7 +75,7 @@ void GameMode_DeathCount::DeathCounter()
 
 void GameMode_DeathCount::ChangeLevel()
 {
-	UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_" + MapNameString + "Map");
+	//UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_" + MapNameString + "Map");
 	UEngineAPICore::GetCore()->OpenLevel("Play_" + MapNameString + "Map");
 }
 
