@@ -23,7 +23,7 @@ protected:
 
 private:
 	
-	U2DCollision* CollisionComponent;
-
+	U2DCollision* CollisionComponent1;
+	U2DCollision* CollisionComponent2;
 };
 

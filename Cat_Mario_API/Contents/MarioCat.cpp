@@ -45,7 +45,7 @@ MarioCat::MarioCat()
 		}
 		{
 			CollisionFoot = CreateDefaultSubObject<U2DCollision>();
-			CollisionFoot->SetComponentScale({ 34, 6 });
+			CollisionFoot->SetComponentScale({ 30, 8 });
 			CollisionFoot->SetCollisionGroup(ECollisionGroup::PlayerFoot);
 			CollisionFoot->SetCollisionType(ECollisionType::Rect);
 			CollisionFoot->SetComponentLocation(FVector2D{ 0, 29 });
@@ -225,6 +225,12 @@ void MarioCat::Tick(float _DeltaTime)
 	case PlayerState::Dead:
 		RightBeforeDeath(_DeltaTime);
 		break;
+	case PlayerState::SlipDown:
+		EndMotion1(_DeltaTime);
+		break;
+	case PlayerState::GoToDoor:
+		EndMotion2(_DeltaTime);
+		break;
 	default:
 		break;
 	}
@@ -236,6 +242,11 @@ void MarioCat::Tick(float _DeltaTime)
 	CatIsKilled(_DeltaTime);
 	Bounce(_DeltaTime);
 	SueprBounce(_DeltaTime);
+
+	if (StaffTouched == true)
+	{
+		ChangeState(PlayerState::SlipDown);
+	}
 }
 
 void MarioCat::ChangeState(PlayerState _CurPlayerState)
@@ -555,6 +566,26 @@ void MarioCat::DeathCheck()
 {
 	IsCatDead = true;
 }
+
+void MarioCat::EndMotion1(float _DeltaTime)
+{
+	CatRenderer->ChangeAnimation("Cat_JumpRight");
+
+	AddActorLocation(FVector2D::DOWN * _DeltaTime);
+
+	if (StaffBlockTouched == true)
+	{
+		ChangeState(PlayerState::GoToDoor);
+	}
+}
+
+void MarioCat::EndMotion2(float _DeltaTime)
+{
+	CatRenderer->ChangeAnimation("Cat_RunRight");
+
+	AddActorLocation(FVector2D::RIGHT * _DeltaTime);
+}
+
 
 void MarioCat::LevelChangeStart()
 {

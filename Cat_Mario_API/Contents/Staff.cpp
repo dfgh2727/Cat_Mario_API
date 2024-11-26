@@ -17,10 +17,17 @@ Staff::Staff()
 	StaffRenderer->SetComponentScale({ 44, 604 });
 
 	{
-		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentScale({ 20, 604 });
-		CollisionComponent->SetCollisionGroup(ECollisionGroup::Prop);
-		CollisionComponent->SetCollisionType(ECollisionType::Rect);
+		CollisionComponent1 = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent1->SetComponentScale({ 20, 604 });
+		CollisionComponent1->SetCollisionGroup(ECollisionGroup::Prop);
+		CollisionComponent1->SetCollisionType(ECollisionType::Rect);
+	}
+	{
+		CollisionComponent2 = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent2->SetComponentScale({ 60, 60 });
+		CollisionComponent2->SetCollisionGroup(ECollisionGroup::Prop);
+		CollisionComponent2->SetCollisionType(ECollisionType::Rect);
+		CollisionComponent2->SetComponentLocation(FVector2D{ 0, 328 });
 	}
 
 	DebugOn();
@@ -38,12 +45,24 @@ void Staff::BeginPlay()
 void Staff::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+	{
 
-	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerBody);
+	AActor* Result = CollisionComponent1->CollisionOnce(ECollisionGroup::PlayerBody);
 	if (nullptr != Result)
 	{
 		MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
-		/*MainPlayer->*/
+		MainPlayer->AddActorLocation(FVector2D::DOWN * _DeltaTime);
+	}
+	}
+
+	{
+
+	AActor* Result = CollisionComponent2->CollisionOnce(ECollisionGroup::PlayerFoot);
+	if (nullptr != Result)
+	{
+		MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
+		MainPlayer->AddActorLocation(FVector2D::RIGHT * _DeltaTime);
+	}
 	}
 }
 

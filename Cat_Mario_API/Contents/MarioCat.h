@@ -10,6 +10,8 @@ enum class PlayerState
 	Jump,
 	Stay,
 	Dead,
+	SlipDown,
+	GoToDoor,
 };
 
 class MarioCat : public AMapActor
@@ -58,6 +60,12 @@ public:
 	/*static bool TouchFlag;*/
 
 	static FVector2D StartPos;
+
+	bool StaffTouched = false;
+	bool StaffBlockTouched = false;
+
+	void EndMotion1(float _DeltaTime);
+	void EndMotion2(float _DeltaTime);
 
 protected:
 
