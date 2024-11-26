@@ -39,7 +39,6 @@ public:
 
 	void Gravity(float _DeltaTime);
 
-	void PipeCheck();
 	void PlayerGroundCheck(FVector2D _MovePos);
 
 	void DontOverlap(float _DeltaTime);
@@ -55,7 +54,9 @@ public:
 	void Bounce(float _DeltaTime);
 	void SueprBounce(float _DeltaTime);
 
+	void PipeCheck();
 	void PipeMotion(float _DeltaTime);
+	void CatInThePipe();
 
 	void RightBeforeDeath(float _DeltaTime);
 	void TurnOffTheSwitch();
