@@ -51,7 +51,7 @@ void Staff::Tick(float _DeltaTime)
 	if (nullptr != Result)
 	{
 		MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
-		MainPlayer->AddActorLocation(FVector2D::DOWN * _DeltaTime);
+		MainPlayer->StaffTouched = true;
 	}
 	}
 
@@ -61,7 +61,7 @@ void Staff::Tick(float _DeltaTime)
 	if (nullptr != Result)
 	{
 		MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
-		MainPlayer->AddActorLocation(FVector2D::RIGHT * _DeltaTime);
+		MainPlayer->StaffBlockTouched = true;
 	}
 	}
 }
