@@ -20,9 +20,12 @@ public:
 	void Tick(float _DeltaTime) override;
 
 	void LevelChangeStart() override;
+	void ReStart(float _DeltaTime);
+	void GoToDeathCount();
+
 	void SealSwitch();
 	void LaunchTheSeal();
-
+	void Clear();
 protected:
 
 private:

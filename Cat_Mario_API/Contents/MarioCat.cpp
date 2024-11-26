@@ -234,6 +234,9 @@ void MarioCat::Tick(float _DeltaTime)
 	case PlayerState::Clear:
 		YouCleared(_DeltaTime);
 		break;
+	case PlayerState::GoDown:
+		PipeMotion(_DeltaTime);
+		break;
 	default:
 		break;
 	}
@@ -246,7 +249,7 @@ void MarioCat::Tick(float _DeltaTime)
 	Bounce(_DeltaTime);
 	SueprBounce(_DeltaTime);
 	StartEndMotion();
-	
+	PipeCheck();
 }
 
 void MarioCat::ChangeState(PlayerState _CurPlayerState)
@@ -509,6 +512,21 @@ void MarioCat::SueprBounce(float _DeltaTime)
 		GravityForce = FVector2D::ZERO;
 		JumpPower = FVector2D(0.0f, -1000.0f);
 	}
+}
+
+void MarioCat::PipeCheck()
+{
+	if (OnThePipe == true)
+	{
+		ChangeState(PlayerState::GoDown);
+	}
+}
+
+void MarioCat::PipeMotion(float _DeltaTime)
+{
+	CatRenderer->ChangeAnimation("Cat_JumpRight");
+	AddActorLocation(FVector2D::DOWN * 0.08f);
+	InThePipe = true;
 }
 
 void MarioCat::CatIsKilled(float _DeltaTime)

@@ -13,6 +13,7 @@ enum class PlayerState
 	SlipDown,
 	GoToDoor,
 	Clear,
+	GoDown, 
 };
 
 class MarioCat : public AMapActor
@@ -38,6 +39,7 @@ public:
 
 	void Gravity(float _DeltaTime);
 
+	void PipeCheck();
 	void PlayerGroundCheck(FVector2D _MovePos);
 
 	void DontOverlap(float _DeltaTime);
@@ -52,6 +54,8 @@ public:
 
 	void Bounce(float _DeltaTime);
 	void SueprBounce(float _DeltaTime);
+
+	void PipeMotion(float _DeltaTime);
 
 	void RightBeforeDeath(float _DeltaTime);
 	void TurnOffTheSwitch();
@@ -74,6 +78,9 @@ public:
 	bool OverTheStaff = false;
 	bool AtTheDoor = false;
 	bool Cleared = false;
+
+	bool OnThePipe = false;
+	bool InThePipe = false;
 
 	PlayerState GetPlayerState() 
 	{
