@@ -73,6 +73,21 @@ public:
 
 	bool Cleared = false;
 
+	PlayerState GetPlayerState() 
+	{
+		return CurPlayerState;
+	}
+
+	FVector2D GetGravityForce()
+	{
+		return GravityForce;
+	}
+
+	FVector2D GetJumpPower()
+	{
+		return JumpPower;
+	}
+
 protected:
 
 private:

@@ -135,6 +135,11 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	{
+		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
+		NewActor->SetActorLocation({ 5248, 587 });
+	}
+
+	{
 		Seal3 = GetWorld()->SpawnActor<DownSeal>();
 		Seal3->SetActorLocation({ 7280, -100 });
 	}
@@ -181,7 +186,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { 300, 700 /*7200, 10*/ };
+		MarioCat::StartPos = {/* 5135, 520*/ /*300, 700*/ 7100, 10 };
 		Check = true;
 	}
 }
@@ -195,12 +200,12 @@ void GameMode_FirstMap::SealSwtich()
 		Seal1Lever = true;
 	}
 
-	if (PlayerPos.X >= 3130.0f)
+	if (PlayerPos.X >= 3120.0f)
 	{
 		Seal2Lever = true;
 	}
 
-	if (PlayerPos.X >= 7220.0f)
+	if (PlayerPos.X >= 7200.0f)
 	{
 		Seal3Lever = true;
 	}

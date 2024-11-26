@@ -251,8 +251,6 @@ void MarioCat::Tick(float _DeltaTime)
 
 void MarioCat::ChangeState(PlayerState _CurPlayerState)
 {
-
-
 	CurPlayerState = _CurPlayerState;
 }
 
