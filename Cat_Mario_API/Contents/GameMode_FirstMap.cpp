@@ -101,9 +101,9 @@ void GameMode_FirstMap::BeginPlay()
 
 	//테스트용
 	{
-		/*Turtle* NewActor = GetWorld()->SpawnActor<Turtle>();
+		Turtle* NewActor = GetWorld()->SpawnActor<Turtle>();
 		NewActor->SetActorLocation({ 400, 700 });
-		NewActor->SetColImage("1stColMap.png");*/
+		NewActor->SetColImage("1stColMap.png");
 	}
 	{
 		FirstMapP1* NewActor = GetWorld()->SpawnActor<FirstMapP1>();
@@ -188,7 +188,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = {/* 5135, 520*/ /*300, 700*/ /*7100, 10*/  6700, 10 };
+		MarioCat::StartPos = {/* 5135, 520*/ 300, 700 /*7100, 10*/ /* 6700, 10*/ };
 		Check = true;
 	}
 }
