@@ -224,6 +224,8 @@ void GameMode_FirstMap::AtTheDoor()
 	{
 		Player->Cleared = true;
 		GameMode_DeathCount::MapNameString = "Second";
+	
+		MarioCat::StartPos = { 300, 700 };
 		TimeEventer.PushEvent(2.0f, std::bind(&GameMode_FirstMap::GoToDeathCount, this));
 	}	
 }
