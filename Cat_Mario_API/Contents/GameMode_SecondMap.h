@@ -24,6 +24,6 @@ public:
 protected:
 
 private:
-
+	class UpSeal* Seal;
 };
 

@@ -28,6 +28,8 @@ SecondMapP2::~SecondMapP2()
 void SecondMapP2::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// 물개가 나간 다음에 다음 맵으로 이동 가능함
 }
 
 void SecondMapP2::Tick(float _DeltaTime)

@@ -10,6 +10,7 @@
 #include "MarioCat.h"
 
 #include "SecondMapP2.h"
+#include "UpSeal.h"
 
 GameMode_SecondMap::GameMode_SecondMap()
 {
@@ -31,6 +32,10 @@ void GameMode_SecondMap::BeginPlay()
 	{
 		SecondMapP2* NewActor = GetWorld()->SpawnActor<SecondMapP2>();
 		NewActor->SetActorLocation({ 882, 617 });
+	}
+	{
+		Seal = GetWorld()->SpawnActor<UpSeal>();
+		Seal->SetActorLocation({ 882, 617 });
 	}
 }
 
