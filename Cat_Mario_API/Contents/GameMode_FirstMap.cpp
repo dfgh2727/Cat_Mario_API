@@ -186,7 +186,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = {/* 5135, 520*/ /*300, 700*/ 7100, 10 };
+		MarioCat::StartPos = {/* 5135, 520*/ /*300, 700*/ /*7100, 10*/  6700, 10 };
 		Check = true;
 	}
 }

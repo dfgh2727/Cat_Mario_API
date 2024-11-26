@@ -576,10 +576,11 @@ void MarioCat::StartEndMotion()
 
 void MarioCat::EndMotion1(float _DeltaTime)
 {
-	CatRenderer->ChangeAnimation("Cat_JumpRight");
-
-	AddActorLocation(FVector2D::DOWN * 100.0f * _DeltaTime);
-
+	if (StaffBlockTouched == false)
+	{
+		CatRenderer->ChangeAnimation("Cat_JumpRight");
+		AddActorLocation(FVector2D::DOWN * 100.0f * _DeltaTime);
+	}
 	if (StaffBlockTouched == true)
 	{
 		ChangeState(PlayerState::GoToDoor);
@@ -594,7 +595,6 @@ void MarioCat::EndMotion2(float _DeltaTime)
 
 	CatRenderer->ChangeAnimation("Cat_RunRight");
 	AddActorLocation(FVector2D::RIGHT * 100.0f * _DeltaTime);
-	StaffBlockTouched = false;
 
 	if (Cleared == true)
 	{
