@@ -45,9 +45,6 @@ void HiddenBoxS::Tick(float _DeltaTime)
 
 void HiddenBoxS::BlockDisappear(float _DeltaTime)
 {
-	//AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
-	//if (nullptr != Result)
-
 	MarioCat* MainActor = GetWorld()->GetPawn<MarioCat>();
 	FVector2D GForce = MainActor->GetGravityForce();
 	FVector2D CatJumpPower = MainActor->GetJumpPower();
@@ -67,11 +64,6 @@ void HiddenBoxS::BlockDisappear(float _DeltaTime)
 		}
 		
 	}
-	/*std::vector<AActor*> HiddenBlock;
-	bool ItsBlock = CollisionComponent
-		->Collision(static_cast<int>(ECollisionGroup::PlayerHead), HiddenBlock, FVector2D::UP, 100);
-	if (ItsBlock == true)*/
-	
 }
 
 void HiddenBoxS::BlockShowUP()
