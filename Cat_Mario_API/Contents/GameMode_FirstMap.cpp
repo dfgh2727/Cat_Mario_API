@@ -163,7 +163,9 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 		UEngineAPICore::GetCore()->OpenLevel("Play_SecondMap");
 	}
 
+	OverTheStaff();
 	AtTheDoor();
+	Clear();
 }
 
 void GameMode_FirstMap::ReStart(float _DeltaTime)
@@ -228,7 +230,7 @@ void GameMode_FirstMap::SealGoDown()
 
 	if (Seal3Lever == true)
 	{
-		Seal3->AddActorLocation(FVector2D::DOWN * 0.8f);
+		Seal3->AddActorLocation(FVector2D::DOWN * 5.0f);
 	}
 }
 
@@ -242,11 +244,25 @@ void GameMode_FirstMap::OverTheStaff()
 	}	
 }
 
+void GameMode_FirstMap::AtTheDoor()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (PlayerPos.X >= 7510.0f)
+	{
+		Player->AtTheDoor = true;
+	}
+}
+
 void GameMode_FirstMap::Clear()
 {
-	GameMode_DeathCount::MapNameString = "Second";
-	MarioCat::StartPos = { 300, 700 };
-	TimeEventer.PushEvent(2.0f, std::bind(&GameMode_FirstMap::GoToDeathCount, this));
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	if (Player->Cleared == true)
+	{
+		GameMode_DeathCount::MapNameString = "Second";
+		MarioCat::StartPos = { 300, 700 };
+		TimeEventer.PushEvent(2.0f, std::bind(&GameMode_FirstMap::GoToDeathCount, this));
+	}
 }
 
 void GameMode_FirstMap::GoToDeathCount()

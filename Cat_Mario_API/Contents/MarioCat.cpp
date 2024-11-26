@@ -596,7 +596,7 @@ void MarioCat::EndMotion2(float _DeltaTime)
 	CatRenderer->ChangeAnimation("Cat_RunRight");
 	AddActorLocation(FVector2D::RIGHT * 150.0f * _DeltaTime);
 
-	if (Cleared == true)
+	if (AtTheDoor == true)
 	{
 		ChangeState(PlayerState::Clear);
 		//StaffBlockTouched = false;
@@ -606,6 +606,7 @@ void MarioCat::EndMotion2(float _DeltaTime)
 void MarioCat::YouCleared(float _DeltaTime)
 {
 	CatRenderer->ChangeAnimation("Cat_StandRight");
+	Cleared = true;
 }
 
 
