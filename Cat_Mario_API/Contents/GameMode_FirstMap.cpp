@@ -121,7 +121,7 @@ void GameMode_FirstMap::BeginPlay()
 
 	{
 		FirstMapP2* NewActor = GetWorld()->SpawnActor<FirstMapP2>();
-		NewActor->SetActorLocation({ 1753, 618 });
+		NewActor->SetActorLocation({ 1753, 617 });
 	}
 	{
 		SuperBouncyWC* NewActor = GetWorld()->SpawnActor<SuperBouncyWC>();

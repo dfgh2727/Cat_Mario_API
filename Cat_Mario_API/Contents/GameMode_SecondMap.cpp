@@ -9,6 +9,8 @@
 #include "SecondMap.h"
 #include "MarioCat.h"
 
+#include "SecondMapP2.h"
+
 GameMode_SecondMap::GameMode_SecondMap()
 {
 }
@@ -25,6 +27,10 @@ void GameMode_SecondMap::BeginPlay()
 
 	{
 		SecondMap* NewActor = GetWorld()->SpawnActor<SecondMap>();
+	}
+	{
+		SecondMapP2* NewActor = GetWorld()->SpawnActor<SecondMapP2>();
+		NewActor->SetActorLocation({ 882, 617 });
 	}
 }
 

@@ -143,6 +143,9 @@
     <ClCompile Include="DownSeal.cpp">
       <Filter>InterActive Things\Monster\Seal</Filter>
     </ClCompile>
+    <ClCompile Include="SecondMapP2.cpp">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -286,6 +289,9 @@
     </ClInclude>
     <ClInclude Include="DownSeal.h">
       <Filter>InterActive Things\Monster\Seal</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondMapP2.h">
+      <Filter>InterActive Things\Pipes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
