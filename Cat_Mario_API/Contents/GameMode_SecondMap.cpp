@@ -62,3 +62,8 @@ void GameMode_SecondMap::LevelChangeStart()
 		Check = true;
 	}
 }
+
+void GameMode_SecondMap::LevelChangeStart()
+{
+
+}
