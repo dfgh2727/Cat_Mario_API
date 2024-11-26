@@ -1,17 +1,17 @@
 #include "PreCompile.h"
-#include "Seal.h"
+#include "UpSeal.h"
 
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineBase/EngineRandom.h>
 
 #include "Enum.h"
 
-Seal::Seal()
+UpSeal::UpSeal()
 {
-	USpriteRenderer* SealRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	SealRenderer->SetSprite("Seal.png");
-	SealRenderer->SetOrder(ERenderOrder::PLAYER);
-	SealRenderer->SetComponentScale({ 53, 78 });
+	USpriteRenderer* UpSealRenderer = CreateDefaultSubObject<USpriteRenderer>();
+	UpSealRenderer->SetSprite("UpSeal.png");
+	UpSealRenderer->SetOrder(ERenderOrder::PLAYER);
+	UpSealRenderer->SetComponentScale({ 53, 78 });
 	{
 		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent->SetComponentScale({ 53, 78 });
@@ -21,16 +21,16 @@ Seal::Seal()
 	DebugOn();
 }
 
-Seal::~Seal()
+UpSeal::~UpSeal()
 {
 }
 
-void Seal::BeginPlay()
+void UpSeal::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-void Seal::Tick(float _DeltaTime)
+void UpSeal::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 }

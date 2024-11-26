@@ -17,7 +17,8 @@
 #include "QBlockwithWC.h"
 #include "FirstMapP1.h"
 #include "FirstMapP2.h"
-#include "Seal.h"
+#include "UpSeal.h"
+#include "DownSeal.h"
 #include "HiddenBoxS.h"
 #include "SuperBouncyWC.h"
 #include "Turtle.h"
@@ -106,7 +107,7 @@ void GameMode_FirstMap::BeginPlay()
 		NewActor->SetActorLocation({ 1221, 646 });
 	}
 	{
-		Seal1 = GetWorld()->SpawnActor<Seal>();
+		Seal1 = GetWorld()->SpawnActor<UpSeal>();
 		Seal1->SetActorLocation({ 1221, 640 });
 	}
 
@@ -126,12 +127,12 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	{
-		/*Seal2 = GetWorld()->SpawnActor<Seal>();
-		Seal2->SetActorLocation({ 7280, -100 });*/
+		Seal2 = GetWorld()->SpawnActor<DownSeal>();
+		Seal2->SetActorLocation({ 3180, -100 });
 	}
 
 	{
-		Seal3 = GetWorld()->SpawnActor<Seal>();
+		Seal3 = GetWorld()->SpawnActor<DownSeal>();
 		Seal3->SetActorLocation({ 7280, -100 });
 	}
 	{
@@ -147,7 +148,7 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 
 	SealSwtich();
 	//SealGoUp();
-	//SealGoDown();
+	SealGoDown();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -165,10 +166,7 @@ void GameMode_FirstMap::ReStart(float _DeltaTime)
 	{
 		--GameMode_DeathCount::Number;
 
-		UEngineAPICore::GetCore()->OpenLevel("DeathCount");
-		
-		/*UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_FirstMap");
-		UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");*/
+		GoToDeathCount();
 	}
 }
 
@@ -194,12 +192,12 @@ void GameMode_FirstMap::SealSwtich()
 		Seal1Lever = true;
 	}
 
-	if (PlayerPos.X >= 1120.0f && PlayerPos.Y <= 520.0f)
+	if (PlayerPos.X >= 3130.0f)
 	{
 		Seal2Lever = true;
 	}
 
-	if (PlayerPos.X >= 1120.0f)
+	if (PlayerPos.X >= 7220.0f)
 	{
 		Seal3Lever = true;
 	}
@@ -222,7 +220,7 @@ void GameMode_FirstMap::SealGoDown()
 
 	if (Seal3Lever == true)
 	{
-		Seal1->AddActorLocation(FVector2D::DOWN * 0.8f);
+		Seal3->AddActorLocation(FVector2D::DOWN * 0.8f);
 	}
 }
 

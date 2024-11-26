@@ -107,9 +107,6 @@
     <ClCompile Include="BParticleD.cpp">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClCompile>
-    <ClCompile Include="Seal.cpp">
-      <Filter>InterActive Things\Monster</Filter>
-    </ClCompile>
     <ClCompile Include="HiddenBoxS.cpp">
       <Filter>InterActive Things\Blocks\CoinBox</Filter>
     </ClCompile>
@@ -139,6 +136,12 @@
     </ClCompile>
     <ClCompile Include="BBreakingBlock.cpp">
       <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="UpSeal.cpp">
+      <Filter>InterActive Things\Monster\Seal</Filter>
+    </ClCompile>
+    <ClCompile Include="DownSeal.cpp">
+      <Filter>InterActive Things\Monster\Seal</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -248,9 +251,6 @@
     <ClInclude Include="BParticleD.h">
       <Filter>InterActive Things\Blocks\BParticles</Filter>
     </ClInclude>
-    <ClInclude Include="Seal.h">
-      <Filter>InterActive Things\Monster</Filter>
-    </ClInclude>
     <ClInclude Include="HiddenBoxS.h">
       <Filter>InterActive Things\Blocks\CoinBox</Filter>
     </ClInclude>
@@ -280,6 +280,12 @@
     </ClInclude>
     <ClInclude Include="BBreakingBlock.h">
       <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="UpSeal.h">
+      <Filter>InterActive Things\Monster\Seal</Filter>
+    </ClInclude>
+    <ClInclude Include="DownSeal.h">
+      <Filter>InterActive Things\Monster\Seal</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -333,6 +339,9 @@
     </Filter>
     <Filter Include="InterActive Things\Blocks\BreakingBlock">
       <UniqueIdentifier>{0db5b076-5eaa-405c-9383-7ef8340ab91b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Monster\Seal">
+      <UniqueIdentifier>{4caf5a3a-56f6-40a3-8fc1-efe2a61c6617}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

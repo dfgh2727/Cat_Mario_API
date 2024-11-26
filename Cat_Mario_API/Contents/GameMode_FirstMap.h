@@ -36,9 +36,9 @@ protected:
 private:
 	//class QuestionMark* QMark = nullptr;
 	//class Flag* MiddlePointFlag = nullptr;
-	class Seal* Seal1;
-	Seal* Seal2;
-	Seal* Seal3;
+	class UpSeal* Seal1;
+	class DownSeal* Seal2;
+	DownSeal* Seal3;
 	bool Seal1Lever = false;
 	bool Seal2Lever = false;
 	bool Seal3Lever = false;

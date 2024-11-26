@@ -199,6 +199,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="DownSeal.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="EighthMap.cpp">
       <SubType>
       </SubType>
@@ -299,7 +303,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Seal.cpp">
+    <ClCompile Include="UpSeal.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -383,6 +387,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="DeathCount.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="DownSeal.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -486,7 +494,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Seal.h">
+    <ClInclude Include="UpSeal.h">
       <SubType>
       </SubType>
     </ClInclude>
