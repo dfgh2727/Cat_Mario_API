@@ -51,7 +51,7 @@ void SecondMapP2::CatCheck(float _DeltaTime)
 		if (true == UEngineInput::GetInst().IsDown(VK_DOWN))
 		{
 			Player->OnThePipe = true;
-			int a = 0;
+			//CollisionComponent->Destroy();
 		}
 	}
 }
