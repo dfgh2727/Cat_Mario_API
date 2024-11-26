@@ -55,6 +55,10 @@ void GameMode_FirstMap::BeginPlay()
 		NewActor->SetActorLocation({ 494, 528 });
 	}
 	{
+		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
+		NewActor->SetActorLocation({ 785, 587 });
+	}
+	{
 		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
 		NewActor->SetActorLocation({ 727, 528 });
 	}
@@ -82,7 +86,6 @@ void GameMode_FirstMap::BeginPlay()
 		QBlock->SetActorLocation({ 785, 528 });
 	}
 
-	//QMark->SetActorLocation({ 785, 528 });
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
 		NewActor->SetActorLocation({ 901, 528 });
@@ -98,9 +101,9 @@ void GameMode_FirstMap::BeginPlay()
 
 	//테스트용
 	{
-		Turtle* NewActor = GetWorld()->SpawnActor<Turtle>();
+		/*Turtle* NewActor = GetWorld()->SpawnActor<Turtle>();
 		NewActor->SetActorLocation({ 400, 700 });
-		NewActor->SetColImage("1stColMap.png");
+		NewActor->SetColImage("1stColMap.png");*/
 	}
 	{
 		FirstMapP1* NewActor = GetWorld()->SpawnActor<FirstMapP1>();
