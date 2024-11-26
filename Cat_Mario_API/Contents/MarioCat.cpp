@@ -231,6 +231,9 @@ void MarioCat::Tick(float _DeltaTime)
 	case PlayerState::GoToDoor:
 		EndMotion2(_DeltaTime);
 		break;
+	case PlayerState::Clear:
+		YouCleared(_DeltaTime);
+		break;
 	default:
 		break;
 	}
@@ -594,6 +597,17 @@ void MarioCat::EndMotion2(float _DeltaTime)
 	CatRenderer->ChangeAnimation("Cat_RunRight");
 	AddActorLocation(FVector2D::RIGHT * 100.0f * _DeltaTime);
 	StaffBlockTouched = false;
+
+	if (Cleared == true)
+	{
+		ChangeState(PlayerState::Clear);
+		//StaffBlockTouched = false;
+	}
+}
+
+void MarioCat::YouCleared(float _DeltaTime)
+{
+	CatRenderer->ChangeAnimation("Cat_StandRight");
 }
 
 

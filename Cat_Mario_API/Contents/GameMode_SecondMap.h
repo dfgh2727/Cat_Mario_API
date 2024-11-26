@@ -17,9 +17,9 @@ public:
 	GameMode_SecondMap& operator=(GameMode_SecondMap&& _Other) noexcept = delete;
 
 	void BeginPlay() override;
-
 	void Tick(float _DeltaTime) override;
 
+	void LevelChangeStart() override;
 
 protected:
 

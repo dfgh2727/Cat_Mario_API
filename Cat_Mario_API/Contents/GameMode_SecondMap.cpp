@@ -38,3 +38,16 @@ void GameMode_SecondMap::Tick(float _DeltaTime)
 	}
 
 }
+
+void GameMode_SecondMap::LevelChangeStart()
+{
+	Super::LevelChangeStart();
+
+	static bool /*GameMode_FirstMap::*/Check = false;
+
+	if (Check == false)
+	{
+		MarioCat::StartPos = { 300, 700 };
+		Check = true;
+	}
+}

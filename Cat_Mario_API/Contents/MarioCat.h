@@ -12,6 +12,7 @@ enum class PlayerState
 	Dead,
 	SlipDown,
 	GoToDoor,
+	Clear,
 };
 
 class MarioCat : public AMapActor
@@ -67,6 +68,9 @@ public:
 	void StartEndMotion();
 	void EndMotion1(float _DeltaTime);
 	void EndMotion2(float _DeltaTime);
+	void YouCleared(float _DeltaTime);
+
+	bool Cleared = false;
 
 protected:
 

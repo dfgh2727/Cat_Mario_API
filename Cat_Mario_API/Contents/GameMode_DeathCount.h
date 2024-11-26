@@ -27,6 +27,8 @@ public:
 	void DeathCounter();
 	static int Number;
 
+	static std::string MapNameString;
+
 protected:
 
 private:

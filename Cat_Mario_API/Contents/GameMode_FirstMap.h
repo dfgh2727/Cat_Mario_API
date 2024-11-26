@@ -27,6 +27,9 @@ public:
 	void SealGoUp();
 	void SealGoDown();
 
+	void AtTheDoor();
+
+	void GoToDeathCount();
 
 protected:
 

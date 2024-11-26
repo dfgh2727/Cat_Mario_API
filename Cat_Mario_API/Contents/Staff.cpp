@@ -45,7 +45,10 @@ void Staff::BeginPlay()
 void Staff::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
-	{
+
+	CatTouchedStaff();
+
+	/*{
 
 	AActor* Result = CollisionComponent1->CollisionOnce(ECollisionGroup::PlayerBody);
 	if (nullptr != Result)
@@ -53,7 +56,7 @@ void Staff::Tick(float _DeltaTime)
 		MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
 		MainPlayer->StaffTouched = true;
 	}
-	}
+	}*/
 
 	{
 
@@ -66,3 +69,12 @@ void Staff::Tick(float _DeltaTime)
 	}
 }
 
+void Staff::CatTouchedStaff()
+{
+	AActor* Result = CollisionComponent1->CollisionOnce(ECollisionGroup::PlayerBody);
+	if (nullptr != Result)
+	{
+		MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
+		MainPlayer->StaffTouched = true;
+	}
+}

@@ -14,6 +14,7 @@
 
 
 int GameMode_DeathCount::Number = 2;
+std::string GameMode_DeathCount::MapNameString = "First";
 
 GameMode_DeathCount::GameMode_DeathCount()
 {
@@ -53,7 +54,7 @@ void GameMode_DeathCount::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
-		UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");
+		UEngineAPICore::GetCore()->OpenLevel("Play_" + MapNameString + "Map");
 	}
 
 }
@@ -74,8 +75,8 @@ void GameMode_DeathCount::DeathCounter()
 
 void GameMode_DeathCount::ChangeLevel()
 {
-	UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_FirstMap");
-	UEngineAPICore::GetCore()->OpenLevel("Play_FirstMap");
+	UEngineAPICore::GetCore()->ResetLevel<GameMode_FirstMap, MarioCat>("Play_" + MapNameString + "Map");
+	UEngineAPICore::GetCore()->OpenLevel("Play_" + MapNameString + "Map");
 }
 
 void GameMode_DeathCount::LevelChangeStart()
