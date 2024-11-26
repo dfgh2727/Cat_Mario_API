@@ -89,13 +89,13 @@ void GameMode_SecondMap::LaunchTheSeal()
 	}
 }
 
-//void GameMode_SecondMap::InToThePipe()
+//void GameMode_SecondMap::InThePipe()
 //{
 //	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 //
-//	if (PipeSwitch == true)
+//	if (Player->InThePipe == true)
 //	{
-//		Player->AddActorLocation(FVector2D::UP * 0.8f);
+//		
 //	}
 //}
 
@@ -119,7 +119,7 @@ void GameMode_SecondMap::GoToDeathCount()
 void GameMode_SecondMap::Clear()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-	if (Player->Cleared == true)
+	if (Player->InThePipe == true)
 	{
 		GameMode_DeathCount::MapNameString = "Third";
 		MarioCat::StartPos = { 300, 700 };

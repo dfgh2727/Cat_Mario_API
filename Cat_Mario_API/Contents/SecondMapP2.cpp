@@ -5,6 +5,9 @@
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineInput.h>
 #include <EngineCore/EngineCoreDebug.h>
+#include <EngineCore/Level.h>
+
+#include "MarioCat.h"
 
 SecondMapP2::SecondMapP2()
 {
@@ -13,7 +16,7 @@ SecondMapP2::SecondMapP2()
 	FirstMapP1Renderer->SetOrder(ERenderOrder::PIPE);
 	FirstMapP1Renderer->SetComponentScale({ 120, 234 });
 	{
-		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent->SetComponentScale({ 102, 234 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
@@ -35,5 +38,19 @@ void SecondMapP2::BeginPlay()
 void SecondMapP2::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+	CatCheck(_DeltaTime);
 }
 
+void SecondMapP2::CatCheck(float _DeltaTime)
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+
+	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerFoot);
+	if (nullptr != Result)
+	{
+		if (true == UEngineInput::GetInst().IsPress(VK_SPACE))
+		{
+			Player->OnThePipe = true;
+		}
+	}
+}
