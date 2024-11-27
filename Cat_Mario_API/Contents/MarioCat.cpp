@@ -409,7 +409,7 @@ void MarioCat::Move(float _DeltaTime)
 		ChangeState(PlayerState::Jump);
 		return;
 	}
-
+	
 	if (false == UEngineInput::GetInst().IsPress(VK_RIGHT) &&
 		false == UEngineInput::GetInst().IsPress(VK_LEFT) &&
 		false == UEngineInput::GetInst().IsPress(VK_UP))
