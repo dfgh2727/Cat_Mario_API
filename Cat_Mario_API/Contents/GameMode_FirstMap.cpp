@@ -180,7 +180,7 @@ void GameMode_FirstMap::ReStart(float _DeltaTime)
 	if (true == Player->IsCatDead)
 	{
 		--GameMode_DeathCount::Number;
-
+		GameMode_DeathCount::At1stMap = true;
 		GoToDeathCount();
 	}
 }
@@ -265,6 +265,8 @@ void GameMode_FirstMap::Clear()
 	if (Player->Cleared == true)
 	{
 		GameMode_DeathCount::MapNameString = "Second";
+		GameMode_DeathCount::At1stMap = false;
+
 		MarioCat::StartPos = { 150, 700 };
 		TimeEventer.PushEvent(2.0f, std::bind(&GameMode_FirstMap::GoToDeathCount, this));
 	}

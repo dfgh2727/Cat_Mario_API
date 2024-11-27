@@ -71,7 +71,7 @@ void GameMode_SecondMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { 300, 700 };
+		MarioCat::StartPos = { 150, 700 };
 		Check = true;
 	}
 }
@@ -112,6 +112,7 @@ void GameMode_SecondMap::ReStart(float _DeltaTime)
 	if (true == Player->IsCatDead)
 	{
 		--GameMode_DeathCount::Number;
+		GameMode_DeathCount::At2ndMap = true;
 
 		GoToDeathCount();
 	}
@@ -125,9 +126,12 @@ void GameMode_SecondMap::GoToDeathCount()
 void GameMode_SecondMap::Clear()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+
 	if (Player->InThePipe == true)
 	{
 		GameMode_DeathCount::MapNameString = "Third";
+		GameMode_DeathCount::At2ndMap = false;
+
 		MarioCat::StartPos = { 148, 10 };
 		TimeEventer.PushEvent(0.5f, std::bind(&GameMode_SecondMap::OpenNextLevel, this));
 	}

@@ -30,6 +30,13 @@ public:
 
 	static std::string MapNameString;
 
+	static bool At1stMap;
+	static bool At2ndMap;
+	static bool At3rdMap;
+	static bool At4thMap;
+	static bool At5thMap;
+	static bool At8thMap;
+
 protected:
 
 private:
