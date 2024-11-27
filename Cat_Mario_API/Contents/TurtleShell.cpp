@@ -10,6 +10,7 @@
 #include <EnginePlatform/EngineInput.h>
 
 #include "Enum.h"
+#include "MarioCat.h"
 
 TurtleShell::TurtleShell()
 {
@@ -209,13 +210,18 @@ void TurtleShell::TurnAround(FVector2D _MovePos)
 
 void TurtleShell::DirOfCollision(float _DeltaTime)
 {
+	MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
+
 	//LeftBody와 PlayerFoot이 충돌했을시 오른쪽으로 움직임
 	{
 		AActor* Result = LeftBody->CollisionOnce(ECollisionGroup::PlayerFoot);
 		if (nullptr != Result)
 		{
-			MoveDir = FVector2D::RIGHT;
-			ShellMoves = true;
+			if ((MainPlayer->GetPlayerState() == PlayerState::Jump) && (MainPlayer->IsCatKilled == false))
+			{
+				MoveDir = FVector2D::RIGHT;
+				ShellMoves = true;
+			}
 		}
 	}
 	//RightBody와 PlayerFoot이 충돌했을시 왼쪽으로 움직임
@@ -223,8 +229,11 @@ void TurtleShell::DirOfCollision(float _DeltaTime)
 		AActor* Result = RightBody->CollisionOnce(ECollisionGroup::PlayerFoot);
 		if (nullptr != Result)
 		{
-			MoveDir = FVector2D::LEFT;
-			ShellMoves = true;
+			if ((MainPlayer->GetPlayerState() == PlayerState::Jump) && (MainPlayer->IsCatKilled == false))
+			{
+				MoveDir = FVector2D::LEFT;
+				ShellMoves = true;
+			}
 		}
 	}
 }

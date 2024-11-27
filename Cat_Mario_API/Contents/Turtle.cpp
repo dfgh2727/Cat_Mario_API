@@ -13,6 +13,8 @@
 #include "TurtleShell.h"
 #include "GameMode_FirstMap.h"
 
+#include "MarioCat.h"
+
 
 Turtle::Turtle()
 {
@@ -197,11 +199,15 @@ void Turtle::TurnAround(FVector2D _MovePos)
 
 void Turtle::IsKilled(float _DeltaTime)
 {
+	MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
 	AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::PlayerFoot);
 	if (nullptr != Result)
 	{
-		SpawnShell();
-		this->Destroy();
+		if ((MainPlayer->GetPlayerState() == PlayerState::Jump) && (MainPlayer->IsCatKilled == false))
+		{
+			SpawnShell();
+			this->Destroy();
+		}
 	}
 }
 
