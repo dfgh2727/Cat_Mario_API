@@ -23,6 +23,7 @@
 #include "Enum.h"
 
 bool MarioCat::IsCatDead = false;
+bool MarioCat::IsCatKilled = false;
 FVector2D MarioCat::StartPos = FVector2D::ZERO;
 
 
@@ -548,10 +549,12 @@ void MarioCat::CatInThePipe()
 
 void MarioCat::CatIsKilled(float _DeltaTime)
 {
+
 	{
 		AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::MonsterBody);
 		if (nullptr != Result)
 		{
+			IsCatKilled = true;
 			ChangeState(PlayerState::Dead);
 		}
 	}
@@ -560,6 +563,7 @@ void MarioCat::CatIsKilled(float _DeltaTime)
 		AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::TurtleShell);
 		if (nullptr != Result)
 		{
+			IsCatKilled = true;
 			ChangeState(PlayerState::Dead);
 		}
 	}

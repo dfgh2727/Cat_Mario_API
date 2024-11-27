@@ -13,7 +13,7 @@
 
 #include "GameMode_FirstMap.h"
 #include "Enum.h"
-//#include "MarioCat.h"
+#include "MarioCat.h"
 
 
 WhiteCircle::WhiteCircle()
@@ -141,10 +141,14 @@ bool WhiteCircle::OnTheBlock(float _DeltaTime)
 
 void WhiteCircle::IsKilled(float _DeltaTime)
 {
+	MarioCat* MainPlayer = GetWorld()->GetPawn<MarioCat>();
 	AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::PlayerFoot);
 	if (nullptr != Result)
 	{
-		this->Destroy();
+		if ((MainPlayer->GetPlayerState() == PlayerState::Jump) && (MainPlayer->IsCatKilled == false))
+		{
+			this->Destroy();
+		}
 	}
 }
 

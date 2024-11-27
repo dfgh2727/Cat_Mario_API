@@ -65,6 +65,7 @@ public:
 	/*static bool TouchFlag;*/
 
 	static bool IsCatDead;
+	static bool IsCatKilled;
 	
 	static FVector2D StartPos;
 

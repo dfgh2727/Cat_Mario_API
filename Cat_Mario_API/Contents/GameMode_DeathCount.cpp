@@ -140,4 +140,5 @@ void GameMode_DeathCount::LevelChangeStart()
 	}
 
 	MarioCat::IsCatDead = false;
+	MarioCat::IsCatKilled = false;
 }
