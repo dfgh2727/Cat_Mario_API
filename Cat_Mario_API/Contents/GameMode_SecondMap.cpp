@@ -10,6 +10,7 @@
 
 #include "MarioCat.h"
 #include "SecondMapP2.h"
+#include "ColPipe.h"
 #include "UpSeal.h"
 
 #include "GameMode_DeathCount.h"
@@ -34,6 +35,10 @@ void GameMode_SecondMap::BeginPlay()
 	{
 		SecondMapP2* NewActor = GetWorld()->SpawnActor<SecondMapP2>();
 		NewActor->SetActorLocation({ 882, 617 });
+	}
+	{
+		ColPipe* Col = GetWorld()->SpawnActor<ColPipe>();
+		Col->SetActorLocation({ 882, 617 });
 	}
 	{
 		Seal = GetWorld()->SpawnActor<UpSeal>();

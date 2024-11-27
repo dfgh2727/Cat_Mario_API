@@ -519,17 +519,17 @@ void MarioCat::PipeCheck()
 	if (OnThePipe == true)
 	{
 		ChangeState(PlayerState::GoDown);
-		//OnThePipe = false;
+		OnThePipe = false;
 	}
 }
 
 void MarioCat::PipeMotion(float _DeltaTime)
 {
-	if (InThePipe = false)
+	/*if (InThePipe = false)*/
 	{
 		CatRenderer->ChangeAnimation("Cat_JumpRight");
-		AddActorLocation(FVector2D::DOWN * 200.0f * _DeltaTime);
-		TimeEventer.PushEvent(0.5f, std::bind(&MarioCat::CatInThePipe, this));
+		AddActorLocation(FVector2D::DOWN * 100.0f * _DeltaTime);
+		TimeEventer.PushEvent(1.0f, std::bind(&MarioCat::CatInThePipe, this));
 	}
 }
 

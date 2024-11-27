@@ -1,6 +1,5 @@
 #pragma once
 #include <EngineCore/Actor.h>
-#include <EngineCore/2DCollision.h>
 
 // Ό³Έν :
 class SecondMapP2 : public AActor
@@ -19,11 +18,9 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
-	void CatCheck(float _DeltaTime);
 
 protected:
 
 private:
-	U2DCollision* CollisionComponent;
 };
 

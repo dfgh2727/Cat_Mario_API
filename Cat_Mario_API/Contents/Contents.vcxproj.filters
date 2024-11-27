@@ -146,6 +146,9 @@
     <ClCompile Include="SecondMapP2.cpp">
       <Filter>InterActive Things\Pipes</Filter>
     </ClCompile>
+    <ClCompile Include="ColPipe.cpp">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -291,6 +294,9 @@
       <Filter>InterActive Things\Monster\Seal</Filter>
     </ClInclude>
     <ClInclude Include="SecondMapP2.h">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClInclude>
+    <ClInclude Include="ColPipe.h">
       <Filter>InterActive Things\Pipes</Filter>
     </ClInclude>
   </ItemGroup>
