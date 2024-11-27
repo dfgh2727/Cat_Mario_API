@@ -51,7 +51,7 @@ void GameMode_ThirdMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { 150, 700 };
+		MarioCat::StartPos = { 148, 10 };
 		Check = true;
 	}
 }
