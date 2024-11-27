@@ -34,10 +34,6 @@ void GameMode_DeathCount::BeginPlay()
 
 	{
 		Counter = GetWorld()->SpawnActor<CountDown>();
-		/*if (NumberIsNegative == true)
-		{
-			Counter->ShowMinus();
-		}*/
 		Counter->SetActorLocation({550, 420});
 		Counter->SetTextSpriteName("CMnum.PNG");
 		Counter->SetOrder(ERenderOrder::UI);

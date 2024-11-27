@@ -54,12 +54,13 @@ void GameMode_SecondMap::Tick(float _DeltaTime)
 	LaunchTheSeal();
 
 	ReStart(_DeltaTime);
+	Clear();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("Play_ThirdMap");
-	}
 
+	}
 }
 
 void GameMode_SecondMap::LevelChangeStart()
@@ -127,7 +128,12 @@ void GameMode_SecondMap::Clear()
 	if (Player->InThePipe == true)
 	{
 		GameMode_DeathCount::MapNameString = "Third";
-		MarioCat::StartPos = { 300, 700 };
-		TimeEventer.PushEvent(2.0f, std::bind(&GameMode_SecondMap::GoToDeathCount, this));
+		MarioCat::StartPos = { 148, 10 };
+		TimeEventer.PushEvent(0.5f, std::bind(&GameMode_SecondMap::OpenNextLevel, this));
 	}
+}
+
+void GameMode_SecondMap::OpenNextLevel()
+{
+	UEngineAPICore::GetCore()->OpenLevel("Play_ThirdMap");
 }

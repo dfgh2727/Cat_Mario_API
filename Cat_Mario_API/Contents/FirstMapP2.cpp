@@ -12,13 +12,13 @@ FirstMapP2::FirstMapP2()
 	FirstMapP1Renderer->SetSprite("1stMapP2.png");
 	FirstMapP1Renderer->SetOrder(ERenderOrder::PIPE);
 	FirstMapP1Renderer->SetComponentScale({ 120, 234 });
-	{
+	/*{
 		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent->SetComponentScale({ 102, 234 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}
-		DebugOn();
+		DebugOn();*/
 }
 
 FirstMapP2::~FirstMapP2()

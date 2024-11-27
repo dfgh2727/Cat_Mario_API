@@ -529,7 +529,7 @@ void MarioCat::PipeMotion(float _DeltaTime)
 	{
 		CatRenderer->ChangeAnimation("Cat_JumpRight");
 		AddActorLocation(FVector2D::DOWN * 100.0f * _DeltaTime);
-		TimeEventer.PushEvent(1.0f, std::bind(&MarioCat::CatInThePipe, this));
+		TimeEventer.PushEvent(0.5f, std::bind(&MarioCat::CatInThePipe, this));
 	}
 }
 

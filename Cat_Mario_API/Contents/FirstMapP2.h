@@ -22,6 +22,6 @@ public:
 protected:
 
 private:
-	U2DCollision* CollisionComponent;
+	//U2DCollision* CollisionComponent;
 };
 

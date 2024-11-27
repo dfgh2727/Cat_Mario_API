@@ -26,6 +26,8 @@ public:
 	void SealSwitch();
 	void LaunchTheSeal();
 	void Clear();
+	void OpenNextLevel();
+
 protected:
 
 private:

@@ -17,6 +17,7 @@
 #include "QBlockwithWC.h"
 #include "FirstMapP1.h"
 #include "FirstMapP2.h"
+#include "ColPipe.h"
 #include "UpSeal.h"
 #include "DownSeal.h"
 #include "HiddenBoxS.h"
@@ -121,6 +122,10 @@ void GameMode_FirstMap::BeginPlay()
 
 	{
 		FirstMapP2* NewActor = GetWorld()->SpawnActor<FirstMapP2>();
+		NewActor->SetActorLocation({ 1753, 617 });
+	}
+	{
+		ColPipe* NewActor = GetWorld()->SpawnActor<ColPipe>();
 		NewActor->SetActorLocation({ 1753, 617 });
 	}
 	{
