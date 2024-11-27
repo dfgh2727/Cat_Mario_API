@@ -1,5 +1,4 @@
 #include "PreCompile.h"
-
 #include "GameMode_SecondMap.h"
 
 #include <EngineCore/Level.h>
@@ -95,16 +94,6 @@ void GameMode_SecondMap::LaunchTheSeal()
 	}
 }
 
-//void GameMode_SecondMap::InThePipe()
-//{
-//	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-//
-//	if (Player->InThePipe == true)
-//	{
-//		
-//	}
-//}
-
 void GameMode_SecondMap::ReStart(float _DeltaTime)
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
@@ -112,7 +101,7 @@ void GameMode_SecondMap::ReStart(float _DeltaTime)
 	if (true == Player->IsCatDead)
 	{
 		--GameMode_DeathCount::Number;
-		GameMode_DeathCount::At2ndMap = true;
+		GameMode_DeathCount::At3rdMap = true;
 
 		GoToDeathCount();
 	}
@@ -130,7 +119,7 @@ void GameMode_SecondMap::Clear()
 	if (Player->InThePipe == true)
 	{
 		GameMode_DeathCount::MapNameString = "Third";
-		GameMode_DeathCount::At2ndMap = false;
+		GameMode_DeathCount::At3rdMap = false;
 
 		MarioCat::StartPos = { 148, 10 };
 		TimeEventer.PushEvent(0.5f, std::bind(&GameMode_SecondMap::OpenNextLevel, this));
@@ -139,5 +128,5 @@ void GameMode_SecondMap::Clear()
 
 void GameMode_SecondMap::OpenNextLevel()
 {
-	UEngineAPICore::GetCore()->OpenLevel("Play_ThirdMap");
+	UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
 }

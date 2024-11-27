@@ -17,9 +17,14 @@ public:
 	GameMode_ThirdMap& operator=(GameMode_ThirdMap&& _Other) noexcept = delete;
 
 	void BeginPlay() override;
-
 	void Tick(float _DeltaTime) override;
 
+	void LevelChangeStart() override;
+	void ReStart(float _DeltaTime);
+	void GoToDeathCount();
+
+	void Clear();
+	void OpenNextLevel();
 protected:
 
 private:

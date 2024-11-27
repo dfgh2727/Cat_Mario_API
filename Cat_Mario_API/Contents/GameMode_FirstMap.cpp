@@ -95,9 +95,9 @@ void GameMode_FirstMap::BeginPlay()
 		QBlock->SetActorLocation({ 901, 528 });
 	}
 	{
-		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+	/*	WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
 		NewActor->SetActorLocation({ 450, 700 });
-		NewActor->SetColImage("1stColMap.png");
+		NewActor->SetColImage("1stColMap.png");*/
 	}
 
 	//테스트용

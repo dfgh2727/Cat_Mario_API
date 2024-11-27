@@ -457,7 +457,7 @@ bool MarioCat::CatOnTheBlock(float _DeltaTime)
 {
 	std::vector<AActor*> SteppingBlock;
 	bool IsCatOnTheBlock = CollisionFoot
-		->Collision(static_cast<int>(ECollisionGroup::SquareBlock), SteppingBlock, GravityForce * _DeltaTime, 100);
+		->Collision(static_cast<int>(ECollisionGroup::SquareBlock), SteppingBlock, GravityForce * _DeltaTime, 5);
 	return IsCatOnTheBlock;
 }
 
