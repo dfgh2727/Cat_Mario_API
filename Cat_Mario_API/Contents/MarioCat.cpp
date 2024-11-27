@@ -480,6 +480,76 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 			AddActorLocation(FVector2D::LEFT);
 		}
 	}
+
+
+	{
+
+		std::vector<AActor*> HitTheBlockR;
+		while (true)
+		{
+			AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::SquareBlock, FVector2D::ZERO);
+			if (nullptr != Result)
+			{
+				JumpPower = FVector2D::ZERO;
+				IsGround = true;
+				GravityForce = FVector2D::ZERO;
+				AddActorLocation(FVector2D::UP);
+			}
+			else {
+				break;
+			}
+		}
+	}
+
+	{
+		std::vector<AActor*> HitTheBlockR;
+		while (true)
+		{
+			AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::SquareBlock, FVector2D::ZERO);
+			if (nullptr != Result)
+			{
+				JumpPower = FVector2D::ZERO;
+				IsGround = true;
+				GravityForce = FVector2D::ZERO;
+				AddActorLocation(FVector2D::UP);
+			}
+			else {
+				break;
+			}
+		}
+	}
+
+	// 테스트
+	//{
+	//	std::vector<AActor*> HitTheBlockR;
+	//	bool Hit = CollisionFoot
+	//		->Collision(static_cast<int>(ECollisionGroup::SquareBlock), HitTheBlockR, FVector2D::RIGHT, 100);
+	//	if (true == Hit)
+	//	{
+	//		AddActorLocation(FVector2D::LEFT);
+	//	}
+	//}
+	//{
+	//	std::vector<AActor*> HitTheBlockL;
+	//	bool Hit = CollisionFoot
+	//		->Collision(static_cast<int>(ECollisionGroup::SquareBlock), HitTheBlockL, FVector2D::LEFT, 100);
+	//	if (true == Hit)
+	//	{
+	//		AddActorLocation(FVector2D::RIGHT);
+	//	}
+	//}
+
+	{
+		std::vector<AActor*> HitTheBlockL;
+		bool Hit = CollisionBody
+			->Collision(static_cast<int>(ECollisionGroup::SquareBlock), HitTheBlockL, FVector2D::ZERO, 100);
+		if (true == Hit)
+		{
+			AddActorLocation(FVector2D::RIGHT);
+		}
+	}
+
+
 	{
 		std::vector<AActor*> HitTheBlockL;
 		bool Hit = CollisionBody
@@ -489,6 +559,7 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 			AddActorLocation(FVector2D::RIGHT);
 		}
 	}
+
 
 	// 머리가 블럭에 닿는 순간 
 	AActor* Result = CollisionHead->CollisionOnce(ECollisionGroup::SquareBlock);
