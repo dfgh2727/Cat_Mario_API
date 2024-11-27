@@ -27,6 +27,7 @@
 
 #include "FDBlock1.h"
 #include "FDBlock2.h"
+#include "Cloud.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -227,26 +228,27 @@ void GameMode_FirstMap::BeginPlay()
 
 	{
 		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
-		NewActor->SetActorLocation({ 5769, 528 });
+		NewActor->SetActorLocation({ 5768, 528 });
 	}
 	{
 		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
-		NewActor->SetActorLocation({ 5827, 528 });
+		NewActor->SetActorLocation({ 5826, 528 });
 	}
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
-		NewActor->SetActorLocation({ 5885, 528 });
+		NewActor->SetActorLocation({ 5884, 528 });
 
 		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
-		QBlock->SetActorLocation({ 5885, 528 });
+		QBlock->SetActorLocation({ 5884, 528 });
 	}
 	{
 		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
-		NewActor->SetActorLocation({ 5943, 528 });
+		NewActor->SetActorLocation({ 5942, 528 });
 	}
 
 	{
-		//±¸¸§
+		Cloud* NewActor = GetWorld()->SpawnActor<Cloud>();
+		NewActor->SetActorLocation({ 6040, 326 });
 	}
 
 	{
@@ -298,7 +300,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { /*2920, 700*/ /* 5135, 520*/ 300, 700 /*7100, 10*/ /* 6700, 10*/ };
+		MarioCat::StartPos = { /*2920, 700*/ /*5940, 700*/ 300, 700 /*7100, 10*/ /* 6700, 10*/ };
 		Check = true;
 	}
 }
