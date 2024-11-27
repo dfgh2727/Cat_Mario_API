@@ -63,7 +63,7 @@ void GameMode_ThirdMap::ReStart(float _DeltaTime)
 	if (true == Player->IsCatDead)
 	{
 		--GameMode_DeathCount::Number;
-		GameMode_DeathCount::At2ndMap = true;
+		GameMode_DeathCount::At3rdMap = true;
 
 		GoToDeathCount();
 	}
@@ -80,8 +80,8 @@ void GameMode_ThirdMap::Clear()
 
 	if (Player->InThePipe == true)
 	{
-		GameMode_DeathCount::MapNameString = "Third";
-		GameMode_DeathCount::At2ndMap = false;
+		GameMode_DeathCount::MapNameString = "Fourth";
+		GameMode_DeathCount::At3rdMap = false;
 
 		MarioCat::StartPos = { 148, 10 };
 		TimeEventer.PushEvent(0.5f, std::bind(&GameMode_ThirdMap::OpenNextLevel, this));
@@ -90,6 +90,6 @@ void GameMode_ThirdMap::Clear()
 
 void GameMode_ThirdMap::OpenNextLevel()
 {
-	UEngineAPICore::GetCore()->OpenLevel("Play_ThirdMap");
+	UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
 }
 
