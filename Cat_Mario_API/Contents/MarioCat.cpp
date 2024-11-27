@@ -505,9 +505,12 @@ void MarioCat::Bounce(float _DeltaTime)
 	AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::BouncyObject);
 	if (nullptr != Result)
 	{
-		ChangeState(PlayerState::Jump);
-		GravityForce = FVector2D::ZERO;
-		JumpPower = FVector2D(0.0f, -400.0f);
+		if (GetPlayerState() != PlayerState::Dead)
+		{
+			ChangeState(PlayerState::Jump);
+			GravityForce = FVector2D::ZERO;
+			JumpPower = FVector2D(0.0f, -400.0f);
+		}
 	}
 }
 
@@ -516,9 +519,12 @@ void MarioCat::SueprBounce(float _DeltaTime)
 	AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::SuperBouncyObject);
 	if (nullptr != Result)
 	{
-		ChangeState(PlayerState::Jump);
-		GravityForce = FVector2D::ZERO;
-		JumpPower = FVector2D(0.0f, -1000.0f);
+		if (GetPlayerState() != PlayerState::Dead)
+		{
+			ChangeState(PlayerState::Jump);
+			GravityForce = FVector2D::ZERO;
+			JumpPower = FVector2D(0.0f, -1000.0f);
+		}
 	}
 }
 

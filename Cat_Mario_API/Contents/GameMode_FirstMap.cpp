@@ -161,7 +161,7 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 
 	SealSwtich();
 	//SealGoUp();
-	SealGoDown();
+	//SealGoDown();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
