@@ -576,8 +576,8 @@ void MarioCat::Bounce(float _DeltaTime)
 	{
 		if (GetPlayerState() != PlayerState::Dead)
 		{
-			BGMPlayer.Loop(1);
-			BGMPlayer = UEngineSound::Play("Bounce.MP3");
+			/*BGMPlayer.Loop(1);
+			BGMPlayer = UEngineSound::Play("Bounce.MP3");*/
 
 			ChangeState(PlayerState::Jump);
 			GravityForce = FVector2D::ZERO;
@@ -593,8 +593,8 @@ void MarioCat::SueprBounce(float _DeltaTime)
 	{
 		if (GetPlayerState() != PlayerState::Dead)
 		{
-			BGMPlayer.Loop(1);
-			BGMPlayer = UEngineSound::Play("Bounce.MP3");
+			/*BGMPlayer.Loop(1);
+			BGMPlayer = UEngineSound::Play("Bounce.MP3");*/
 
 			ChangeState(PlayerState::Jump);
 			GravityForce = FVector2D::ZERO;
