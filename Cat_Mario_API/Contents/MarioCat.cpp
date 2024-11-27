@@ -85,7 +85,7 @@ void MarioCat::BeginPlay()
 	FVector2D Size = UEngineAPICore::GetCore()->GetMainWindow().GetWindowSize();
 	GetWorld()->SetCameraPivot(Size.Half() * -1.0f);
 
-	/*BGMPlayer = UEngineSound::Play("Field.MP3");*/
+	//BGMPlayer = UEngineSound::Play("Field.MP3");
 
 }
 
@@ -198,14 +198,10 @@ void MarioCat::Tick(float _DeltaTime)
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
 
 	//추후에 브금 추가시 주석 해제 
-	//if (true == UEngineInput::GetInst().IsDown(VK_F3))
-	//{
-	//	BGMPlayer.OnOffSwtich();
-
-	//	// static썼다. 
-	//	//UEngineAPICore::GetCore()->ResetLevel<APlayGameMode, ANewPlayer>("Play");
-	//	//UEngineAPICore::GetCore()->OpenLevel("Play");
-	//}
+	/*if (true == UEngineInput::GetInst().IsDown(VK_F3))
+	{
+		BGMPlayer.OnOffSwtich();
+	}*/
 
 	if (true == UEngineInput::GetInst().IsDown('R'))
 	{
@@ -408,6 +404,8 @@ void MarioCat::Move(float _DeltaTime)
 	{
 		JumpPower = FVector2D(0.0f, -750.0f);
 		ChangeState(PlayerState::Jump);
+		BGMPlayer.Loop(1);
+		BGMPlayer = UEngineSound::Play("Jump.MP3");
 		return;
 	}
 	
