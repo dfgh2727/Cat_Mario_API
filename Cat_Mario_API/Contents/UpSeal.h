@@ -22,8 +22,6 @@ public:
 protected:
 
 private:
-	class USpriteRenderer* MonsterRenderer;
-	U2DCollision* MonsterBody;
 	U2DCollision* CollisionComponent;
 };
 

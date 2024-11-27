@@ -25,6 +25,9 @@
 #include "Turtle.h"
 #include "Staff.h"
 
+#include "FDBlock1.h"
+#include "FDBlock2.h"
+
 #include "GameMode_DeathCount.h"
 
 
@@ -95,16 +98,21 @@ void GameMode_FirstMap::BeginPlay()
 		QBlock->SetActorLocation({ 901, 528 });
 	}
 	{
-	/*	WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
-		NewActor->SetActorLocation({ 450, 700 });
-		NewActor->SetColImage("1stColMap.png");*/
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 610, 700 });
+		NewActor->SetColImage("1stColMap.png");
+	}
+	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 955, 700 });
+		NewActor->SetColImage("1stColMap.png");
 	}
 
 	//테스트용
 	{
-		Turtle* NewActor = GetWorld()->SpawnActor<Turtle>();
+		/*Turtle* NewActor = GetWorld()->SpawnActor<Turtle>();
 		NewActor->SetActorLocation({ 400, 700 });
-		NewActor->SetColImage("1stColMap.png");
+		NewActor->SetColImage("1stColMap.png");*/
 	}
 	{
 		FirstMapP1* NewActor = GetWorld()->SpawnActor<FirstMapP1>();
@@ -140,8 +148,105 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 2698, 528 });
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 2756, 528 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		QBlock->SetActorLocation({ 2756, 528 });
+	}
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 2814, 528 });
+	}
+
+	{
+		FDBlock1* NewActor = GetWorld()->SpawnActor<FDBlock1>();
+		NewActor->SetActorLocation({ 2928, 296});
+	}
+
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 3335, 296 });
+	}
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 3393, 296 });
+	}
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 3451, 296 });
+	}
+
+	{
+		/*BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 2699, 528 });*/ //연속 코인 상자
+	}
+
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 3857, 528 });
+	}
+	{
+		/*BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 2699, 528 });*/ //별 상자
+	}
+
+	{
+		FDBlock2* NewActor = GetWorld()->SpawnActor<FDBlock2>();
+		NewActor->SetActorLocation({ 4321, 785 });
+	}
+
+	{
+		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
+		NewActor->SetActorLocation({ 5190, 354 });
+	}
+	{
 		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
 		NewActor->SetActorLocation({ 5248, 587 });
+	}
+	{
+		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
+		NewActor->SetActorLocation({ 5305, 587 });
+	}
+	{
+		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
+		NewActor->SetActorLocation({ 5362, 587 });
+	}
+	{
+		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
+		NewActor->SetActorLocation({ 5419, 587 });
+	}
+	{
+		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
+		NewActor->SetActorLocation({ 5477, 587 });
+	}
+
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 5769, 528 });
+	}
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 5827, 528 });
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 5885, 528 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		QBlock->SetActorLocation({ 5885, 528 });
+	}
+	{
+		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
+		NewActor->SetActorLocation({ 5943, 528 });
+	}
+
+	{
+		//구름
 	}
 
 	{
@@ -193,7 +298,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = {/* 5135, 520*/ 300, 700 /*7100, 10*/ /* 6700, 10*/ };
+		MarioCat::StartPos = { /*2920, 700*/ /* 5135, 520*/ 300, 700 /*7100, 10*/ /* 6700, 10*/ };
 		Check = true;
 	}
 }

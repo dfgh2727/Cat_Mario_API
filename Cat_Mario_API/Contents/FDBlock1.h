@@ -3,18 +3,18 @@
 #include <EngineCore/2DCollision.h>
 
 // Ό³Έν :
-class DownSeal : public AActor
+class FDBlock1 : public AActor
 {
 public:
 	// constrcuter destructer
-	DownSeal();
-	~DownSeal();
+	FDBlock1();
+	~FDBlock1();
 
 	// delete Function
-	DownSeal(const DownSeal& _Other) = delete;
-	DownSeal(DownSeal&& _Other) noexcept = delete;
-	DownSeal& operator=(const DownSeal& _Other) = delete;
-	DownSeal& operator=(DownSeal&& _Other) noexcept = delete;
+	FDBlock1(const FDBlock1& _Other) = delete;
+	FDBlock1(FDBlock1&& _Other) noexcept = delete;
+	FDBlock1& operator=(const FDBlock1& _Other) = delete;
+	FDBlock1& operator=(FDBlock1&& _Other) noexcept = delete;
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
