@@ -91,7 +91,7 @@ void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);
-
+	
 		UColor Color = ColImage->GetColor(NextPos, UColor::WHITE);
 		if (Color == UColor::WHITE)
 		{
