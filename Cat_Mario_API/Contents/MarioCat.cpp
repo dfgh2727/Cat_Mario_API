@@ -198,10 +198,10 @@ void MarioCat::Tick(float _DeltaTime)
 	UEngineDebug::CoreOutPutString("PlayerPos : " + GetActorLocation().ToString());
 
 	//추후에 브금 추가시 주석 해제 
-	/*if (true == UEngineInput::GetInst().IsDown(VK_F3))
+	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
 		BGMPlayer.OnOffSwtich();
-	}*/
+	}
 
 	if (true == UEngineInput::GetInst().IsDown('R'))
 	{

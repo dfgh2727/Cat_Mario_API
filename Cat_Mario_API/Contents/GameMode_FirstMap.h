@@ -1,5 +1,6 @@
 #pragma once
 #include <EngineCore/GameMode.h>
+#include <EnginePlatform/EngineSound.h>
 
 // Ό³Έν :
 class GameMode_FirstMap : public AGameMode
@@ -44,5 +45,7 @@ private:
 	bool Seal1Lever = false;
 	bool Seal2Lever = false;
 	bool Seal3Lever = false;
+
+	USoundPlayer BGMPlayer;
 };
 
