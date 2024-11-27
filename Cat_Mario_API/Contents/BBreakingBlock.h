@@ -21,7 +21,6 @@ public:
 
 	void ItsBroken();
 
-
 protected:
 
 private:

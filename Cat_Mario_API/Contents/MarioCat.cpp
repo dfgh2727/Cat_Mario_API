@@ -48,7 +48,7 @@ MarioCat::MarioCat()
 			CollisionFoot->SetComponentScale({ 30, 8 });
 			CollisionFoot->SetCollisionGroup(ECollisionGroup::PlayerFoot);
 			CollisionFoot->SetCollisionType(ECollisionType::Rect);
-			CollisionFoot->SetComponentLocation(FVector2D{ 0, 32 });
+			CollisionFoot->SetComponentLocation(FVector2D{ 0, 30 });
 		}
 		{
 			CollisionBody = CreateDefaultSubObject<U2DCollision>();
@@ -455,10 +455,17 @@ void MarioCat::Jump(float _DeltaTime)
 
 bool MarioCat::CatOnTheBlock(float _DeltaTime)
 {
-	std::vector<AActor*> SteppingBlock;
-	bool IsCatOnTheBlock = CollisionFoot
-		->Collision(static_cast<int>(ECollisionGroup::SquareBlock), SteppingBlock, GravityForce * _DeltaTime, 5);
-	return IsCatOnTheBlock;
+	//std::vector<AActor*> SteppingBlock;
+	//bool IsCatOnTheBlock = CollisionFoot
+	//	->Collision(static_cast<int>(ECollisionGroup::SquareBlock), SteppingBlock, GravityForce * _DeltaTime, 5);
+	//return IsCatOnTheBlock;
+
+	AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::SquareBlock);
+	if (nullptr != Result)
+	{
+		bool IsCatOnTheBlock = true;
+		return IsCatOnTheBlock;
+	}
 }
 
 void MarioCat::HitTheBlock(float _DeltaTime)
