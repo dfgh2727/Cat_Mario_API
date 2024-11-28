@@ -17,6 +17,14 @@ FBPipe::FBPipe()
 	FirstMapP1Renderer->SetSprite("1stMapP2.png");
 	FirstMapP1Renderer->SetOrder(ERenderOrder::PIPE);
 	FirstMapP1Renderer->SetComponentScale({ 120, 234 });
+
+	//{
+	//	CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+	//	CollisionComponent->SetComponentScale({ 100, 234 });
+	//	CollisionComponent->SetCollisionGroup(ECollisionGroup::Prop);
+	//	CollisionComponent->SetCollisionType(ECollisionType::Rect);
+	//}
+	//DebugOn();
 }
 
 FBPipe::~FBPipe()
@@ -32,26 +40,23 @@ void FBPipe::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	if (SwitchUp == false)
-	{
+	//TimeEventer.PushEvent(2.0f, std::bind(&FBPipe::ShootFB, this, _DeltaTime));
+	/*ShootFB(_DeltaTime);*/
 
-	}
-	else
-	{
+}
 
-	}
+void FBPipe::SelectTheLoop(float _DeltaTime)
+{
+
+	
 
 }
 
 void FBPipe::ShootFB(float _DeltaTime)
 {
-	//FVector2D PipePos = this->GetActorLocation();
-	//FireBall* FB = GetWorld()->SpawnActor<FireBall>();
-	//FB->SetActorLocation(PipePos);
-
-	//FVector2D FBVelocity = FVector2D::ZERO;
-	//FBVelocity.X = (-1)^
-
+	FVector2D PipePos = this->GetActorLocation();
+	FireBall* FB = GetWorld()->SpawnActor<FireBall>();
+	FB->SetActorLocation(PipePos);
 }
 
 

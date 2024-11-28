@@ -18,7 +18,7 @@ public:
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
-
+	void SelectTheLoop(float _DeltaTime);
 	void ShootFB(float _DeltaTime);
 
 	bool SwitchUp = false;
@@ -26,6 +26,6 @@ public:
 protected:
 
 private:
-
+	U2DCollision* CollisionComponent;
 };
 
