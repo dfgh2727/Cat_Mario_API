@@ -45,12 +45,12 @@ void FBPipe::Tick(float _DeltaTime)
 
 void FBPipe::ShootFB(float _DeltaTime)
 {
-	FVector2D PipePos = this->GetActorLocation();
-	FireBall* FB = GetWorld()->SpawnActor<FireBall>();
-	FB->SetActorLocation(PipePos);
+	//FVector2D PipePos = this->GetActorLocation();
+	//FireBall* FB = GetWorld()->SpawnActor<FireBall>();
+	//FB->SetActorLocation(PipePos);
 
-	FVector2D FBVelocity = FVector2D::ZERO;
-	FBVelocity.X = (-1)^
+	//FVector2D FBVelocity = FVector2D::ZERO;
+	//FBVelocity.X = (-1)^
 
 }
 

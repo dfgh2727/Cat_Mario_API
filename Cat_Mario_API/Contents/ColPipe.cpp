@@ -52,7 +52,7 @@ void ColPipe::CatCheck(float _DeltaTime)
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 
-	AActor* Result = CollisionComponent1->CollisionOnce(ECollisionGroup::PlayerFoot);
+	AActor* Result = CollisionComponent1->CollisionOnce(ECollisionGroup::ColPlayer);
 	if (nullptr != Result)
 	{
 		if (true == UEngineInput::GetInst().IsDown(VK_DOWN))
