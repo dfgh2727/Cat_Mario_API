@@ -33,12 +33,12 @@ void GameMode_ThirdMap::BeginPlay()
 
 	{
 		FirstMapP2* NewActor = GetWorld()->SpawnActor<FirstMapP2>();
-		NewActor->SetActorLocation({ 5670, 617 });
+		NewActor->SetActorLocation({ 5975, 619 });
 	}
-	{
-		ColPipe* NewActor = GetWorld()->SpawnActor<ColPipe>();
-		NewActor->SetActorLocation({ 5670, 617 });
-	}
+	//{
+	//	ColPipe* NewActor = GetWorld()->SpawnActor<ColPipe>();
+	//	NewActor->SetActorLocation({ 5975, 619 });
+	//}
 }
 
 void GameMode_ThirdMap::Tick(float _DeltaTime)
@@ -51,6 +51,13 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
+	}
+
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+
+	if (true == UEngineInput::GetInst().IsDown(VK_F3))
+	{
+		Player->SetActorLocation({ 5700, 700 });
 	}
 
 }

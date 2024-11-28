@@ -18,6 +18,7 @@ enum class ECollisionGroup
 	PlayerHead,
 	PlayerBody,
 	PlayerFoot,
+	ColPlayer,
 	MonsterBody,
 	BouncyObject,
 	SuperBouncyObject,

@@ -35,6 +35,26 @@ void FDBlock2::BeginPlay()
 void FDBlock2::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+
+	Touched();
+	FallDown(_DeltaTime);
+}
+
+void FDBlock2::Touched()
+{
+	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::ColPlayer, FVector2D::ZERO);
+	if (nullptr != Result)
+	{
+		BlockIsTouched = true;
+	}
+}
+void FDBlock2::FallDown(float _DeltaTime)
+{
+	if (BlockIsTouched == true)
+	{
+		AddActorLocation(FVector2D::DOWN * _DeltaTime * 300.0f);
+	}
+
 }
 
 

@@ -19,9 +19,14 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void Touched();
+	void FallDown(float _DeltaTime);
+
 protected:
 
 private:
 	U2DCollision* CollisionComponent;
+
+	bool BlockIsTouched = false;
 };
 

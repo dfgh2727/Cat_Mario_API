@@ -30,6 +30,8 @@
 #include "FDBlock2.h"
 #include "Cloud.h"
 
+#include "FlyingStick.h"
+
 #include "GameMode_DeathCount.h"
 
 
@@ -199,6 +201,34 @@ void GameMode_FirstMap::BeginPlay()
 		NewActor->SetActorLocation({ 2699, 528 });*/ //º° »óÀÚ
 	}
 
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({4147, 528 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		QBlock->SetActorLocation({4147, 528 });
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 4321, 528 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		QBlock->SetActorLocation({4321, 528 });
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 4321, 296 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		QBlock->SetActorLocation({ 4321, 296 });
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 4493, 528 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		QBlock->SetActorLocation({ 4493, 528 });
+	}
 	{
 		FDBlock2* NewActor = GetWorld()->SpawnActor<FDBlock2>();
 		NewActor->SetActorLocation({ 4321, 785 });

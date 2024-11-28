@@ -164,6 +164,9 @@
     <ClCompile Include="MushroomN.cpp">
       <Filter>InterActive Things\Mushroom</Filter>
     </ClCompile>
+    <ClCompile Include="FlyingStick.cpp">
+      <Filter>InterActive Things\Monster</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -328,6 +331,9 @@
     </ClInclude>
     <ClInclude Include="MushroomN.h">
       <Filter>InterActive Things\Mushroom</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyingStick.h">
+      <Filter>InterActive Things\Monster</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
