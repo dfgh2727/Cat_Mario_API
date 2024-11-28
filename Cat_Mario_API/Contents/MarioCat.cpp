@@ -200,7 +200,7 @@ void MarioCat::Tick(float _DeltaTime)
 	//추후에 브금 추가시 주석 해제 
 	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
-		BGMPlayer.OnOffSwtich();
+		//BGMPlayer.OnOffSwtich();
 	}
 
 	if (true == UEngineInput::GetInst().IsDown('R'))
@@ -404,8 +404,8 @@ void MarioCat::Move(float _DeltaTime)
 	{
 		JumpPower = FVector2D(0.0f, -750.0f);
 		ChangeState(PlayerState::Jump);
-		BGMPlayer.Loop(1);
-		BGMPlayer = UEngineSound::Play("Jump.MP3");
+		/*BGMPlayer.Loop(1);
+		BGMPlayer = UEngineSound::Play("Jump.MP3");*/
 		return;
 	}
 	
