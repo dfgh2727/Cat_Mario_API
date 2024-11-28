@@ -39,6 +39,7 @@ void FireBallSwitch::BeginPlay()
 void FireBallSwitch::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+
 	{
 		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerBody);
 		if (nullptr != Result)
@@ -46,14 +47,6 @@ void FireBallSwitch::Tick(float _DeltaTime)
 			this->Destroy();
 		}
 	}
-
-	//{
-	//	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
-	//	if (nullptr != Result)
-	//	{
-	//		this->Destroy();
-	//	}
-	//}
 
 	{
 		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerFoot);

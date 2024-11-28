@@ -3,7 +3,6 @@
 
 #include <EngineCore/SpriteRenderer.h>
 
-
 #include "Enum.h"
 
 UEngineRandom FireBall::Random;
@@ -21,6 +20,7 @@ FireBall::FireBall()
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::None);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}
+
 	DebugOn();
 }
 
@@ -34,22 +34,17 @@ void FireBall::BeginPlay()
 
 	FBVelocity = FVector2D::ZERO;
 	float XValue = Random.Randomfloat(-170.0f, 170.0f);
-	float YValue = Random.Randomfloat(-900.0f, -700.0f);
+	float YValue = Random.Randomfloat(-1000.0f, -800.0f);
 
 	FBVelocity.X = XValue;
 	FBVelocity.Y = YValue;
-
 }
 
 void FireBall::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-
-
 	AddActorLocation(FBVelocity * _DeltaTime);
-
-
 	Gravity(_DeltaTime);
 }
 

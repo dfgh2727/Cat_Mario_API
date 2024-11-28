@@ -12,12 +12,14 @@ UpSeal::UpSeal()
 	UpSealRenderer->SetSprite("UpSeal.png");
 	UpSealRenderer->SetOrder(ERenderOrder::PLAYER);
 	UpSealRenderer->SetComponentScale({ 53, 78 });
+
 	{
 		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent->SetComponentScale({ 53, 78 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::MonsterBody);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}
+
 	DebugOn();
 }
 
