@@ -57,7 +57,7 @@ void MushroomN::Move(float _DeltaTime)
 	FVector2D MushroomPos = this->GetActorLocation();
 
 	TurnAround(MoveDir);
-	AddActorLocation(MoveDir * 0.08f);
+	AddActorLocation(MoveDir * 0.1f);
 }
 
 void MushroomN::MushroomGroundCheck(FVector2D _MovePos)
