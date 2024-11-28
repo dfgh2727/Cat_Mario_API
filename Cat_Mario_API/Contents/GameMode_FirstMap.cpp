@@ -15,6 +15,7 @@
 #include "Flag.h"
 #include "QBlockwithCoin.h"
 #include "QBlockwithWC.h"
+#include "QBlockwithMushroomN.h"
 #include "FirstMapP1.h"
 #include "FirstMapP2.h"
 #include "ColPipe.h"
@@ -156,8 +157,10 @@ void GameMode_FirstMap::BeginPlay()
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
 		NewActor->SetActorLocation({ 2756, 528 });
 
-		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		QBlockwithMushroomN* QBlock = GetWorld()->SpawnActor<QBlockwithMushroomN>();
 		QBlock->SetActorLocation({ 2756, 528 });
+		QBlock->SetColImage("1stColMap.png");
+		// 버섯상자로 변경
 	}
 	{
 		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();

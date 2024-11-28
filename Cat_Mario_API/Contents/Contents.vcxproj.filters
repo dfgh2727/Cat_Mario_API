@@ -158,6 +158,12 @@
     <ClCompile Include="Cloud.cpp">
       <Filter>InterActive Things\Monster</Filter>
     </ClCompile>
+    <ClCompile Include="QBlockwithMushroomN.cpp">
+      <Filter>InterActive Things\Blocks\MysteryBox</Filter>
+    </ClCompile>
+    <ClCompile Include="MushroomN.cpp">
+      <Filter>InterActive Things\Mushroom</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -317,6 +323,12 @@
     <ClInclude Include="Cloud.h">
       <Filter>InterActive Things\Monster</Filter>
     </ClInclude>
+    <ClInclude Include="QBlockwithMushroomN.h">
+      <Filter>InterActive Things\Blocks\MysteryBox</Filter>
+    </ClInclude>
+    <ClInclude Include="MushroomN.h">
+      <Filter>InterActive Things\Mushroom</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -375,6 +387,9 @@
     </Filter>
     <Filter Include="InterActive Things\Blocks\FallingDown">
       <UniqueIdentifier>{f6dbf749-4838-4642-bb65-b796bd25bde2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Mushroom">
+      <UniqueIdentifier>{3160ea1e-4db3-4394-b7eb-437be47bb7c7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

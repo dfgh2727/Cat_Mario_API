@@ -28,5 +28,6 @@ enum class ECollisionGroup
 	TurtleShell,
 	Dozer,
 	BreakingBlock,
+	None,
 
 };

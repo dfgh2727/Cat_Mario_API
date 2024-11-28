@@ -29,7 +29,7 @@ void Coin::BeginPlay()
 
 void Coin::Tick(float _DeltaTime)
 {
-	Time = UEngineAPICore::GetCore()->GetDeltaTime();
+	//Time = UEngineAPICore::GetCore()->GetDeltaTime();
 	Super::Tick(_DeltaTime);
 
 	RiseUp();
