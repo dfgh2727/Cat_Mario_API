@@ -6,6 +6,7 @@
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineInput.h>
 #include <EngineCore/EngineCoreDebug.h>
+#include <EngineBase/EngineRandom.h>
 
 #include "FireBall.h"
 
