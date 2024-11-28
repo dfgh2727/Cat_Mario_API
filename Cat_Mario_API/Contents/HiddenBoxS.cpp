@@ -49,20 +49,16 @@ void HiddenBoxS::BlockDisappear(float _DeltaTime)
 	FVector2D GForce = MainActor->GetGravityForce();
 	FVector2D CatJumpPower = MainActor->GetJumpPower();
 
-	if (MainActor->GetPlayerState() == PlayerState::Jump)
+	if (CatJumpPower.Y * (-1.0f) >= GForce.Y)
 	{
-		if (CatJumpPower.Y * (-1.0f) >= GForce.Y)
+		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
+		if (nullptr != Result)
 		{
-			AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
-			if (nullptr != Result)
-			{
-				CoinShowUP();
-				BlockShowUP();
-				this->Destroy();
-			}
-
+			CoinShowUP();
+			BlockShowUP();
+			this->Destroy();
 		}
-		
+
 	}
 }
 

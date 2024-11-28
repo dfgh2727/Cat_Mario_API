@@ -8,6 +8,8 @@
 #include <EngineCore/EngineCoreDebug.h>
 #include <EngineCore/Level.h>
 
+#include "MarioCat.h"
+
 CoinBox::CoinBox()
 {
 	
@@ -29,12 +31,27 @@ void CoinBox::RenderCollisionComponent()
 
 void CoinBox::BlockDisappear(float _DeltaTime)
 {
-	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
-	if (nullptr != Result)
+	MarioCat* MainActor = GetWorld()->GetPawn<MarioCat>();
+	FVector2D GForce = MainActor->GetGravityForce();
+	FVector2D CatJumpPower = MainActor->GetJumpPower();
+
+	if (CatJumpPower.Y * (-1.0f) >= GForce.Y)
 	{
-		CoinShowUP();
-		this->Destroy();
+		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
+		if (nullptr != Result)
+		{
+			CoinShowUP();
+			this->Destroy();
+		}
+
 	}
+
+	//AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
+	//if (nullptr != Result)
+	//{
+	//	CoinShowUP();
+	//	this->Destroy();
+	//}
 }
 
 void CoinBox::CoinShowUP()
