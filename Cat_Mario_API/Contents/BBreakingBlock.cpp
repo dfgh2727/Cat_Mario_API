@@ -12,6 +12,8 @@
 #include "BParticleC.h"
 #include "BParticleD.h"
 
+#include "MarioCat.h"
+
 
 BBreakingBlock::BBreakingBlock()
 {
@@ -42,13 +44,19 @@ void BBreakingBlock::BeginPlay()
 void BBreakingBlock::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
-
-	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
-	if (nullptr != Result)
-	{
-		ItsBroken();
-	}
 	
+	MarioCat* MainPlayer = GetWorld()->GetPawn< MarioCat>();
+	FVector2D GForce = MainPlayer->GetGravityForce();
+	FVector2D CatJumpPower = MainPlayer->GetJumpPower();
+
+	if (CatJumpPower.Y * (-1.0f) >= GForce.Y)
+	{
+		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
+		if (nullptr != Result)
+		{
+			ItsBroken();
+		}
+	}
 }
 
 void BBreakingBlock::ItsBroken()

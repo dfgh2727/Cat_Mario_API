@@ -99,16 +99,16 @@ void GameMode_FirstMap::BeginPlay()
 		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
 		QBlock->SetActorLocation({ 901, 528 });
 	}
-	{
-		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
-		NewActor->SetActorLocation({ 610, 700 });
-		NewActor->SetColImage("1stColMap.png");
-	}
-	{
-		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
-		NewActor->SetActorLocation({ 955, 700 });
-		NewActor->SetColImage("1stColMap.png");
-	}
+	//{
+	//	WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+	//	NewActor->SetActorLocation({ 610, 700 });
+	//	NewActor->SetColImage("1stColMap.png");
+	//}
+	//{
+	//	WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+	//	NewActor->SetActorLocation({ 955, 700 });
+	//	NewActor->SetColImage("1stColMap.png");
+	//}
 
 	//테스트용
 	{

@@ -39,7 +39,7 @@ MarioCat::MarioCat()
 
 		{
 			CollisionHead = CreateDefaultSubObject<U2DCollision>();
-			CollisionHead->SetComponentScale({ 35, 8 });
+			CollisionHead->SetComponentScale({ 47, 8 });
 			CollisionHead->SetCollisionGroup(ECollisionGroup::PlayerHead);
 			CollisionHead->SetCollisionType(ECollisionType::Rect);
 			CollisionHead->SetComponentLocation(FVector2D{ 0, -30 });
@@ -480,40 +480,35 @@ void MarioCat::HitTheBlock(float _DeltaTime)
 	}
 
 
+	while (true /*GetPlayerState()!= PlayerState::Jump*/)
 	{
-
-		std::vector<AActor*> HitTheBlockR;
-		while (true)
+		AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::SquareBlock, FVector2D::ZERO);
+		if (nullptr != Result)
 		{
-			AActor* Result = CollisionBody->CollisionOnce(ECollisionGroup::SquareBlock, FVector2D::ZERO);
-			if (nullptr != Result)
-			{
-				JumpPower = FVector2D::ZERO;
-				IsGround = true;
-				GravityForce = FVector2D::ZERO;
-				AddActorLocation(FVector2D::UP);
-			}
-			else {
-				break;
-			}
+			JumpPower = FVector2D::ZERO;
+			IsGround = true;
+			GravityForce = FVector2D::ZERO;
+			AddActorLocation(FVector2D::UP);
+		}
+		else
+		{
+			break;
 		}
 	}
 
+	while (true)
 	{
-		std::vector<AActor*> HitTheBlockR;
-		while (true)
+		AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::SquareBlock, FVector2D::ZERO);
+		if (nullptr != Result)
 		{
-			AActor* Result = CollisionFoot->CollisionOnce(ECollisionGroup::SquareBlock, FVector2D::ZERO);
-			if (nullptr != Result)
-			{
-				JumpPower = FVector2D::ZERO;
-				IsGround = true;
-				GravityForce = FVector2D::ZERO;
-				AddActorLocation(FVector2D::UP);
-			}
-			else {
-				break;
-			}
+			JumpPower = FVector2D::ZERO;
+			IsGround = true;
+			GravityForce = FVector2D::ZERO;
+			AddActorLocation(FVector2D::UP);
+		}
+		else 
+		{
+			break;
 		}
 	}
 
