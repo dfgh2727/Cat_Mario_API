@@ -169,7 +169,7 @@ void GameMode_FirstMap::BeginPlay()
 
 	{
 		FDBlock1* NewActor = GetWorld()->SpawnActor<FDBlock1>();
-		NewActor->SetActorLocation({ 2928, 296});
+		NewActor->SetActorLocation({ 2929, 296});
 	}
 
 	{
