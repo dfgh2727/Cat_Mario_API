@@ -160,7 +160,7 @@ void GameMode_FirstMap::BeginPlay()
 		QBlockwithMushroomN* QBlock = GetWorld()->SpawnActor<QBlockwithMushroomN>();
 		QBlock->SetActorLocation({ 2756, 528 });
 		QBlock->SetColImage("1stColMap.png");
-		// 버섯상자로 변경
+
 	}
 	{
 		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
@@ -253,6 +253,8 @@ void GameMode_FirstMap::BeginPlay()
 		Cloud* NewActor = GetWorld()->SpawnActor<Cloud>();
 		NewActor->SetActorLocation({ 6040, 326 });
 	}
+
+	// 날아오는 막대기 구현
 
 	{
 		Seal3 = GetWorld()->SpawnActor<DownSeal>();
