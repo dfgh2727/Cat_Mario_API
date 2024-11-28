@@ -1,12 +1,15 @@
 #include "PreCompile.h"
-#include "FirstMapP2.h"
+#include "FBPipe.h"
+
 #include "Enum.h"
 
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineInput.h>
 #include <EngineCore/EngineCoreDebug.h>
 
-FirstMapP2::FirstMapP2()
+#include "FireBall.h"
+
+FBPipe::FBPipe()
 {
 	USpriteRenderer* FirstMapP1Renderer = CreateDefaultSubObject<USpriteRenderer>();
 	FirstMapP1Renderer->SetSprite("1stMapP2.png");
@@ -14,16 +17,23 @@ FirstMapP2::FirstMapP2()
 	FirstMapP1Renderer->SetComponentScale({ 120, 234 });
 }
 
-FirstMapP2::~FirstMapP2()
+FBPipe::~FBPipe()
 {
 }
 
-void FirstMapP2::BeginPlay()
+void FBPipe::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-void FirstMapP2::Tick(float _DeltaTime)
+void FBPipe::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 }
+
+void FBPipe::ShootFB(float _DeltaTime)
+{
+
+}
+
+

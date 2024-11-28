@@ -167,6 +167,15 @@
     <ClCompile Include="FlyingStick.cpp">
       <Filter>InterActive Things\Monster</Filter>
     </ClCompile>
+    <ClCompile Include="FBPipe.cpp">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClCompile>
+    <ClCompile Include="FireBall.cpp">
+      <Filter>InterActive Things\FireBall</Filter>
+    </ClCompile>
+    <ClCompile Include="FireBallSwitch.cpp">
+      <Filter>InterActive Things\FireBall</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -335,6 +344,15 @@
     <ClInclude Include="FlyingStick.h">
       <Filter>InterActive Things\Monster</Filter>
     </ClInclude>
+    <ClInclude Include="FBPipe.h">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClInclude>
+    <ClInclude Include="FireBall.h">
+      <Filter>InterActive Things\FireBall</Filter>
+    </ClInclude>
+    <ClInclude Include="FireBallSwitch.h">
+      <Filter>InterActive Things\FireBall</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -396,6 +414,9 @@
     </Filter>
     <Filter Include="InterActive Things\Mushroom">
       <UniqueIdentifier>{3160ea1e-4db3-4394-b7eb-437be47bb7c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\FireBall">
+      <UniqueIdentifier>{df8f7762-36cf-400c-9293-0acbe69b7c4f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

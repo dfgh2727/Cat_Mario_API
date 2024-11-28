@@ -9,8 +9,7 @@
 #include "ThirdMap.h"
 #include "MarioCat.h"
 
-#include "FirstMapP2.h"
-#include "ColPipe.h"
+#include "FBPipe.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -32,13 +31,9 @@ void GameMode_ThirdMap::BeginPlay()
 	}
 
 	{
-		FirstMapP2* NewActor = GetWorld()->SpawnActor<FirstMapP2>();
+		FBPipe* NewActor = GetWorld()->SpawnActor<FBPipe>();
 		NewActor->SetActorLocation({ 5975, 619 });
 	}
-	//{
-	//	ColPipe* NewActor = GetWorld()->SpawnActor<ColPipe>();
-	//	NewActor->SetActorLocation({ 5975, 619 });
-	//}
 }
 
 void GameMode_ThirdMap::Tick(float _DeltaTime)
