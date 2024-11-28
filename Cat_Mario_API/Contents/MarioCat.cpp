@@ -400,11 +400,12 @@ void MarioCat::Move(float _DeltaTime)
 
 	DirVector += -DirVector *_DeltaTime ;
 
-	if (true == UEngineInput::GetInst().IsPress(VK_UP))
+	if (true == UEngineInput::GetInst().IsPress(VK_UP)/* && GravityForce == FVector2D::ZERO*/)
 	{
 		JumpPower = FVector2D(0.0f, -750.0f);
 		ChangeState(PlayerState::Jump);
-		BGMPlayer.Loop(1);
+
+		BGMPlayer.Loop(0);
 		BGMPlayer = UEngineSound::Play("Jump.MP3");
 		return;
 	}
