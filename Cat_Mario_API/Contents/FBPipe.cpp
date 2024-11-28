@@ -40,9 +40,7 @@ void FBPipe::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	//TimeEventer.PushEvent(2.0f, std::bind(&FBPipe::ShootFB, this, _DeltaTime));
-	/*ShootFB(_DeltaTime);*/
-
+	ShootFB(_DeltaTime);
 }
 
 void FBPipe::SelectTheLoop(float _DeltaTime)
@@ -54,9 +52,16 @@ void FBPipe::SelectTheLoop(float _DeltaTime)
 
 void FBPipe::ShootFB(float _DeltaTime)
 {
-	FVector2D PipePos = this->GetActorLocation();
-	FireBall* FB = GetWorld()->SpawnActor<FireBall>();
-	FB->SetActorLocation(PipePos);
+	time += _DeltaTime;
+
+	if (time > 1.0f)
+	{
+		FVector2D PipePos = this->GetActorLocation();
+		FireBall* FB = GetWorld()->SpawnActor<FireBall>();
+		FB->SetActorLocation(PipePos);
+
+		time = 0.0f;
+	}
 }
 
 
