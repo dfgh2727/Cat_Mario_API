@@ -19,9 +19,12 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void ChangeFace();
+
 protected:
 
 private:
+	class USpriteRenderer* MonsterRenderer;
 	U2DCollision* CollisionComponent;
 };
 
