@@ -55,7 +55,7 @@ public:
 		// 내가 널 만든 레벨이야.
 		ActorPtr->World = this;
 
-		BeginPlayList.push_back(ActorPtr);
+ 		BeginPlayList.push_back(ActorPtr);
 		// NewActor->BeginPlay();
 		// AllActors.push_back(NewActor);
 		return NewActor;
