@@ -33,6 +33,7 @@ public:
 	void Clear();
 
 	void GoToDeathCount();
+	void StopTheMusic();
 
 protected:
 
@@ -46,6 +47,6 @@ private:
 	bool Seal2Lever = false;
 	bool Seal3Lever = false;
 
-	USoundPlayer BGMPlayer;
+	USoundPlayer BGMPlayerBase;
 };
 

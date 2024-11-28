@@ -265,7 +265,7 @@ void GameMode_FirstMap::BeginPlay()
 		TheStaff->SetActorLocation({ 7161, 374 });
 	}
 
-	//BGMPlayer = UEngineSound::Play("Field.MP3");
+	BGMPlayerBase = UEngineSound::Play("Field.MP3");
 }
 
 void GameMode_FirstMap::Tick(float _DeltaTime)
@@ -282,9 +282,19 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 		UEngineAPICore::GetCore()->OpenLevel("Play_SecondMap");
 	}
 
+	StopTheMusic();
 	OverTheStaff();
 	AtTheDoor();
 	Clear();
+}
+
+void GameMode_FirstMap::StopTheMusic()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	if (Player->IsCatKilled == true)
+	{
+		BGMPlayerBase.Stop();
+	}
 }
 
 void GameMode_FirstMap::ReStart(float _DeltaTime)
