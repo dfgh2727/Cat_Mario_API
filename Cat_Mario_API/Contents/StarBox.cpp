@@ -13,7 +13,7 @@
 StarBox::StarBox()
 {
 	USpriteRenderer* QMarkRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	QMarkRenderer->SetSprite("QBlock.png");
+	QMarkRenderer->SetSprite("BBreakingBlock.png");
 	QMarkRenderer->SetOrder(ERenderOrder::BLOCK);
 	QMarkRenderer->SetComponentScale({ 60, 60 });
 
