@@ -1,8 +1,9 @@
 #pragma once
-#include "CoinBox.h"
+#include <EngineCore/Actor.h>
+#include <EngineCore/2DCollision.h>
 
 // Ό³Έν :
-class InfiniteCoinBox : public CoinBox
+class InfiniteCoinBox : public AActor
 {
 public:
 	// constrcuter destructer
@@ -18,11 +19,16 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
-	void BlockDisappear(float _DeltaTime) override;
+	void InfiniteCoin(float _DeltaTime);
 
 protected:
 
 private:
-
+	class USpriteRenderer* BBreakingBlockRenderer;
+	USpriteRenderer* QBlockRenderer;
+	U2DCollision* CollisionComponent;
+	bool End = false;
+	float Time = 2.0f;
+	float CoinTime = 0.0f
 };
 
