@@ -743,3 +743,13 @@ void MarioCat::LevelChangeEnd()
 {
 	Super::LevelChangeEnd();
 }
+
+void MarioCat::Hide()
+{
+	CatRenderer->SetOrder(ERenderOrder::HIDDEN);
+}
+
+void MarioCat::Appear()
+{
+	CatRenderer->SetOrder(ERenderOrder::PLAYER);
+}

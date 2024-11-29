@@ -294,8 +294,6 @@ void GameMode_FirstMap::BeginPlay()
 		NewActor->SetActorLocation({ 6040, 326 });
 	}
 
-	// 날아오는 막대기 구현
-
 	{
 		Seal3 = GetWorld()->SpawnActor<DownSeal>();
 		Seal3->SetActorLocation({ 7380, -100 });

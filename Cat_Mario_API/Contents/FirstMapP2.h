@@ -27,6 +27,9 @@ public:
 protected:
 
 private:
+	U2DCollision* CollisionComponent1;
+	U2DCollision* CollisionComponent2;
+
 	bool ShakeThePipe = false;
 	float ShakingTime = 0.0f;
 	float Time = 0.0f;

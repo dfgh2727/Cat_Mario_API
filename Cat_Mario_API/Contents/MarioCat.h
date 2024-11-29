@@ -99,6 +99,10 @@ public:
 		return JumpPower;
 	}
 
+	void Hide();
+	void Appear();
+
+
 protected:
 
 private:
@@ -127,7 +131,6 @@ private:
 	float MaxSpeed = 1000.0f;
 	float MinSpeed = 0.05f;
 	
-
 	std::string DirString = "Right";
 
 	FVector2D JumpPower = FVector2D(0.0f, -1500.0f);
