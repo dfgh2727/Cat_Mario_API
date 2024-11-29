@@ -28,6 +28,10 @@ public:
 	void SealGoUp();
 	void SealGoDown();
 
+	void FSSwtich();
+	void FlyingStickAppears();
+
+
 	void OverTheStaff();
 	void AtTheDoor();
 	void Clear();
@@ -47,6 +51,9 @@ private:
 	bool Seal2Lever = false;
 	bool Seal3Lever = false;
 
+	bool FSLever = false;
+
+	int DoItOnce = 1;
 	USoundPlayer BGMPlayerBase;
 };
 

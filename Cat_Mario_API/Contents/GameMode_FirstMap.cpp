@@ -307,6 +307,9 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 	//SealGoUp();
 	//SealGoDown();
 
+	FSSwtich();
+	FlyingStickAppears();
+
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("Play_SecondMap");
@@ -347,7 +350,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { /*2920, 700*/ /*5940, 700*/ 300, 700 /*7100, 10*/ /* 6700, 10*/ };
+		MarioCat::StartPos = { /*2920, 700*/ /*5940, 700*/ /*300, 700*/ /*7100, 10*/  6700, 10 };
 		Check = true;
 	}
 }
@@ -430,3 +433,25 @@ void GameMode_FirstMap::GoToDeathCount()
 {
 	UEngineAPICore::GetCore()->OpenLevel("DeathCount");
 }
+
+void GameMode_FirstMap::FSSwtich()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+
+	if (PlayerPos.X >= 6770.0f && PlayerPos.Y <= 80.0f)
+	{
+		FSLever = true;
+	}
+}
+
+void GameMode_FirstMap::FlyingStickAppears()
+{
+	if (FSLever == true && DoItOnce == 1)
+	{
+		FlyingStick* NewActor = GetWorld()->SpawnActor<FlyingStick>();
+		NewActor->SetActorLocation({ 6900, 100 });
+		--DoItOnce;
+	}
+}
+

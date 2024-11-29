@@ -23,5 +23,7 @@ protected:
 
 private:
 	U2DCollision* CollisionComponent;
+
+	float time = 2.0f;
 };
 
