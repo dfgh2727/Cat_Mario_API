@@ -38,9 +38,6 @@ void HiddenBoxS::Tick(float _DeltaTime)
 	Super::Tick(_DeltaTime);
 	
 	BlockDisappear(_DeltaTime);
-
-	AActor* MainActor = GetWorld()->GetPawn();
-	
 }
 
 void HiddenBoxS::BlockDisappear(float _DeltaTime)

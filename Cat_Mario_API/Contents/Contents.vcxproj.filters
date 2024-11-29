@@ -176,6 +176,9 @@
     <ClCompile Include="FireBallSwitch.cpp">
       <Filter>InterActive Things\FireBall</Filter>
     </ClCompile>
+    <ClCompile Include="InfiniteCoinBox.cpp">
+      <Filter>InterActive Things\Blocks\CoinBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -352,6 +355,9 @@
     </ClInclude>
     <ClInclude Include="FireBallSwitch.h">
       <Filter>InterActive Things\FireBall</Filter>
+    </ClInclude>
+    <ClInclude Include="InfiniteCoinBox.h">
+      <Filter>InterActive Things\Blocks\CoinBox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
