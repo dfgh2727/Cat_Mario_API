@@ -20,12 +20,12 @@ Star::Star()
 		MonsterRenderer = CreateDefaultSubObject<USpriteRenderer>();
 		MonsterRenderer->SetSprite("Star.png");
 		MonsterRenderer->SetOrder(ERenderOrder::PLAYER);
-		MonsterRenderer->SetComponentScale({ 120, 120 });
+		MonsterRenderer->SetComponentScale({ 56, 62 });
 	}
 	{
 		MonsterBody = CreateDefaultSubObject<U2DCollision>();
-		MonsterBody->SetComponentScale({ 55, 53 });
-		MonsterBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
+		MonsterBody->SetComponentScale({ 56, 62 });
+		MonsterBody->SetCollisionGroup(ECollisionGroup::Prop);
 		MonsterBody->SetCollisionType(ECollisionType::Rect);
 	}
 
@@ -63,6 +63,12 @@ void Star::Move(float _DeltaTime)
 
 	TurnAround(MoveDir);
 	AddActorLocation(MoveDir * 0.08f);
+
+	if (JumpPower.Y * (-1.0f) >= GravityForce.Y)
+	{
+		AddActorLocation(JumpPower * _DeltaTime);
+	}
+
 }
 
 void Star::MonsterGroundCheck(FVector2D _MovePos)
@@ -108,7 +114,7 @@ void Star::Gravity(float _DeltaTime)
 	if (false == IsGround)
 	{
 		AddActorLocation(GravityForce * _DeltaTime);
-		GravityForce += FVector2D::DOWN * _DeltaTime * 1200.0f;
+		GravityForce += FVector2D::DOWN * _DeltaTime * 800.0f;
 	}
 	else
 	{
@@ -152,9 +158,7 @@ void Star::TurnAround(FVector2D _MovePos)
 				MoveDir = FVector2D::LEFT;
 				PosOrN = -1.0f;
 			}
-
 		}
-
 	}
 
 	AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::SquareBlock);

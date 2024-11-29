@@ -36,6 +36,8 @@ private:
 	U2DCollision* MonsterBody;
 	bool IsGround = false;
 
+	FVector2D JumpPower = FVector2D(0.0f, -750.0f);
+
 	FVector2D GravityForce = FVector2D::ZERO;
 	FVector2D MoveDir = FVector2D::LEFT;
 	float PosOrN = -1.0f;

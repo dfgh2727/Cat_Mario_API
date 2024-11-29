@@ -179,9 +179,6 @@
     <ClCompile Include="InfiniteCoinBox.cpp">
       <Filter>InterActive Things\Blocks\CoinBox</Filter>
     </ClCompile>
-    <ClCompile Include="StarBox.cpp">
-      <Filter>InterActive Things\Blocks\MysteryBox</Filter>
-    </ClCompile>
     <ClCompile Include="Star.cpp">
       <Filter>InterActive Things\Monster</Filter>
     </ClCompile>
@@ -364,9 +361,6 @@
     </ClInclude>
     <ClInclude Include="InfiniteCoinBox.h">
       <Filter>InterActive Things\Blocks\CoinBox</Filter>
-    </ClInclude>
-    <ClInclude Include="StarBox.h">
-      <Filter>InterActive Things\Blocks\MysteryBox</Filter>
     </ClInclude>
     <ClInclude Include="Star.h">
       <Filter>InterActive Things\Monster</Filter>
