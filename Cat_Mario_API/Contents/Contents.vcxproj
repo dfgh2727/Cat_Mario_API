@@ -351,6 +351,14 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="Star.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="StarBox.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="UpSeal.cpp">
       <SubType>
       </SubType>
@@ -587,6 +595,14 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="SecondMapP2.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Star.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="StarBox.h">
       <SubType>
       </SubType>
     </ClInclude>

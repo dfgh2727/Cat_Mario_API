@@ -29,6 +29,7 @@
 #include "FDBlock1.h"
 #include "FDBlock2.h"
 #include "Cloud.h"
+#include "InfiniteCoinBox.h"
 
 #include "FlyingStick.h"
 
@@ -188,8 +189,11 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	{
-		/*BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
-		NewActor->SetActorLocation({ 2699, 528 });*/ //연속 코인 상자
+		//사라지는 QBlock 배치
+	}
+	{
+		InfiniteCoinBox* NewActor = GetWorld()->SpawnActor<InfiniteCoinBox>();
+		NewActor->SetActorLocation({ 3451, 528 });
 	}
 
 	{
@@ -350,7 +354,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { /*2920, 700*/ /*5940, 700*/ /*300, 700*/ /*7100, 10*/  6700, 10 };
+		MarioCat::StartPos = { 2920, 700 /*5940, 700*/ /*300, 700*/ /*7100, 10*/  /*6700, 10*/ };
 		Check = true;
 	}
 }

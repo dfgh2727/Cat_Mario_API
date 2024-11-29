@@ -18,22 +18,17 @@ InfiniteCoinBox::InfiniteCoinBox()
 	BBreakingBlockRenderer->SetOrder(ERenderOrder::BLOCK);
 	BBreakingBlockRenderer->SetComponentScale({ 60, 60 });
 
-	QBlockRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	QBlockRenderer->SetSprite("QBlock.png");
-	QBlockRenderer->SetOrder(ERenderOrder::BLOCK);
-	QBlockRenderer->SetComponentScale({ 60, 60 });
-
 	{
-		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentScale({ 60, 60 });
-		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
-		CollisionComponent->SetCollisionType(ECollisionType::Rect);
+		CollisionComponent1 = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent1->SetComponentScale({ 60, 60 });
+		CollisionComponent1->SetCollisionGroup(ECollisionGroup::SquareBlock);
+		CollisionComponent1->SetCollisionType(ECollisionType::Rect);
 	}
 	{
-		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentScale({ 60, 60 });
-		CollisionComponent->SetCollisionGroup(ECollisionGroup::CoinBox);
-		CollisionComponent->SetCollisionType(ECollisionType::Rect);
+		CollisionComponent2 = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent2->SetComponentScale({ 60, 60 });
+		CollisionComponent2->SetCollisionGroup(ECollisionGroup::CoinBox);
+		CollisionComponent2->SetCollisionType(ECollisionType::Rect);
 	}
 	DebugOn();
 }
@@ -51,10 +46,18 @@ void InfiniteCoinBox::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	if (End == false)
+	TouchCheck();
+
+	if (Touched == true && End == false)
 	{
-		InfiniteCoin(_DeltaTime);
+		CoinCycle += _DeltaTime;
 		Time -= _DeltaTime;
+
+		if (CoinCycle >= 0.08f)
+		{
+			InfiniteCoin(_DeltaTime);
+			CoinCycle = 0.0f;
+		}
 	}
 
 	if (Time <= 0.0f)
@@ -63,7 +66,7 @@ void InfiniteCoinBox::Tick(float _DeltaTime)
 	}
 }
 
-void InfiniteCoinBox::InfiniteCoin(float _DeltaTime)
+void InfiniteCoinBox::TouchCheck()
 {
 	MarioCat* MainActor = GetWorld()->GetPawn<MarioCat>();
 	FVector2D GForce = MainActor->GetGravityForce();
@@ -71,22 +74,26 @@ void InfiniteCoinBox::InfiniteCoin(float _DeltaTime)
 
 	if (CatJumpPower.Y * (-1.0f) >= GForce.Y)
 	{
-		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
+		AActor* Result = CollisionComponent2->CollisionOnce(ECollisionGroup::PlayerHead);
 		if (nullptr != Result)
 		{
-			CoinTime += _DeltaTime;
-
-			FVector2D PresentPos = this->GetActorLocation();
-			Coin* TheCoin = GetWorld()->SpawnActor<Coin>();
-			TheCoin->SetActorLocation(PresentPos);
-			AddActorLocation(FVector2D::UP * 0.25f);
-
-			if (CoinTime >= 0.5f)
-			{
-				TheCoin->Destroy();
-			}
-			
+			Touched = true;
 		}
 
+	}
+}
+
+void InfiniteCoinBox::InfiniteCoin(float _DeltaTime)
+{
+	CoinTimeLimit += _DeltaTime;
+
+	FVector2D PresentPos = this->GetActorLocation();
+	Coin* TheCoin = GetWorld()->SpawnActor<Coin>();
+	TheCoin->SetActorLocation(PresentPos);
+	TheCoin->AddActorLocation(FVector2D::UP * 0.2f);
+
+	if (CoinTimeLimit >= 0.3f)
+	{
+		TheCoin->Destroy();
 	}
 }

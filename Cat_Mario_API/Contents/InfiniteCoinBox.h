@@ -19,16 +19,20 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void TouchCheck();
 	void InfiniteCoin(float _DeltaTime);
 
 protected:
 
 private:
 	class USpriteRenderer* BBreakingBlockRenderer;
-	USpriteRenderer* QBlockRenderer;
-	U2DCollision* CollisionComponent;
+	U2DCollision* CollisionComponent1;
+	U2DCollision* CollisionComponent2;
+
+	bool Touched = false;
 	bool End = false;
 	float Time = 2.0f;
-	float CoinTime = 0.0f
+	float CoinCycle = 0.0f;
+	float CoinTimeLimit = 0.0f;
 };
 
