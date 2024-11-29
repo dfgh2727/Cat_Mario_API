@@ -32,7 +32,7 @@
 #include "InfiniteCoinBox.h"
 
 #include "FlyingStick.h"
-#include "Star.h"
+#include "StarBox.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -201,11 +201,14 @@ void GameMode_FirstMap::BeginPlay()
 		BBreakingBlock* NewActor = GetWorld()->SpawnActor<BBreakingBlock>();
 		NewActor->SetActorLocation({ 3857, 528 });
 	}
-	{
-		Star* NewActor = GetWorld()->SpawnActor<Star>();
-		NewActor->SetActorLocation({ 2920, 500 });
-		NewActor->SetColImage("1stColMap.png");
 
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 3915, 528 });
+
+		StarBox* QMark = GetWorld()->SpawnActor<StarBox>();
+		QMark->SetActorLocation({ 3915, 528 });
+		QMark->SetColImage("1stColMap.png");
 	}
 
 	{

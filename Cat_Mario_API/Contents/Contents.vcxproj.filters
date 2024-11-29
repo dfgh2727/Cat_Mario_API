@@ -182,6 +182,9 @@
     <ClCompile Include="Star.cpp">
       <Filter>InterActive Things\Monster</Filter>
     </ClCompile>
+    <ClCompile Include="StarBox.cpp">
+      <Filter>InterActive Things\Blocks\MysteryBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -364,6 +367,9 @@
     </ClInclude>
     <ClInclude Include="Star.h">
       <Filter>InterActive Things\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="StarBox.h">
+      <Filter>InterActive Things\Blocks\MysteryBox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
