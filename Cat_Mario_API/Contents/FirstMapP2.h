@@ -20,12 +20,15 @@ public:
 	void Tick(float _DeltaTime) override;
 
 	void CatInthePipe();
+	void PipeMotion(float _DeltaTime);
 	void Shake(float _DeltaTime);
+	void Launch(float _DeltaTime);
 
 protected:
 
 private:
 	bool ShakeThePipe = false;
+	float ShakingTime = 0.0f;
 	float Time = 0.0f;
 };
 
