@@ -62,7 +62,7 @@ void Star::Move(float _DeltaTime)
 	FVector2D MonsterPos = this->GetActorLocation();
 
 	TurnAround(MoveDir);
-	AddActorLocation(MoveDir * 0.08f);
+	AddActorLocation(MoveDir * 0.1f);
 
 	if (JumpPower.Y * (-1.0f) >= GravityForce.Y)
 	{
