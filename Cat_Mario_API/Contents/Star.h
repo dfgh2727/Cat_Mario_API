@@ -28,7 +28,7 @@ public:
 
 	bool GetOutOfBox(float _DeltaTime);
 	void RiseUp(float _DeltaTime);
-
+	
 protected:
 
 private:
