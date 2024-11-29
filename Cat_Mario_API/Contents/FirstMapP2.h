@@ -19,9 +19,13 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	void CatInthePipe();
+	void Shake(float _DeltaTime);
+
 protected:
 
 private:
-	//U2DCollision* CollisionComponent;
+	bool ShakeThePipe = false;
+	float Time = 0.0f;
 };
 

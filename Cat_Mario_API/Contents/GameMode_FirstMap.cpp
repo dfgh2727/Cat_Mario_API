@@ -360,7 +360,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { 2920, 700 /*5940, 700*/ /*300, 700*/ /*7100, 10*/  /*6700, 10*/ };
+		MarioCat::StartPos = { /*2920, 700*/ /*5940, 700*/ 300, 700 /*7100, 10*/  /*6700, 10*/ };
 		Check = true;
 	}
 }
