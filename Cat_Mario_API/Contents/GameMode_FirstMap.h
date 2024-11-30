@@ -41,6 +41,11 @@ public:
 
 	void CatIsInThePipe(float _DeltaTime);
 	void CatIsUnderTheBlock();
+	void MonsterSwitch1();
+	void MonsterSwitch2();
+	void MonsterShowUp1();
+	void MonsterShowUp2();
+
 
 
 protected:
@@ -60,7 +65,12 @@ private:
 
 	bool FSLever = false;
 
-	int DoItOnce = 1;
+	bool MonsterLever1 = false;
+	bool MonsterLever2 = false;
+	bool DoItOnce1 = true;
+	bool DoItOnce2 = true;
+	bool DoItOnce3 = true;
+
 	float Time = 0.0f;
 	USoundPlayer BGMPlayerBase;
 };

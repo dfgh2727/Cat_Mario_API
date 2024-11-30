@@ -315,6 +315,9 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 	//SealGoUp();
 	//SealGoDown();
 
+	MonsterSwitch1();
+	MonsterShowUp1();
+
 	FSSwtich();
 	FlyingStickAppears();
 	CatIsInThePipe(_DeltaTime);
@@ -407,14 +410,39 @@ void GameMode_FirstMap::SealGoDown()
 	}
 }
 
-void GameMode_FirstMap::OverTheStaff()
+void GameMode_FirstMap::MonsterSwitch1()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if (PlayerPos.X >= 7161.0f)
+	if (PlayerPos.X >= 2170.0f)
 	{
-		Player->OverTheStaff = true;
-	}	
+		MonsterLever1 = true;
+	}
+}
+
+void GameMode_FirstMap::MonsterShowUp1()
+{
+	if (MonsterLever1 == true && DoItOnce1 == true)
+	{
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 2811, 463 });
+			NewActor->SetColImage("1stColMap.png");
+		}
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 3101, 235 });
+			NewActor->SetColImage("1stColMap.png");
+		}
+
+		DoItOnce1 = false;
+	}
+}
+
+
+void GameMode_FirstMap::OverTheStaff()
+{
+
 }
 
 void GameMode_FirstMap::AtTheDoor()
@@ -458,11 +486,11 @@ void GameMode_FirstMap::FSSwtich()
 
 void GameMode_FirstMap::FlyingStickAppears()
 {
-	if (FSLever == true && DoItOnce == 1)
+	if (FSLever == true && DoItOnce3 == true)
 	{
 		FlyingStick* NewActor = GetWorld()->SpawnActor<FlyingStick>();
 		NewActor->SetActorLocation({ 6900, 100 });
-		--DoItOnce;
+		DoItOnce3 = false;
 	}
 }
 
@@ -487,7 +515,7 @@ void GameMode_FirstMap::CatIsUnderTheBlock()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if (PlayerPos.X >= 2800.0f && PlayerPos.Y >= 220.0f)
+	if (PlayerPos.X >= 2890.0f && PlayerPos.Y >= 460.0f)
 	{
 		FDB->IsFalling = true;
 	}
