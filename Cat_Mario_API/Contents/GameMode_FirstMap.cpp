@@ -115,11 +115,7 @@ void GameMode_FirstMap::BeginPlay()
 	//}
 
 	//테스트용
-	{
-		/*Turtle* NewActor = GetWorld()->SpawnActor<Turtle>();
-		NewActor->SetActorLocation({ 400, 700 });
-		NewActor->SetColImage("1stColMap.png");*/
-	}
+	
 	{
 		FirstMapP1* NewActor = GetWorld()->SpawnActor<FirstMapP1>();
 		NewActor->SetActorLocation({ 1221, 646 });
@@ -317,6 +313,8 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 
 	MonsterSwitch1();
 	MonsterShowUp1();
+	MonsterSwitch2();
+	MonsterShowUp2();
 
 	FSSwtich();
 	FlyingStickAppears();
@@ -364,7 +362,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { /*2920, 700*/ /*5940, 700*/ 300, 700 /*7100, 10*/  /*6700, 10*/ };
+		MarioCat::StartPos = { /*2600, 700*/ /*2920, 700*/ /*5940, 700*/ 300, 700 /*7100, 10*/  /*6700, 10*/ };
 		Check = true;
 	}
 }
@@ -436,6 +434,41 @@ void GameMode_FirstMap::MonsterShowUp1()
 		}
 
 		DoItOnce1 = false;
+	}
+}
+
+void GameMode_FirstMap::MonsterSwitch2()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (PlayerPos.X >= 2190.0f)
+	{
+		MonsterLever2 = true;
+	}
+}
+
+void GameMode_FirstMap::MonsterShowUp2()
+{
+	if (MonsterLever2 == true && DoItOnce2 == true)
+	{
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 3688, 700 });
+			NewActor->SetColImage("1stColMap.png");
+		}
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 3808, 700 });
+			NewActor->SetColImage("1stColMap.png");
+		}
+		{
+			Turtle* NewActor = GetWorld()->SpawnActor<Turtle>();
+			NewActor->SetActorLocation({ 3988, 700 });
+			NewActor->SetColImage("1stColMap.png");
+			
+		}
+
+		DoItOnce2 = false;
 	}
 }
 

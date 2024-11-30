@@ -38,7 +38,7 @@ private:
 
 	float PosOrN = -1.0f;
 	FVector2D GravityForce = FVector2D::ZERO;
-	FVector2D MoveDir = FVector2D::LEFT;
+	FVector2D MoveDir = FVector2D::RIGHT;
 
 	bool MonsterIsKilled = false;
 };

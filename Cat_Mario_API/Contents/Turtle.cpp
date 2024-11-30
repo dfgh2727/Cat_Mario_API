@@ -40,7 +40,7 @@ Turtle::Turtle()
 	MonsterRenderer->CreateAnimation("Turtle_RunRight", "CMmon_Right.png", 1, 1, 0.5f);
 	MonsterRenderer->CreateAnimation("Turtle_RunLeft", "CMmon_Left.png", 1, 1, 0.5f);
 
-	MonsterRenderer->ChangeAnimation("Turtle_RunLeft");
+	MonsterRenderer->ChangeAnimation("Turtle_RunRight");
 
 	DebugOn();
 }
