@@ -18,12 +18,13 @@ public:
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
-
+	void KillTheCat();
 	bool IsFalling = false;
 
 protected:
 
 private:
-
+	U2DCollision* CollisionComponent1;
+	U2DCollision* CollisionComponent2;
 };
 

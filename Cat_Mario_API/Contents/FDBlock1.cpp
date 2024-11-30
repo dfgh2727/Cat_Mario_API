@@ -16,16 +16,16 @@ FDBlock1::FDBlock1()
 	BlockRenderer->SetComponentScale({ 176, 60 });
 	
 	{
-		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentScale({ 176, 60 });
-		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
-		CollisionComponent->SetCollisionType(ECollisionType::Rect);
+		CollisionComponent1 = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent1->SetComponentScale({ 176, 60 });
+		CollisionComponent1->SetCollisionGroup(ECollisionGroup::SquareBlock);
+		CollisionComponent1->SetCollisionType(ECollisionType::Rect);
 	}
 	{
-		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentScale({ 176, 60 });
-		CollisionComponent->SetCollisionGroup(ECollisionGroup::FDBlock);
-		CollisionComponent->SetCollisionType(ECollisionType::Rect);
+		CollisionComponent2 = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent2->SetComponentScale({ 176, 60 });
+		CollisionComponent2->SetCollisionGroup(ECollisionGroup::FDBlock);
+		CollisionComponent2->SetCollisionType(ECollisionType::Rect);
 	}
 
 	DebugOn();
@@ -47,6 +47,18 @@ void FDBlock1::Tick(float _DeltaTime)
 	if (IsFalling == true)
 	{
 		AddActorLocation(FVector2D::DOWN * 700.0f * _DeltaTime);
+		KillTheCat();
 	}
 }
 
+void FDBlock1::KillTheCat()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+
+	AActor* Result = CollisionComponent2->CollisionOnce(ECollisionGroup::ColPlayer);
+	if (nullptr != Result)
+	{
+		Player->IsCatKilled = true;
+		Player->ChangeState(PlayerState::Dead);
+	}
+}

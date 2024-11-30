@@ -650,7 +650,6 @@ void MarioCat::CatIsKilled(float _DeltaTime)
 			ChangeState(PlayerState::Dead);
 		}
 	}
-	
 }
 
 void MarioCat::RightBeforeDeath(float _DeltaTime)

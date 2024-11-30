@@ -102,6 +102,7 @@ public:
 	void Hide();
 	void Appear();
 
+	void ChangeState(PlayerState _CurPlayerState);
 
 protected:
 
@@ -119,7 +120,6 @@ private:
 	void Move(float _DeltaTime);
 	void Jump(float _DeltaTime);
 
-	void ChangeState(PlayerState _CurPlayerState);
 
 	class USpriteRenderer* CatRenderer;
 	U2DCollision* CollisionHead;
