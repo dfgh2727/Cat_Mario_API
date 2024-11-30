@@ -286,6 +286,17 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 5939, 700 });
+		NewActor->SetColImage("1stColMap.png");
+	}
+	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 6059, 700 });
+		NewActor->SetColImage("1stColMap.png");
+	}
+
+	{
 		Cloud* NewActor = GetWorld()->SpawnActor<Cloud>();
 		NewActor->SetActorLocation({ 6040, 326 });
 	}
@@ -315,6 +326,8 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 	MonsterShowUp1();
 	MonsterSwitch2();
 	MonsterShowUp2();
+	MonsterSwitch3();
+	MonsterShowUp3();
 
 	FSSwtich();
 	FlyingStickAppears();
@@ -362,7 +375,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { /*2600, 700*/ /*2920, 700*/ /*5940, 700*/ 300, 700 /*7100, 10*/  /*6700, 10*/ };
+		MarioCat::StartPos = { /*2600, 700*/ /*2920, 700*/ 6150, 100 /*300, 700*/ /*7100, 10*/  /*6700, 10*/ };
 		Check = true;
 	}
 }
@@ -472,6 +485,43 @@ void GameMode_FirstMap::MonsterShowUp2()
 	}
 }
 
+void GameMode_FirstMap::MonsterSwitch3()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (PlayerPos.X >= 6500.0f && PlayerPos.Y <= 410.0f)
+	{
+		MonsterLever3 = true;
+	}
+}
+
+void GameMode_FirstMap::MonsterShowUp3()
+{
+	if (MonsterLever3 == true && DoItOnce3 == true)
+	{
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 6523, 0 });
+			NewActor->SetColImage("1stColMap.png");
+		}
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 6583, 0 });
+			NewActor->SetColImage("1stColMap.png");
+		}
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 6643, 0 });
+			NewActor->SetColImage("1stColMap.png");
+		}
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 6703, 0 });
+			NewActor->SetColImage("1stColMap.png");
+		}
+		DoItOnce3 = false;
+	}
+}
 
 void GameMode_FirstMap::OverTheStaff()
 {
@@ -519,11 +569,11 @@ void GameMode_FirstMap::FSSwtich()
 
 void GameMode_FirstMap::FlyingStickAppears()
 {
-	if (FSLever == true && DoItOnce3 == true)
+	if (FSLever == true && DoItOnce4 == true)
 	{
 		FlyingStick* NewActor = GetWorld()->SpawnActor<FlyingStick>();
-		NewActor->SetActorLocation({ 6900, 100 });
-		DoItOnce3 = false;
+		NewActor->SetActorLocation({ 6980, 100 });
+		DoItOnce4 = false;
 	}
 }
 

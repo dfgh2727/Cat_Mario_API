@@ -43,9 +43,11 @@ public:
 	void CatIsUnderTheBlock();
 	void MonsterSwitch1();
 	void MonsterSwitch2();
+	void MonsterSwitch3();
+
 	void MonsterShowUp1();
 	void MonsterShowUp2();
-
+	void MonsterShowUp3();
 
 
 protected:
@@ -67,9 +69,14 @@ private:
 
 	bool MonsterLever1 = false;
 	bool MonsterLever2 = false;
+	bool MonsterLever3 = false;
+	
+
 	bool DoItOnce1 = true;
 	bool DoItOnce2 = true;
 	bool DoItOnce3 = true;
+	bool DoItOnce4 = true;
+
 
 	float Time = 0.0f;
 	USoundPlayer BGMPlayerBase;
