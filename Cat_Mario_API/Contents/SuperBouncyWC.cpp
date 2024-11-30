@@ -122,6 +122,7 @@ void SuperBouncyWC::Move(float _DeltaTime)
 	FVector2D MonsterPos = this->GetActorLocation();
 
 	TurnAround(MoveDir);
+
 	AddActorLocation(MoveDir * 0.08f);
 }
 
@@ -159,46 +160,45 @@ void SuperBouncyWC::TurnAround(FVector2D _MovePos)
 		}
 
 	}
+
+	AActor* Result = SuperBouncyBody->CollisionOnce(ECollisionGroup::Prop);
+	if (nullptr != Result)
 	{
-		AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::SquareBlock);
-		if (nullptr != Result)
+		if (MoveDir == FVector2D::LEFT)
 		{
-			if (MoveDir == FVector2D::LEFT)
-			{
-				MonsterRenderer->ChangeAnimation("Mon_RunRight");
-				MoveDir = FVector2D::RIGHT;
-				PosOrN = 1.0f;
-			}
-			//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
-			else
-			{
-				MonsterRenderer->ChangeAnimation("Mon_RunLeft");
-				MoveDir = FVector2D::LEFT;
-				PosOrN = -1.0f;
-			}
+			MonsterRenderer->ChangeAnimation("Mon_RunRight");
+			MoveDir = FVector2D::RIGHT;
+			PosOrN = 1.0f;
+		}
+		//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
+		else
+		{
+			MonsterRenderer->ChangeAnimation("Mon_RunLeft");
+			MoveDir = FVector2D::LEFT;
+			PosOrN = -1.0f;
 		}
 	}
 
-	{
-		AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::Prop);
-		if (nullptr != Result)
-		{
-			if (MoveDir == FVector2D::LEFT)
-			{
-				MonsterRenderer->ChangeAnimation("Mon_RunRight");
-				MoveDir = FVector2D::RIGHT;
-				PosOrN = 1.0f;
-			}
-			//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
-			else
-			{
-				MonsterRenderer->ChangeAnimation("Mon_RunLeft");
-				MoveDir = FVector2D::LEFT;
-				PosOrN = -1.0f;
-			}
-		}
-	}
-	
+	//{
+	//	AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::SquareBlock);
+	//	if (nullptr != Result)
+	//	{
+	//		if (MoveDir == FVector2D::LEFT)
+	//		{
+	//			MonsterRenderer->ChangeAnimation("Mon_RunRight");
+	//			MoveDir = FVector2D::RIGHT;
+	//			PosOrN = 1.0f;
+	//		}
+	//		//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
+	//		else
+	//		{
+	//			MonsterRenderer->ChangeAnimation("Mon_RunLeft");
+	//			MoveDir = FVector2D::LEFT;
+	//			PosOrN = -1.0f;
+	//		}
+	//	}
+	//}
+
 	//몬스터가 맵의 왼쪽 끝에 닿을 경우 방향 변경
 	if (MonsterPos.X <= 0.0)
 	{
@@ -207,4 +207,6 @@ void SuperBouncyWC::TurnAround(FVector2D _MovePos)
 		PosOrN = 1.0f;
 	}
 }
+
+
 
