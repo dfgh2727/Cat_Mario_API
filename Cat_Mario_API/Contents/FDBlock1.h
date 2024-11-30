@@ -19,9 +19,11 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
+	bool IsFalling = false;
+
 protected:
 
 private:
-	U2DCollision* CollisionComponent;
+
 };
 

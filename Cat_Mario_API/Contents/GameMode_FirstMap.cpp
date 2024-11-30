@@ -172,8 +172,8 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	{
-		FDBlock1* NewActor = GetWorld()->SpawnActor<FDBlock1>();
-		NewActor->SetActorLocation({ 2929, 296});
+		FDB = GetWorld()->SpawnActor<FDBlock1>();
+		FDB->SetActorLocation({ 2929, 296});
 	}
 
 	{
@@ -318,16 +318,18 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 	FSSwtich();
 	FlyingStickAppears();
 	CatIsInThePipe(_DeltaTime);
+	CatIsUnderTheBlock();
+
+	//StopTheMusic();
+	OverTheStaff();
+	AtTheDoor();
+	Clear();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("Play_SecondMap");
 	}
 
-	//StopTheMusic();
-	OverTheStaff();
-	AtTheDoor();
-	Clear();
 }
 
 void GameMode_FirstMap::StopTheMusic()
@@ -478,5 +480,15 @@ void GameMode_FirstMap::CatIsInThePipe(float _DeltaTime)
 		{
 			Player->DeathCheck();
 		}
+	}
+}
+
+void GameMode_FirstMap::CatIsUnderTheBlock()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (PlayerPos.X >= 2800.0f && PlayerPos.Y >= 220.0f)
+	{
+		FDB->IsFalling = true;
 	}
 }

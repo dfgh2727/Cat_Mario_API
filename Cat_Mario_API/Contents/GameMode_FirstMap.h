@@ -40,6 +40,7 @@ public:
 	void StopTheMusic();
 
 	void CatIsInThePipe(float _DeltaTime);
+	void CatIsUnderTheBlock();
 
 
 protected:
@@ -52,6 +53,7 @@ private:
 	DownSeal* Seal3;
 
 	class FirstMapP2* P2;
+	class FDBlock1* FDB;
 	bool Seal1Lever = false;
 	bool Seal2Lever = false;
 	bool Seal3Lever = false;

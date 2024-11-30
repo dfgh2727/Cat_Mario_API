@@ -23,6 +23,7 @@ enum class ECollisionGroup
 	BouncyObject,
 	SuperBouncyObject,
 	SquareBlock,
+	FDBlock,
 	CoinBox,
 	Prop,
 	MysteryBox,

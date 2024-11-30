@@ -3,8 +3,10 @@
 
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineBase/EngineRandom.h>
+#include <EngineCore/Level.h>
 
 #include "Enum.h"
+#include "MarioCat.h"
 
 FDBlock1::FDBlock1()
 {
@@ -14,17 +16,17 @@ FDBlock1::FDBlock1()
 	BlockRenderer->SetComponentScale({ 176, 60 });
 	
 	{
-		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent->SetComponentScale({ 176, 60 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::SquareBlock);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}
-	//{
-	//	CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-	//	CollisionComponent->SetComponentScale({ 176, 60 });
-	//	CollisionComponent->SetCollisionGroup(ECollisionGroup::MonsterBody);
-	//	CollisionComponent->SetCollisionType(ECollisionType::Rect);
-	//}
+	{
+		U2DCollision* CollisionComponent = CreateDefaultSubObject<U2DCollision>();
+		CollisionComponent->SetComponentScale({ 176, 60 });
+		CollisionComponent->SetCollisionGroup(ECollisionGroup::FDBlock);
+		CollisionComponent->SetCollisionType(ECollisionType::Rect);
+	}
 
 	DebugOn();
 }
@@ -41,5 +43,10 @@ void FDBlock1::BeginPlay()
 void FDBlock1::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+
+	if (IsFalling == true)
+	{
+		AddActorLocation(FVector2D::DOWN * 700.0f * _DeltaTime);
+	}
 }
 
