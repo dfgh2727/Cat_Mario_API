@@ -39,6 +39,9 @@ public:
 	void GoToDeathCount();
 	void StopTheMusic();
 
+	void CatIsInThePipe(float _DeltaTime);
+
+
 protected:
 
 private:
@@ -47,6 +50,8 @@ private:
 	class UpSeal* Seal1;
 	class DownSeal* Seal2;
 	DownSeal* Seal3;
+
+	class FirstMapP2* P2;
 	bool Seal1Lever = false;
 	bool Seal2Lever = false;
 	bool Seal3Lever = false;
@@ -54,6 +59,7 @@ private:
 	bool FSLever = false;
 
 	int DoItOnce = 1;
+	float Time = 0.0f;
 	USoundPlayer BGMPlayerBase;
 };
 

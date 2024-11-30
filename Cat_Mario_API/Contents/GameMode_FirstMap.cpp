@@ -135,8 +135,8 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	{
-		FirstMapP2* NewActor = GetWorld()->SpawnActor<FirstMapP2>();
-		NewActor->SetActorLocation({ 1753, 617 });
+		P2 = GetWorld()->SpawnActor<FirstMapP2>();
+		P2->SetActorLocation({ 1753, 617 });
 	}
 	{
 		ColPipe* NewActor = GetWorld()->SpawnActor<ColPipe>();
@@ -317,6 +317,7 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 
 	FSSwtich();
 	FlyingStickAppears();
+	CatIsInThePipe(_DeltaTime);
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -463,3 +464,19 @@ void GameMode_FirstMap::FlyingStickAppears()
 	}
 }
 
+void GameMode_FirstMap::CatIsInThePipe(float _DeltaTime)
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	if (Player->InThePipe == true)
+	{
+		Time += _DeltaTime;
+		FVector2D PipePos = P2->GetActorLocation();
+		Player->SetActorLocation(PipePos);
+		Player->Hide();
+
+		if (Time >= 6.0f)
+		{
+			Player->DeathCheck();
+		}
+	}
+}
