@@ -275,6 +275,9 @@
     <ClCompile Include="EndImage.cpp">
       <Filter>ShowMeTheMap</Filter>
     </ClCompile>
+    <ClCompile Include="BBBRender.cpp">
+      <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -550,6 +553,9 @@
     </ClInclude>
     <ClInclude Include="EndImage.h">
       <Filter>ShowMeTheMap</Filter>
+    </ClInclude>
+    <ClInclude Include="BBBRender.h">
+      <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

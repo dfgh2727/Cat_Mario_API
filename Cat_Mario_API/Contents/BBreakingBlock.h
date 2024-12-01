@@ -24,8 +24,6 @@ public:
 protected:
 
 private:
-
-	class USpriteRenderer* BBreakingBlockRenderer;
 	U2DCollision* CollisionComponent;
 
 	bool Broken = false;

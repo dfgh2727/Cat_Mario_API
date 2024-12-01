@@ -30,6 +30,7 @@
 #include "FDBlock2.h"
 #include "Cloud.h"
 #include "InfiniteCoinBox.h"
+#include "BBBRender.h"
 
 #include "FlyingStick.h"
 #include "StarBox.h"
@@ -103,16 +104,16 @@ void GameMode_FirstMap::BeginPlay()
 		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
 		QBlock->SetActorLocation({ 901, 528 });
 	}
-	//{
-	//	WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
-	//	NewActor->SetActorLocation({ 610, 700 });
-	//	NewActor->SetColImage("1stColMap.png");
-	//}
-	//{
-	//	WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
-	//	NewActor->SetActorLocation({ 955, 700 });
-	//	NewActor->SetColImage("1stColMap.png");
-	//}
+	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 610, 700 });
+		NewActor->SetColImage("1stColMap.png");
+	}
+	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 955, 700 });
+		NewActor->SetColImage("1stColMap.png");
+	}
 
 	//테스트용
 	
@@ -186,10 +187,11 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	{
-		//사라지는 QBlock 배치
+		InfiniteCoinBox* NewActor = GetWorld()->SpawnActor<InfiniteCoinBox>();
+		NewActor->SetActorLocation({ 3451, 528 });
 	}
 	{
-		InfiniteCoinBox* NewActor = GetWorld()->SpawnActor<InfiniteCoinBox>();
+		BBBRender* NewActor = GetWorld()->SpawnActor<BBBRender>();
 		NewActor->SetActorLocation({ 3451, 528 });
 	}
 
@@ -310,7 +312,7 @@ void GameMode_FirstMap::BeginPlay()
 		TheStaff->SetActorLocation({ 7161, 374 });
 	}
 
-	//BGMPlayerBase = UEngineSound::Play("Field.MP3");
+	BGMPlayerBase = UEngineSound::Play("Field.MP3");
 }
 
 void GameMode_FirstMap::Tick(float _DeltaTime)
@@ -319,8 +321,8 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 	ReStart(_DeltaTime);
 
 	SealSwtich();
-	//SealGoUp();
-	//SealGoDown();
+	SealGoUp();
+	SealGoDown();
 
 	MonsterSwitch1();
 	MonsterShowUp1();
@@ -334,7 +336,7 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 	CatIsInThePipe(_DeltaTime);
 	CatIsUnderTheBlock();
 
-	//StopTheMusic();
+	StopTheMusic();
 	OverTheStaff();
 	AtTheDoor();
 	Clear();
@@ -375,7 +377,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { /*2600, 700*/ /*2920, 700*/ 6150, 100 /*300, 700*/ /*7100, 10*/  /*6700, 10*/ };
+		MarioCat::StartPos = { 2600, 700 /*2920, 700*/ /*6150, 100*/ /*300, 700*/ /*7100, 10*/  /*6700, 10*/ };
 		Check = true;
 	}
 }

@@ -187,7 +187,7 @@ void MarioCat::Gravity(float _DeltaTime)
 		// 증가시키고 
 		// 여기서 계산
 		AddActorLocation(GravityForce * _DeltaTime);
-		GravityForce += FVector2D::DOWN * _DeltaTime * 1200.0f;
+		GravityForce += FVector2D::DOWN * _DeltaTime * 1000.0f;
 	}
 	else 
 	{
