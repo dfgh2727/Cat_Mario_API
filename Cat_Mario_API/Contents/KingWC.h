@@ -39,7 +39,7 @@ private:
 	FVector2D MoveDir = FVector2D::LEFT;
 	float PosOrN = -1.0f;
 
-	FVector2D JumpPower = FVector2D(0.0f, -1000.0f);
+	FVector2D JumpPower = FVector2D(-50.0f, -800.0f);
 
 	bool DoItOnce = true;
 };

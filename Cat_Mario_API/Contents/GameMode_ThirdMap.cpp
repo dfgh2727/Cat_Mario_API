@@ -157,7 +157,7 @@ void GameMode_ThirdMap::KWCSwitch()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if (PlayerPos.X >= 2461.0f)
+	if (PlayerPos.X >= 2440.0f)
 	{
 		KWCLever = true;
 	}
@@ -168,7 +168,7 @@ void GameMode_ThirdMap::KWCShowUp()
 	if (KWCLever == true && DoItOnce1 == true)
 	{
 		KingWC* NewActor = GetWorld()->SpawnActor<KingWC>();
-		NewActor->SetActorLocation({ 2500, 820 });
+		NewActor->SetActorLocation({ 2550, 820 });
 		NewActor->SetColImage("3rdColMap.png");
 		DoItOnce1 = false;
 	}
