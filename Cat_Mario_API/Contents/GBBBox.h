@@ -24,7 +24,6 @@ public:
 protected:
 
 private:
-
 	class USpriteRenderer* GBBBoxRenderer;
 	U2DCollision* CollisionComponent;
 

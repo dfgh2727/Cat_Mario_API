@@ -251,6 +251,9 @@
     <ClCompile Include="BigWC.cpp">
       <Filter>InterActive Things\Monster\WhiteCircle</Filter>
     </ClCompile>
+    <ClCompile Include="SpickyBlock.cpp">
+      <Filter>InterActive Things\Blocks\GBlock</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -502,6 +505,9 @@
     </ClInclude>
     <ClInclude Include="BigWC.h">
       <Filter>InterActive Things\Monster\WhiteCircle</Filter>
+    </ClInclude>
+    <ClInclude Include="SpickyBlock.h">
+      <Filter>InterActive Things\Blocks\GBlock</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

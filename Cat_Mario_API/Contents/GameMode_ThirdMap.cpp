@@ -25,6 +25,7 @@
 #include "FireBallSwitch.h"
 #include "UpStair.h"
 #include "DownStair.h"
+#include "GAbnormalBlock.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -50,10 +51,14 @@ void GameMode_ThirdMap::BeginPlay()
 		NewActor->SetActorLocation({ 146, 786 });
 	}
 	{
+		GAbnormalBlock* NewActor = GetWorld()->SpawnActor<GAbnormalBlock>();
+		NewActor->SetActorLocation({ 1073, 588 });
+	}
+
+	{
 		HiddenBoxD* NewActor = GetWorld()->SpawnActor<HiddenBoxD>();
 		NewActor->SetActorLocation({ 146, 701 });
 	}
-
 	{
 		HiddenBoxD* NewActor = GetWorld()->SpawnActor<HiddenBoxD>();
 		NewActor->SetActorLocation({ 1130, 470 });
