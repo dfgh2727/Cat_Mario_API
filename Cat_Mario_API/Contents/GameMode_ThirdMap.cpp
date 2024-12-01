@@ -234,7 +234,7 @@ void GameMode_ThirdMap::BearSwitch()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if (3070.0f <= PlayerPos.X)
+	if (3070.0f == PlayerPos.X)
 	{
 		BearLever = true;
 	}
@@ -247,6 +247,8 @@ void GameMode_ThirdMap::BearShowUp()
 		Bear* NewActor = GetWorld()->SpawnActor<Bear>();
 		NewActor->SetActorLocation({ 3191, 500 });
 		NewActor->SetColImage("3rdColMap.png");
+		BearLever = false;
+
 		DoItOnce2 = false;
 	}
 }
