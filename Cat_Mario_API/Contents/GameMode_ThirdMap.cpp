@@ -122,7 +122,7 @@ void GameMode_ThirdMap::BeginPlay()
 
 	{
 		FDBlock7* FDB = GetWorld()->SpawnActor<FDBlock7>();
-		FDB->SetActorLocation({ 7000, 600 });
+		FDB->SetActorLocation({ 7278, 669 });
 	}
 }
 
@@ -151,7 +151,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
-		Player->SetActorLocation({ 5850, 700 });
+		Player->SetActorLocation({ 7200, 10 });
 	}
 
 }
