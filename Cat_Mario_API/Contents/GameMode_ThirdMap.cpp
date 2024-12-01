@@ -29,6 +29,15 @@
 #include "ThirdMapP2.h"
 #include "ColPipe2.h"
 
+#include "WhiteCircle.h"
+#include "MapActor.h"
+#include "QBlockwithCoin.h"
+#include "QBlockwithWC.h"
+#include "QBlockwithMushroomN.h"
+#include "Turtle.h"
+#include "StarBox.h"
+#include "BNormalBlock.h"
+
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
 
@@ -52,6 +61,48 @@ void GameMode_ThirdMap::BeginPlay()
 		FDBlock3* NewActor = GetWorld()->SpawnActor<FDBlock3>();
 		NewActor->SetActorLocation({ 146, 786 });
 	}
+
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 436, 528 });
+
+		QBlockwithMushroomN* QMark = GetWorld()->SpawnActor<QBlockwithMushroomN>();
+		QMark->SetActorLocation({ 436, 528 });
+		QMark->SetColImage("1stColMap.png");
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 610, 528 });
+
+		QBlockwithWC* QMark = GetWorld()->SpawnActor<QBlockwithWC>();
+		QMark->SetActorLocation({ 610, 528 });
+		QMark->SetColImage("1stColMap.png");
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 494, 528 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		QBlock->SetActorLocation({ 494, 528 });
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 552, 528 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		QBlock->SetActorLocation({ 552, 528 });
+	}
+	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 660, 700 });
+		NewActor->SetColImage("3rdColMap.png");
+	}
+	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 780, 700 });
+		NewActor->SetColImage("3rdColMap.png");
+	}
+
 	{
 		GAbnormalBlock* NewActor = GetWorld()->SpawnActor<GAbnormalBlock>();
 		NewActor->SetActorLocation({ 1073, 588 });
@@ -85,6 +136,11 @@ void GameMode_ThirdMap::BeginPlay()
 	{
 		HiddenBoxD* NewActor = GetWorld()->SpawnActor<HiddenBoxD>();
 		NewActor->SetActorLocation({ 1421, 528 });
+	}
+	{
+		WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+		NewActor->SetActorLocation({ 1305, 700 });
+		NewActor->SetColImage("3rdColMap.png");
 	}
 
 	{
@@ -151,6 +207,9 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 	ReStart(_DeltaTime);
 	Clear();
 
+	MonsterSwitch();
+	MonsterShowUp();
+
 	KWCSwitch();
 	KWCShowUp();
 	BearSwitch();
@@ -171,7 +230,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
-		Player->SetActorLocation({ 6100, 500 });
+		Player->SetActorLocation({ 3560, 500 });
 	}
 
 }
@@ -251,7 +310,7 @@ void GameMode_ThirdMap::BearSwitch()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if (3070.0f == PlayerPos.X)
+	if (3070.0f <= PlayerPos.X)
 	{
 		BearLever = true;
 	}
@@ -332,4 +391,42 @@ void GameMode_ThirdMap::Stairs(float _DeltaTime)
 		StairTimer = 0.0f;
 	}
 
+}
+
+void GameMode_ThirdMap::MonsterSwitch()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (PlayerPos.X >= 1450.0f)
+	{
+		MonsterLever = true;
+	}
+}
+
+void GameMode_ThirdMap::MonsterShowUp()
+{
+	if (MonsterLever == true && DoItOnce3 == true)
+	{
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 2057, 700 });
+			NewActor->SetColImage("3rdColMap.png");
+		}
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 2117, 700 });
+			NewActor->SetColImage("3rdColMap.png");
+		}
+		{
+			WhiteCircle* NewActor = GetWorld()->SpawnActor<WhiteCircle>();
+			NewActor->SetActorLocation({ 2177, 700 });
+			NewActor->SetColImage("3rdColMap.png");
+		}
+		{
+			Turtle* NewActor = GetWorld()->SpawnActor<Turtle>();
+			NewActor->SetActorLocation({ 1830, 600 });
+			NewActor->SetColImage("3rdColMap.png");
+		}
+		DoItOnce3 = false;
+	}
 }

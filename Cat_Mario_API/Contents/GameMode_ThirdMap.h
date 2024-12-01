@@ -31,6 +31,9 @@ public:
 	void BearSwitch();
 	void BearShowUp();
 
+	void MonsterSwitch();
+	void MonsterShowUp();
+
 	void CatIsUnderTheBlock1();
 	void CatIsUnderTheBlock2();
 	void CatIsUnderTheBlock3();
@@ -52,6 +55,8 @@ private:
 	bool DoItOnce1 = true;
 	bool BearLever = false;
 	bool DoItOnce2 = true;
+	bool MonsterLever = false;
+	bool DoItOnce3 = true;
 
 	float BearTimer = 0.0f;
 	float StairTimer = 0.0f;
