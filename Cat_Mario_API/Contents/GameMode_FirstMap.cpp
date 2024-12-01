@@ -56,7 +56,6 @@ void GameMode_FirstMap::BeginPlay()
 	Player->SetColImage("1stColMap.png");
 
 
-	/*if(MarioCat::TouchFlag == false)*/
 	{
 		Flag* MiddlePointFlag = GetWorld()->SpawnActor<Flag>();
 		MiddlePointFlag->SetActorLocation({ 3860, 440 });
@@ -115,7 +114,6 @@ void GameMode_FirstMap::BeginPlay()
 		NewActor->SetColImage("1stColMap.png");
 	}
 
-	//테스트용
 	
 	{
 		FirstMapP1* NewActor = GetWorld()->SpawnActor<FirstMapP1>();
