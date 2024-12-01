@@ -10,6 +10,7 @@
 #include "MarioCat.h"
 
 #include "FBPipe.h"
+#include "FDBlock3.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -30,6 +31,14 @@ void GameMode_ThirdMap::BeginPlay()
 		ThirdMap* NewActor = GetWorld()->SpawnActor<ThirdMap>();
 	}
 
+	{
+		FDBlock3* NewActor = GetWorld()->SpawnActor<FDBlock3>();
+		NewActor->SetActorLocation({ 146, 786 });
+	}
+	{
+		FDBlock3* NewActor = GetWorld()->SpawnActor<FDBlock3>();
+		NewActor->SetActorLocation({ 1421, 786 });
+	}
 	{
 		FBPipe* NewActor = GetWorld()->SpawnActor<FBPipe>();
 		NewActor->SetActorLocation({ 5975, 619 });
