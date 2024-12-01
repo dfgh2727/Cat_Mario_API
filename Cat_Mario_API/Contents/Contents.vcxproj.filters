@@ -188,6 +188,21 @@
     <ClCompile Include="FDBlock3.cpp">
       <Filter>InterActive Things\Blocks\FallingDown</Filter>
     </ClCompile>
+    <ClCompile Include="GAbnormalBlock.cpp">
+      <Filter>InterActive Things\Blocks\GBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="HiddenBoxD.cpp">
+      <Filter>InterActive Things\Blocks\CoinBox</Filter>
+    </ClCompile>
+    <ClCompile Include="GNormalBlock.cpp">
+      <Filter>InterActive Things\Blocks\GBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="HiddenBoxDT.cpp">
+      <Filter>InterActive Things\Blocks\CoinBox</Filter>
+    </ClCompile>
+    <ClCompile Include="KingWC.cpp">
+      <Filter>InterActive Things\Monster\WhiteCircle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -377,6 +392,21 @@
     <ClInclude Include="FDBlock3.h">
       <Filter>InterActive Things\Blocks\FallingDown</Filter>
     </ClInclude>
+    <ClInclude Include="GAbnormalBlock.h">
+      <Filter>InterActive Things\Blocks\GBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="HiddenBoxD.h">
+      <Filter>InterActive Things\Blocks\CoinBox</Filter>
+    </ClInclude>
+    <ClInclude Include="GNormalBlock.h">
+      <Filter>InterActive Things\Blocks\GBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="HiddenBoxDT.h">
+      <Filter>InterActive Things\Blocks\CoinBox</Filter>
+    </ClInclude>
+    <ClInclude Include="KingWC.h">
+      <Filter>InterActive Things\Monster\WhiteCircle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -441,6 +471,9 @@
     </Filter>
     <Filter Include="InterActive Things\FireBall">
       <UniqueIdentifier>{df8f7762-36cf-400c-9293-0acbe69b7c4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Blocks\GBlock">
+      <UniqueIdentifier>{574480b5-a07a-47c6-93c7-0daceef375f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

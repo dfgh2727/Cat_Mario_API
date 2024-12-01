@@ -263,6 +263,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GAbnormalBlock.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="GameMode_DeathCount.cpp">
       <SubType>
       </SubType>
@@ -307,7 +311,19 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GNormalBlock.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="GoingUpBlock.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="HiddenBoxD.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="HiddenBoxDT.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -316,6 +332,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="InfiniteCoinBox.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="KingWC.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -514,6 +534,10 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="GAbnormalBlock.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="GameMode_DeathCount.h">
       <SubType>
       </SubType>
@@ -558,7 +582,19 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="GNormalBlock.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="GoingUpBlock.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="HiddenBoxD.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="HiddenBoxDT.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -567,6 +603,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="InfiniteCoinBox.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="KingWC.h">
       <SubType>
       </SubType>
     </ClInclude>

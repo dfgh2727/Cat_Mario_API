@@ -11,6 +11,8 @@
 
 #include "FBPipe.h"
 #include "FDBlock3.h"
+#include "HiddenBoxD.h"
+#include "HiddenBoxDT.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -36,8 +38,39 @@ void GameMode_ThirdMap::BeginPlay()
 		NewActor->SetActorLocation({ 146, 786 });
 	}
 	{
+		HiddenBoxD* NewActor = GetWorld()->SpawnActor<HiddenBoxD>();
+		NewActor->SetActorLocation({ 146, 701 });
+	}
+
+	{
+		HiddenBoxD* NewActor = GetWorld()->SpawnActor<HiddenBoxD>();
+		NewActor->SetActorLocation({ 1130, 470 });
+	}
+	{
 		FDBlock3* NewActor = GetWorld()->SpawnActor<FDBlock3>();
 		NewActor->SetActorLocation({ 1421, 786 });
+	}
+
+	{
+		HiddenBoxD* NewActor = GetWorld()->SpawnActor<HiddenBoxD>();
+		NewActor->SetActorLocation({ 1247, 528 });
+	}
+	{
+		HiddenBoxD* NewActor = GetWorld()->SpawnActor<HiddenBoxD>();
+		NewActor->SetActorLocation({ 1305, 528 });
+	}
+	{
+		HiddenBoxD* NewActor = GetWorld()->SpawnActor<HiddenBoxD>();
+		NewActor->SetActorLocation({ 1363, 528 });
+	} 
+	{
+		HiddenBoxD* NewActor = GetWorld()->SpawnActor<HiddenBoxD>();
+		NewActor->SetActorLocation({ 1421, 528 });
+	}
+
+	{
+		HiddenBoxDT* NewActor = GetWorld()->SpawnActor<HiddenBoxDT>();
+		NewActor->SetActorLocation({ 2290, 701 });
 	}
 	{
 		FBPipe* NewActor = GetWorld()->SpawnActor<FBPipe>();
