@@ -51,7 +51,10 @@ void FDBlock3::Touched()
 
 void FDBlock3::FallDown(float _DeltaTime)
 {
-	AddActorLocation(FVector2D::DOWN * _DeltaTime * 300.0f);
+	if (BlockIsTouched == true)
+	{
+		AddActorLocation(FVector2D::DOWN * _DeltaTime * 300.0f);
+	}
 }
 
 

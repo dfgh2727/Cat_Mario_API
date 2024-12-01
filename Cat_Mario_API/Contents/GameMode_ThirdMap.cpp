@@ -21,6 +21,8 @@
 #include "FDBlock4.h"
 #include "FDBlock5.h"
 #include "FDBlock6.h"
+#include "FDBlock7.h"
+
 #include "FireBallSwitch.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
@@ -116,6 +118,11 @@ void GameMode_ThirdMap::BeginPlay()
 	{
 		FBPipe* NewActor = GetWorld()->SpawnActor<FBPipe>();
 		NewActor->SetActorLocation({ 5975, 619 });
+	}
+
+	{
+		FDBlock7* FDB = GetWorld()->SpawnActor<FDBlock7>();
+		FDB->SetActorLocation({ 7000, 600 });
 	}
 }
 
