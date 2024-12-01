@@ -111,7 +111,7 @@ void GameMode_ThirdMap::BeginPlay()
 
 	{
 		FireBallSwitch* NewActor = GetWorld()->SpawnActor<FireBallSwitch>();
-		NewActor->SetActorLocation({ 5595, 580 });
+		NewActor->SetActorLocation({ 5595, 585 });
 	}
 	{
 		FBPipe* NewActor = GetWorld()->SpawnActor<FBPipe>();
@@ -258,6 +258,5 @@ void GameMode_ThirdMap::CatIsUnderTheBlock2()
 
 void GameMode_ThirdMap::CatIsUnderTheBlock3()
 {
-
 	FDB6->IsFalling = true;
 }
