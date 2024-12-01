@@ -49,13 +49,10 @@ void GBBBox::Tick(float _DeltaTime)
 	FVector2D GForce = MainPlayer->GetGravityForce();
 	FVector2D CatJumpPower = MainPlayer->GetJumpPower();
 
-	if (CatJumpPower.Y * (-1.0f) >= GForce.Y)
+	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::ColPlayer);
+	if (nullptr != Result)
 	{
-		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerFoot);
-		if (nullptr != Result)
-		{
-			ItsBroken();
-		}
+		ItsBroken();
 	}
 }
 

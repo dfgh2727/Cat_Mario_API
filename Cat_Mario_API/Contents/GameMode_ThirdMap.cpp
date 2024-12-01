@@ -14,6 +14,7 @@
 #include "HiddenBoxD.h"
 #include "HiddenBoxDT.h"
 #include "KingWC.h"
+#include "HiddenBoxFragile.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -73,6 +74,12 @@ void GameMode_ThirdMap::BeginPlay()
 		HiddenBoxDT* NewActor = GetWorld()->SpawnActor<HiddenBoxDT>();
 		NewActor->SetActorLocation({ 2290, 701 });
 	}
+
+	{
+		HiddenBoxFragile* NewActor = GetWorld()->SpawnActor<HiddenBoxFragile>();
+		NewActor->SetActorLocation({ 2864, 528 });
+	}
+
 	{
 		FBPipe* NewActor = GetWorld()->SpawnActor<FBPipe>();
 		NewActor->SetActorLocation({ 5975, 619 });
