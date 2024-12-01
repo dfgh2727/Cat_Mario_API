@@ -22,8 +22,9 @@
 #include "FDBlock5.h"
 #include "FDBlock6.h"
 #include "FDBlock7.h"
-
 #include "FireBallSwitch.h"
+#include "UpStair.h"
+#include "DownStair.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -142,6 +143,8 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	FBPSwtich();
 
+	Stairs(_DeltaTime);
+
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
@@ -151,7 +154,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
-		Player->SetActorLocation({ 7200, 10 });
+		Player->SetActorLocation({ 6100, 500 });
 	}
 
 }
@@ -276,4 +279,38 @@ void GameMode_ThirdMap::FBPSwtich()
 	{
 		ThePipe->SwitchUp = true;
 	}
+}
+
+void GameMode_ThirdMap::Stairs(float _DeltaTime)
+{
+	StairTimer += _DeltaTime;
+
+	if (StairTimer > 5.0f)
+	{
+		{
+			UpStair* TheStairU = GetWorld()->SpawnActor<UpStair>();
+			TheStairU->SetActorLocation({ 6530, 850 });
+
+			FVector2D UStairPos = TheStairU->GetActorLocation();
+			if (UStairPos.Y <= -10.0f)
+			{
+				TheStairU->Destroy();
+			}
+		}
+
+		{
+			DownStair* TheStairD = GetWorld()->SpawnActor<DownStair>();
+			TheStairD->SetActorLocation({ 6780, -10 });
+			//StairTimer = 0.0f;
+
+			FVector2D DStairPos = TheStairD->GetActorLocation();
+			if (DStairPos.Y >= 850.0f)
+			{
+				TheStairD->Destroy();
+			}
+		}
+
+		StairTimer = 0.0f;
+	}
+
 }

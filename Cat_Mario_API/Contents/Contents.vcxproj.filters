@@ -242,6 +242,12 @@
     <ClCompile Include="FDBlock7.cpp">
       <Filter>InterActive Things\Blocks\FallingDown</Filter>
     </ClCompile>
+    <ClCompile Include="UpStair.cpp">
+      <Filter>InterActive Things\Props\Stairs</Filter>
+    </ClCompile>
+    <ClCompile Include="DownStair.cpp">
+      <Filter>InterActive Things\Props\Stairs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -485,6 +491,12 @@
     <ClInclude Include="FDBlock7.h">
       <Filter>InterActive Things\Blocks\FallingDown</Filter>
     </ClInclude>
+    <ClInclude Include="UpStair.h">
+      <Filter>InterActive Things\Props\Stairs</Filter>
+    </ClInclude>
+    <ClInclude Include="DownStair.h">
+      <Filter>InterActive Things\Props\Stairs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -558,6 +570,9 @@
     </Filter>
     <Filter Include="InterActive Things\Blocks\GBlock\GBreakingBlock">
       <UniqueIdentifier>{8f420529-7b1d-4f4a-a3e8-f0b6011d9e1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Props\Stairs">
+      <UniqueIdentifier>{68324a00-398e-4785-8271-2a7b0aa0b3f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

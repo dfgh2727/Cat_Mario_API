@@ -36,7 +36,7 @@ public:
 	void CatIsUnderTheBlock3();
 
 	void FBPSwtich();
-
+	void Stairs(float _DeltaTime);
 
 protected:
 
@@ -54,5 +54,6 @@ private:
 	bool DoItOnce2 = true;
 
 	float BearTimer = 0.0f;
+	float StairTimer = 0.0f;
 };
 

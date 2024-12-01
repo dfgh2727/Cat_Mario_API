@@ -215,6 +215,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="DownStair.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="EighthMap.cpp">
       <SubType>
       </SubType>
@@ -423,6 +427,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="UpStair.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Star.cpp">
       <SubType>
       </SubType>
@@ -535,6 +543,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="DownSeal.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="DownStair.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -743,6 +755,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="SecondMapP2.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="UpStair.h">
       <SubType>
       </SubType>
     </ClInclude>
