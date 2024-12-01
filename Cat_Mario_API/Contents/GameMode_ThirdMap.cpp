@@ -116,8 +116,8 @@ void GameMode_ThirdMap::BeginPlay()
 		NewActor->SetActorLocation({ 5595, 585 });
 	}
 	{
-		FBPipe* NewActor = GetWorld()->SpawnActor<FBPipe>();
-		NewActor->SetActorLocation({ 5975, 619 });
+		ThePipe = GetWorld()->SpawnActor<FBPipe>();
+		ThePipe->SetActorLocation({ 5975, 619 });
 	}
 
 	{
@@ -139,6 +139,8 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 	BearShowUp();
 
 	CatIsUnderTheBlock1();
+
+	FBPSwtich();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -266,4 +268,12 @@ void GameMode_ThirdMap::CatIsUnderTheBlock2()
 void GameMode_ThirdMap::CatIsUnderTheBlock3()
 {
 	FDB6->IsFalling = true;
+}
+
+void GameMode_ThirdMap::FBPSwtich()
+{
+	if (FireBallSwitch::Switch == true)
+	{
+		ThePipe->SwitchUp = true;
+	}
 }

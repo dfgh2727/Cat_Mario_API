@@ -11,6 +11,8 @@
 #include <EngineCore/EngineAPICore.h>
 #include "FBPipe.h"
 
+bool FireBallSwitch::Switch = false;
+
 FireBallSwitch::FireBallSwitch()
 {
 	USpriteRenderer* SwitchRenderer = CreateDefaultSubObject<USpriteRenderer>();
@@ -47,7 +49,7 @@ void FireBallSwitch::Tick(float _DeltaTime)
 		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerBody);
 		if (nullptr != Result)
 		{
-			ThePipe->SwitchUp = true;
+			Switch = true;
 			this->Destroy();
 		}
 	}
@@ -56,7 +58,7 @@ void FireBallSwitch::Tick(float _DeltaTime)
 		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerFoot);
 		if (nullptr != Result)
 		{
-			ThePipe->SwitchUp = true;
+			Switch = true;
 			this->Destroy();
 		}
 	}

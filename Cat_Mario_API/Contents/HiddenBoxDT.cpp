@@ -42,20 +42,16 @@ void HiddenBoxDT::Tick(float _DeltaTime)
 
 void HiddenBoxDT::BlockDisappear(float _DeltaTime)
 {
-	MarioCat* MainActor = GetWorld()->GetPawn<MarioCat>();
+	/*MarioCat* MainActor = GetWorld()->GetPawn<MarioCat>();
 	FVector2D GForce = MainActor->GetGravityForce();
-	FVector2D CatJumpPower = MainActor->GetJumpPower();
+	FVector2D CatJumpPower = MainActor->GetJumpPower();*/
 
-	if (CatJumpPower.Y * (-1.0f) >= GForce.Y)
+	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::TurtleShell);
+	if (nullptr != Result)
 	{
-		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::TurtleShell);
-		if (nullptr != Result)
-		{
-			CoinShowUP();
-			BlockShowUP();
-			this->Destroy();
-		}
-
+		CoinShowUP();
+		BlockShowUP();
+		this->Destroy();
 	}
 }
 

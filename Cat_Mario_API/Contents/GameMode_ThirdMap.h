@@ -35,6 +35,9 @@ public:
 	void CatIsUnderTheBlock2();
 	void CatIsUnderTheBlock3();
 
+	void FBPSwtich();
+
+
 protected:
 
 private:
@@ -42,6 +45,8 @@ private:
 	class FDBlock4* FDB4;
 	class FDBlock5* FDB5;
 	class FDBlock6* FDB6;
+
+	class FBPipe* ThePipe;
 
 	bool KWCLever = false;
 	bool DoItOnce1 = true;

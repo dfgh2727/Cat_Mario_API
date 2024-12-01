@@ -69,7 +69,7 @@ void FBPipe::ShootFB2(float _DeltaTime)
 {
 	time += _DeltaTime;
 
-	if (time > 0.8f)
+	if (time > 0.1f)
 	{
 		FVector2D PipePos = this->GetActorLocation();
 		FireBall* FB = GetWorld()->SpawnActor<FireBall>();
