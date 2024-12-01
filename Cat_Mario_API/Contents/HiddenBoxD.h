@@ -24,6 +24,6 @@ public:
 protected:
 
 private:
-	class USpriteRenderer* SkyRenderer;
+	class USpriteRenderer* DarkRenderer;
 };
 

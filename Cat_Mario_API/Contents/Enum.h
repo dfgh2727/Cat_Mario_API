@@ -31,5 +31,6 @@ enum class ECollisionGroup
 	Dozer,
 	BreakingBlock,
 	None,
+	BigBody,
 
 };

@@ -1,7 +1,7 @@
 #include "PreCompile.h"
-#include "HiddenBoxD.h"
+#include "HiddenBoxFragile.h"
 #include "Enum.h"
-#include "GNormalBlock.h"
+#include "GBBBox.h"
 
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineInput.h>
@@ -9,7 +9,7 @@
 #include <EngineCore/Level.h>
 #include"MarioCat.h"
 
-HiddenBoxD::HiddenBoxD()
+HiddenBoxFragile::HiddenBoxFragile()
 {
 	DarkRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	DarkRenderer->SetSprite("DarkBlock.png");
@@ -24,23 +24,23 @@ HiddenBoxD::HiddenBoxD()
 	DebugOn();
 }
 
-HiddenBoxD::~HiddenBoxD()
+HiddenBoxFragile::~HiddenBoxFragile()
 {
 }
 
-void HiddenBoxD::BeginPlay()
+void HiddenBoxFragile::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-void HiddenBoxD::Tick(float _DeltaTime)
+void HiddenBoxFragile::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
 	BlockDisappear(_DeltaTime);
 }
 
-void HiddenBoxD::BlockDisappear(float _DeltaTime)
+void HiddenBoxFragile::BlockDisappear(float _DeltaTime)
 {
 	MarioCat* MainActor = GetWorld()->GetPawn<MarioCat>();
 	FVector2D GForce = MainActor->GetGravityForce();
@@ -59,9 +59,9 @@ void HiddenBoxD::BlockDisappear(float _DeltaTime)
 	}
 }
 
-void HiddenBoxD::BlockShowUP()
+void HiddenBoxFragile::BlockShowUP()
 {
 	FVector2D PresentPos = this->GetActorLocation();
-	GNormalBlock* TheBlock = GetWorld()->SpawnActor<GNormalBlock>();
+	GBBBox* TheBlock = GetWorld()->SpawnActor<GBBBox>();
 	TheBlock->SetActorLocation(PresentPos);
 }

@@ -203,6 +203,27 @@
     <ClCompile Include="KingWC.cpp">
       <Filter>InterActive Things\Monster\WhiteCircle</Filter>
     </ClCompile>
+    <ClCompile Include="GParticleA.cpp">
+      <Filter>InterActive Things\Blocks\GBlock\GParticles</Filter>
+    </ClCompile>
+    <ClCompile Include="GParticleB.cpp">
+      <Filter>InterActive Things\Blocks\GBlock\GParticles</Filter>
+    </ClCompile>
+    <ClCompile Include="GParticleC.cpp">
+      <Filter>InterActive Things\Blocks\GBlock\GParticles</Filter>
+    </ClCompile>
+    <ClCompile Include="GParticleD.cpp">
+      <Filter>InterActive Things\Blocks\GBlock\GParticles</Filter>
+    </ClCompile>
+    <ClCompile Include="GBBBox.cpp">
+      <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="HiddenBoxFragile.cpp">
+      <Filter>InterActive Things\Blocks\CoinBox</Filter>
+    </ClCompile>
+    <ClCompile Include="GBBBrick.cpp">
+      <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -407,6 +428,27 @@
     <ClInclude Include="KingWC.h">
       <Filter>InterActive Things\Monster\WhiteCircle</Filter>
     </ClInclude>
+    <ClInclude Include="GParticleA.h">
+      <Filter>InterActive Things\Blocks\GBlock\GParticles</Filter>
+    </ClInclude>
+    <ClInclude Include="GParticleB.h">
+      <Filter>InterActive Things\Blocks\GBlock\GParticles</Filter>
+    </ClInclude>
+    <ClInclude Include="GParticleC.h">
+      <Filter>InterActive Things\Blocks\GBlock\GParticles</Filter>
+    </ClInclude>
+    <ClInclude Include="GParticleD.h">
+      <Filter>InterActive Things\Blocks\GBlock\GParticles</Filter>
+    </ClInclude>
+    <ClInclude Include="GBBBox.h">
+      <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="HiddenBoxFragile.h">
+      <Filter>InterActive Things\Blocks\CoinBox</Filter>
+    </ClInclude>
+    <ClInclude Include="GBBBrick.h">
+      <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -474,6 +516,12 @@
     </Filter>
     <Filter Include="InterActive Things\Blocks\GBlock">
       <UniqueIdentifier>{574480b5-a07a-47c6-93c7-0daceef375f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Blocks\GBlock\GParticles">
+      <UniqueIdentifier>{18db9ecd-6bc1-4005-b7ab-abad3931e334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Blocks\GBlock\GBreakingBlock">
+      <UniqueIdentifier>{8f420529-7b1d-4f4a-a3e8-f0b6011d9e1f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

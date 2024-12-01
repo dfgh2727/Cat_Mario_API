@@ -311,6 +311,14 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GBBBox.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="GBBBrick.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="GNormalBlock.cpp">
       <SubType>
       </SubType>
@@ -319,11 +327,31 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GParticleA.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="GParticleB.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="GParticleC.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="GParticleD.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="HiddenBoxD.cpp">
       <SubType>
       </SubType>
     </ClCompile>
     <ClCompile Include="HiddenBoxDT.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="HiddenBoxFragile.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -582,6 +610,14 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="GBBBox.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GBBBrick.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="GNormalBlock.h">
       <SubType>
       </SubType>
@@ -590,11 +626,31 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="GParticleA.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GParticleB.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GParticleC.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GParticleD.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="HiddenBoxD.h">
       <SubType>
       </SubType>
     </ClInclude>
     <ClInclude Include="HiddenBoxDT.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="HiddenBoxFragile.h">
       <SubType>
       </SubType>
     </ClInclude>
