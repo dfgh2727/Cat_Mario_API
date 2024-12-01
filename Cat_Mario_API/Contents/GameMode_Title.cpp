@@ -25,7 +25,7 @@ void GameMode_Title::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
+	if (true == UEngineInput::GetInst().IsDown(VK_RETURN))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("DeathCount");
 	}
