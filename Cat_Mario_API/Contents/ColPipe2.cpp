@@ -63,4 +63,4 @@ void ColPipe2::CatCheck(float _DeltaTime)
 			this->Destroy();
 		}
 	}
-}
+} 
