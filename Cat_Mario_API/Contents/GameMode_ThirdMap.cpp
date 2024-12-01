@@ -176,6 +176,31 @@ void GameMode_ThirdMap::BeginPlay()
 	}
 
 	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 4552, 296});
+
+		QBlockwithMushroomN* QBlock = GetWorld()->SpawnActor<QBlockwithMushroomN>();
+		QBlock->SetActorLocation({ 4552, 296 });
+		QBlock->SetColImage("3rdColMap.png");
+
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 4610, 296 });
+
+		QBlockwithCoin* QBlock = GetWorld()->SpawnActor<QBlockwithCoin>();
+		QBlock->SetActorLocation({ 4610, 296 });
+	}
+	{
+		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
+		NewActor->SetActorLocation({ 4668, 296 });
+
+		StarBox* QMark = GetWorld()->SpawnActor<StarBox>();
+		QMark->SetActorLocation({ 4668, 296 });
+		QMark->SetColImage("3rdColMap.png");
+	}
+
+	{
 		FireBallSwitch* NewActor = GetWorld()->SpawnActor<FireBallSwitch>();
 		NewActor->SetActorLocation({ 5595, 585 });
 	}
