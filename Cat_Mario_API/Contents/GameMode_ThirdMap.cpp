@@ -13,6 +13,7 @@
 #include "FDBlock3.h"
 #include "HiddenBoxD.h"
 #include "HiddenBoxDT.h"
+#include "KingWC.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -85,6 +86,9 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 	ReStart(_DeltaTime);
 	Clear();
 
+	KWCSwitch();
+	KWCShowUp();
+
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
@@ -149,3 +153,23 @@ void GameMode_ThirdMap::OpenNextLevel()
 	UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
 }
 
+void GameMode_ThirdMap::KWCSwitch()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (PlayerPos.X >= 2461.0f)
+	{
+		KWCLever = true;
+	}
+}
+
+void GameMode_ThirdMap::KWCShowUp()
+{
+	if (KWCLever == true && DoItOnce1 == true)
+	{
+		KingWC* NewActor = GetWorld()->SpawnActor<KingWC>();
+		NewActor->SetActorLocation({ 2520, 850 });
+		NewActor->SetColImage("3rdColMap.png");
+		DoItOnce1 = false;
+	}
+}

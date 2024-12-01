@@ -25,9 +25,14 @@ public:
 
 	void Clear();
 	void OpenNextLevel();
+
+	void KWCSwitch();
+	void KWCShowUp();
+
 protected:
 
 private:
-
+	bool KWCLever = false;
+	bool DoItOnce1 = true;
 };
 

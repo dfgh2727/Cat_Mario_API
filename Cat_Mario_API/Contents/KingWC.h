@@ -25,6 +25,7 @@ public:
 	bool OnTheBlock(float _DeltaTime);
 
 	void TurnAround(FVector2D _MovePos);
+	void JumpUp(float _DeltaTime);
 
 protected:
 
@@ -38,4 +39,7 @@ private:
 	FVector2D MoveDir = FVector2D::LEFT;
 	float PosOrN = -1.0f;
 
+	FVector2D JumpPower = FVector2D(0.0f, -1500.0f);
+
+	bool DoItOnce = true;
 };
