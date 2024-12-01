@@ -28,11 +28,15 @@ public:
 
 	void KWCSwitch();
 	void KWCShowUp();
+	void BearSwitch();
+	void BearShowUp();
 
 protected:
 
 private:
 	bool KWCLever = false;
 	bool DoItOnce1 = true;
+	bool BearLever = false;
+	bool DoItOnce2 = true;
 };
 

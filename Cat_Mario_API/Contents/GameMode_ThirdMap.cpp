@@ -16,6 +16,8 @@
 #include "KingWC.h"
 #include "HiddenBoxFragile.h"
 #include "Flag.h"
+#include "ThirdMapP1.h"
+#include "Bear.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -81,7 +83,10 @@ void GameMode_ThirdMap::BeginPlay()
 		NewActor->SetActorLocation({ 2864, 528 });
 	}
 
-
+	{
+		ThirdMapP1* MiddlePointFlag = GetWorld()->SpawnActor<ThirdMapP1>();
+		MiddlePointFlag->SetActorLocation({ 3191, 674 });
+	}
 	{
 		Flag* MiddlePointFlag = GetWorld()->SpawnActor<Flag>();
 		MiddlePointFlag->SetActorLocation({ 3570, 674 });
@@ -102,6 +107,8 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	KWCSwitch();
 	KWCShowUp();
+	BearSwitch();
+	BearShowUp();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -185,5 +192,26 @@ void GameMode_ThirdMap::KWCShowUp()
 		NewActor->SetActorLocation({ 2550, 820 });
 		NewActor->SetColImage("3rdColMap.png");
 		DoItOnce1 = false;
+	}
+}
+
+void GameMode_ThirdMap::BearSwitch()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (PlayerPos.X >= 3070.0f)
+	{
+		BearLever = true;
+	}
+}
+
+void GameMode_ThirdMap::BearShowUp()
+{
+	if (BearLever == true && DoItOnce2 == true)
+	{
+		Bear* NewActor = GetWorld()->SpawnActor<Bear>();
+		NewActor->SetActorLocation({ 3191, 500 });
+		NewActor->SetColImage("3rdColMap.png");
+		DoItOnce2 = false;
 	}
 }

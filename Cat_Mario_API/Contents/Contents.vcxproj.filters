@@ -224,6 +224,12 @@
     <ClCompile Include="GBBBrick.cpp">
       <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
     </ClCompile>
+    <ClCompile Include="ThirdMapP1.cpp">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClCompile>
+    <ClCompile Include="Bear.cpp">
+      <Filter>InterActive Things\Monster</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -448,6 +454,12 @@
     </ClInclude>
     <ClInclude Include="GBBBrick.h">
       <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdMapP1.h">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClInclude>
+    <ClInclude Include="Bear.h">
+      <Filter>InterActive Things\Monster</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

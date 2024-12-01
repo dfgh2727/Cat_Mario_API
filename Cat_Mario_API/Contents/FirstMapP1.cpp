@@ -26,8 +26,3 @@ void FirstMapP1::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 }
-
-void FirstMapP1::Launch()
-{
-	
-}
