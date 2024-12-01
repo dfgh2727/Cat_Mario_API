@@ -263,6 +263,18 @@
     <ClCompile Include="HiddenBoxwithMT.cpp">
       <Filter>InterActive Things\Blocks\MysteryBox</Filter>
     </ClCompile>
+    <ClCompile Include="ColPipe2.cpp">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdMapP2.cpp">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMode_TheEnd.cpp">
+      <Filter>GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="EndImage.cpp">
+      <Filter>ShowMeTheMap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -526,6 +538,18 @@
     </ClInclude>
     <ClInclude Include="HiddenBoxwithMT.h">
       <Filter>InterActive Things\Blocks\MysteryBox</Filter>
+    </ClInclude>
+    <ClInclude Include="ColPipe2.h">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdMapP2.h">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode_TheEnd.h">
+      <Filter>GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="EndImage.h">
+      <Filter>ShowMeTheMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -26,6 +26,8 @@
 #include "UpStair.h"
 #include "DownStair.h"
 #include "GAbnormalBlock.h"
+#include "ThirdMapP2.h"
+#include "ColPipe2.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -130,6 +132,16 @@ void GameMode_ThirdMap::BeginPlay()
 		FDBlock7* FDB = GetWorld()->SpawnActor<FDBlock7>();
 		FDB->SetActorLocation({ 7278, 669 });
 	}
+
+	
+	{
+		ColPipe2* NewActor = GetWorld()->SpawnActor<ColPipe2>();
+		NewActor->SetActorLocation({ 7550, 442 });
+	}
+	{
+		ThirdMapP2* NewActor = GetWorld()->SpawnActor<ThirdMapP2>();
+		NewActor->SetActorLocation({ 7550, 442 });
+	}
 }
 
 void GameMode_ThirdMap::Tick(float _DeltaTime)
@@ -199,7 +211,7 @@ void GameMode_ThirdMap::Clear()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 
-	if (Player->InThePipe == true)
+	if (Player->ItsTunnel == true)
 	{
 		GameMode_DeathCount::MapNameString = "Fourth";
 		GameMode_DeathCount::At3rdMap = false;
@@ -211,7 +223,7 @@ void GameMode_ThirdMap::Clear()
 
 void GameMode_ThirdMap::OpenNextLevel()
 {
-	UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
+	UEngineAPICore::GetCore()->OpenLevel("TheEnd");
 }
 
 void GameMode_ThirdMap::KWCSwitch()

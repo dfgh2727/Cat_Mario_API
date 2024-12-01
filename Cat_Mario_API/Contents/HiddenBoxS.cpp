@@ -7,7 +7,7 @@
 #include <EnginePlatform/EngineInput.h>
 #include <EngineCore/EngineCoreDebug.h>
 #include <EngineCore/Level.h>
-#include"MarioCat.h"
+#include "MarioCat.h"
 
 HiddenBoxS::HiddenBoxS()
 {
