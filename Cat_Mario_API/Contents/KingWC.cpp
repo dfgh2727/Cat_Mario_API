@@ -144,14 +144,14 @@ void KingWC::TurnAround(FVector2D _MovePos)
 			//왼쪽으로 가다가 픽셀 충돌할 시 오른쪽으로 방향 변경
 			if (MoveDir == FVector2D::LEFT)
 			{
-				MonsterRenderer->SetSprite("KingWC_Right");
+				MonsterRenderer->SetSprite("KingWC_Right.png");
 				MoveDir = FVector2D::RIGHT;
 				PosOrN = 1.0f;
 			}
 			//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
 			else
 			{
-				MonsterRenderer->SetSprite("KingWC_Left");
+				MonsterRenderer->SetSprite("KingWC_Left.png");
 				MoveDir = FVector2D::LEFT;
 				PosOrN = -1.0f;
 			}
@@ -165,14 +165,14 @@ void KingWC::TurnAround(FVector2D _MovePos)
 	{
 		if (MoveDir == FVector2D::LEFT)
 		{
-			MonsterRenderer->SetSprite("KingWC_Right");
+			MonsterRenderer->SetSprite("KingWC_Right.png");
 			MoveDir = FVector2D::RIGHT;
 			PosOrN = 1.0f;
 		}
 		//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
 		else
 		{
-			MonsterRenderer->SetSprite("KingWC_Left");
+			MonsterRenderer->SetSprite("KingWC_Left.png");
 			MoveDir = FVector2D::LEFT;
 			PosOrN = -1.0f;
 		}
@@ -181,7 +181,7 @@ void KingWC::TurnAround(FVector2D _MovePos)
 	//몬스터가 맵의 왼쪽 끝에 닿을 경우 방향 변경
 	if (MonsterPos.X <= 0.0)
 	{
-		MonsterRenderer->SetSprite("KingWC_Right");
+		MonsterRenderer->SetSprite("KingWC_Right.png");
 		MoveDir = FVector2D::RIGHT;
 		PosOrN = 1.0f;
 	}

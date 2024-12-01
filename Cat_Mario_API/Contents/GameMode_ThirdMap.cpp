@@ -168,7 +168,7 @@ void GameMode_ThirdMap::KWCShowUp()
 	if (KWCLever == true && DoItOnce1 == true)
 	{
 		KingWC* NewActor = GetWorld()->SpawnActor<KingWC>();
-		NewActor->SetActorLocation({ 2520, 850 });
+		NewActor->SetActorLocation({ 2500, 820 });
 		NewActor->SetColImage("3rdColMap.png");
 		DoItOnce1 = false;
 	}
