@@ -248,6 +248,9 @@
     <ClCompile Include="DownStair.cpp">
       <Filter>InterActive Things\Props\Stairs</Filter>
     </ClCompile>
+    <ClCompile Include="BigWC.cpp">
+      <Filter>InterActive Things\Monster\WhiteCircle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -496,6 +499,9 @@
     </ClInclude>
     <ClInclude Include="DownStair.h">
       <Filter>InterActive Things\Props\Stairs</Filter>
+    </ClInclude>
+    <ClInclude Include="BigWC.h">
+      <Filter>InterActive Things\Monster\WhiteCircle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

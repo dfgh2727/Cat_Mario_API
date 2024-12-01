@@ -44,7 +44,7 @@ void DownStair::Tick(float _DeltaTime)
 	}
 	else if (Faster == true)
 	{
-		AddActorLocation(FVector2D::DOWN * 200.0f * _DeltaTime);
+		AddActorLocation(FVector2D::DOWN * 500.0f * _DeltaTime);
 	}
 	
 }
