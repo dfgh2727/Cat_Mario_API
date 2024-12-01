@@ -18,6 +18,9 @@
 #include "Flag.h"
 #include "ThirdMapP1.h"
 #include "Bear.h"
+#include "FDBlock4.h"
+#include "FDBlock5.h"
+#include "FDBlock6.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -93,6 +96,19 @@ void GameMode_ThirdMap::BeginPlay()
 	}
 
 	{
+		FDB4 = GetWorld()->SpawnActor<FDBlock4>();
+		FDB4->SetActorLocation({ 4177, 64 });
+	}
+	{
+		FDB5 = GetWorld()->SpawnActor<FDBlock5>();
+		FDB5->SetActorLocation({ 3915, 65 });
+	}
+	{
+		FDB6 = GetWorld()->SpawnActor<FDBlock6>();
+		FDB6->SetActorLocation({ 4090, -70 });
+	}
+
+	{
 		FBPipe* NewActor = GetWorld()->SpawnActor<FBPipe>();
 		NewActor->SetActorLocation({ 5975, 619 });
 	}
@@ -110,6 +126,8 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 	BearSwitch();
 	BearShowUp();
 
+	CatIsUnderTheBlock1();
+
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
@@ -119,7 +137,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
-		Player->SetActorLocation({ 2400, 700 });
+		Player->SetActorLocation({ 3520, 700 });
 	}
 
 }
@@ -199,7 +217,7 @@ void GameMode_ThirdMap::BearSwitch()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if (PlayerPos.X >= 3070.0f)
+	if (3070.0f <= PlayerPos.X)
 	{
 		BearLever = true;
 	}
@@ -214,4 +232,27 @@ void GameMode_ThirdMap::BearShowUp()
 		NewActor->SetColImage("3rdColMap.png");
 		DoItOnce2 = false;
 	}
+}
+
+void GameMode_ThirdMap::CatIsUnderTheBlock1()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (PlayerPos.X >= 4030.0f)
+	{
+		FDB4->IsFalling = true;
+		TimeEventer.PushEvent(1.0f, std::bind(&GameMode_ThirdMap::CatIsUnderTheBlock2, this));
+		TimeEventer.PushEvent(2.3f, std::bind(&GameMode_ThirdMap::CatIsUnderTheBlock3, this));
+	}
+}
+
+void GameMode_ThirdMap::CatIsUnderTheBlock2()
+{
+	FDB5->IsFalling = true;
+}
+
+void GameMode_ThirdMap::CatIsUnderTheBlock3()
+{
+
+	FDB6->IsFalling = true;
 }

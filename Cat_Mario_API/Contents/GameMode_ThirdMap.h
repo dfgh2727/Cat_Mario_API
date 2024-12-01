@@ -31,12 +31,23 @@ public:
 	void BearSwitch();
 	void BearShowUp();
 
+	void CatIsUnderTheBlock1();
+	void CatIsUnderTheBlock2();
+	void CatIsUnderTheBlock3();
+
 protected:
 
 private:
+
+	class FDBlock4* FDB4;
+	class FDBlock5* FDB5;
+	class FDBlock6* FDB6;
+
 	bool KWCLever = false;
 	bool DoItOnce1 = true;
 	bool BearLever = false;
 	bool DoItOnce2 = true;
+
+	float BearTimer = 0.0f;
 };
 

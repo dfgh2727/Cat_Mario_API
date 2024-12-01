@@ -230,6 +230,18 @@
     <ClCompile Include="Bear.cpp">
       <Filter>InterActive Things\Monster</Filter>
     </ClCompile>
+    <ClCompile Include="FDBlock4.cpp">
+      <Filter>InterActive Things\Blocks\FallingDown</Filter>
+    </ClCompile>
+    <ClCompile Include="FDBlock5.cpp">
+      <Filter>InterActive Things\Blocks\FallingDown</Filter>
+    </ClCompile>
+    <ClCompile Include="FDBlock6.cpp">
+      <Filter>InterActive Things\Blocks\FallingDown</Filter>
+    </ClCompile>
+    <ClCompile Include="FDBlock7.cpp">
+      <Filter>InterActive Things\Blocks\FallingDown</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -460,6 +472,18 @@
     </ClInclude>
     <ClInclude Include="Bear.h">
       <Filter>InterActive Things\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="FDBlock4.h">
+      <Filter>InterActive Things\Blocks\FallingDown</Filter>
+    </ClInclude>
+    <ClInclude Include="FDBlock5.h">
+      <Filter>InterActive Things\Blocks\FallingDown</Filter>
+    </ClInclude>
+    <ClInclude Include="FDBlock6.h">
+      <Filter>InterActive Things\Blocks\FallingDown</Filter>
+    </ClInclude>
+    <ClInclude Include="FDBlock7.h">
+      <Filter>InterActive Things\Blocks\FallingDown</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
