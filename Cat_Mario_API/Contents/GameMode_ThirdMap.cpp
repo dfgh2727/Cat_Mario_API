@@ -15,6 +15,7 @@
 #include "HiddenBoxDT.h"
 #include "KingWC.h"
 #include "HiddenBoxFragile.h"
+#include "Flag.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -80,6 +81,12 @@ void GameMode_ThirdMap::BeginPlay()
 		NewActor->SetActorLocation({ 2864, 528 });
 	}
 
+
+	{
+		Flag* MiddlePointFlag = GetWorld()->SpawnActor<Flag>();
+		MiddlePointFlag->SetActorLocation({ 3570, 674 });
+	}
+
 	{
 		FBPipe* NewActor = GetWorld()->SpawnActor<FBPipe>();
 		NewActor->SetActorLocation({ 5975, 619 });
@@ -105,7 +112,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
-		Player->SetActorLocation({ 5700, 700 });
+		Player->SetActorLocation({ 2400, 700 });
 	}
 
 }
