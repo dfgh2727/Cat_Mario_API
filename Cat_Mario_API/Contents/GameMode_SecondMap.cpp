@@ -13,6 +13,9 @@
 #include "ColPipe.h"
 #include "UpSeal.h"
 
+#include "HiddenBoxS.h"
+#include "HiddenBoxwithMT.h"
+
 #include "GameMode_DeathCount.h"
 
 GameMode_SecondMap::GameMode_SecondMap()
@@ -35,6 +38,17 @@ void GameMode_SecondMap::BeginPlay()
 	{
 		SecondMapP1* NewActor = GetWorld()->SpawnActor<SecondMapP1>();
 		NewActor->SetActorLocation({ 766, 674 });
+	}
+
+	{
+		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
+		NewActor->SetActorLocation({ 664, 468 });
+	}
+	{
+		HiddenBoxwithMT* NewActor = GetWorld()->SpawnActor<HiddenBoxwithMT>();
+		NewActor->SetActorLocation({ 780, 468 });
+		NewActor->SetColImage("2ndColMap.png");
+
 	}
 	{
 		SecondMapP2* NewActor = GetWorld()->SpawnActor<SecondMapP2>();
