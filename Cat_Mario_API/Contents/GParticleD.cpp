@@ -8,7 +8,7 @@
 GParticleD::GParticleD()
 {
 	BParticleRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	BParticleRenderer->SetSprite("BParticle.png");
+	BParticleRenderer->SetSprite("GParticle.png");
 	BParticleRenderer->SetOrder(ERenderOrder::PLAYER);
 	BParticleRenderer->SetComponentScale({ 20, 20 });
 }
