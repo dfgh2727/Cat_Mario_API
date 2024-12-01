@@ -240,6 +240,9 @@ void MarioCat::Tick(float _DeltaTime)
 	case PlayerState::GoDown:
 		PipeMotion(_DeltaTime);
 		break;
+	case PlayerState::WalkIn:
+		WalkingIn(_DeltaTime);
+		break;
 	default:
 		break;
 	}
@@ -253,6 +256,7 @@ void MarioCat::Tick(float _DeltaTime)
 	SueprBounce(_DeltaTime);
 	StartEndMotion();
 	PipeCheck();
+	TryToWalkIn();
 }
 
 void MarioCat::ChangeState(PlayerState _CurPlayerState)
@@ -629,6 +633,34 @@ void MarioCat::CatInThePipe()
 	InThePipe = true;
 }
 
+void MarioCat::TryToWalkIn()
+{
+	if (CatWalkIn == true)
+	{
+		ChangeState(PlayerState::WalkIn);
+	}
+}
+
+void MarioCat::WalkingIn(float _DeltaTime)
+{
+	CatRenderer->ChangeAnimation("Cat_RunRight");
+	AddActorLocation(FVector2D::LEFT * 150.0f * _DeltaTime);
+
+	if (ItsTunnel == false)
+	{
+		TimeEventer.PushEvent(0.5f, std::bind(&MarioCat::LaunchTheCat, this, _DeltaTime));
+	}
+	else
+	{
+		return;
+	}
+}
+
+void MarioCat::LaunchTheCat(float _DeltaTime)
+{
+	CatRenderer->ChangeAnimation("Cat_IsDeadLeft");
+	AddActorLocation(FVector2D::LEFT * 5000.0f * _DeltaTime);
+}
 
 void MarioCat::CatIsKilled(float _DeltaTime)
 {

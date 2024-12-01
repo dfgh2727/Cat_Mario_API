@@ -30,4 +30,5 @@ void SecondMapP2::BeginPlay()
 void SecondMapP2::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+
 }

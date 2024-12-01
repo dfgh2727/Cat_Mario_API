@@ -13,7 +13,8 @@ enum class PlayerState
 	SlipDown,
 	GoToDoor,
 	Clear,
-	GoDown, 
+	GoDown,
+	WalkIn
 };
  
 class MarioCat : public AMapActor
@@ -103,6 +104,12 @@ public:
 	void Appear();
 
 	void ChangeState(PlayerState _CurPlayerState);
+	void TryToWalkIn();
+	void WalkingIn(float _DeltaTime);
+	bool CatWalkIn = false;
+	bool ItsTunnel = false;
+
+	void LaunchTheCat(float _DeltaTime);
 
 protected:
 

@@ -254,6 +254,9 @@
     <ClCompile Include="SpickyBlock.cpp">
       <Filter>InterActive Things\Blocks\GBlock</Filter>
     </ClCompile>
+    <ClCompile Include="SecondMapP1.cpp">
+      <Filter>InterActive Things\Pipes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -508,6 +511,9 @@
     </ClInclude>
     <ClInclude Include="SpickyBlock.h">
       <Filter>InterActive Things\Blocks\GBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondMapP1.h">
+      <Filter>InterActive Things\Pipes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
