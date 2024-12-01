@@ -21,6 +21,7 @@
 #include "FDBlock4.h"
 #include "FDBlock5.h"
 #include "FDBlock6.h"
+#include "FireBallSwitch.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -109,6 +110,10 @@ void GameMode_ThirdMap::BeginPlay()
 	}
 
 	{
+		FireBallSwitch* NewActor = GetWorld()->SpawnActor<FireBallSwitch>();
+		NewActor->SetActorLocation({ 5595, 580 });
+	}
+	{
 		FBPipe* NewActor = GetWorld()->SpawnActor<FBPipe>();
 		NewActor->SetActorLocation({ 5975, 619 });
 	}
@@ -137,7 +142,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
-		Player->SetActorLocation({ 3520, 700 });
+		Player->SetActorLocation({ 5850, 700 });
 	}
 
 }

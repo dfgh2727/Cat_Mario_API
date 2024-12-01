@@ -20,10 +20,11 @@ FireBallSwitch::FireBallSwitch()
 
 	{
 		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent->SetComponentScale({ 65, 100 });
+		CollisionComponent->SetComponentScale({ 58, 58 });
 		CollisionComponent->SetCollisionGroup(ECollisionGroup::Prop);
 		CollisionComponent->SetCollisionType(ECollisionType::Rect);
 	}
+
 	DebugOn();
 }
 
@@ -40,10 +41,13 @@ void FireBallSwitch::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
+	ThePipe = GetWorld()->GetPawn<FBPipe>();
+
 	{
 		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerBody);
 		if (nullptr != Result)
 		{
+			ThePipe->SwitchUp = true;
 			this->Destroy();
 		}
 	}
@@ -52,6 +56,7 @@ void FireBallSwitch::Tick(float _DeltaTime)
 		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerFoot);
 		if (nullptr != Result)
 		{
+			ThePipe->SwitchUp = true;
 			this->Destroy();
 		}
 	}

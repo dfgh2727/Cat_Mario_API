@@ -40,21 +40,22 @@ void FBPipe::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	ShootFB(_DeltaTime);
-}
-
-void FBPipe::SelectTheLoop(float _DeltaTime)
-{
-
+	if (SwitchUp == false)
+	{
+		ShootFB1(_DeltaTime);
+	}
+	else
+	{
+		ShootFB2(_DeltaTime);
+	}
 	
-
 }
 
-void FBPipe::ShootFB(float _DeltaTime)
+void FBPipe::ShootFB1(float _DeltaTime)
 {
 	time += _DeltaTime;
 
-	if (time > 1.0f)
+	if (time > 2.0f)
 	{
 		FVector2D PipePos = this->GetActorLocation();
 		FireBall* FB = GetWorld()->SpawnActor<FireBall>();
@@ -64,4 +65,17 @@ void FBPipe::ShootFB(float _DeltaTime)
 	}
 }
 
+void FBPipe::ShootFB2(float _DeltaTime)
+{
+	time += _DeltaTime;
+
+	if (time > 0.8f)
+	{
+		FVector2D PipePos = this->GetActorLocation();
+		FireBall* FB = GetWorld()->SpawnActor<FireBall>();
+		FB->SetActorLocation(PipePos);
+
+		time = 0.0f;
+	}
+}
 

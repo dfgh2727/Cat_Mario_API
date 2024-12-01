@@ -19,7 +19,8 @@ public:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 	void SelectTheLoop(float _DeltaTime);
-	void ShootFB(float _DeltaTime);
+	void ShootFB1(float _DeltaTime);
+	void ShootFB2(float _DeltaTime);
 
 	bool SwitchUp = false;
 

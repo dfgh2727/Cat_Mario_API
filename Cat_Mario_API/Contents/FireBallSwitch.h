@@ -22,6 +22,7 @@ public:
 protected:
 
 private:
+	class FBPipe* ThePipe;
 	U2DCollision* CollisionComponent;
 };
 
