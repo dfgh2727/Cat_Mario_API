@@ -20,7 +20,7 @@ KingWC::KingWC()
 {
 	{
 		MonsterRenderer = CreateDefaultSubObject<USpriteRenderer>();
-		MonsterRenderer->SetSprite("CMmon_Right.png");
+		MonsterRenderer->SetSprite("KingWC_Left.png");
 		MonsterRenderer->SetOrder(ERenderOrder::PLAYER);
 		MonsterRenderer->SetComponentScale({ 120, 120 });
 	}
@@ -30,11 +30,6 @@ KingWC::KingWC()
 		MonsterBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
 		MonsterBody->SetCollisionType(ECollisionType::Rect);
 	}
-
-	MonsterRenderer->CreateAnimation("Mon_RunRight", "CMmon_Right.png", 0, 0, 0.5f);
-	MonsterRenderer->CreateAnimation("Mon_RunLeft", "CMmon_Left.png", 0, 0, 0.5f);
-
-	MonsterRenderer->ChangeAnimation("Mon_RunLeft");
 
 	DebugOn();
 }
@@ -147,14 +142,14 @@ void KingWC::TurnAround(FVector2D _MovePos)
 			//왼쪽으로 가다가 픽셀 충돌할 시 오른쪽으로 방향 변경
 			if (MoveDir == FVector2D::LEFT)
 			{
-				MonsterRenderer->ChangeAnimation("Mon_RunRight");
+				MonsterRenderer->ChangeAnimation("KingWC_Right");
 				MoveDir = FVector2D::RIGHT;
 				PosOrN = 1.0f;
 			}
 			//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
 			else
 			{
-				MonsterRenderer->ChangeAnimation("Mon_RunLeft");
+				MonsterRenderer->ChangeAnimation("KingWC_Left");
 				MoveDir = FVector2D::LEFT;
 				PosOrN = -1.0f;
 			}
@@ -168,14 +163,14 @@ void KingWC::TurnAround(FVector2D _MovePos)
 	{
 		if (MoveDir == FVector2D::LEFT)
 		{
-			MonsterRenderer->ChangeAnimation("Mon_RunRight");
+			MonsterRenderer->ChangeAnimation("KingWC_Right");
 			MoveDir = FVector2D::RIGHT;
 			PosOrN = 1.0f;
 		}
 		//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
 		else
 		{
-			MonsterRenderer->ChangeAnimation("Mon_RunLeft");
+			MonsterRenderer->ChangeAnimation("KingWC_Left");
 			MoveDir = FVector2D::LEFT;
 			PosOrN = -1.0f;
 		}
@@ -184,7 +179,7 @@ void KingWC::TurnAround(FVector2D _MovePos)
 	//몬스터가 맵의 왼쪽 끝에 닿을 경우 방향 변경
 	if (MonsterPos.X <= 0.0)
 	{
-		MonsterRenderer->ChangeAnimation("Mon_RunRight");
+		MonsterRenderer->ChangeAnimation("KingWC_Right");
 		MoveDir = FVector2D::RIGHT;
 		PosOrN = 1.0f;
 	}
