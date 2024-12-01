@@ -387,6 +387,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="HiddenBoxwithMT.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="InfiniteCoinBox.cpp">
       <SubType>
       </SubType>
@@ -731,6 +735,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="HiddenBoxS.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="HiddenBoxwithMT.h">
       <SubType>
       </SubType>
     </ClInclude>

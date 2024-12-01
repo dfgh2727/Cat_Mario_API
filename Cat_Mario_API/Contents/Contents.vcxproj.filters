@@ -260,6 +260,9 @@
     <ClCompile Include="MushroomT.cpp">
       <Filter>InterActive Things\Mushroom</Filter>
     </ClCompile>
+    <ClCompile Include="HiddenBoxwithMT.cpp">
+      <Filter>InterActive Things\Blocks\MysteryBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -520,6 +523,9 @@
     </ClInclude>
     <ClInclude Include="MushroomT.h">
       <Filter>InterActive Things\Mushroom</Filter>
+    </ClInclude>
+    <ClInclude Include="HiddenBoxwithMT.h">
+      <Filter>InterActive Things\Blocks\MysteryBox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
