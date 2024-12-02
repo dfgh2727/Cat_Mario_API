@@ -40,10 +40,10 @@ void GameMode_SecondMap::BeginPlay()
 		NewActor->SetActorLocation({ 766, 674 });
 	}
 
-	{
+	/*{
 		HiddenBoxS* NewActor = GetWorld()->SpawnActor<HiddenBoxS>();
 		NewActor->SetActorLocation({ 664, 468 });
-	}
+	}*/
 	{
 		HiddenBoxwithMT* NewActor = GetWorld()->SpawnActor<HiddenBoxwithMT>();
 		NewActor->SetActorLocation({ 780, 468 });
