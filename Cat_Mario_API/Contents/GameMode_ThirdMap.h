@@ -1,6 +1,6 @@
 #pragma once
 #include <EngineCore/GameMode.h>
-
+#include <EnginePlatform/EngineSound.h>
 
 // Ό³Έν :
 class GameMode_ThirdMap : public AGameMode
@@ -22,6 +22,7 @@ public:
 	void LevelChangeStart() override;
 	void ReStart(float _DeltaTime);
 	void GoToDeathCount();
+	void StopTheMusic();
 
 	void Clear();
 	void OpenNextLevel();
@@ -60,5 +61,6 @@ private:
 
 	float BearTimer = 0.0f;
 	float StairTimer = 0.0f;
+	USoundPlayer BGMPlayer;
 };
 

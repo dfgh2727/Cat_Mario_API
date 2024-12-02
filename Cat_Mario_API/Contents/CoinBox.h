@@ -1,6 +1,7 @@
 #pragma once
 #include <EngineCore/Actor.h>
 #include <EngineCore/2DCollision.h>
+#include <EnginePlatform/EngineSound.h>
 
 // Ό³Έν :
 class CoinBox : public AActor
@@ -27,6 +28,8 @@ protected:
 
 private:
 	class USpriteRenderer* QBlockRenderer;
+	USoundPlayer BGMPlayer;
+
 	//bool IsHit = false;
 };
 

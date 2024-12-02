@@ -223,6 +223,9 @@ void GameMode_ThirdMap::BeginPlay()
 		ThirdMapP2* NewActor = GetWorld()->SpawnActor<ThirdMapP2>();
 		NewActor->SetActorLocation({ 7550, 442 });
 	}
+
+	BGMPlayer = UEngineSound::Play("UnderGround.MP3");
+
 }
 
 void GameMode_ThirdMap::Tick(float _DeltaTime)
@@ -245,6 +248,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 	FBPSwtich();
 
 	Stairs(_DeltaTime);
+	StopTheMusic();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -258,6 +262,15 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 		Player->SetActorLocation({ 3560, 500 });
 	}
 
+}
+
+void GameMode_ThirdMap::StopTheMusic()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	if (Player->IsCatKilled == true)
+	{
+		BGMPlayer.Stop();
+	}
 }
 
 void GameMode_ThirdMap::LevelChangeStart()
@@ -297,6 +310,7 @@ void GameMode_ThirdMap::Clear()
 
 	if (Player->ItsTunnel == true)
 	{
+		BGMPlayer.Stop();
 		GameMode_DeathCount::MapNameString = "Fourth";
 		GameMode_DeathCount::At3rdMap = false;
 

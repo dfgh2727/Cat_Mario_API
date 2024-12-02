@@ -60,4 +60,6 @@ void CoinBox::CoinShowUP()
 	Coin* TheCoin = GetWorld()->SpawnActor<Coin>();
 	TheCoin->SetActorLocation(PresentPos);
 	AddActorLocation(FVector2D::UP * 0.25f);
+	BGMPlayer.Loop(0);
+	BGMPlayer = UEngineSound::Play("Coin.MP3");
 }

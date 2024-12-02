@@ -543,6 +543,7 @@ void GameMode_FirstMap::Clear()
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	if (Player->Cleared == true)
 	{
+		BGMPlayerBase.Stop();
 		GameMode_DeathCount::MapNameString = "Second";
 		GameMode_DeathCount::At1stMap = false;
 
