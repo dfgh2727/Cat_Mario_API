@@ -224,6 +224,7 @@ void GameMode_ThirdMap::BeginPlay()
 		NewActor->SetActorLocation({ 7550, 442 });
 	}
 
+	BGMPlayer.SetVolume(0.5f);
 	BGMPlayer = UEngineSound::Play("UnderGround.MP3");
 
 }
