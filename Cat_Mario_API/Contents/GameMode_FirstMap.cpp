@@ -303,7 +303,7 @@ void GameMode_FirstMap::BeginPlay()
 
 	{
 		Seal3 = GetWorld()->SpawnActor<DownSeal>();
-		Seal3->SetActorLocation({ 7380, -100 });
+		Seal3->SetActorLocation({ 7380, -84 });
 	}
 	{
 		Staff* TheStaff = GetWorld()->SpawnActor<Staff>();
@@ -417,7 +417,7 @@ void GameMode_FirstMap::SealGoDown()
 
 	if (Seal3Lever == true)
 	{
-		Seal3->AddActorLocation(FVector2D::DOWN * 1.4f);
+		Seal3->AddActorLocation(FVector2D::DOWN * 1.2f);
 	}
 }
 

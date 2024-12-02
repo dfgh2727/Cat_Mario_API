@@ -68,7 +68,7 @@ void GameMode_ThirdMap::BeginPlay()
 
 		QBlockwithMushroomN* QMark = GetWorld()->SpawnActor<QBlockwithMushroomN>();
 		QMark->SetActorLocation({ 436, 528 });
-		QMark->SetColImage("1stColMap.png");
+		QMark->SetColImage("3rdColMap.png");
 	}
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
@@ -76,7 +76,7 @@ void GameMode_ThirdMap::BeginPlay()
 
 		QBlockwithWC* QMark = GetWorld()->SpawnActor<QBlockwithWC>();
 		QMark->SetActorLocation({ 610, 528 });
-		QMark->SetColImage("1stColMap.png");
+		QMark->SetColImage("3rdColMap.png");
 	}
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
