@@ -84,7 +84,7 @@ void Turtle::MonsterGroundCheck(FVector2D _MovePos)
 	{
 		// 픽셀충돌에서 제일 중요한건 애초에 박히지 않는것이다.
 		FVector2D MonsterScale = MonsterRenderer->GetTransform().Scale;
-		FVector2D NextPos = GetActorLocation() + FVector2D{ 0, 40 } + _MovePos;
+		FVector2D NextPos = GetActorLocation() + FVector2D{ 0, 35 } + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);
