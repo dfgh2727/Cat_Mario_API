@@ -394,7 +394,7 @@ void GameMode_FirstMap::SealSwtich()
 		Seal2Lever = true;
 	}
 
-	if (PlayerPos.X >= 7250.0f)
+	if (PlayerPos.X >= 7200.0f)
 	{
 		Seal3Lever = true;
 	}
@@ -412,12 +412,12 @@ void GameMode_FirstMap::SealGoDown()
 {
 	if (Seal2Lever == true)
 	{
-		Seal2->AddActorLocation(FVector2D::DOWN * 0.8f);
+		Seal2->AddActorLocation(FVector2D::DOWN * 1.2f);
 	}
 
 	if (Seal3Lever == true)
 	{
-		Seal3->AddActorLocation(FVector2D::DOWN * 0.8f);
+		Seal3->AddActorLocation(FVector2D::DOWN * 1.4f);
 	}
 }
 

@@ -135,7 +135,7 @@ private:
 
 	FVector2D DirVector = FVector2D::ZERO;
 	float DirAcc = 1000.0f;
-	float MaxSpeed = 1000.0f;
+	float MaxSpeed = 800.0f;
 	float MinSpeed = 0.05f;
 	
 	std::string DirString = "Right";

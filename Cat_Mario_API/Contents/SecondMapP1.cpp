@@ -18,10 +18,10 @@ SecondMapP1::SecondMapP1()
 
 	{
 		CollisionComponent1 = CreateDefaultSubObject<U2DCollision>();
-		CollisionComponent1->SetComponentScale({ 60, 104 });
+		CollisionComponent1->SetComponentScale({ 60, 94 });
 		CollisionComponent1->SetCollisionGroup(ECollisionGroup::Prop);
 		CollisionComponent1->SetCollisionType(ECollisionType::Rect);
-		CollisionComponent1->SetComponentLocation(FVector2D{ -40, 0 });
+		CollisionComponent1->SetComponentLocation(FVector2D{ -40, 10 });
 
 	}
 	{
