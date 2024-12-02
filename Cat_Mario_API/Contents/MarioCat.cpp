@@ -599,6 +599,7 @@ void MarioCat::SueprBounce(float _DeltaTime)
 	{
 		if (GetPlayerState() != PlayerState::Dead)
 		{
+			BGMPlayer.SetVolume(1.0f);
 			BGMPlayer.Loop(1);
 			BGMPlayer = UEngineSound::Play("Bounce.MP3");
 
@@ -686,6 +687,8 @@ void MarioCat::CatIsKilled(float _DeltaTime)
 
 void MarioCat::RightBeforeDeath(float _DeltaTime)
 {
+	BGMPlayer.SetVolume(0.5f);
+	BGMPlayer = UEngineSound::Play("Death.MP3");
 	CatRenderer->ChangeAnimation("Cat_IsDead" + DirString);
 	TimeEventer.PushEvent(0.5f, std::bind(&MarioCat::YouDied, this, _DeltaTime));
 }
