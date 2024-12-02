@@ -1,6 +1,7 @@
 #pragma once
 #include <EngineCore/Actor.h>
 #include <EngineCore/2DCollision.h>
+#include <EnginePlatform/EngineSound.h>
 
 // Ό³Έν :
 class BBreakingBlock : public AActor
@@ -27,5 +28,6 @@ private:
 	U2DCollision* CollisionComponent;
 
 	bool Broken = false;
+	USoundPlayer BGMPlayer;
 };
 

@@ -55,6 +55,8 @@ void BBreakingBlock::Tick(float _DeltaTime)
 		if (nullptr != Result)
 		{
 			ItsBroken();
+			BGMPlayer.SetVolume(0.5f);
+			BGMPlayer = UEngineSound::Play("Breaking.MP3");
 		}
 	}
 }
