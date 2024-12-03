@@ -145,7 +145,7 @@ void GameMode_ThirdMap::BeginPlay()
 
 	{
 		HiddenBoxDT* NewActor = GetWorld()->SpawnActor<HiddenBoxDT>();
-		NewActor->SetActorLocation({ 2290, 701 });
+		NewActor->SetActorLocation({ 2291, 703 });
 	}
 
 	{

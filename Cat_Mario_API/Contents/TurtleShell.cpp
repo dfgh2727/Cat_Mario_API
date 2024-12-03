@@ -181,17 +181,35 @@ void TurtleShell::TurnAround(FVector2D _MovePos)
 
 	}
 
-	AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::SquareBlock);
-	if (nullptr != Result)
+	//AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::SquareBlock);
+	//if (nullptr != Result)
+	//{
+	//	if (MoveDir == FVector2D::LEFT)
+	//	{
+	//		MonsterRenderer->SetSprite("CMshell_Right.png");
+	//		MoveDir = FVector2D::RIGHT;
+	//		PosOrN = 1.0f;
+	//	}
+	//	//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
+	//	else
+	//	{
+	//		MonsterRenderer->SetSprite("CMshell_Left.png");
+	//		MoveDir = FVector2D::LEFT;
+	//		PosOrN = -1.0f;
+	//	}
+	//}
 	{
-		if (MoveDir == FVector2D::LEFT)
+		AActor* Result = LeftBody->CollisionOnce(ECollisionGroup::SquareBlock);
+		if (nullptr != Result)
 		{
 			MonsterRenderer->SetSprite("CMshell_Right.png");
 			MoveDir = FVector2D::RIGHT;
 			PosOrN = 1.0f;
 		}
-		//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
-		else
+	}
+	{
+		AActor* Result = RightBody->CollisionOnce(ECollisionGroup::SquareBlock);
+		if (nullptr != Result)
 		{
 			MonsterRenderer->SetSprite("CMshell_Left.png");
 			MoveDir = FVector2D::LEFT;
