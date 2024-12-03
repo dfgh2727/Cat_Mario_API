@@ -75,8 +75,12 @@ void WhiteCircle::Move(float _DeltaTime)
 
 	FVector2D MonsterPos = this->GetActorLocation();
 
-	TurnAround(MoveDir);
-	AddActorLocation(MoveDir * 0.08f);
+	//if (GetOutOfBox(_DeltaTime) == false)
+	{
+		TurnAround(MoveDir);
+		AddActorLocation(MoveDir * 0.08f);
+	}
+
 }
 
 void WhiteCircle::MonsterGroundCheck(FVector2D _MovePos)
@@ -195,7 +199,6 @@ void WhiteCircle::TurnAround(FVector2D _MovePos)
 			MoveDir = FVector2D::RIGHT;
 			PosOrN = 1.0f;
 		}
-		//오른쪽으로 가다가 픽셀 충돌할 시 왼쪽으로 방향 변경
 		else
 		{
 			MonsterRenderer->ChangeAnimation("Mon_RunLeft");
@@ -226,7 +229,6 @@ void WhiteCircle::RiseUp(float _DeltaTime)
 {
 	if (true == GetOutOfBox(_DeltaTime))
 	{
-		MonsterRenderer->ChangeAnimation("Mon_RunRight");
-		AddActorLocation(FVector2D::UP * 0.25f);
+		AddActorLocation(FVector2D::UP * 100.0f* _DeltaTime);
 	}
 }

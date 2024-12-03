@@ -40,6 +40,7 @@ void HiddenBoxwithMT::BeginPlay()
 void HiddenBoxwithMT::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+	BlockDisappear(_DeltaTime);
 }
 
 void HiddenBoxwithMT::BlockDisappear(float _DeltaTime)
