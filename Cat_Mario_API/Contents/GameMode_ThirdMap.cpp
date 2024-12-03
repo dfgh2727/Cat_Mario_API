@@ -437,7 +437,7 @@ void GameMode_ThirdMap::MonsterSwitch()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if (PlayerPos.X >= 1450.0f)
+	if (PlayerPos.X >= 1190.0f)
 	{
 		MonsterLever = true;
 	}
