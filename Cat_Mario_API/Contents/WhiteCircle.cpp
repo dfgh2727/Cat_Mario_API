@@ -225,5 +225,8 @@ bool WhiteCircle::GetOutOfBox(float _DeltaTime)
 void WhiteCircle::RiseUp(float _DeltaTime)
 {
 	if (true == GetOutOfBox(_DeltaTime))
-	AddActorLocation(FVector2D::UP * 0.25f);
+	{
+		MonsterRenderer->ChangeAnimation("Mon_RunRight");
+		AddActorLocation(FVector2D::UP * 0.25f);
+	}
 }
