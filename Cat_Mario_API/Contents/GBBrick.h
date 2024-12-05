@@ -3,18 +3,18 @@
 #include <EngineCore/2DCollision.h>
 
 // Ό³Έν :
-class GBBBrick : public AActor
+class GBBrick : public AActor
 {
 public:
 	// constrcuter destructer
-	GBBBrick();
-	~GBBBrick();
+	GBBrick();
+	~GBBrick();
 
 	// delete Function
-	GBBBrick(const GBBBrick& _Other) = delete;
-	GBBBrick(GBBBrick&& _Other) noexcept = delete;
-	GBBBrick& operator=(const GBBBrick& _Other) = delete;
-	GBBBrick& operator=(GBBBrick&& _Other) noexcept = delete;
+	GBBrick(const GBBrick& _Other) = delete;
+	GBBrick(GBBrick&& _Other) noexcept = delete;
+	GBBrick& operator=(const GBBrick& _Other) = delete;
+	GBBrick& operator=(GBBrick&& _Other) noexcept = delete;
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
@@ -25,7 +25,7 @@ protected:
 
 private:
 
-	class USpriteRenderer* GBBBrickRenderer;
+	class USpriteRenderer* GBBrickRenderer;
 	U2DCollision* CollisionComponent;
 
 	bool Broken = false;

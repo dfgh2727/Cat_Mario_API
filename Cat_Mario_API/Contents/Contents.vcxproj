@@ -359,11 +359,19 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="GBBBrick.cpp">
+    <ClCompile Include="GBBrick.cpp">
       <SubType>
       </SubType>
     </ClCompile>
     <ClCompile Include="GBMarbleBlock1.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="GBMarbleBlock2.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="GBTileBlock.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -734,11 +742,19 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="GBBBrick.h">
+    <ClInclude Include="GBBrick.h">
       <SubType>
       </SubType>
     </ClInclude>
     <ClInclude Include="GBMarbleBlock1.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GBMarbleBlock2.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GBTileBlock.h">
       <SubType>
       </SubType>
     </ClInclude>

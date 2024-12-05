@@ -38,6 +38,9 @@
 #include "StarBox.h"
 #include "BNormalBlock.h"
 
+#include "GBTileBlock.h"
+#include "GBBrick.h"
+
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
 
@@ -52,6 +55,148 @@ void GameMode_ThirdMap::BeginPlay()
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	Player->SetMapImage("3rdMap.png");
 	Player->SetColImage("3rdColMap.png");
+
+	//BigBody 전용 BreakingBlock (Tile)
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4784, 528 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4842, 528 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4900, 528 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4958, 528 });
+	}
+
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4784, 586 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4842, 586 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4900, 586 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4958, 586 });
+	}
+
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4784, 644 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4842, 644 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4900, 644 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4958, 644 });
+	}
+
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4784, 702 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4842, 702 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4900, 702 });
+	}
+	{
+		GBTileBlock* NewActor = GetWorld()->SpawnActor<GBTileBlock>();
+		NewActor->SetActorLocation({ 4958, 702 });
+	}
+
+	//BigBody 전용 BreakingBlock (BreakingBlock)
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 4726, 470 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 4726, 528 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 4726, 586 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 4726, 644 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 4726, 702 });
+	}
+
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 4668, 586 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 4668, 644 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 4668, 702 });
+	}
+
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 5016, 470 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 5016, 528 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 5016, 586 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 5016, 644 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 5016, 702 });
+	}
+
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 5074, 528 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 5074, 586 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 5074, 644 });
+	}
+	{
+		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
+		NewActor->SetActorLocation({ 5074, 702 });
+	}
 
 	{
 		ThirdMap* NewActor = GetWorld()->SpawnActor<ThirdMap>();
@@ -260,7 +405,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
-		Player->SetActorLocation({ 3560, 500 });
+		Player->SetActorLocation({ 4610, 528 });
 	}
 
 }

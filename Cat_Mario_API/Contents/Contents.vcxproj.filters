@@ -221,7 +221,7 @@
     <ClCompile Include="HiddenBoxFragile.cpp">
       <Filter>InterActive Things\Blocks\CoinBox</Filter>
     </ClCompile>
-    <ClCompile Include="GBBBrick.cpp">
+    <ClCompile Include="GBBrick.cpp">
       <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
     </ClCompile>
     <ClCompile Include="ThirdMapP1.cpp">
@@ -279,6 +279,12 @@
       <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
     </ClCompile>
     <ClCompile Include="GBMarbleBlock1.cpp">
+      <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="GBMarbleBlock2.cpp">
+      <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="GBTileBlock.cpp">
       <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
     </ClCompile>
   </ItemGroup>
@@ -503,7 +509,7 @@
     <ClInclude Include="HiddenBoxFragile.h">
       <Filter>InterActive Things\Blocks\CoinBox</Filter>
     </ClInclude>
-    <ClInclude Include="GBBBrick.h">
+    <ClInclude Include="GBBrick.h">
       <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
     </ClInclude>
     <ClInclude Include="ThirdMapP1.h">
@@ -561,6 +567,12 @@
       <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
     </ClInclude>
     <ClInclude Include="GBMarbleBlock1.h">
+      <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="GBMarbleBlock2.h">
+      <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="GBTileBlock.h">
       <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
     </ClInclude>
   </ItemGroup>

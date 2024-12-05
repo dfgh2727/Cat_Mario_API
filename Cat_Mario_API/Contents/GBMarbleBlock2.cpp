@@ -1,5 +1,5 @@
 #include "PreCompile.h"
-#include "GBBBrick.h"
+#include "GBMarbleBlock2.h"
 #include "Enum.h"
 
 #include <EngineCore/SpriteRenderer.h>
@@ -13,12 +13,12 @@
 #include "GParticleD.h"
 
 
-GBBBrick::GBBBrick()
+GBMarbleBlock2::GBMarbleBlock2()
 {
-	USpriteRenderer* GBBBrickRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	GBBBrickRenderer->SetSprite("GBreakingBlock.png");
-	GBBBrickRenderer->SetOrder(ERenderOrder::BLOCK);
-	GBBBrickRenderer->SetComponentScale({ 60, 60 });
+	USpriteRenderer* GBMarbleBlock2Renderer = CreateDefaultSubObject<USpriteRenderer>();
+	GBMarbleBlock2Renderer->SetSprite("GMarbleBlock2.png");
+	GBMarbleBlock2Renderer->SetOrder(ERenderOrder::BLOCK);
+	GBMarbleBlock2Renderer->SetComponentScale({ 60, 60 });
 
 	{
 		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
@@ -30,16 +30,16 @@ GBBBrick::GBBBrick()
 
 }
 
-GBBBrick::~GBBBrick()
+GBMarbleBlock2::~GBMarbleBlock2()
 {
 }
 
-void GBBBrick::BeginPlay()
+void GBMarbleBlock2::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-void GBBBrick::Tick(float _DeltaTime)
+void GBMarbleBlock2::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
@@ -50,7 +50,7 @@ void GBBBrick::Tick(float _DeltaTime)
 	}
 }
 
-void GBBBrick::ItsBroken()
+void GBMarbleBlock2::ItsBroken()
 {
 	{
 		FVector2D PresentPos = this->GetActorLocation();
