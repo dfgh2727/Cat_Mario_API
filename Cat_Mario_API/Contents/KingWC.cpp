@@ -46,7 +46,7 @@ void KingWC::BeginPlay()
 void KingWC::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
-	JumpUp(_DeltaTime);
+	/*JumpUp(_DeltaTime);*/
 	Move(_DeltaTime);
 
 }

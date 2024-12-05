@@ -28,7 +28,7 @@ public:
 	void OpenNextLevel();
 
 	void KWCSwitch();
-	void KWCShowUp();
+	void KWCShowUp(float _Deltatime);
 	void BearSwitch();
 	void BearShowUp();
 

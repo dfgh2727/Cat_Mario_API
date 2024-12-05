@@ -40,6 +40,8 @@
 
 #include "GBTileBlock.h"
 #include "GBBrick.h"
+#include "GBMarbleBlock1.h"
+#include "GBMarbleBlock2.h"
 
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
@@ -125,7 +127,7 @@ void GameMode_ThirdMap::BeginPlay()
 		NewActor->SetActorLocation({ 4958, 702 });
 	}
 
-	//BigBody 전용 BreakingBlock (BreakingBlock)
+	//BigBody 전용 BreakingBlock (Brick)
 	{
 		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
 		NewActor->SetActorLocation({ 4726, 470 });
@@ -196,6 +198,79 @@ void GameMode_ThirdMap::BeginPlay()
 	{
 		GBBrick* NewActor = GetWorld()->SpawnActor<GBBrick>();
 		NewActor->SetActorLocation({ 5074, 702 });
+	}
+
+	//BigBody 전용 BreakingBlock (MarbleBlock)
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4668, 760 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4726, 760 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4784, 760 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4842, 760 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4900, 760 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4958, 760 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 5016, 760 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 5074, 760 });
+	}
+
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4668, 818 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4726, 818 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4784, 818 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4842, 818 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4900, 818 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 4958, 818 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 5016, 818 });
+	}
+	{
+		GBMarbleBlock1* NewActor = GetWorld()->SpawnActor<GBMarbleBlock1>();
+		NewActor->SetActorLocation({ 5074, 818 });
+	}
+
+	{
+		KingWC* NewActor = GetWorld()->SpawnActor<KingWC>();
+		NewActor->SetActorLocation({4903, 460 });
+		NewActor->SetColImage("3rdColMap.png");
 	}
 
 	{
@@ -385,7 +460,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 	MonsterShowUp();
 
 	KWCSwitch();
-	KWCShowUp();
+	KWCShowUp(_DeltaTime);
 	BearSwitch();
 	BearShowUp();
 
@@ -480,13 +555,14 @@ void GameMode_ThirdMap::KWCSwitch()
 	}
 }
 
-void GameMode_ThirdMap::KWCShowUp()
+void GameMode_ThirdMap::KWCShowUp(float _Deltatime)
 {
 	if (KWCLever == true && DoItOnce1 == true)
 	{
 		KingWC* NewActor = GetWorld()->SpawnActor<KingWC>();
 		NewActor->SetActorLocation({ 2550, 820 });
 		NewActor->SetColImage("3rdColMap.png");
+		NewActor->JumpUp(_Deltatime);
 		DoItOnce1 = false;
 	}
 }
