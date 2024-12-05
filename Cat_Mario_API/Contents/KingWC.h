@@ -27,6 +27,8 @@ public:
 	void TurnAround(FVector2D _MovePos);
 	void JumpUp(float _DeltaTime);
 
+	bool Jump = false;
+
 protected:
 
 private:

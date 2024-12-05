@@ -269,7 +269,7 @@ void GameMode_ThirdMap::BeginPlay()
 
 	{
 		KingWC* NewActor = GetWorld()->SpawnActor<KingWC>();
-		NewActor->SetActorLocation({4903, 460 });
+		NewActor->SetActorLocation({4903, 464 });
 		NewActor->SetColImage("3rdColMap.png");
 	}
 
@@ -460,7 +460,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 	MonsterShowUp();
 
 	KWCSwitch();
-	KWCShowUp(_DeltaTime);
+	KWCShowUp();
 	BearSwitch();
 	BearShowUp();
 
@@ -555,14 +555,14 @@ void GameMode_ThirdMap::KWCSwitch()
 	}
 }
 
-void GameMode_ThirdMap::KWCShowUp(float _Deltatime)
+void GameMode_ThirdMap::KWCShowUp()
 {
 	if (KWCLever == true && DoItOnce1 == true)
 	{
 		KingWC* NewActor = GetWorld()->SpawnActor<KingWC>();
 		NewActor->SetActorLocation({ 2550, 820 });
 		NewActor->SetColImage("3rdColMap.png");
-		NewActor->JumpUp(_Deltatime);
+		NewActor->Jump = true;
 		DoItOnce1 = false;
 	}
 }
