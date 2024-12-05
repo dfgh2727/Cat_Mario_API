@@ -1,5 +1,5 @@
 #include "PreCompile.h"
-#include "GBBBox.h"
+#include "GBMarbleBlock1.h"
 #include "Enum.h"
 
 #include <EngineCore/SpriteRenderer.h>
@@ -12,15 +12,13 @@
 #include "GParticleC.h"
 #include "GParticleD.h"
 
-#include "MarioCat.h"
 
-
-GBBBox::GBBBox()
+GBMarbleBlock1::GBMarbleBlock1()
 {
-	USpriteRenderer* GBBBoxRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	GBBBoxRenderer->SetSprite("GNormalBlock.png");
-	GBBBoxRenderer->SetOrder(ERenderOrder::BLOCK);
-	GBBBoxRenderer->SetComponentScale({ 60, 60 });
+	USpriteRenderer* GBMarbleBlock1Renderer = CreateDefaultSubObject<USpriteRenderer>();
+	GBMarbleBlock1Renderer->SetSprite("GMarbleBlock1.png");
+	GBMarbleBlock1Renderer->SetOrder(ERenderOrder::BLOCK);
+	GBMarbleBlock1Renderer->SetComponentScale({ 60, 60 });
 
 	{
 		CollisionComponent = CreateDefaultSubObject<U2DCollision>();
@@ -32,33 +30,27 @@ GBBBox::GBBBox()
 
 }
 
-GBBBox::~GBBBox()
+GBMarbleBlock1::~GBMarbleBlock1()
 {
 }
 
-void GBBBox::BeginPlay()
+void GBMarbleBlock1::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-void GBBBox::Tick(float _DeltaTime)
+void GBMarbleBlock1::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	MarioCat* MainPlayer = GetWorld()->GetPawn< MarioCat>();
-	FVector2D GForce = MainPlayer->GetGravityForce();
-	FVector2D CatJumpPower = MainPlayer->GetJumpPower();
-
+	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::BigBody);
+	if (nullptr != Result)
 	{
-		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::ColPlayer);
-		if (nullptr != Result)
-		{
-			ItsBroken();
-		}
+		ItsBroken();
 	}
 }
 
-void GBBBox::ItsBroken()
+void GBMarbleBlock1::ItsBroken()
 {
 	{
 		FVector2D PresentPos = this->GetActorLocation();

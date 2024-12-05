@@ -363,6 +363,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="GBMarbleBlock1.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="GNormalBlock.cpp">
       <SubType>
       </SubType>
@@ -731,6 +735,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="GBBBrick.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="GBMarbleBlock1.h">
       <SubType>
       </SubType>
     </ClInclude>

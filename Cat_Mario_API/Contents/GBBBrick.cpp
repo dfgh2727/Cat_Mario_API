@@ -12,8 +12,6 @@
 #include "GParticleC.h"
 #include "GParticleD.h"
 
-#include "MarioCat.h"
-
 
 GBBBrick::GBBBrick()
 {
@@ -44,10 +42,6 @@ void GBBBrick::BeginPlay()
 void GBBBrick::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
-
-	MarioCat* MainPlayer = GetWorld()->GetPawn< MarioCat>();
-	FVector2D GForce = MainPlayer->GetGravityForce();
-	FVector2D CatJumpPower = MainPlayer->GetJumpPower();
 
 	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::BigBody);
 	if (nullptr != Result)

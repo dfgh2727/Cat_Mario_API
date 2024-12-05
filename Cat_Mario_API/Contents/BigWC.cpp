@@ -22,17 +22,17 @@ BigWC::BigWC()
 		MonsterRenderer = CreateDefaultSubObject<USpriteRenderer>();
 		MonsterRenderer->SetSprite("BigWC.png");
 		MonsterRenderer->SetOrder(ERenderOrder::PLAYER);
-		MonsterRenderer->SetComponentScale({ 189, 159 });
+		MonsterRenderer->SetComponentScale({ 126, 106 });
 	}
 	{
 		MonsterBody = CreateDefaultSubObject<U2DCollision>();
-		MonsterBody->SetComponentScale({ 189, 159 });
+		MonsterBody->SetComponentScale({ 126, 106 });
 		MonsterBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
 		MonsterBody->SetCollisionType(ECollisionType::Rect);
 	}
 	{
 		BouncyBody = CreateDefaultSubObject<U2DCollision>();
-		BouncyBody->SetComponentScale({ 189, 159 });
+		BouncyBody->SetComponentScale({ 126, 106 });
 		BouncyBody->SetCollisionGroup(ECollisionGroup::BigBody);
 		BouncyBody->SetCollisionType(ECollisionType::Rect);
 	}

@@ -34,6 +34,7 @@
 
 #include "FlyingStick.h"
 #include "StarBox.h"
+#include "BigWC.h"
 
 #include "GameMode_DeathCount.h"
 
@@ -55,7 +56,12 @@ void GameMode_FirstMap::BeginPlay()
 	Player->SetMapImage("1stMap.png");
 	Player->SetColImage("1stColMap.png");
 
+	{
+		BigWC* MiddlePointFlag = GetWorld()->SpawnActor<BigWC>();
+		MiddlePointFlag->SetActorLocation({ 600, 440 });
+		MiddlePointFlag->SetColImage("1stColMap.png");
 
+	}
 	{
 		Flag* MiddlePointFlag = GetWorld()->SpawnActor<Flag>();
 		MiddlePointFlag->SetActorLocation({ 3860, 440 });

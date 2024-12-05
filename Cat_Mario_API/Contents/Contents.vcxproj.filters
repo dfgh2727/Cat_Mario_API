@@ -278,6 +278,9 @@
     <ClCompile Include="BBBRender.cpp">
       <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
     </ClCompile>
+    <ClCompile Include="GBMarbleBlock1.cpp">
+      <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -556,6 +559,9 @@
     </ClInclude>
     <ClInclude Include="BBBRender.h">
       <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="GBMarbleBlock1.h">
+      <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
