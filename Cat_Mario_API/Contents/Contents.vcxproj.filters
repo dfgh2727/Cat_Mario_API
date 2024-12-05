@@ -287,6 +287,9 @@
     <ClCompile Include="GBTileBlock.cpp">
       <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
     </ClCompile>
+    <ClCompile Include="MushroomB.cpp">
+      <Filter>InterActive Things\Mushroom</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -574,6 +577,9 @@
     </ClInclude>
     <ClInclude Include="GBTileBlock.h">
       <Filter>InterActive Things\Blocks\GBlock\GBreakingBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="MushroomB.h">
+      <Filter>InterActive Things\Mushroom</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

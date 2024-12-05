@@ -32,5 +32,6 @@ enum class ECollisionGroup
 	BreakingBlock,
 	None,
 	BigBody,
+	GettingBig,
 
 };

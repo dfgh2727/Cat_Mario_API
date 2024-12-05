@@ -14,6 +14,7 @@
 #include "GameMode_FirstMap.h"
 #include "Enum.h"
 #include "MarioCat.h"
+#include "BigWC.h"
 
 
 KingWC::KingWC()
@@ -52,7 +53,7 @@ void KingWC::Tick(float _DeltaTime)
 		JumpUp(_DeltaTime);
 	}
 	Move(_DeltaTime);
-
+	Grow();
 }
 
 void KingWC::Move(float _DeltaTime)
@@ -200,5 +201,21 @@ void KingWC::JumpUp(float _DeltaTime)
 	else if(IsGround == true)
 	{
 		DoItOnce = false;
+	}
+}
+
+void KingWC::Grow()
+{
+	AActor* Result = MonsterBody->CollisionOnce(ECollisionGroup::GettingBig);
+	if (nullptr != Result)
+	{
+		FVector2D PresentPos = this->GetActorLocation();
+		UEngineWinImage* ColImageForBigWC = this->GetColImage();
+
+		BigWC* BigWhiteCircle = GetWorld()->SpawnActor<BigWC>();
+		BigWhiteCircle->SetActorLocation(PresentPos);
+		BigWhiteCircle->ColImage = ColImageForBigWC;
+
+		this->Destroy();
 	}
 }
