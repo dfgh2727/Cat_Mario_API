@@ -158,7 +158,7 @@
     <ClCompile Include="Cloud.cpp">
       <Filter>InterActive Things\Monster</Filter>
     </ClCompile>
-    <ClCompile Include="QBlockwithMushroomN.cpp">
+    <ClCompile Include="QBlockwithMushroom.cpp">
       <Filter>InterActive Things\Blocks\MysteryBox</Filter>
     </ClCompile>
     <ClCompile Include="MushroomN.cpp">
@@ -449,7 +449,7 @@
     <ClInclude Include="Cloud.h">
       <Filter>InterActive Things\Monster</Filter>
     </ClInclude>
-    <ClInclude Include="QBlockwithMushroomN.h">
+    <ClInclude Include="QBlockwithMushroom.h">
       <Filter>InterActive Things\Blocks\MysteryBox</Filter>
     </ClInclude>
     <ClInclude Include="MushroomN.h">

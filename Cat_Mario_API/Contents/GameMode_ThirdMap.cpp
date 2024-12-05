@@ -33,7 +33,7 @@
 #include "MapActor.h"
 #include "QBlockwithCoin.h"
 #include "QBlockwithWC.h"
-#include "QBlockwithMushroomN.h"
+#include "QBlockwithMushroom.h"
 #include "Turtle.h"
 #include "StarBox.h"
 #include "BNormalBlock.h"
@@ -286,7 +286,7 @@ void GameMode_ThirdMap::BeginPlay()
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
 		NewActor->SetActorLocation({ 436, 528 });
 
-		QBlockwithMushroomN* QMark = GetWorld()->SpawnActor<QBlockwithMushroomN>();
+		QBlockwithMushroom* QMark = GetWorld()->SpawnActor<QBlockwithMushroom>();
 		QMark->SetActorLocation({ 436, 528 });
 		QMark->SetColImage("3rdColMap.png");
 	}
@@ -399,10 +399,10 @@ void GameMode_ThirdMap::BeginPlay()
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();
 		NewActor->SetActorLocation({ 4552, 296});
 
-		QBlockwithMushroomN* QBlock = GetWorld()->SpawnActor<QBlockwithMushroomN>();
+		QBlockwithMushroom* QBlock = GetWorld()->SpawnActor<QBlockwithMushroom>();
 		QBlock->SetActorLocation({ 4552, 296 });
 		QBlock->SetColImage("3rdColMap.png");
-
+		QBlock->ItsB = true;
 	}
 	{
 		BNormalBlock* NewActor = GetWorld()->SpawnActor<BNormalBlock>();

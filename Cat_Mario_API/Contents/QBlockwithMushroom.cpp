@@ -1,5 +1,5 @@
 #include "PreCompile.h"
-#include "QBlockwithMushroomN.h"
+#include "QBlockwithMushroom.h"
 
 #include "Enum.h"
 #include <EngineCore/SpriteRenderer.h>
@@ -8,8 +8,9 @@
 #include <EngineCore/Level.h>
 
 #include "MushroomN.h"
+#include "MushroomB.h"
 
-QBlockwithMushroomN::QBlockwithMushroomN()
+QBlockwithMushroom::QBlockwithMushroom()
 {
 	USpriteRenderer* QMarkRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	QMarkRenderer->SetSprite("QBlock.png");
@@ -26,23 +27,23 @@ QBlockwithMushroomN::QBlockwithMushroomN()
 	DebugOn();
 }
 
-QBlockwithMushroomN::~QBlockwithMushroomN()
+QBlockwithMushroom::~QBlockwithMushroom()
 {
 }
 
-void QBlockwithMushroomN::BeginPlay()
+void QBlockwithMushroom::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-void QBlockwithMushroomN::Tick(float _DeltaTime)
+void QBlockwithMushroom::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 	BlockDisappear(_DeltaTime);
 
 }
 
-void QBlockwithMushroomN::BlockDisappear(float _DeltaTime)
+void QBlockwithMushroom::BlockDisappear(float _DeltaTime)
 {
 	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::PlayerHead);
 	if (nullptr != Result)
@@ -53,12 +54,21 @@ void QBlockwithMushroomN::BlockDisappear(float _DeltaTime)
 
 }
 
-void QBlockwithMushroomN::MushroomShowUP()
+void QBlockwithMushroom::MushroomShowUP()
 {
 	FVector2D PresentPos = this->GetActorLocation();
-	UEngineWinImage* ColImageForWC = this->GetColImage();
+	UEngineWinImage* ColImageForMushroom = this->GetColImage();
 
-	MushroomN* TheMushroom = GetWorld()->SpawnActor<MushroomN>();
-	TheMushroom->SetActorLocation(PresentPos);
-	TheMushroom->ColImage = ColImageForWC;
+	if (ItsB == true)
+	{
+		MushroomB* TheMushroomB = GetWorld()->SpawnActor<MushroomB>();
+		TheMushroomB->SetActorLocation(PresentPos);
+		TheMushroomB->ColImage = ColImageForMushroom;
+	}
+	else
+	{
+		MushroomN* TheMushroomN = GetWorld()->SpawnActor<MushroomN>();
+		TheMushroomN->SetActorLocation(PresentPos);
+		TheMushroomN->ColImage = ColImageForMushroom;
+	}
 }

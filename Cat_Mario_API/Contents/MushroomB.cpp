@@ -13,7 +13,7 @@
 MushroomB::MushroomB()
 {
 	MushroomRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	MushroomRenderer->SetSprite("MushroomB.png");
+	MushroomRenderer->SetSprite("MushroomN.png");
 	MushroomRenderer->SetOrder(ERenderOrder::PROP);
 	MushroomRenderer->SetComponentScale({ 46, 48 });
 

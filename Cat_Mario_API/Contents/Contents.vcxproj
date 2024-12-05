@@ -459,7 +459,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="QBlockwithMushroomN.cpp">
+    <ClCompile Include="QBlockwithMushroom.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -846,7 +846,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="QBlockwithMushroomN.h">
+    <ClInclude Include="QBlockwithMushroom.h">
       <SubType>
       </SubType>
     </ClInclude>
