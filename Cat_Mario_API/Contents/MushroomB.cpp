@@ -146,13 +146,13 @@ void MushroomB::Eaten()
 		}
 	}
 
-	{
-		AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::MonsterBody, FVector2D::ZERO);
-		if (nullptr != Result)
-		{
-			Destroy();
-		}
-	}
+	//{
+	//	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::MonsterBody);
+	//	if (nullptr != Result)
+	//	{
+	//		Destroy();
+	//	}
+	//}
 }
 
 

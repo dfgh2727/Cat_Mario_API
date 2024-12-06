@@ -216,6 +216,7 @@ void KingWC::Grow()
 		BigWhiteCircle->SetActorLocation(PresentPos);
 		BigWhiteCircle->ColImage = ColImageForBigWC;
 
+		Result->Destroy();
 		this->Destroy();
 	}
 }
