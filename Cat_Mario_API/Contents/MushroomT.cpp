@@ -202,6 +202,12 @@ void MushroomT::TurnAround(FVector2D _MovePos)
 		MoveDir = FVector2D::RIGHT;
 		PosOrN = 1.0f;
 	}
+
+	if (MushroomPos.X >= 920.0)
+	{
+		MoveDir = FVector2D::LEFT;
+		PosOrN = -1.0f;
+	}
 }
 
 bool MushroomT::GetOutOfBox(float _DeltaTime)
