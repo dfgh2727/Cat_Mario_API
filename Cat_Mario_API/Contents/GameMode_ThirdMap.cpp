@@ -625,9 +625,10 @@ void GameMode_ThirdMap::FBPSwtich()
 
 void GameMode_ThirdMap::Stairs(float _DeltaTime)
 {
-	StairTimer += _DeltaTime;
+	UpStairTimer += _DeltaTime;
+	DownStairTimer += _DeltaTime;
 
-	if (StairTimer > 5.0f)
+	if (UpStairTimer > 2.5f)
 	{
 		{
 			UpStair* TheStairU = GetWorld()->SpawnActor<UpStair>();
@@ -639,15 +640,20 @@ void GameMode_ThirdMap::Stairs(float _DeltaTime)
 				TheStairU->Destroy();
 			}
 		}
+		UpStairTimer = 0.0f;
+	}
 
+	if (DownStair::Faster == true)
+	{
+		StairTimerValue = 1.3f;
+	}
+
+	
+	if (DownStairTimer > StairTimerValue)
+	{
 		{
 			DownStair* TheStairD = GetWorld()->SpawnActor<DownStair>();
 			TheStairD->SetActorLocation({ 6780, -10 });
-
-			if (DownStair::Faster == true)
-			{
-				AddActorLocation(FVector2D::DOWN * 100.0 * _DeltaTime);
-			}
 
 			FVector2D DStairPos = TheStairD->GetActorLocation();
 			if (DStairPos.Y >= 850.0f)
@@ -656,9 +662,10 @@ void GameMode_ThirdMap::Stairs(float _DeltaTime)
 			}
 		}
 
-		StairTimer = 0.0f;
+		DownStairTimer = 0.0f;
 	}
-
+	
+	
 }
 
 void GameMode_ThirdMap::MonsterSwitch()

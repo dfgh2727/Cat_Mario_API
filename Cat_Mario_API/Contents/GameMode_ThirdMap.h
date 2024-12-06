@@ -62,7 +62,9 @@ private:
 	bool DoItOnce3 = true;
 
 	float BearTimer = 0.0f;
-	float StairTimer = 0.0f;
+	float UpStairTimer = 0.0f;
+	float DownStairTimer = 0.0f;
+	float StairTimerValue = 2.5f;
 	USoundPlayer BGMPlayer;
 };
 

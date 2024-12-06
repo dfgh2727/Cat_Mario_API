@@ -36,5 +36,5 @@ void UpStair::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
 
-	AddActorLocation(FVector2D::UP * 70.0f * _DeltaTime);
+	AddActorLocation(FVector2D::UP * 100.0f * _DeltaTime);
 }
