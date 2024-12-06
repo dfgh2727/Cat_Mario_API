@@ -66,7 +66,7 @@ void BigWC::Move(float _DeltaTime)
 
 	FVector2D MonsterPos = this->GetActorLocation();
 
-	AddActorLocation(MoveDir * 0.08f);
+	AddActorLocation(MoveDir * 0.3f);
 }
 
 void BigWC::MonsterGroundCheck(FVector2D _MovePos)
@@ -112,7 +112,7 @@ void BigWC::Gravity(float _DeltaTime)
 	if (false == IsGround)
 	{
 		AddActorLocation(GravityForce * _DeltaTime);
-		GravityForce += FVector2D::DOWN * _DeltaTime * 1200.0f;
+		GravityForce += FVector2D::DOWN * _DeltaTime * 900.0f;
 	}
 	else
 	{
