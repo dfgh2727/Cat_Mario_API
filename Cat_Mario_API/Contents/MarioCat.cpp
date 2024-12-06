@@ -14,10 +14,6 @@
 #include "GameMode_SecondMap.h"
 #include "GameMode_ThirdMap.h"
 #include "GameMode_FourthMap.h"
-#include "GameMode_FifthMap.h"
-#include "GameMode_SixthMap.h"
-#include "GameMode_SeventhMap.h"
-#include "GameMode_EighthMap.h"
 
 #include "MapActor.h"
 #include "Enum.h"

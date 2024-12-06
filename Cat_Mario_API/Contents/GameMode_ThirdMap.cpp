@@ -545,7 +545,7 @@ void GameMode_ThirdMap::Clear()
 
 void GameMode_ThirdMap::OpenNextLevel()
 {
-	UEngineAPICore::GetCore()->OpenLevel("TheEnd");
+	UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
 }
 
 void GameMode_ThirdMap::KWCSwitch()
@@ -647,7 +647,6 @@ void GameMode_ThirdMap::Stairs(float _DeltaTime)
 	{
 		StairTimerValue = 0.9f;
 	}
-
 	
 	if (DownStairTimer > StairTimerValue)
 	{
