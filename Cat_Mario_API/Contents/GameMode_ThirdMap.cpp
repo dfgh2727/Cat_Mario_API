@@ -645,7 +645,7 @@ void GameMode_ThirdMap::Stairs(float _DeltaTime)
 
 	if (DownStair::Faster == true)
 	{
-		StairTimerValue = 1.3f;
+		StairTimerValue = 0.9f;
 	}
 
 	
