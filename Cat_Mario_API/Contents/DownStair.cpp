@@ -37,6 +37,7 @@ void DownStair::BeginPlay()
 void DownStair::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+	GoFaster();
 
 	if (Faster == false)
 	{

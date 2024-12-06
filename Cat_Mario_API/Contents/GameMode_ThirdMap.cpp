@@ -43,6 +43,9 @@
 #include "GBMarbleBlock1.h"
 #include "GBMarbleBlock2.h"
 
+
+//bool GameMode_ThirdMap::CatIsOnStair = false;
+
 GameMode_ThirdMap::GameMode_ThirdMap()
 {
 
@@ -480,7 +483,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
-		Player->SetActorLocation({ 4610, 528 });
+		Player->SetActorLocation({ 6000, 420 });
 	}
 
 }
@@ -640,7 +643,11 @@ void GameMode_ThirdMap::Stairs(float _DeltaTime)
 		{
 			DownStair* TheStairD = GetWorld()->SpawnActor<DownStair>();
 			TheStairD->SetActorLocation({ 6780, -10 });
-			//StairTimer = 0.0f;
+
+			if (DownStair::Faster == true)
+			{
+				AddActorLocation(FVector2D::DOWN * 100.0 * _DeltaTime);
+			}
 
 			FVector2D DStairPos = TheStairD->GetActorLocation();
 			if (DStairPos.Y >= 850.0f)

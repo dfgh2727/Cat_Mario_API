@@ -57,7 +57,7 @@ void MushroomB::Move(float _DeltaTime)
 	FVector2D MushroomPos = this->GetActorLocation();
 
 	TurnAround(MoveDir);
-	AddActorLocation(MoveDir * 0.1f);
+	AddActorLocation(MoveDir * 0.15f);
 }
 
 void MushroomB::MushroomGroundCheck(FVector2D _MovePos)
@@ -146,13 +146,6 @@ void MushroomB::Eaten()
 		}
 	}
 
-	//{
-	//	AActor* Result = CollisionComponent->CollisionOnce(ECollisionGroup::MonsterBody);
-	//	if (nullptr != Result)
-	//	{
-	//		Destroy();
-	//	}
-	//}
 }
 
 

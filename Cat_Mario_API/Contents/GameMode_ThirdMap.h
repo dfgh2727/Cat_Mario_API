@@ -42,6 +42,8 @@ public:
 	void FBPSwtich();
 	void Stairs(float _DeltaTime);
 
+	/*static bool CatIsOnStair;*/
+
 protected:
 
 private:
