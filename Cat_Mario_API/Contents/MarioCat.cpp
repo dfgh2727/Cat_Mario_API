@@ -22,7 +22,7 @@ bool MarioCat::IsCatDead = false;
 bool MarioCat::IsCatKilled = false;
 FVector2D MarioCat::StartPos = FVector2D::ZERO;
 
-
+ 
 MarioCat::MarioCat()
 {
 	/*SetActorLocation({ 300, 700 });*/
