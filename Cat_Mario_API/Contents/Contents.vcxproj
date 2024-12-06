@@ -231,10 +231,6 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="EighthMap.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="EndImage.cpp">
       <SubType>
       </SubType>
@@ -275,10 +271,6 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="FifthMap.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="FireBall.cpp">
       <SubType>
       </SubType>
@@ -311,14 +303,6 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="GameMode_EighthMap.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="GameMode_FifthMap.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="GameMode_FirstMap.cpp">
       <SubType>
       </SubType>
@@ -332,14 +316,6 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="GameMode_SecondMap.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="GameMode_SeventhMap.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="GameMode_SixthMap.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -507,14 +483,6 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="SeventhMap.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="SixthMap.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="Staff.cpp">
       <SubType>
       </SubType>
@@ -618,10 +586,6 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="EighthMap.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="EndImage.h">
       <SubType>
       </SubType>
@@ -662,10 +626,6 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="FifthMap.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="FireBall.h">
       <SubType>
       </SubType>
@@ -698,14 +658,6 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="GameMode_EighthMap.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="GameMode_FifthMap.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="GameMode_FirstMap.h">
       <SubType>
       </SubType>
@@ -719,14 +671,6 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="GameMode_SecondMap.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="GameMode_SeventhMap.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="GameMode_SixthMap.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -891,14 +835,6 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="SecondMap.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="SeventhMap.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="SixthMap.h">
       <SubType>
       </SubType>
     </ClInclude>

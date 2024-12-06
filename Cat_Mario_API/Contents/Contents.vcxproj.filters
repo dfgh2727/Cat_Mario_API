@@ -40,30 +40,6 @@
     <ClCompile Include="MarioCat.cpp">
       <Filter>InterActive Things\MainPlayer_MarioCat</Filter>
     </ClCompile>
-    <ClCompile Include="FifthMap.cpp">
-      <Filter>ShowMeTheMap</Filter>
-    </ClCompile>
-    <ClCompile Include="GameMode_FifthMap.cpp">
-      <Filter>GameModes</Filter>
-    </ClCompile>
-    <ClCompile Include="SixthMap.cpp">
-      <Filter>ShowMeTheMap</Filter>
-    </ClCompile>
-    <ClCompile Include="GameMode_SixthMap.cpp">
-      <Filter>GameModes</Filter>
-    </ClCompile>
-    <ClCompile Include="SeventhMap.cpp">
-      <Filter>ShowMeTheMap</Filter>
-    </ClCompile>
-    <ClCompile Include="GameMode_SeventhMap.cpp">
-      <Filter>GameModes</Filter>
-    </ClCompile>
-    <ClCompile Include="EighthMap.cpp">
-      <Filter>ShowMeTheMap</Filter>
-    </ClCompile>
-    <ClCompile Include="GameMode_EighthMap.cpp">
-      <Filter>GameModes</Filter>
-    </ClCompile>
     <ClCompile Include="Enum.cpp">
       <Filter>enum</Filter>
     </ClCompile>
@@ -330,30 +306,6 @@
     </ClInclude>
     <ClInclude Include="MarioCat.h">
       <Filter>InterActive Things\MainPlayer_MarioCat</Filter>
-    </ClInclude>
-    <ClInclude Include="FifthMap.h">
-      <Filter>ShowMeTheMap</Filter>
-    </ClInclude>
-    <ClInclude Include="GameMode_FifthMap.h">
-      <Filter>GameModes</Filter>
-    </ClInclude>
-    <ClInclude Include="SixthMap.h">
-      <Filter>ShowMeTheMap</Filter>
-    </ClInclude>
-    <ClInclude Include="GameMode_SixthMap.h">
-      <Filter>GameModes</Filter>
-    </ClInclude>
-    <ClInclude Include="SeventhMap.h">
-      <Filter>ShowMeTheMap</Filter>
-    </ClInclude>
-    <ClInclude Include="GameMode_SeventhMap.h">
-      <Filter>GameModes</Filter>
-    </ClInclude>
-    <ClInclude Include="EighthMap.h">
-      <Filter>ShowMeTheMap</Filter>
-    </ClInclude>
-    <ClInclude Include="GameMode_EighthMap.h">
-      <Filter>GameModes</Filter>
     </ClInclude>
     <ClInclude Include="Enum.h">
       <Filter>enum</Filter>
