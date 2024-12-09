@@ -53,7 +53,6 @@ void ThirdMapP2::CatCheck()
 		{
 			Player->ItsTunnel = true;
 			Player->CatWalkIn = true;
-			this->Destroy();
 		}
 	}
 }
