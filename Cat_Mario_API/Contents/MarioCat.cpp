@@ -641,7 +641,7 @@ void MarioCat::TryToWalkIn()
 void MarioCat::WalkingIn(float _DeltaTime)
 {
 	CatRenderer->ChangeAnimation("Cat_RunRight");
-	AddActorLocation(FVector2D::LEFT * 150.0f * _DeltaTime);
+	AddActorLocation(FVector2D::RIGHT * 100.0f * _DeltaTime);
 
 	if (ItsTunnel == false)
 	{

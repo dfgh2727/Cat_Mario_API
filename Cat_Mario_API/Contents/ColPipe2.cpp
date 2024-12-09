@@ -45,7 +45,7 @@ void ColPipe2::BeginPlay()
 void ColPipe2::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
-	CatCheck(_DeltaTime);
+	//CatCheck(_DeltaTime);
 }
 
 

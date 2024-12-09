@@ -151,7 +151,7 @@ void GameMode_FirstMap::BeginPlay()
 
 	{
 		Seal2 = GetWorld()->SpawnActor<DownSeal>();
-		Seal2->SetActorLocation({ 3180, -100 });
+		Seal2->SetActorLocation({ 3240, -100 });
 	}
 
 	{

@@ -526,6 +526,7 @@ void GameMode_ThirdMap::ReStart(float _DeltaTime)
 void GameMode_ThirdMap::GoToDeathCount()
 {
 	UEngineAPICore::GetCore()->OpenLevel("DeathCount");
+	DownStair::Faster == false;
 }
 
 void GameMode_ThirdMap::Clear()
@@ -538,7 +539,7 @@ void GameMode_ThirdMap::Clear()
 		GameMode_DeathCount::MapNameString = "Fourth";
 		GameMode_DeathCount::At3rdMap = false;
 
-		MarioCat::StartPos = { 148, 10 };
+		MarioCat::StartPos = { 148, 528 };
 		TimeEventer.PushEvent(0.5f, std::bind(&GameMode_ThirdMap::OpenNextLevel, this));
 	}
 }
@@ -647,6 +648,10 @@ void GameMode_ThirdMap::Stairs(float _DeltaTime)
 	{
 		StairTimerValue = 0.9f;
 	}
+	else
+	{
+		StairTimerValue = 2.5f;
+	}
 	
 	if (DownStairTimer > StairTimerValue)
 	{
@@ -663,7 +668,6 @@ void GameMode_ThirdMap::Stairs(float _DeltaTime)
 
 		DownStairTimer = 0.0f;
 	}
-	
 	
 }
 

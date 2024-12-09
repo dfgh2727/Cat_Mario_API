@@ -35,7 +35,7 @@ void GameMode_FourthMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
-		UEngineAPICore::GetCore()->OpenLevel("Play_FifthMap");
+		UEngineAPICore::GetCore()->OpenLevel("TheEnd");
 	}
 
 }
