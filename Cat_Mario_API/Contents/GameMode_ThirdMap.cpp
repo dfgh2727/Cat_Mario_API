@@ -27,7 +27,6 @@
 #include "DownStair.h"
 #include "GAbnormalBlock.h"
 #include "ThirdMapP2.h"
-#include "ColPipe2.h"
 
 #include "WhiteCircle.h"
 #include "MapActor.h"
@@ -438,10 +437,6 @@ void GameMode_ThirdMap::BeginPlay()
 	}
 
 	
-	{
-		ColPipe2* NewActor = GetWorld()->SpawnActor<ColPipe2>();
-		NewActor->SetActorLocation({ 7550, 442 });
-	}
 	{
 		ThirdMapP2* NewActor = GetWorld()->SpawnActor<ThirdMapP2>();
 		NewActor->SetActorLocation({ 7550, 442 });
