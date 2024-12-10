@@ -17,12 +17,22 @@ public:
 	GameMode_FourthMap& operator=(GameMode_FourthMap&& _Other) noexcept = delete;
 
 	void BeginPlay() override;
-
 	void Tick(float _DeltaTime) override;
+
+	void FSSwitch();
+	void FSMove(float _DeltaTime);
+
+	void ReStart(float _DeltaTime);
+	void LevelChangeStart() override;
+	void AtTheDoor();
+	void Clear();
+	void GoToDeathCount();
 
 protected:
 
 private:
-
+	bool FSLever1 = false;
+	bool FSLever2 = false;
+	class FakeStaff* TheFStaff;
 };
 
