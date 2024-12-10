@@ -60,15 +60,20 @@ void GameMode_FourthMap::FSSwitch()
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
 
-	if (PlayerPos.X>= 840.0f && PlayerPos.X <= 1119.0f && PlayerPos.Y >= 640.0f)
+	if (DoItOnce == true)
 	{
-		TheFStaff->MoveSwitch = true;
-		TheFStaff->GoLeft = true;
-	}
-	else if (PlayerPos.X >= 1142.0f && PlayerPos.Y >= 699.0f)
-	{
-		TheFStaff->MoveSwitch = true;
-		TheFStaff->GoLeft = true;
+		if (PlayerPos.X >= 840.0f && PlayerPos.X <= 1119.0f && PlayerPos.Y >= 640.0f)
+		{
+			TheFStaff->MoveSwitch = true;
+			TheFStaff->GoLeft = true;
+			DoItOnce = false;
+		}
+		else if (PlayerPos.X >= 1142.0f && PlayerPos.Y >= 699.0f)
+		{
+			TheFStaff->MoveSwitch = true;
+			TheFStaff->GoRight = true;
+			DoItOnce = false;
+		}
 	}
 }
 
@@ -79,7 +84,7 @@ void GameMode_FourthMap::ReStart(float _DeltaTime)
 	if (true == Player->IsCatDead)
 	{
 		--GameMode_DeathCount::Number;
-		GameMode_DeathCount::At1stMap = true;
+		GameMode_DeathCount::At4thMap = true;
 		GoToDeathCount();
 	}
 }
@@ -101,7 +106,7 @@ void GameMode_FourthMap::AtTheDoor()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if (PlayerPos.X >= 7510.0f)
+	if (PlayerPos.X >= 1900.0f)
 	{
 		Player->AtTheDoor = true;
 	}
@@ -113,7 +118,7 @@ void GameMode_FourthMap::Clear()
 	if (Player->Cleared == true)
 	{
 		//BGMPlayerBase.Stop();
-		GameMode_DeathCount::MapNameString = "TheEnd";
+		//GameMode_DeathCount::MapNameString = "TheEnd";
 		GameMode_DeathCount::At4thMap = false;
 
 		MarioCat::StartPos = { 300, 700 };

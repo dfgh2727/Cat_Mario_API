@@ -27,7 +27,7 @@ FakeStaff::FakeStaff()
 	{
 		CollisionComponent2 = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent2->SetComponentScale({ 20, 576 });
-		CollisionComponent2->SetCollisionGroup(ECollisionGroup::MonsterBody);
+		CollisionComponent2->SetCollisionGroup(ECollisionGroup::Prop);
 		CollisionComponent2->SetCollisionType(ECollisionType::Rect);
 		CollisionComponent2->SetComponentLocation(FVector2D{ 0, 20 });
 	}
@@ -58,16 +58,10 @@ void FakeStaff::Tick(float _DeltaTime)
 void FakeStaff::Move(float _DeltaTime)
 {
 	MonsterGroundCheck(GravityForce * _DeltaTime);
-	//if (true == OnTheBlock(_DeltaTime))
-	//{
-	//	IsGround = true;
-	//}
 	Gravity(_DeltaTime);
 
-	FVector2D MonsterPos = this->GetActorLocation();
-
 	TurnAround(MoveDir);
-	AddActorLocation(MoveDir * 0.08f);
+	AddActorLocation(MoveDir * 0.1f);
 
 }
 
@@ -120,7 +114,6 @@ void FakeStaff::Gravity(float _DeltaTime)
 	{
 		GravityForce = FVector2D::ZERO;
 	}
-
 }
 
 
@@ -131,7 +124,7 @@ void FakeStaff::TurnAround(FVector2D _MovePos)
 	if (nullptr != ColImage)
 	{
 		// 미래의 몬스터 위치
-		FVector2D NextPos = MonsterPos + FVector2D{ 10.0f * PosOrN, 0.0 } + _MovePos;
+		FVector2D NextPos = MonsterPos + FVector2D{ 10.0f * PosOrN, 310.0 } + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);
@@ -170,14 +163,6 @@ void FakeStaff::TurnAround(FVector2D _MovePos)
 			PosOrN = -1.0f;
 		}
 	}
-
-	////몬스터가 맵의 왼쪽 끝에 닿을 경우 방향 변경
-	//if (MonsterPos.X <= 0.0)
-	//{
-	//	StaffRenderer->ChangeAnimation("Mon_RunRight");
-	//	MoveDir = FVector2D::RIGHT;
-	//	PosOrN = 1.0f;
-	//}
 }
 
 void FakeStaff::SetDirection()

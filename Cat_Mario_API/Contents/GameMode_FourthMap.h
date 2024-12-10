@@ -34,5 +34,6 @@ private:
 	bool FSLever1 = false;
 	bool FSLever2 = false;
 	class FakeStaff* TheFStaff;
+	bool DoItOnce = true;
 };
 
