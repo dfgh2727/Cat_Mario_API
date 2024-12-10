@@ -734,7 +734,7 @@ void MarioCat::EndMotion1(float _DeltaTime)
 		CatRenderer->ChangeAnimation("Cat_JumpRight");
 		AddActorLocation(FVector2D::DOWN * 200.0f * _DeltaTime);
 	}
-	if (StaffBlockTouched == true)
+	else
 	{
 		ChangeState(PlayerState::GoToDoor);
 		StaffTouched = false;

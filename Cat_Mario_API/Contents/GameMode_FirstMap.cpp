@@ -341,7 +341,6 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 	CatIsUnderTheBlock();
 
 	StopTheMusic();
-	OverTheStaff();
 	AtTheDoor();
 	Clear();
 
@@ -527,11 +526,6 @@ void GameMode_FirstMap::MonsterShowUp3()
 		}
 		DoItOnce3 = false;
 	}
-}
-
-void GameMode_FirstMap::OverTheStaff()
-{
-
 }
 
 void GameMode_FirstMap::AtTheDoor()

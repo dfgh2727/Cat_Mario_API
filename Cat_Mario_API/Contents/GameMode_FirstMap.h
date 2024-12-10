@@ -31,8 +31,6 @@ public:
 	void FSSwtich();
 	void FlyingStickAppears();
 
-
-	void OverTheStaff();
 	void AtTheDoor();
 	void Clear();
 

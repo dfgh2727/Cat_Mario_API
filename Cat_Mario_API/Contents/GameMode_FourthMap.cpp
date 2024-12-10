@@ -27,7 +27,6 @@ void GameMode_FourthMap::BeginPlay()
 	Player->SetMapImage("4thMap.png");
 	Player->SetColImage("4thColMap.png");
 
-
 	{
 		FourthMap* NewActor = GetWorld()->SpawnActor<FourthMap>();
 	}
@@ -45,8 +44,11 @@ void GameMode_FourthMap::BeginPlay()
 void GameMode_FourthMap::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
+	ReStart(_DeltaTime);
 
 	FSSwitch();
+	AtTheDoor();
+	Clear();
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
@@ -106,7 +108,7 @@ void GameMode_FourthMap::AtTheDoor()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	FVector2D PlayerPos = Player->GetActorLocation();
-	if (PlayerPos.X >= 1900.0f)
+	if (PlayerPos.X >= 1885.0f)
 	{
 		Player->AtTheDoor = true;
 	}
@@ -122,11 +124,16 @@ void GameMode_FourthMap::Clear()
 		GameMode_DeathCount::At4thMap = false;
 
 		MarioCat::StartPos = { 300, 700 };
-		TimeEventer.PushEvent(2.0f, std::bind(&GameMode_FourthMap::GoToDeathCount, this));
+		TimeEventer.PushEvent(3.5f, std::bind(&GameMode_FourthMap::GoToTheEnd, this));
 	}
 }
 
 void GameMode_FourthMap::GoToDeathCount()
 {
 	UEngineAPICore::GetCore()->OpenLevel("DeathCount");
+}
+
+void GameMode_FourthMap::GoToTheEnd()
+{
+	UEngineAPICore::GetCore()->OpenLevel("TheEnd");
 }

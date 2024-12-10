@@ -27,6 +27,7 @@ public:
 	void AtTheDoor();
 	void Clear();
 	void GoToDeathCount();
+	void GoToTheEnd();
 
 protected:
 

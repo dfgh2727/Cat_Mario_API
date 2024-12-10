@@ -124,7 +124,7 @@ void FakeStaff::TurnAround(FVector2D _MovePos)
 	if (nullptr != ColImage)
 	{
 		// 미래의 몬스터 위치
-		FVector2D NextPos = MonsterPos + FVector2D{ 10.0f * PosOrN, 310.0 } + _MovePos;
+		FVector2D NextPos = MonsterPos + FVector2D{ 10.0f * PosOrN, 300.0 } + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);
@@ -151,17 +151,9 @@ void FakeStaff::TurnAround(FVector2D _MovePos)
 
 	AActor* Result = CollisionComponent2->CollisionOnce(ECollisionGroup::SquareBlock);
 	if (nullptr != Result)
-	{
-		if (MoveDir == FVector2D::LEFT)
-		{
-			MoveDir = FVector2D::RIGHT;
-			PosOrN = 1.0f;
-		}
-		else
-		{
-			MoveDir = FVector2D::LEFT;
-			PosOrN = -1.0f;
-		}
+	{	
+		MoveDir = FVector2D::RIGHT;
+		PosOrN = 1.0f;
 	}
 }
 
