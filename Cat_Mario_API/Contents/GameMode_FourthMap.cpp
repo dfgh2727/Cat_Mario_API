@@ -70,7 +70,7 @@ void GameMode_FourthMap::FSSwitch()
 			TheFStaff->GoLeft = true;
 			DoItOnce = false;
 		}
-		else if (PlayerPos.X >= 1142.0f && PlayerPos.Y >= 699.0f)
+		else if (PlayerPos.X >= 1130.0f )
 		{
 			TheFStaff->MoveSwitch = true;
 			TheFStaff->GoRight = true;

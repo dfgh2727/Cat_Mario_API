@@ -27,7 +27,7 @@ FakeStaff::FakeStaff()
 	{
 		CollisionComponent2 = CreateDefaultSubObject<U2DCollision>();
 		CollisionComponent2->SetComponentScale({ 20, 576 });
-		CollisionComponent2->SetCollisionGroup(ECollisionGroup::Prop);
+		CollisionComponent2->SetCollisionGroup(ECollisionGroup::MonsterBody);
 		CollisionComponent2->SetCollisionType(ECollisionType::Rect);
 		CollisionComponent2->SetComponentLocation(FVector2D{ 0, 20 });
 	}

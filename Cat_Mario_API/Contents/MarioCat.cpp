@@ -180,8 +180,6 @@ void MarioCat::Gravity(float _DeltaTime)
 {
 	if (false == IsGround)
 	{
-		// 증가시키고 
-		// 여기서 계산
 		AddActorLocation(GravityForce * _DeltaTime);
 		GravityForce += FVector2D::DOWN * _DeltaTime * 1000.0f;
 	}
@@ -312,9 +310,9 @@ void MarioCat::MainCamera()
 			CatPos.X = PrevPos.X;
 		}
 
-		if (MapScale.X <= CatPos.X)
+		if (MapScale.X + 100.0f <= CatPos.X)
 		{
-			CatPos.X = MapScale.X;
+			CatPos.X = MapScale.X + 100.0f;
 		}
 
 		if (0.0 >= CatPos.Y)
