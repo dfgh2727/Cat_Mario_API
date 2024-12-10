@@ -8,6 +8,10 @@
 #include "FourthMap.h"
 #include "MarioCat.h"
 
+#include "Staff.h"
+#include "FakeStaff.h"
+
+
 GameMode_FourthMap::GameMode_FourthMap()
 {
 }
@@ -26,6 +30,14 @@ void GameMode_FourthMap::BeginPlay()
 	{
 		FourthMap* NewActor = GetWorld()->SpawnActor<FourthMap>();
 
+	}
+	{
+		Staff* TheStaff = GetWorld()->SpawnActor<Staff>();
+		TheStaff->SetActorLocation({ 1537, 374 });
+	}
+	{
+		FakeStaff* TheStaff = GetWorld()->SpawnActor<FakeStaff>();
+		TheStaff->SetActorLocation({ 1131, 364 });
 	}
 }
 

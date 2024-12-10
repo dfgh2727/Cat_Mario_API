@@ -22,11 +22,11 @@ Bear::Bear()
 		MonsterRenderer = CreateDefaultSubObject<USpriteRenderer>();
 		MonsterRenderer->SetSprite("Bear_Left.png");
 		MonsterRenderer->SetOrder(ERenderOrder::PLAYER);
-		MonsterRenderer->SetComponentScale({ 70, 115 });
+		MonsterRenderer->SetComponentScale({ 68, 114 });
 	}
 	{
 		MonsterBody = CreateDefaultSubObject<U2DCollision>();
-		MonsterBody->SetComponentScale({ 70, 115 });
+		MonsterBody->SetComponentScale({ 68, 114 });
 		MonsterBody->SetCollisionGroup(ECollisionGroup::MonsterBody);
 		MonsterBody->SetCollisionType(ECollisionType::Rect);
 	}
@@ -121,7 +121,7 @@ void Bear::TurnAround(FVector2D _MovePos)
 	if (nullptr != ColImage)
 	{
 		// 미래의 몬스터 위치
-		FVector2D NextPos = MonsterPos + FVector2D{ 35.0f * PosOrN, 0.0 } + _MovePos;
+		FVector2D NextPos = MonsterPos + FVector2D{ 34.0f * PosOrN, 0.0 } + _MovePos;
 
 		NextPos.X = floorf(NextPos.X);
 		NextPos.Y = floorf(NextPos.Y);

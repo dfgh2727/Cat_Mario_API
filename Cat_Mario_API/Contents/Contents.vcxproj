@@ -239,6 +239,10 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="FakeStaff.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="FBPipe.cpp">
       <SubType>
       </SubType>
@@ -591,6 +595,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="Enum.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="FakeStaff.h">
       <SubType>
       </SubType>
     </ClInclude>

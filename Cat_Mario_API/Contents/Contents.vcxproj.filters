@@ -107,9 +107,6 @@
     <ClCompile Include="TurtleShell.cpp">
       <Filter>InterActive Things\Monster\Turtle</Filter>
     </ClCompile>
-    <ClCompile Include="Staff.cpp">
-      <Filter>InterActive Things\Props</Filter>
-    </ClCompile>
     <ClCompile Include="BBreakingBlock.cpp">
       <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
     </ClCompile>
@@ -266,6 +263,12 @@
     <ClCompile Include="MushroomB.cpp">
       <Filter>InterActive Things\Mushroom</Filter>
     </ClCompile>
+    <ClCompile Include="Staff.cpp">
+      <Filter>InterActive Things\Props\Staff</Filter>
+    </ClCompile>
+    <ClCompile Include="FakeStaff.cpp">
+      <Filter>InterActive Things\Props\Staff</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\PreCompile.h">
@@ -373,9 +376,6 @@
     </ClInclude>
     <ClInclude Include="TurtleShell.h">
       <Filter>InterActive Things\Monster\Turtle</Filter>
-    </ClInclude>
-    <ClInclude Include="Staff.h">
-      <Filter>InterActive Things\Props</Filter>
     </ClInclude>
     <ClInclude Include="BBreakingBlock.h">
       <Filter>InterActive Things\Blocks\BreakingBlock</Filter>
@@ -533,6 +533,12 @@
     <ClInclude Include="MushroomB.h">
       <Filter>InterActive Things\Mushroom</Filter>
     </ClInclude>
+    <ClInclude Include="Staff.h">
+      <Filter>InterActive Things\Props\Staff</Filter>
+    </ClInclude>
+    <ClInclude Include="FakeStaff.h">
+      <Filter>InterActive Things\Props\Staff</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -609,6 +615,9 @@
     </Filter>
     <Filter Include="InterActive Things\Props\Stairs">
       <UniqueIdentifier>{68324a00-398e-4785-8271-2a7b0aa0b3f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InterActive Things\Props\Staff">
+      <UniqueIdentifier>{084f30ac-497d-414c-abd8-48ebe310c2cf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
