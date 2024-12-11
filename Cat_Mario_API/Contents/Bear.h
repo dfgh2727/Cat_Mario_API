@@ -38,7 +38,7 @@ private:
 	FVector2D MoveDir = FVector2D::LEFT;
 	float PosOrN = -1.0f;
 
-	FVector2D JumpPower = FVector2D( 0.0f, -400.0f);
+	FVector2D JumpPower = FVector2D( 0.0f, -700.0f);
 
 	bool DoItOnce = true;
 	float Timer = 0.0;

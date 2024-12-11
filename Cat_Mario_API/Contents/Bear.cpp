@@ -49,6 +49,7 @@ void Bear::Tick(float _DeltaTime)
 	JumpUp(_DeltaTime);
 
 	Timer += _DeltaTime;
+
 	if (Timer >= 0.1f)
 	{
 		Move(_DeltaTime);
