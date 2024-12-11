@@ -47,6 +47,9 @@ void GameMode_FourthMap::Tick(float _DeltaTime)
 	Super::Tick(_DeltaTime);
 	ReStart(_DeltaTime);
 
+	BearSwitch();
+	BearShowUp();
+
 	FSSwitch();
 	AtTheDoor();
 	Clear();
@@ -100,7 +103,7 @@ void GameMode_FourthMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { /*2600, 700*/ /*2920, 700*/ /*6150, 100*/ 300, 700 /*7100, 10*/  /*6700, 10*/ };
+		MarioCat::StartPos = { 175, 580 };
 		Check = true;
 	}
 }

@@ -534,7 +534,7 @@ void GameMode_ThirdMap::Clear()
 		GameMode_DeathCount::MapNameString = "Fourth";
 		GameMode_DeathCount::At3rdMap = false;
 
-		MarioCat::StartPos = { 148, 528 };
+		MarioCat::StartPos = { 175, 580 };
 		TimeEventer.PushEvent(0.5f, std::bind(&GameMode_ThirdMap::OpenNextLevel, this));
 	}
 }
