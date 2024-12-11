@@ -46,8 +46,13 @@ void Bear::BeginPlay()
 void Bear::Tick(float _DeltaTime)
 {
 	Super::Tick(_DeltaTime);
-	Move(_DeltaTime);
 	JumpUp(_DeltaTime);
+
+	Timer += _DeltaTime;
+	if (Timer >= 0.05f)
+	{
+		Move(_DeltaTime);
+	}
 }
 
 void Bear::Move(float _DeltaTime)

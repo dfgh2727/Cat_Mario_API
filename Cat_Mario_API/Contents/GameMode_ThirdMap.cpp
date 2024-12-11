@@ -478,7 +478,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_F3))
 	{
-		Player->SetActorLocation({ 6000, 420 });
+		Player->SetActorLocation({ 2771, 650 });
 	}
 
 }

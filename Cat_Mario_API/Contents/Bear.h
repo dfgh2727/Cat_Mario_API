@@ -41,4 +41,5 @@ private:
 	FVector2D JumpPower = FVector2D( 0.0f, -200.0f);
 
 	bool DoItOnce = true;
+	float Timer = 0.0;
 };
