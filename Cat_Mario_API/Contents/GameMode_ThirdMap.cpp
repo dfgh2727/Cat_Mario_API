@@ -583,8 +583,9 @@ void GameMode_ThirdMap::BearShowUp()
 		Bear* NewActor = GetWorld()->SpawnActor<Bear>();
 		NewActor->SetActorLocation({ 3191, 500 });
 		NewActor->SetColImage("3rdColMap.png");
-		BearLever = false;
+		NewActor->GoLeft = true;
 
+		BearLever = false;
 		DoItOnce2 = false;
 	}
 }

@@ -25,7 +25,10 @@ public:
 
 	void TurnAround(FVector2D _MovePos);
 	void JumpUp(float _DeltaTime);
+	void SetDirection();
 
+	bool GoRight = false;
+	bool GoLeft = false;
 protected:
 
 private:

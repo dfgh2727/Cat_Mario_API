@@ -52,6 +52,7 @@ void Bear::Tick(float _DeltaTime)
 
 	if (Timer >= 0.1f)
 	{
+		SetDirection();
 		Move(_DeltaTime);
 	}
 }
@@ -166,3 +167,26 @@ void Bear::JumpUp(float _DeltaTime)
 		DoItOnce = false;
 	}
 }
+
+
+void Bear::SetDirection()
+{
+	if (GoRight == true)
+	{
+		MoveDir = FVector2D::RIGHT;
+		MonsterRenderer->SetSprite("Bear_Right.png");
+
+		PosOrN = 1.0f;
+		GoRight = false;
+	}
+
+	if (GoLeft == true)
+	{
+		MoveDir = FVector2D::LEFT;
+		MonsterRenderer->SetSprite("Bear_Left.png");
+
+		PosOrN = -1.0f;
+		GoLeft = false;
+	}
+}
+

@@ -159,8 +159,9 @@ void GameMode_FourthMap::BearShowUp()
 		Bear* NewActor = GetWorld()->SpawnActor<Bear>();
 		NewActor->SetActorLocation({ 175, 600 });
 		NewActor->SetColImage("4thColMap.png");
+		NewActor->GoRight = true;
+		
 		BearLever = false;
-
 		DoItOnce2 = false;
 	}
 }
