@@ -110,7 +110,7 @@ void Bear::Gravity(float _DeltaTime)
 	if (false == IsGround)
 	{
 		AddActorLocation(GravityForce * _DeltaTime);
-		GravityForce += FVector2D::DOWN * _DeltaTime * 1200.0f;
+		GravityForce += FVector2D::DOWN * _DeltaTime * 1800.0f;
 	}
 	else
 	{
