@@ -11,6 +11,7 @@
 
 #include "Staff.h"
 #include "FakeStaff.h"
+#include "Bear.h"
 
 
 GameMode_FourthMap::GameMode_FourthMap()
@@ -136,4 +137,27 @@ void GameMode_FourthMap::GoToDeathCount()
 void GameMode_FourthMap::GoToTheEnd()
 {
 	UEngineAPICore::GetCore()->OpenLevel("TheEnd");
+}
+
+void GameMode_FourthMap::BearSwitch()
+{
+	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+	FVector2D PlayerPos = Player->GetActorLocation();
+	if (230.0f <= PlayerPos.X)
+	{
+		BearLever = true;
+	}
+}
+
+void GameMode_FourthMap::BearShowUp()
+{
+	if (BearLever == true && DoItOnce2 == true)
+	{
+		Bear* NewActor = GetWorld()->SpawnActor<Bear>();
+		NewActor->SetActorLocation({ 3191, 500 });
+		NewActor->SetColImage("3rdColMap.png");
+		BearLever = false;
+
+		DoItOnce2 = false;
+	}
 }

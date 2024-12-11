@@ -29,6 +29,9 @@ public:
 	void GoToDeathCount();
 	void GoToTheEnd();
 
+	void BearSwitch();
+	void BearShowUp();
+
 protected:
 
 private:
@@ -36,5 +39,8 @@ private:
 	bool FSLever2 = false;
 	class FakeStaff* TheFStaff;
 	bool DoItOnce = true;
+	
+	bool DoItOnce2 = true;
+	bool BearLever = false;
 };
 
