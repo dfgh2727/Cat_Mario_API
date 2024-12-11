@@ -18,9 +18,8 @@ public:
 
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
-
+	
 	void FSSwitch();
-	void FSMove(float _DeltaTime);
 
 	void ReStart(float _DeltaTime);
 	void LevelChangeStart() override;
