@@ -487,10 +487,15 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 void GameMode_ThirdMap::StopTheMusic()
 {
-	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-	if (Player->IsCatKilled == true || Player->GetPlayerState() == PlayerState::Dead)
+	if (true == SoundSwtich) //사망시 함수가 1번만 실행되게 만듦
 	{
-		BGMPlayer.Stop();
+		MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+		if (Player->IsCatKilled == true || Player->GetPlayerState() == PlayerState::Dead)
+		{
+			BGMPlayer.Stop();
+			DeathSoundPlayer = UEngineSound::Play("Death.MP3");
+			SoundSwtich = false;
+		}
 	}
 }
 

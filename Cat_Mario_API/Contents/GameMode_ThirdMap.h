@@ -65,6 +65,9 @@ private:
 	float UpStairTimer = 0.0f;
 	float DownStairTimer = 0.0f;
 	float StairTimerValue = 2.5f;
+
+	bool SoundSwtich = true;
 	USoundPlayer BGMPlayer;
+	USoundPlayer DeathSoundPlayer;
 };
 

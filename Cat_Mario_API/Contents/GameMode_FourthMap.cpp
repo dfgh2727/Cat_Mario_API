@@ -40,6 +40,9 @@ void GameMode_FourthMap::BeginPlay()
 		TheFStaff->SetActorLocation({ 1131, 364 });
 		TheFStaff->SetColImage("4thColMap.png");
 	}
+
+	BGMPlayer = UEngineSound::Play("Field.MP3");
+	BGMPlayer.Loop(10);
 }
 
 void GameMode_FourthMap::Tick(float _DeltaTime)
@@ -50,6 +53,8 @@ void GameMode_FourthMap::Tick(float _DeltaTime)
 	BearSwitch();
 	BearShowUp();
 
+	StopTheMusic();
+
 	FSSwitch();
 	AtTheDoor();
 	Clear();
@@ -59,6 +64,20 @@ void GameMode_FourthMap::Tick(float _DeltaTime)
 		UEngineAPICore::GetCore()->OpenLevel("TheEnd");
 	}
 
+}
+
+void GameMode_FourthMap::StopTheMusic()
+{
+	if (true == SoundSwtich) //사망시 함수가 1번만 실행되게 만듦
+	{
+		MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+		if (Player->IsCatKilled == true || Player->GetPlayerState() == PlayerState::Dead)
+		{
+			BGMPlayer.Stop();
+			DeathSoundPlayer = UEngineSound::Play("Death.MP3");
+			SoundSwtich = false;
+		}
+	}
 }
 
 void GameMode_FourthMap::FSSwitch()
@@ -123,7 +142,7 @@ void GameMode_FourthMap::Clear()
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 	if (Player->Cleared == true)
 	{
-		//BGMPlayerBase.Stop();
+		BGMPlayer.Stop();
 		//GameMode_DeathCount::MapNameString = "TheEnd";
 		GameMode_DeathCount::At4thMap = false;
 
@@ -165,3 +184,5 @@ void GameMode_FourthMap::BearShowUp()
 		DoItOnce2 = false;
 	}
 }
+
+

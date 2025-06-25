@@ -155,6 +155,8 @@ void GameMode_SecondMap::Clear()
 
 	if (Player->InThePipe == true)
 	{
+		BGMPlayer.Stop();
+
 		GameMode_DeathCount::MapNameString = "Third";
 		GameMode_DeathCount::At2ndMap = false;
 

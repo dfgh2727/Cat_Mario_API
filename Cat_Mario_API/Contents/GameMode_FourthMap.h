@@ -1,6 +1,6 @@
 #pragma once
 #include <EngineCore/GameMode.h>
-
+#include <EnginePlatform/EngineSound.h>
 
 // Ό³Έν :
 class GameMode_FourthMap : public AGameMode
@@ -31,6 +31,9 @@ public:
 	void BearSwitch();
 	void BearShowUp();
 
+	void StopTheMusic();
+
+
 protected:
 
 private:
@@ -41,5 +44,9 @@ private:
 	
 	bool DoItOnce2 = true;
 	bool BearLever = false;
+
+	bool SoundSwtich = true;
+	USoundPlayer BGMPlayer;
+	USoundPlayer DeathSoundPlayer;
 };
 
