@@ -51,7 +51,7 @@ void SecondMapP1::Tick(float _DeltaTime)
 	AActor* Result = CollisionComponent1->CollisionOnce(ECollisionGroup::ColPlayer);
 	if (nullptr != Result)
 	{
-		if (true == UEngineInput::GetInst().IsPress(VK_LEFT))
+		if (true == UEngineInput::GetInst().IsPress(VK_RIGHT))
 		{
 			MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
 			Player->CatWalkIn = true;
