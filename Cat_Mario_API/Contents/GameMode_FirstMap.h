@@ -78,5 +78,8 @@ private:
 
 	float Time = 0.0f;
 	USoundPlayer BGMPlayerBase;
+	USoundPlayer DeathSoundPlayer;
+
+	bool SoundSwtich = true;
 };
 
