@@ -317,6 +317,8 @@ void GameMode_FirstMap::BeginPlay()
 	}
 
 	BGMPlayerBase = UEngineSound::Play("Field.MP3");
+	BGMPlayerBase.Loop(10);
+
 }
 
 void GameMode_FirstMap::Tick(float _DeltaTime)
