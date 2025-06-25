@@ -486,7 +486,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 void GameMode_ThirdMap::StopTheMusic()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-	if (Player->IsCatKilled == true)
+	if (Player->IsCatKilled == true || Player->GetPlayerState() == PlayerState::Dead)
 	{
 		BGMPlayer.Stop();
 	}

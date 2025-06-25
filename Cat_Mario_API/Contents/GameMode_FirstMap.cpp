@@ -354,7 +354,7 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 void GameMode_FirstMap::StopTheMusic()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
-	if (Player->IsCatKilled == true)
+	if (Player->IsCatKilled == true || Player->GetPlayerState() == PlayerState::Dead)
 	{
 		BGMPlayerBase.Stop();
 	}
