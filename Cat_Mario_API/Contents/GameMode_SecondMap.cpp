@@ -62,6 +62,9 @@ void GameMode_SecondMap::BeginPlay()
 		Seal = GetWorld()->SpawnActor<UpSeal>();
 		Seal->SetActorLocation({ 882, 617 });
 	}
+
+	BGMPlayer = UEngineSound::Play("Field.MP3");
+	BGMPlayer.Loop(10);
 }
 
 void GameMode_SecondMap::Tick(float _DeltaTime)
@@ -70,6 +73,7 @@ void GameMode_SecondMap::Tick(float _DeltaTime)
 
 	SealSwitch();
 	LaunchTheSeal();
+	StopTheMusic();
 
 	ReStart(_DeltaTime);
 	Clear();
@@ -91,6 +95,20 @@ void GameMode_SecondMap::LevelChangeStart()
 	{
 		MarioCat::StartPos = { 150, 700 };
 		Check = true;
+	}
+}
+
+void GameMode_SecondMap::StopTheMusic()
+{
+	if (true == SoundSwtich) //사망시 함수가 1번만 실행되게 만듦
+	{
+		MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+		if (Player->IsCatKilled == true || Player->GetPlayerState() == PlayerState::Dead)
+		{
+			BGMPlayer.Stop();
+			DeathSoundPlayer = UEngineSound::Play("Death.MP3");
+			SoundSwtich = false;
+		}
 	}
 }
 

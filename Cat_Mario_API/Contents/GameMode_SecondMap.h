@@ -1,6 +1,6 @@
 #pragma once
 #include <EngineCore/GameMode.h>
-
+#include <EnginePlatform/EngineSound.h>
 
 // Ό³Έν :
 class GameMode_SecondMap : public AGameMode
@@ -27,6 +27,7 @@ public:
 	void LaunchTheSeal();
 	void Clear();
 	void OpenNextLevel();
+	void StopTheMusic();
 
 protected:
 
@@ -35,5 +36,8 @@ private:
 
 	bool SwitchLever = false;
 
+	bool SoundSwtich = true;
+	USoundPlayer BGMPlayer;
+	USoundPlayer DeathSoundPlayer;
 };
 
