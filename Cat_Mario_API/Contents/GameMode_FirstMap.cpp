@@ -346,6 +346,7 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
+		BGMPlayerBase.Stop();
 		UEngineAPICore::GetCore()->OpenLevel("Play_SecondMap");
 	}
 

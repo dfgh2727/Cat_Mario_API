@@ -471,6 +471,7 @@ void GameMode_ThirdMap::Tick(float _DeltaTime)
 
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
+		BGMPlayer.Stop();
 		UEngineAPICore::GetCore()->OpenLevel("Play_FourthMap");
 	}
 
