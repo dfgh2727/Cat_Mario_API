@@ -32,7 +32,7 @@ public:
 	void BearShowUp();
 
 	void StopTheMusic();
-
+	void GoalSFXOn();
 
 protected:
 
@@ -48,5 +48,9 @@ private:
 	bool SoundSwtich = true;
 	USoundPlayer BGMPlayer;
 	USoundPlayer DeathSoundPlayer;
+
+	USoundPlayer GoalSoundPlayer;
+	
+	bool GoalSoundSwtich = true;
 };
 

@@ -59,6 +59,8 @@ void GameMode_FourthMap::Tick(float _DeltaTime)
 	AtTheDoor();
 	Clear();
 
+	GoalSFXOn();
+
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		UEngineAPICore::GetCore()->OpenLevel("TheEnd");
@@ -74,8 +76,23 @@ void GameMode_FourthMap::StopTheMusic()
 		if (Player->IsCatKilled == true || Player->GetPlayerState() == PlayerState::Dead)
 		{
 			BGMPlayer.Stop();
+			//GoalSoundPlayer.Stop();
 			DeathSoundPlayer = UEngineSound::Play("Death.MP3");
 			SoundSwtich = false;
+		}
+	}
+}
+
+void GameMode_FourthMap::GoalSFXOn()
+{
+	if (true == GoalSoundSwtich)
+	{
+		MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+		if (Player->GetPlayerState() == PlayerState::SlipDown)
+		{
+			BGMPlayer.Stop();
+			GoalSoundPlayer = UEngineSound::Play("Goal.MP3");
+			GoalSoundSwtich = false;
 		}
 	}
 }

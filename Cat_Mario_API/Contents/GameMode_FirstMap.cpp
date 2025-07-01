@@ -384,10 +384,6 @@ void GameMode_FirstMap::GoalSFXOn()
 	}
 }
 
-//void GameMode_FirstMap::GoalSFXOff()
-//{
-//
-//}
 
 void GameMode_FirstMap::ReStart(float _DeltaTime)
 {
