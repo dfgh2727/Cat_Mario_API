@@ -47,6 +47,9 @@ public:
 	void MonsterShowUp2();
 	void MonsterShowUp3();
 
+	void GoalSFXOn();
+	//void GoalSFXOff();
+
 
 protected:
 
@@ -79,7 +82,9 @@ private:
 	float Time = 0.0f;
 	USoundPlayer BGMPlayerBase;
 	USoundPlayer DeathSoundPlayer;
+	USoundPlayer GoalSoundPlayer;
 
 	bool SoundSwtich = true;
+	bool GoalSoundSwtich = true;
 };
 

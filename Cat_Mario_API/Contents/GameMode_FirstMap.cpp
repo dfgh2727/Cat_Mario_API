@@ -345,6 +345,8 @@ void GameMode_FirstMap::Tick(float _DeltaTime)
 	AtTheDoor();
 	Clear();
 
+	GoalSFXOn();
+
 	if (true == UEngineInput::GetInst().IsDown(VK_SPACE))
 	{
 		BGMPlayerBase.Stop();
@@ -361,11 +363,31 @@ void GameMode_FirstMap::StopTheMusic()
 		if (Player->IsCatKilled == true || Player->GetPlayerState() == PlayerState::Dead)
 		{
 			BGMPlayerBase.Stop();
+			GoalSoundPlayer.Stop();
 			DeathSoundPlayer = UEngineSound::Play("Death.MP3");
 			SoundSwtich = false;
 		}
 	}
 }
+
+void GameMode_FirstMap::GoalSFXOn()
+{
+	if (true == GoalSoundSwtich)
+	{
+		MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
+		if (Player->GetPlayerState() == PlayerState::SlipDown)
+		{
+			BGMPlayerBase.Stop();
+			GoalSoundPlayer = UEngineSound::Play("Goal.MP3");
+			GoalSoundSwtich = false;
+		}
+	}
+}
+
+//void GameMode_FirstMap::GoalSFXOff()
+//{
+//
+//}
 
 void GameMode_FirstMap::ReStart(float _DeltaTime)
 {
@@ -387,7 +409,7 @@ void GameMode_FirstMap::LevelChangeStart()
 
 	if (Check == false)
 	{
-		MarioCat::StartPos = { /*2600, 700*/ /*2920, 700*/ /*6150, 100*/ 300, 700 /*7100, 10*/  /*6700, 10*/ };
+		MarioCat::StartPos = { /*2600, 700*/ /*2920, 700*/ 6150, 100 /*300, 700*/ /*7100, 10*/  /*6700, 10*/ };
 		Check = true;
 	}
 }
@@ -536,6 +558,7 @@ void GameMode_FirstMap::MonsterShowUp3()
 }
 
 
+
 void GameMode_FirstMap::AtTheDoor()
 {
 	MarioCat* Player = GetWorld()->GetPawn<MarioCat>();
@@ -556,7 +579,7 @@ void GameMode_FirstMap::Clear()
 		GameMode_DeathCount::At1stMap = false;
 
 		MarioCat::StartPos = { 150, 700 };
-		TimeEventer.PushEvent(2.0f, std::bind(&GameMode_FirstMap::GoToDeathCount, this));
+		TimeEventer.PushEvent(4.0f, std::bind(&GameMode_FirstMap::GoToDeathCount, this));
 	}
 }
 
